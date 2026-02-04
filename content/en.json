@@ -1,0 +1,68 @@
+{
+  "HomePage": {
+    "title": "Wathb Environmental Consulting",
+    "subtitle": "Leading the way in sustainable environmental solutions.",
+    "heroCta": "Our Services",
+    "heroSecondary": "Contact Us"
+  },
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "articles": "Articles",
+    "contact": "Contact",
+    "projects": "Projects"
+  },
+  "ContactPage": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our expert team.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "ServicesPage": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive environmental solutions for your business.",
+    "items": [
+      {
+        "title": "Environmental Impact Assessment",
+        "description": "Comprehensive analysis of environmental consequences for your projects."
+      },
+      {
+        "title": "Waste Management",
+        "description": "Strategic planning for sustainable waste disposal and recycling."
+      },
+      {
+        "title": "Sustainability Reporting",
+        "description": "Helping organizations measure and communicate their ESG performance."
+      },
+        {
+        "title": "Air Quality Monitoring",
+        "description": "Advanced tracking and analysis of air pollutants."
+      }
+    ]
+  },
+  "ArticlesPage": {
+    "title": "Latest Insights",
+    "subtitle": "News and articles from our experts.",
+    "items": [
+      {
+        "title": "The Future of Green Energy",
+        "description": "Exploring renewable energy trends in the region.",
+        "date": "2024-01-15"
+      },
+      {
+        "title": "Understanding Compliance",
+        "description": "A guide to local environmental regulations.",
+        "date": "2024-02-01"
+      },
+      {
+        "title": "Sustainable Construction",
+        "description": "Best practices for eco-friendly building.",
+        "date": "2024-02-20"
+      }
+    ]
+  }
+}

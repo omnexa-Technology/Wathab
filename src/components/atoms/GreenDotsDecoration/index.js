@@ -1,0 +1,1 @@
+export { GreenDotsDecoration } from './GreenDotsDecoration';

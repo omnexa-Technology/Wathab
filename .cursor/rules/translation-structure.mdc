@@ -1,0 +1,90 @@
+---
+description: Translation structure and i18n rules - enforces use of ONLY src/locales/ar.js and src/locales/en.js
+alwaysApply: true
+---
+
+# Translation Structure Rules
+
+This project uses a **STRICT** translation structure that **MUST NOT** be modified or replaced.
+
+## ✅ ONLY Allowed Translation Files
+
+```
+src/locales/ar.js
+src/locales/en.js
+```
+
+These are the **ONLY** files where translations can exist or be added.
+
+## ❌ STRICTLY FORBIDDEN
+
+You **MUST NOT**:
+
+- Create any new translation folders
+- Create JSON translation files (e.g., `en.json`, `ar.json`)
+- Use `/content`, `/src/content`, or `/src/i18n` directories
+- Introduce any new i18n architecture or libraries
+- Refactor or replace the current translation system
+- Modify the translation loading mechanism
+
+## Adding New Translation Keys
+
+When adding new translations:
+
+1. **Open both files**: `src/locales/ar.js` and `src/locales/en.js`
+2. **Add keys to existing objects**: Follow the existing nested structure
+3. **Maintain consistency**: Use the same key paths in both files
+4. **Arabic translations**: Provide proper Arabic text (not English)
+
+### Example
+
+```javascript
+// src/locales/en.js
+export const en = {
+  home: {
+    vision: {
+      title: "Our Vision",
+      description: "Description text..."
+    }
+  }
+};
+
+// src/locales/ar.js
+export const ar = {
+  home: {
+    vision: {
+      title: "رؤيتنا",
+      description: "نص الوصف..."
+    }
+  }
+};
+```
+
+## Using Translations in Components
+
+Use the existing `useTranslation()` hook as-is:
+
+```javascript
+import { useTranslation } from '@/hooks/useTranslation';
+
+function Component() {
+  const { t } = useTranslation();
+  
+  return <h1>{t('home.vision.title')}</h1>;
+}
+```
+
+## Rule Enforcement
+
+- ⚠️ This rule applies to **ALL** components, pages, and features
+- ⚠️ No exceptions are allowed
+- ⚠️ Do not suggest alternatives or improvements to this structure
+- ⚠️ When in doubt, always use the existing structure
+
+## Why This Matters
+
+Maintaining this structure ensures:
+- Consistency across the entire codebase
+- No duplicate translation systems
+- Predictable behavior for all developers
+- Easy maintenance and updates

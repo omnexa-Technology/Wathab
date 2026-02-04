@@ -1,0 +1,48 @@
+{
+  "services": [
+    {
+      "slug": "environmental-impact-assessment",
+      "title": "تقييم الأثر البيئي"
+    },
+    {
+      "slug": "environmental-auditing",
+      "title": "المراجعة البيئية"
+    },
+    {
+      "slug": "reports-and-records-preparation",
+      "title": "إعداد التقارير والسجلات"
+    },
+    {
+      "slug": "environmental-management-plans",
+      "title": "خطط الإدارة البيئية"
+    },
+    {
+      "slug": "environmental-treatment-and-rehabilitation",
+      "title": "المعالجة البيئية وإعادة التأهيل"
+    },
+    {
+      "slug": "solid-waste-management",
+      "title": "إدارة النفايات الصلبة"
+    },
+    {
+      "slug": "environmental-consulting",
+      "title": "الاستشارات البيئية"
+    },
+    {
+      "slug": "sustainability-and-circular-economy",
+      "title": "الاستدامة والاقتصاد الدائري"
+    },
+    {
+      "slug": "training-and-capacity-building",
+      "title": "التدريب وبناء القدرات"
+    },
+    {
+      "slug": "environmental-measurements-and-monitoring",
+      "title": "القياسات والمراقبة البيئية"
+    },
+    {
+      "slug": "environmental-observations-implementation",
+      "title": "تنفيذ الملاحظات البيئية"
+    }
+  ]
+}

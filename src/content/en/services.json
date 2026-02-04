@@ -1,0 +1,48 @@
+{
+  "services": [
+    {
+      "slug": "environmental-impact-assessment",
+      "title": "Environmental Impact Assessment"
+    },
+    {
+      "slug": "environmental-auditing",
+      "title": "Environmental Auditing"
+    },
+    {
+      "slug": "reports-and-records-preparation",
+      "title": "Reports and Records Preparation"
+    },
+    {
+      "slug": "environmental-management-plans",
+      "title": "Environmental Management Plans"
+    },
+    {
+      "slug": "environmental-treatment-and-rehabilitation",
+      "title": "Environmental Treatment and Rehabilitation"
+    },
+    {
+      "slug": "solid-waste-management",
+      "title": "Solid Waste Management"
+    },
+    {
+      "slug": "environmental-consulting",
+      "title": "Environmental Consulting"
+    },
+    {
+      "slug": "sustainability-and-circular-economy",
+      "title": "Sustainability and Circular Economy"
+    },
+    {
+      "slug": "training-and-capacity-building",
+      "title": "Training and Capacity Building"
+    },
+    {
+      "slug": "environmental-measurements-and-monitoring",
+      "title": "Environmental Measurements and Monitoring"
+    },
+    {
+      "slug": "environmental-observations-implementation",
+      "title": "Environmental Observations Implementation"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+export { SectionTitleText } from './SectionTitleText';

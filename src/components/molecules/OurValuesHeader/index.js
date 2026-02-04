@@ -1,0 +1,1 @@
+export { OurValuesHeader } from './OurValuesHeader';

@@ -1,0 +1,1 @@
+export { ValueIcon } from './ValueIcon';

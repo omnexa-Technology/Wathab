@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/din-next-lt-arabic/DINNextLTArabic-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/din-next-lt-arabic/DINNextLTArabic-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/din-next-lt-arabic/DINNextLTArabic-Bold.woff2") format("woff2");
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  /* Anima / Figma design tokens */
+  --body-font-family: "DIN Next LT Arabic", Helvetica, system-ui, sans-serif;
+  --body-font-size: 20px;
+  --body-font-style: normal;
+  --body-font-weight: 400;
+  --body-letter-spacing: 0px;
+  --body-line-height: normal;
+  --text-20bold-font-family: "DIN Next LT Arabic", Helvetica, system-ui, sans-serif;
+  --text-20bold-font-size: 20px;
+  --text-20bold-font-style: normal;
+  --text-20bold-font-weight: 700;
+  --text-20bold-letter-spacing: 0px;
+  --text-20bold-line-height: normal;
+  --h5-font-family: "DIN Next LT Arabic", Helvetica, system-ui, sans-serif;
+  --h5-font-size: 24px;
+  --h5-font-style: normal;
+  --h5-font-weight: 500;
+  --h5-letter-spacing: 0px;
+  --h5-line-height: normal;
+  --sub-body-font-family: "DIN Next LT Arabic", Helvetica, system-ui, sans-serif;
+  --sub-body-font-size: 16px;
+  --sub-body-font-style: normal;
+  --sub-body-font-weight: 400;
+  --sub-body-letter-spacing: 0px;
+  --sub-body-line-height: 32px;
+  --text-20regular-font-family: "DIN Next LT Arabic", Helvetica, system-ui, sans-serif;
+  --text-20regular-font-size: 20px;
+  --text-20regular-font-style: normal;
+  --text-20regular-font-weight: 400;
+  --text-20regular-letter-spacing: 0px;
+  --text-20regular-line-height: 40px;
+  --text-24regular-font-family: "DIN Next LT Arabic", Helvetica, system-ui, sans-serif;
+  --text-24regular-font-size: 24px;
+  --text-24regular-font-style: normal;
+  --text-24regular-font-weight: 400;
+  --text-24regular-letter-spacing: 0px;
+  --text-24regular-line-height: 48px;
+  --text-32regular-font-family: "DIN Next LT Arabic", Helvetica, system-ui, sans-serif;
+  --text-32regular-font-size: 32px;
+  --text-32regular-font-style: normal;
+  --text-32regular-font-weight: 400;
+  --text-32regular-letter-spacing: 0px;
+  --text-32regular-line-height: 64px;
+}
+
+@theme {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Brand Colors */
+  --color-brand-900: #1a4d3a;
+  --color-brand-200: #86efac;
+
+  /* Neutral Colors */
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-700: #374151;
+  --color-grey-600: #595959;
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-primary: "DIN Next LT Arabic", system-ui, sans-serif;
+  --font-din: "DIN Next LT Arabic", system-ui, sans-serif;
+
+  /* Spacing Tokens - Tailwind v4 automatically generates utilities from --spacing-* */
+  --spacing-section: 7rem;
+  /* 112px - generates px-section, py-section, gap-section, etc. */
+  --spacing-navbar-x: 1.5rem;
+  /* 24px - generates px-navbar-x, etc. */
+  --spacing-navbar-y: 1rem;
+  /* 16px - generates py-navbar-y, etc. */
+  --spacing-topbar-y: 1.5rem;
+  /* 24px - generates py-topbar-y, etc. */
+  --spacing-nav: 1.5rem;
+  /* 24px - generates gap-nav, px-nav, etc. */
+  --spacing-section-gap: 3rem;
+  /* 48px - generates gap-section-gap, etc. */
+  --spacing-action: 1rem;
+  /* 16px - generates gap-action, px-action, etc. */
+  --spacing-xs: 0.5rem;
+  /* 8px - generates gap-xs, px-xs, etc. */
+  --spacing-button-x: 0.75rem;
+  /* 12px - generates px-button-x, etc. */
+  --spacing-button-y: 0.5rem;
+  /* 8px - generates py-button-y, etc. */
+  --spacing-icon: 0.5rem;
+  /* 8px - generates p-icon, etc. */
+  --spacing-icon-size: 1.5rem;
+  /* 24px - generates w-icon-size, h-icon-size, etc. */
+  --spacing-divider-height: 1rem;
+  /* 16px - generates h-divider-height, etc. */
+  --spacing-indicator: 0.125rem;
+  /* 2px - generates h-indicator, etc. */
+
+  /* Font Size Tokens */
+  --font-size-headnav: 1.25rem;
+  /* 20px - generates text-headnav */
+  --font-size-nav: 1rem;
+  /* 16px - generates text-nav */
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-navbar: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+
+  /* Carousel spacing tokens */
+  --spacing-carousel-gap: 3rem;
+  /* 48px - gap between navigation elements */
+  --spacing-slide-padding: 4rem;
+  /* 64px - slide content padding */
+
+  /* Carousel colors */
+  --color-carousel-active: #86ba41;
+  /* Active pagination indicator */
+  --color-carousel-inactive: #939393;
+  /* Inactive pagination border */
+  --color-carousel-nav-bg: rgba(255, 255, 255, 0.1);
+  /* Navigation button background */
+  --color-carousel-nav-hover: rgba(255, 255, 255, 0.2);
+  /* Navigation button hover */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.dark) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+html,
+body {
+  font-family: "DIN Next LT Arabic", system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.about-green-cut-rtl {
+  clip-path: polygon(310px 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 668px);
+}
+
+.about-green-cut-ltr {
+  clip-path: polygon(0 0,
+      calc(100% - 310px) 0,
+      100% 668px,
+      100% 100%,
+      0 100%);
+}
+
+/* Achievements section: content enter/exit and image scale (transform + opacity only) */
+@keyframes achievements-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes achievements-content-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes achievements-image-scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.achievements-content-enter {
+  animation: achievements-content-enter 500ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.achievements-content-exit {
+  animation: achievements-content-exit 500ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.achievements-image-scale {
+  animation: achievements-image-scale 700ms ease-out forwards;
+}
