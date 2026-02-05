@@ -5,7 +5,7 @@
 
 import Image from 'next/image';
 import { LogoOverlay } from '@/components/molecules/LogoOverlay/LogoOverlay';
-
+import FadeContent from '@/components/FadeContent';
 export function AboutImage({
   logoTextSrc = 'assets/icons/logo/logo-dark1.svg',
   logoTextAlt = 'Company Logo',
@@ -13,33 +13,37 @@ export function AboutImage({
 }) {
   return (
     <div className={`relative w-full lg:w-[732px] h-[830px] shrink-0 ${className}`}>
-      {/* Floating top logo */}
-      <Image
-        className=" absolute z-20 top-0 left-1/2 -translate-x-1/2 w-56 h-56"
-        alt='Company Logo'
-        src='/assets/icons/logo/logoAbout.svg'
-        width={224}
-        height={224}
-        loading="lazy"
-      />
+      <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
 
-      {/* Main image container with overlay */}
-      <div className="absolute top-[150px] left-0 w-full lg:w-[732px] h-[680px] flex items-end justify-center overflow-hidden rounded-lg">
+
+        {/* Floating top logo */}
         <Image
-          src='/assets/images/pages/Home/about.webp'
-          alt='Environmental workers with wind turbines'
-          fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 732px"
+          className=" absolute z-20 top-0 left-1/2 -translate-x-1/2 w-56 h-56"
+          alt='Company Logo'
+          src='/assets/icons/logo/logoAbout.svg'
+          width={224}
+          height={224}
           loading="lazy"
         />
 
-        {/* Logo overlay at bottom */}
-        <LogoOverlay
-          logoTextSrc={logoTextSrc}
-          logoTextAlt={logoTextAlt}
-        />
-      </div>
-    </div>
+        {/* Main image container with overlay */}
+        <div className="absolute top-[150px] left-0 w-full lg:w-[732px] h-[680px] flex items-end justify-center overflow-hidden rounded-lg">
+          <Image
+            src='/assets/images/pages/Home/about.webp'
+            alt='Environmental workers with wind turbines'
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 732px"
+            loading="lazy"
+          />
+
+          {/* Logo overlay at bottom */}
+          <LogoOverlay
+            logoTextSrc={logoTextSrc}
+            logoTextAlt={logoTextAlt}
+          />
+        </div>
+      </FadeContent>
+    </div >
   );
 }

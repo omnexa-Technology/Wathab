@@ -4,7 +4,6 @@
  */
 
 import { useTranslation } from '@/hooks/useTranslation';
-import { SectionTitleText } from '@/components/atoms/SectionTitleText/SectionTitleText';
 import { GreenDotsDecoration } from '@/components/atoms/GreenDotsDecoration/GreenDotsDecoration';
 
 export function OurValuesHeader({ titleKey = 'ourValues.sectionTitle', className = '' }) {
@@ -12,8 +11,10 @@ export function OurValuesHeader({ titleKey = 'ourValues.sectionTitle', className
 
   return (
     <header className={`inline-flex items-center justify-center gap-4 relative flex-[0_0_auto] ${className}`}>
-      <SectionTitleText>{t(titleKey)}</SectionTitleText>
       <GreenDotsDecoration />
+      <h1 className="text-white text-5xl font-bold">
+        {t(titleKey)}
+      </h1>
     </header>
   );
 }
