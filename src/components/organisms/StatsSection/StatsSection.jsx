@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef, useState, useEffect } from 'react';
 import { StatCard } from '@/components/molecules/StatCard/StatCard';
 
 const STATS_DATA = [
@@ -30,14 +31,33 @@ const STATS_DATA = [
 ];
 
 /**
- * Stats section: four horizontal cards with icon, counter, and label.
- * @param {Object} props
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
+ * Stats section: four horizontal cards with icon, animated counter, and label.
+ * Counters animate from 0 to value when the section scrolls into view.
  */
 export function StatsSection({ className = '', ...props }) {
+  const sectionRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.2, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       className={`flex w-full max-w-[1680px] flex-wrap items-stretch justify-center gap-6 px-4 py-8 md:flex-nowrap md:justify-between ${className}`}
       aria-label="Statistics"
       {...props}
@@ -46,8 +66,9 @@ export function StatsSection({ className = '', ...props }) {
         <StatCard
           key={stat.id}
           iconSrc={stat.iconSrc}
-          value={stat.value}
+          value={isInView ? stat.value : 0}
           labelKey={stat.labelKey}
+          duration={1800}
           className="min-w-0 flex-1 basis-full md:basis-0"
         />
       ))}

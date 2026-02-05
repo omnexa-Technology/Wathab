@@ -4,7 +4,14 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { CounterNumber } from '@/components/counter-number';
 import { CountIcon } from '@/components/atoms/CountIcon/CountIcon';
 
-export function StatCard({ iconSrc, value, labelKey, className = '', ...props }) {
+export function StatCard({
+  iconSrc,
+  value,
+  labelKey,
+  duration = 1500,
+  className = '',
+  ...props
+}) {
   const { t } = useTranslation();
 
   return (
@@ -13,7 +20,13 @@ export function StatCard({ iconSrc, value, labelKey, className = '', ...props })
       {...props}
     >
       <CountIcon src={iconSrc} alt="" />
-      <CounterNumber value={value} size="xl" prefix="+" />
+      <CounterNumber
+        value={value}
+        startValue={0}
+        duration={duration}
+        size="xl"
+        prefix="+"
+      />
       <p className="w-full max-w-[364px] font-din font-normal text-[32px] leading-[64px] tracking-normal text-center text-gray-600">
         {t(labelKey)}
       </p>
