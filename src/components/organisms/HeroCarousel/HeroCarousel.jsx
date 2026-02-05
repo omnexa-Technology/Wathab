@@ -53,7 +53,7 @@ export function HeroCarousel({
       {...props}
     >
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(270deg,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0)_100%)] pointer-events-none z-10" />
+      <div className="absolute inset-0 pointer-events-none z-10" />
 
       {/* Decorative vectors */}
       <div className="absolute w-[22.92%] h-[40.74%] top-[59.26%] left-[77.08%] opacity-[0.16] pointer-events-none z-0">
@@ -85,28 +85,28 @@ export function HeroCarousel({
               <div className="absolute inset-0 z-0">
                 <Image
                   src={slide.imageSrc}
-                  alt=""
+                  alt="hero cover"
                   fill
                   className="object-cover"
                   sizes="100vw"
                   priority={index === 0}
                 />
+                <div className=" flex w-full max-w-[1680px] items-center ltr:justify-start rtl:justify-start gap-12 absolute top-[204px] ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2 px-4 z-100">
+                  <HeroSlide
+                    titleKey={slide.titleKey}
+                    descriptionKey={slide.descriptionKey}
+                    ctaKey={slide.ctaKey}
+                    ctaHref={slide.ctaHref}
+                  />
+                </div>
               </div>
             )}
-            <div className="flex w-full max-w-[1680px] items-center ltr:justify-start rtl:justify-end gap-12 absolute top-[204px] ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2 px-4 z-20">
-              <HeroSlide
-                titleKey={slide.titleKey}
-                descriptionKey={slide.descriptionKey}
-                ctaKey={slide.ctaKey}
-                ctaHref={slide.ctaHref}
-              />
-            </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30">
+      <div className="w-7xl fex items-start justify-start absolute bottom-16 z-30">
         <CarouselNavigation
           onPrev={handlePrev}
           onNext={handleNext}
@@ -123,8 +123,6 @@ export function HeroCarousel({
           onSlideChange={handlePaginationClick}
         />
       </div>
-
-     
     </div>
   );
 }

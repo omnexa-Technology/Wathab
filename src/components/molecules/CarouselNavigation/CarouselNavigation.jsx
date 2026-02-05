@@ -32,7 +32,7 @@ export function CarouselNavigation({
 
   return (
     <div
-      className={`flex items-center gap-4 ${className}`}
+      className={`flex items-start justify-start mr-56 gap-4 ${className}`}
       {...props}
     >
       <CarouselNavButton
