@@ -12,7 +12,7 @@ import { SearchButton } from '@/components/atoms/SearchButton/SearchButton';
 const THEME_STORAGE_KEY = 'app-theme';
 
 const ctaClass =
-  'bg-green-900 text-white inline-flex h-14 items-center justify-center gap-4 rounded-[32px] bg-[#fdfdfd] px-6 py-2.5 font-[number:var(--text-20bold-font-weight)] text-[length:var(--text-20bold-font-size)] tracking-[var(--text-20bold-letter-spacing)] leading-[var(--text-20bold-line-height)] [font-style:var(--text-20bold-font-style)] text-[#1b6936] hover:bg-white transition-colors';
+  ' bg-green-900 text-white inline-flex h-14 items-center justify-center gap-4 rounded-[32px] bg-[#fdfdfd] px-6 py-2.5 font-[number:var(--text-20bold-font-weight)] text-[length:var(--text-20bold-font-size)] tracking-[var(--text-20bold-letter-spacing)] leading-[var(--text-20bold-line-height)] [font-style:var(--text-20bold-font-style)] text-[#1b6936] hover:bg-white hover:text-[#1b6936] transition-colors';
 
 const languageButtonClass =
   'flex items-center gap-2 rounded-[40px] px-4 h-12 font-[number:var(--body-font-weight)] text-[length:var(--body-font-size)] tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] text-white bg-transparent hover:bg-white/10 hover:opacity-80 transition-all border-none cursor-pointer';

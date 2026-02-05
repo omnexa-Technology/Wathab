@@ -75,6 +75,105 @@ export default {
   about: {
     title: 'About Us',
     description: 'Learn about Wathb Environmental Consulting and our commitment to environmental excellence.',
+    hero: {
+      title: '"Wathb" – Your Strategic Partner for Environmental Compliance and Excellence',
+      description: 'Your certified partner for comprehensive environmental solutions and regulatory compliance in Saudi Arabia.',
+      cta: 'Start Your Journey With Us',
+    },
+    intro: {
+      title: 'Our Story',
+      description: 'Wathb was founded in 2023 as a Saudi startup specialized in providing environmental consulting. The company comprises a team of local and international engineers and experts with extensive experience in the field of environment and its economics. Our team members have been a vital part of most natural resource surveys conducted in the Kingdom. We are committed to international alliances with leading global experts and companies using the latest technologies and quality solutions.',
+    },
+    features: {
+      title: 'Why Choose "Wathb" as Your Success Partner?',
+      items: {
+        certification: {
+          title: 'Certified Classification (Class A)',
+          description: 'Certified by the National Center for Environmental Compliance (NCEC)',
+        },
+        experience: {
+          title: 'Deep National Experience',
+          description: 'Team contributed to building regulatory frameworks for natural resources in the Kingdom',
+        },
+        partnerships: {
+          title: 'International Partnerships',
+          description: 'Alliances with leading global experts and companies',
+        },
+        solutions: {
+          title: 'Integrated Solutions',
+          description: 'From environmental studies to licenses and waste management',
+        },
+      },
+    },
+    darkFeature: {
+      title: 'Our Vision',
+      description: 'To become one of the most important national companies in terms of customer and regulatory trust',
+      cards: {
+        innovation: {
+          title: 'Innovation',
+          description: 'We use the latest technologies in environmental solutions',
+        },
+        excellence: {
+          title: 'Excellence',
+          description: 'We adhere to the highest quality standards in every project',
+        },
+      },
+    },
+    timeline: {
+      title: 'Our Values',
+      steps: {
+        step1: {
+          title: 'Comprehensive Study and Assessment',
+          description: 'We begin with a precise assessment of your environmental needs',
+        },
+        step2: {
+          title: 'Planning and Solutions',
+          description: 'We develop an integrated action plan with the best solutions',
+        },
+        step3: {
+          title: 'Implementation and Follow-up',
+          description: 'We implement solutions with precise monitoring',
+        },
+        step4: {
+          title: 'Continuous Improvement',
+          description: 'We ensure continuous compliance and development',
+        },
+      },
+    },
+    stats: {
+      title: 'What Are Our Practical Achievements to Ensure Partner Satisfaction?',
+      items: {
+        projects: {
+          label: 'Completed Projects',
+          value: '150',
+        },
+        studies: {
+          label: 'Environmental Studies',
+          value: '200',
+        },
+        permits: {
+          label: 'Completed Permits',
+          value: '300',
+        },
+        clients: {
+          label: 'Satisfied Clients',
+          value: '100',
+        },
+        sectors: {
+          label: 'Local Sectors',
+          value: '15',
+        },
+        experts: {
+          label: 'Specialized Experts',
+          value: '25',
+        },
+      },
+    },
+    cta: {
+      title: 'Start Your Environmental Success Story with a Partner You Trust',
+      description: 'Contact us today for a free consultation',
+      button: 'Contact Us Now',
+    },
     section: {
       title: 'About Wathb',
       heading: 'A Saudi startup specialized in providing environmental consulting',
