@@ -19,9 +19,10 @@ export function VisionMissionCard({
     >
       <CardContent className="flex flex-col items-end justify-end gap-14 px-10 py-16">
         <CardDescription>{description}</CardDescription>
-        {/* <CardTitle className="text-start">{title}</CardTitle> */}
+        <CardTitle className="text-start">{title}</CardTitle>
         <h1 className="text-start text-5xl font-bold rotate-180 flex items-end justify-start">{title}</h1>
       </CardContent>
     </Card>
   );
 }
+
