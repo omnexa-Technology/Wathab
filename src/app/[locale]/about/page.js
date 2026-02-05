@@ -1,24 +1,36 @@
-import { headers } from 'next/headers';
-import ar from '@/locales/ar';
-import en from '@/locales/en';
+'use client';
 
-const m = { ar, en };
+import { AboutHero } from '@/components/about/AboutHero';
+import { AboutIntro } from '@/components/about/AboutIntro';
+import { AboutFeatures } from '@/components/about/AboutFeatures';
+import { AboutDarkFeature } from '@/components/about/AboutDarkFeature';
+import { AboutTimeline } from '@/components/about/AboutTimeline';
+import { AboutStats } from '@/components/about/AboutStats';
+import { AboutCTA } from '@/components/about/AboutCTA';
 
-export async function generateMetadata() {
-  const h = await headers();
-  const locale = h.get('x-next-locale') || 'ar';
-  const t = m[locale] || m.ar;
-  return { title: `${t.about.title} - Wathb`, description: t.about.description };
-}
-
-export default async function AboutPage() {
-  const h = await headers();
-  const locale = h.get('x-next-locale') || 'ar';
-  const t = m[locale] || m.ar;
+export default function AboutPage() {
   return (
-    <div className='h-[100vh] w-full'>
-      <h1>{t.about.title}</h1>
-      <p>{t.about.description}</p>
-    </div>
+    <>
+      {/* Hero Section */}
+      <AboutHero />
+
+      {/* Intro Section with Image Grid */}
+      <AboutIntro />
+
+      {/* Features Section */}
+      <AboutFeatures />
+
+      {/* Dark Feature Section */}
+      <AboutDarkFeature />
+
+      {/* Timeline Section */}
+      <AboutTimeline />
+
+      {/* Statistics Section */}
+      <AboutStats />
+
+      {/* Call To Action Section */}
+      <AboutCTA />
+    </>
   );
 }
