@@ -36,18 +36,24 @@ const navItems = [
 
   },
   {
-    type: 'dropdown',
+    type: 'link',
     key: 'navbar.projects',
-    items: [
-      { label: 'القطاع الصناعي', href: '/projects/industrial' },
-      { label: 'القطاع التجاري', href: '/projects/commercial' },
-      { label: 'القطاع الحكومي', href: '/projects/government' },
-    ]
+    href: '/sectors',
   },
   {
     type: 'link',
     href: '/articles',
     key: 'navbar.articles'
+  },
+  {
+    type: 'link',
+    href: '/news',
+    key: 'navbar.news'
+  },
+  {
+    type: 'link',
+    href: '/licenses',
+    key: 'navbar.licenses'
   },
   {
     type: 'link',

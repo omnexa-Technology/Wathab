@@ -17,8 +17,8 @@ export default async function ContactPage() {
   const t = m[locale] || m.ar;
   return (
     <div className='h-[100vh] w-full'>
-      <h1>{t.contact.title}</h1>
-      <p>{t.contact.description}</p>
+      <h1 className='m-24 text-8xl font-bold'>{t.contact.title}</h1>
+      <p className='m-24 text-3xl font-medium'>{t.contact.description}</p>
     </div>
   );
 }
