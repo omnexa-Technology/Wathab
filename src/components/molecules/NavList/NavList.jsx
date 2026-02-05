@@ -22,10 +22,18 @@ const navItems = [
     type: 'dropdown',
     key: 'navbar.services',
     items: [
-      { label: 'دراسات تقييم الأثر البيئي', href: '/services/eia' },
-      { label: 'التدقيق البيئي', href: '/services/audit' },
-      { label: 'التراخيص البيئية', href: '/services/permits' },
+      { label: 'إعداد خطط الإدارة البيئية', href: '/services/environmental-management-plans' },
+      { label: 'إعداد خطط المعالجه و إعادة التأهيل البيئى', href: '/services/rehabilitation-and-treatment-plans' },
+      { label: 'دراسات تقييم الأثر البيئي', href: '/services/environmental-impact-assessment' },
+      { label: 'دراسات التدقيق البيئي', href: '/services/environmental-audit' },
+      { label: 'إعداد السجلات والتقارير البيئية', href: '/services/environmental-records-and-reports' },
+      { label: 'إدارةالنفايات (موان)', href: '/services/ports-waste-management' },
+      { label: 'تنفيذ خطط المعاجة و إعادة التأهيل البيئى', href: '/services/rehabilitation-plan-implementation' },
+      { label: 'إعداد الخطط التصحيحية للضوضاء و نمذجة الصوت', href: '/services/noise-correction-and-modeling' },
+      { label: 'الستشارات البيئية للإمتثال و التراخيص', href: '/services/environmental-compliance-and-permits' },
+      { label: 'التدريب و بناء القدرات البيئية', href: '/services/environmental-training-and-capacity-building' },
     ]
+
   },
   {
     type: 'dropdown',
