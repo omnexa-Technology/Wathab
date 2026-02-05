@@ -3,8 +3,7 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-
+import { ArrowLeft } from 'lucide-react';
 
 export function HeroSlide({
   titleKey,
@@ -36,17 +35,15 @@ export function HeroSlide({
             <h1 className={`self-stretch text-7xl font-bold text-white ${textAlign}`}>
               {t(titleKey)}
             </h1>
-
             <h4 className={`w-full max-w-[781px] text-white font-semibold text-4xl  ${textAlign}`}>
               {t(descriptionKey)}
             </h4>
           </div>
-
           <Link href={ctaHref} className={`inline-flex h-auto items-center justify-center gap-4 px-6 py-2.5 bg-[#1b6936] hover:bg-[#1b6936]/90 rounded-[32px] ${ctaOrder}`}>
+            <ArrowLeft className="w-8 h-8 text-white" aria-hidden />
             <span className="text-2xl font-bold text-white   [font-style:var(--text-20bold-font-style)] whitespace-nowrap">
               {t(ctaKey)}
             </span>
-            <ArrowRight className="w-8 h-8 text-white" aria-hidden />
           </Link>
         </div>
       </div>
