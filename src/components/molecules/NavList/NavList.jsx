@@ -13,9 +13,9 @@ const navItems = [
     type: 'dropdown',
     key: 'navbar.about',
     items: [
-      { label: 'نبذة عن وثب', href: '/about/overview' },
-      { label: 'رؤيتنا ورسالتنا', href: '/about/vision' },
-      { label: 'قيمنا', href: '/about/values' },
+      { label: 'نبذة عن وثب', href: '/about' },
+      { label: 'الفريق', href: '/about/team' },
+      { label: 'عملائنا', href: '/about/clients' },
     ]
   },
   {
