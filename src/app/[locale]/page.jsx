@@ -1,5 +1,6 @@
 'use client';
 
+
 import { HeroCarousel } from '@/components/organisms/HeroCarousel/HeroCarousel';
 import { StatsSection } from '@/components/organisms/StatsSection/StatsSection';
 import { OurAbout } from '@/components/organisms/OurAbout/OurAbout';
@@ -56,7 +57,9 @@ export default function HomePage() {
 
       {/* Section 2: Stats/Counters */}
       <div className="flex justify-center relative w-full">
+
         <StatsSection />
+
       </div>
 
       {/* Section 3: Our About (نبذة عن وثب) */}

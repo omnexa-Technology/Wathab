@@ -15,15 +15,18 @@ export function AboutContent({
 
   return (
     <div className={`flex flex-col items-start gap-16 w-full ${className}`}>
-      {paragraphs.map((text, index) => (
-        <Paragraph
-          key={index}
-          variant="text-32regular"
-          className="w-full text-[#595959] text-start"
-        >
-          {text}
-        </Paragraph>
-      ))}
+      
+        {paragraphs.map((text, index) => (
+
+          <Paragraph
+            key={index}
+            variant="text-32regular"
+            className="w-full text-[#595959] text-start"
+          >
+            {text}
+          </Paragraph>
+        ))}
+      
     </div>
   );
 }
