@@ -8,7 +8,7 @@ export async function generateMetadata() {
   const h = await headers();
   const locale = h.get('x-next-locale') || 'ar';
   const t = m[locale] || m.ar;
-  return { title: `${t.projects.title} - Wathb`, description: t.projects.description };
+  return { title: `${t.sectors.title} - Wathb`, description: t.sectors.description };
 }
 
 export default async function ProjectsPage() {
@@ -17,8 +17,8 @@ export default async function ProjectsPage() {
   const t = m[locale] || m.ar;
   return (
     <div className='h-[100vh] w-full'>
-      <h1>{t.projects.title}</h1>
-      <p>{t.projects.description}</p>
+      <h1 className='m-24 text-8xl font-bold'>{t.sectors.title}</h1>
+      <p className='m-24 text-3xl font-medium' >{t.sectors.description}</p>
     </div>
   );
 }

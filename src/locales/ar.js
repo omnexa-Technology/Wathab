@@ -8,10 +8,12 @@ export default {
   navbar: {
     brand: 'وثب',
     home: 'الرئيسية',
-    about: 'من نحن',
-    services: 'خدماتنا',
-    projects: 'المشاريع',
-    articles: 'المقالات',
+    about: 'عن وثب',
+    services: 'الخدمات',
+    projects: 'القطاعات',
+    articles: 'سجل الانجازات',
+    news: 'اخبارنا',
+    licenses: 'التراخيص و التصاريح',
     contact: ' تواصل معنا',
   },
   home: {
@@ -195,7 +197,7 @@ export default {
     }
   },
   services: { title: 'خدماتنا', description: 'مجموعة شاملة من خدمات الاستشارات البيئية المصممة لاحتياجاتك.', slugDescription: 'صفحة تفاصيل هذه الخدمة.' },
-  projects: { title: 'مشاريعنا', description: 'تصفح مجموعتنا من مشاريع الاستشارات البيئية ودراسات الحالة.', slugDescription: 'صفحة تفاصيل هذا المشروع.' },
+  sectors: { title: 'القطاعات', description: 'تصفح مجموعتنا من مشاريع الاستشارات البيئية ودراسات الحالة.', slugDescription: 'صفحة تفاصيل هذا المشروع.' },
   articles: { title: 'المقالات', description: 'أحدث المقالات والرؤى في الاستشارات البيئية والاستدامة.', slugDescription: 'محتوى المقال.' },
   contact: { title: 'اتصل بنا', description: 'تواصل مع فريقنا لمناقشة احتياجاتك في الاستشارات البيئية.' },
   headNav: {
