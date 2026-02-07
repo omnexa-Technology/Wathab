@@ -30,8 +30,8 @@ export function OurServicesSection({ className = '', ...props }) {
     },
     {
       id: 'permits',
-      iconSrc: '/assets/icons/ui/Service3.svg',
       titleKey: 'services.items.permits.title',
+      iconSrc: '/assets/icons/ui/Service3.svg',
       descriptionKey: 'services.items.permits.description',
       variant: 'standard',
       href: '/services/permits',
