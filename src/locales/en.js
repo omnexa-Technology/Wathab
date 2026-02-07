@@ -314,10 +314,23 @@ export default {
   },
   achievements: {
     sectionTitle: 'Our Achievements in Vital Sectors',
+    discoverMore: 'Discover More',
     items: {
       industrial: {
         title: 'Industrial Sector (Environmental Impact Studies)',
         description: 'Providing comprehensive Environmental Impact Assessment (EIA) studies for major factories in strategic fields, including the petrochemical and iron industries, at multiple locations across the Kingdom',
+      },
+      sector2: {
+        title: 'Environmental Compliance',
+        description: 'Delivering expert environmental compliance solutions and regulatory support for projects across vital sectors in the Kingdom.',
+      },
+      sector3: {
+        title: 'Sustainability Consulting',
+        description: 'Strategic environmental consulting to help organizations achieve sustainability goals and environmental excellence.',
+      },
+      sector4: {
+        title: 'Natural Resources Assessment',
+        description: 'Comprehensive natural resource surveys and assessments supporting sustainable development initiatives nationwide.',
       },
     },
   },
