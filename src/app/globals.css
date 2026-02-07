@@ -240,3 +240,41 @@ body {
 .achievements-image-scale {
   animation: achievements-image-scale 700ms ease-out forwards;
 }
+
+/* Hover-to-expand achievements carousel - Figma: 680px height */
+.achievements-carousel {
+  min-height: 680px;
+}
+
+@media (max-width: 768px) {
+  .achievements-carousel {
+    min-height: 400px;
+  }
+}
+
+.achievements-carousel-card {
+  flex-shrink: 0;
+}
+
+.achievements-carousel-card-expanded {
+  flex: 1 1 55%;
+  min-width: min(400px, 80vw);
+}
+
+.achievements-carousel-card-collapsed {
+  flex: 0 1 80px;
+  min-width: 80px;
+  opacity: 0.85;
+}
+
+.achievements-carousel-card-collapsed:hover {
+  opacity: 1;
+}
+
+.achievements-carousel-card-expanded .achievements-carousel-image {
+  transform: scale(1.05);
+}
+
+.achievements-carousel-card-collapsed .achievements-carousel-image {
+  transform: scale(1);
+}
