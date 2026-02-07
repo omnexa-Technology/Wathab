@@ -5,12 +5,7 @@ import { useLanguageStore } from '@/store/useLanguageStore';
 import { ServiceCard } from '@/components/molecules/ServiceCard/ServiceCard';
 import Link from 'next/link';
 
-/**
- * OurServicesSection - Displays company services with featured and standard cards
- * @param {Object} props
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
+
 export function OurServicesSection({ className = '', ...props }) {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
@@ -19,15 +14,15 @@ export function OurServicesSection({ className = '', ...props }) {
   const servicesData = [
     {
       id: 'eia',
-      iconSrc: '/assets/icons/ui/service-eia.svg',
+      iconSrc: '/assets/icons/ui/Service1.svg',
       titleKey: 'services.items.eia.title',
       descriptionKey: 'services.items.eia.description',
       variant: 'featured',
-      href: '/services/eia',
+      href: '/assets/icons/ui/Service1.svg',
     },
     {
       id: 'audit',
-      iconSrc: '/assets/icons/ui/service-audit.svg',
+      iconSrc: '/assets/icons/ui/Service2.svg',
       titleKey: 'services.items.audit.title',
       descriptionKey: 'services.items.audit.description',
       variant: 'standard',
@@ -35,7 +30,7 @@ export function OurServicesSection({ className = '', ...props }) {
     },
     {
       id: 'permits',
-      iconSrc: '/assets/icons/ui/service-permits.svg',
+      iconSrc: '/assets/icons/ui/Service3.svg',
       titleKey: 'services.items.permits.title',
       descriptionKey: 'services.items.permits.description',
       variant: 'standard',
@@ -53,6 +48,26 @@ export function OurServicesSection({ className = '', ...props }) {
         {/* Top Section: Featured Card + Header */}
         <div className="flex flex-col gap-12 items-start w-full">
           <div className="flex gap-16 items-start w-full">
+            {/* Header Content */}
+            <div className="flex flex-col gap-16 flex-1">
+              {/* Section Title */}
+              <div className="flex items-center justify-start w-full">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-1 h-2">
+                    <div className="w-2 h-2 rounded-full bg-[#86ba41]" />
+                    <div className="w-16 h-2 rounded-sm bg-[#86ba41]" />
+                  </div>
+                  <h2 className="font-din font-medium text-[64px] leading-[108px] text-[#0b2c16]">
+                    {t('services.sectionTitle')}
+                  </h2>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="font-din font-normal text-[32px] leading-[64px] text-right text-[#595959] w-full">
+                {t('services.description')}
+              </p>
+            </div>
             {/* Featured Service Card */}
             <ServiceCard
               iconSrc={servicesData[0].iconSrc}
@@ -63,26 +78,6 @@ export function OurServicesSection({ className = '', ...props }) {
               className="flex-1 min-h-[390px]"
             />
 
-            {/* Header Content */}
-            <div className="flex flex-col gap-16 flex-1">
-              {/* Section Title */}
-              <div className="flex items-center justify-end w-full">
-                <div className="flex items-center gap-4">
-                  <h2 className="font-din font-medium text-[64px] leading-[108px] text-[#0b2c16]">
-                    {t('services.sectionTitle')}
-                  </h2>
-                  <div className="flex items-center gap-1 h-2">
-                    <div className="w-2 h-2 rounded-full bg-[#86ba41]" />
-                    <div className="w-16 h-2 rounded-sm bg-[#86ba41]" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="font-din font-normal text-[32px] leading-[64px] text-right text-[#595959] w-full">
-                {t('services.description')}
-              </p>
-            </div>
           </div>
 
           {/* Bottom Section: Standard Service Cards */}
