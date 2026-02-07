@@ -4,18 +4,9 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowRightIcon } from 'lucide-react';
+const COVER_SERVICE_SRC = '/assets/icons/ui/Cover-service.svg';
 
-/**
- * ServiceCard - Displays a service with icon, title, description, and optional CTA
- * @param {Object} props
- * @param {string} props.iconSrc - Path to service icon
- * @param {string} props.titleKey - Translation key for service title
- * @param {string} props.descriptionKey - Translation key for service description
- * @param {'featured' | 'standard'} [props.variant='standard'] - Card styling variant
- * @param {string} [props.href='#'] - Link for "discover more" action
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
 export function ServiceCard({
   iconSrc,
   titleKey,
@@ -36,14 +27,38 @@ export function ServiceCard({
   const descColor = isFeatured ? 'text-[#eaeaea]' : 'text-[#595959]';
   const linkColor = isFeatured ? 'text-white' : 'text-[#303030]';
 
+  const hoverShadow = isFeatured
+    ? 'hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.35)]'
+    : 'hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.12)]';
+
   return (
     <div
-      className={`flex flex-col gap-8 items-end px-6 py-8 rounded-3xl ${cardBg} relative ${className}`}
+      className={`flex flex-col gap-6 items-end px-6 py-8 rounded-3xl ${cardBg} relative overflow-hidden
+        transition-[transform,box-shadow] duration-300 ease-out
+        hover:-translate-y-2 ${hoverShadow}
+        motion-reduce:translate-y-0 motion-reduce:shadow-none motion-reduce:duration-0
+        ${className}`}
       dir={isRTL ? 'rtl' : 'ltr'}
       {...props}
     >
-      {/* Icon */}
-      <div className="relative w-20 h-20 flex-shrink-0">
+      {/* Decorative cover (featured only) - top-left corner */}
+      {isFeatured && (
+        <div
+          className="absolute left-0 top-0 w-[180px] h-[180px] opacity-100 pointer-events-none"
+          aria-hidden
+        >
+          <Image
+            src={COVER_SERVICE_SRC}
+            alt=""
+            width={180}
+            height={180}
+            className="object-contain object-top-left w-full h-full"
+          />
+        </div>
+      )}
+
+      {/* Service icon - aligned to start (right in RTL) via self-start */}
+      <div className="flex flex-row items-start w-20 h-20 shrink-0 self-start">
         <Image
           src={iconSrc}
           alt=""
@@ -54,50 +69,41 @@ export function ServiceCard({
       </div>
 
       {/* Content */}
-      <div className="flex flex-col gap-12 items-end w-full">
+      <div className="flex flex-col gap-6 items-start w-full relative z-10">
         {/* Title and Description */}
-        <div className="flex flex-col gap-8 items-end w-full">
-          <h3 className={`font-din font-bold text-2xl leading-normal text-center ${titleColor}`}>
+        <div className="flex flex-col gap-4 items-start w-full">
+          <h3 className={`font-din font-bold text-2xl leading-normal text-start w-full ${titleColor}`}>
             {t(titleKey)}
           </h3>
-          <p className={`font-din font-normal text-xl leading-[40px] text-right w-full ${descColor}`}>
+          <p className={`font-din font-normal text-lg leading-[32px] text-start w-full ${descColor}`}>
             {t(descriptionKey)}
           </p>
         </div>
 
         {/* Footer Actions */}
-        <div className="flex items-center justify-between w-full">
-          {/* Discover More Link */}
-          <Link
-            href={href}
-            className={`flex items-center gap-2 ${linkColor} hover:opacity-80 transition-opacity`}
-          >
-            <div className="w-6 h-6 flex items-center justify-center">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <span className="font-din font-normal text-xl leading-normal">
-              اكتشف المزيد
-            </span>
-          </Link>
-
-          {/* CTA Button (Featured only) */}
+        <div className="flex flex-wrap items-center justify-between gap-4 w-full">
+          {/* Primary CTA (Featured only) - white button, green text */}
           {isFeatured && (
             <Link
               href={href}
-              className="flex items-center gap-4 px-6 py-3 bg-[#1b6936] hover:bg-[#1b6936]/90 rounded-[32px] h-16 transition-colors"
+              className="flex items-center gap-3 px-6 py-3.5 bg-white hover:bg-white/95 rounded-full min-h-[48px] transition-colors font-din font-bold text-lg text-[#1b6936] whitespace-nowrap"
             >
-              <div className="w-8 h-8 flex items-center justify-center">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21.3334 10.6667L10.6667 21.3333M10.6667 21.3333H21.3334M10.6667 21.3333V10.6667" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <span className="font-din font-bold text-xl leading-normal text-white whitespace-nowrap">
-                ابدأ رحلتك معنا الآن
-              </span>
+              <span>{t('services.requestServiceNow')}</span>
+              <svg className="w-5 h-5 shrink-0 rtl:rotate-180" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                <path d="M5 12h14M14 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </Link>
           )}
+
+          {/* Discover More Link */}
+          <Link
+            href={href}
+            className={` flex items-center  gap-2 px-6.5 py-3.5 rounded-full bg-[#1B6936] ${linkColor} hover:opacity-80 transition-opacity font-din font-normal text-lg`}
+          >
+            <span className="text-white">{t('achievements.discoverMore')}</span>
+          <ArrowRightIcon className="text-white w-5 h-5 shrink-0 rtl:rotate-180" />
+          </Link>
+
         </div>
       </div>
     </div>

@@ -63,9 +63,9 @@ export default function HomePage() {
       </div>
 
       {/* Section 3: Our About (نبذة عن وثب) */}
-      <div className="flex justify-center relative w-full mt-16">
+      {/* <div className="flex justify-center relative w-full mt-16">
         <OurAbout />
-      </div>
+      </div> */}
 
       {/* Section 4: About Us (عن وثب) */}
       <div className="flex justify-center relative w-full mt-12">
