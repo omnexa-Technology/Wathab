@@ -1,5 +1,7 @@
 'use client';
 
+
+
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { OurValuesHeader } from '@/components/molecules/OurValuesHeader/OurValuesHeader';
 import { ValueCard } from '@/components/molecules/ValueCard/ValueCard';
@@ -49,6 +51,7 @@ export function OurValuesSection({ className = '' }) {
       className={`flex flex-col w-[1920px] items-center gap-24 px-[120px] py-24 relative bg-[#222222] ${className}`}
     >
       <OurValuesHeader />
+
       <div className="flex items-start gap-12 relative self-stretch w-full flex-[0_0_auto]">
         {valuesData.map((value) => (
           <ValueCard

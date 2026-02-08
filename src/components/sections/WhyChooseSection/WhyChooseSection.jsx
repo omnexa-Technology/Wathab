@@ -48,6 +48,19 @@ export function WhyChooseSection({ className = '', ...props }) {
       dir={isRTL ? 'rtl' : 'ltr'}
       {...props}
     >
+
+      {/* Section Title */}
+      <div className="flex items-center justify-center gap-4 shrink-0">
+        <div className="flex items-center gap-1 h-2">
+          <div className="w-2 h-2 rounded-full bg-[#86ba41]" />
+          <div className="w-16 h-2 rounded-sm bg-[#86ba41]" />
+        </div>
+        <h2 className="font-din font-medium text-[64px] leading-[108px] text-[#0b2c16] whitespace-nowrap">
+          {t('whyChoose.sectionTitle')}
+        </h2>
+
+      </div>
+
       {/* Reasons List */}
       <div className="flex flex-col flex-1 gap-12 items-end min-h-0 min-w-0">
         <div className="flex flex-col gap-12 items-start w-full">
@@ -63,16 +76,7 @@ export function WhyChooseSection({ className = '', ...props }) {
         </div>
       </div>
 
-      {/* Section Title */}
-      <div className="flex items-center justify-center gap-4 shrink-0">
-        <h2 className="font-din font-medium text-[64px] leading-[108px] text-[#0b2c16] whitespace-nowrap">
-          {t('whyChoose.sectionTitle')}
-        </h2>
-        <div className="flex items-center gap-1 h-2">
-          <div className="w-2 h-2 rounded-full bg-[#86ba41]" />
-          <div className="w-16 h-2 rounded-sm bg-[#86ba41]" />
-        </div>
-      </div>
+
     </section>
   );
 }
