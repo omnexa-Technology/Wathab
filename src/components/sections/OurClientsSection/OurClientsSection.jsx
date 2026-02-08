@@ -4,12 +4,6 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { ClientCard } from '@/components/molecules/ClientCard/ClientCard';
 
-/**
- * OurClientsSection - Displays company clients/partners
- * @param {Object} props
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
 export function OurClientsSection({ className = '', ...props }) {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
