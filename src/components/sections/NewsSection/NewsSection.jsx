@@ -19,7 +19,7 @@ export function NewsSection({ className = '', ...props }) {
   const articlesData = [
     {
       id: 'article-1',
-      imageSrc: '/assets/images/pages/Home/news-1.webp',
+      imageSrc: '/assets/images/pages/Home/news3.webp',
       title: 'الاصلاحات والانشاءات البيئية',
       date: '12 July 2023',
       excerpt: 'من ناحية نساعدكم في دمج ممارسات التنمية المستدامة وكفاءة الموارد، كما نخفّض تكاليف التشغيل على المدى الطويل',
@@ -27,7 +27,7 @@ export function NewsSection({ className = '', ...props }) {
     },
     {
       id: 'article-2',
-      imageSrc: '/assets/images/pages/Home/news-2.webp',
+      imageSrc: '/assets/images/pages/Home/news2.webp',
       title: 'الأصلاحات البيئية',
       date: '12 July 2023',
       excerpt: 'تطوير حلول مستدامة للحفاظ على البيئة وتحسين جودة الحياة',
@@ -35,7 +35,7 @@ export function NewsSection({ className = '', ...props }) {
     },
     {
       id: 'article-3',
-      imageSrc: '/assets/images/pages/Home/news-3.webp',
+      imageSrc: '/assets/images/pages/Home/news1.webp',
       title: 'التنمية المستدامة',
       date: '12 July 2023',
       excerpt: 'مشاريع تنموية تراعي البيئة وتحقق التوازن بين التقدم والحفاظ على الموارد',

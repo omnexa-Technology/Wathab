@@ -2,15 +2,7 @@
 
 import Image from 'next/image';
 
-/**
- * ClientCard - Displays a client logo card
- * @param {Object} props
- * @param {string} props.logoSrc - Path to client logo image
- * @param {string} props.name - Client name
- * @param {string} [props.imageAlt=''] - Alt text for logo
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
+
 export function ClientCard({
   logoSrc,
   name,
