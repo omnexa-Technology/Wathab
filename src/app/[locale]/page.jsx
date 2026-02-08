@@ -4,7 +4,7 @@
 import { HeroCarousel } from '@/components/organisms/HeroCarousel/HeroCarousel';
 import { StatsSection } from '@/components/organisms/StatsSection/StatsSection';
 import { OurAbout } from '@/components/organisms/OurAbout/OurAbout';
-import { AboutSection } from '@/components/sections/AboutSection/AboutSection';
+// import { AboutSection } from '@/components/sections/AboutSection/AboutSection';
 import { VisionMissionSection } from '@/components/sections/VisionMissionSection';
 import { OurValuesSection } from '@/components/sections/OurValuesSection';
 import { OurServicesSection } from '@/components/sections/OurServicesSection/OurServicesSection';
@@ -63,14 +63,14 @@ export default function HomePage() {
       </div>
 
       {/* Section 3: Our About (نبذة عن وثب) */}
-      {/* <div className="flex justify-center relative w-full mt-16">
+      <div className="flex justify-center relative w-full mt-16">
         <OurAbout />
-      </div> */}
+      </div>
 
       {/* Section 4: About Us (عن وثب) */}
-      <div className="flex justify-center relative w-full mt-12">
+      {/* <div className="flex justify-center relative w-full mt-12">
         <AboutSection />
-      </div>
+      </div> */}
 
       {/* Section 5: Vision & Mission (رؤية ورسالة) */}
       <div className="flex justify-center relative w-full mt-12">
@@ -92,15 +92,15 @@ export default function HomePage() {
         <AchievementsSection />
       </div>
 
+      {/* Section 10: Our Clients (عملائنا) */}
+      <div className="flex justify-center relative w-full">
+        <OurClientsSection />
+      </div>
       {/* Section 9: Why Choose Us (لماذا تختار حلولنا البيئية) */}
       <div className="flex justify-center relative w-full">
         <WhyChooseSection />
       </div>
 
-      {/* Section 10: Our Clients (عملائنا) */}
-      <div className="flex justify-center relative w-full">
-        <OurClientsSection />
-      </div>
 
       {/* Section 11: News/Articles (المركز الإعلامي) */}
       <div className="flex justify-center relative w-full">

@@ -23,7 +23,7 @@ export function OurAbout({ className = '', ...props }) {
             <div className="relative md:absolute md:left-1/2 md:-translate-x-1/2 md:top-0 w-full md:w-[1918px] min-h-[871px] md:h-[871px] px-4 md:px-0 py-12 md:py-0">
                 {/* Background decorative patterns - hidden on mobile */}
                 <div
-                    className={`hidden md:block absolute w-full h-[650px] top-[221px] bg-[#1B6936] ${isRTL ? 'about-green-cut-rtl' : 'about-green-cut-ltr'}`}
+                    className={`hidden md:block absolute w-full h-[650px] top-[221px] bg-[#1B6936] bg-[url('/assets/icons/logo/cover-about.svg')] ${isRTL ? 'about-green-cut-rtl' : 'about-green-cut-ltr'}`}
                 />
 
                 {/* Company profile image - positioned LEFT in RTL, RIGHT in LTR */}
