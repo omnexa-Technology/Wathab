@@ -113,7 +113,6 @@ export function FaqSection({ className = '', ...props }) {
               />
             ))}
           </Accordion>
-
           {/* Column 2 */}
           <Accordion type="single" collapsible className=" gap-10 items-start">
             {faqsColumn2.map((faq) => (
