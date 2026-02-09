@@ -76,7 +76,7 @@ export default {
     title: 'About Us',
     description: 'Learn about Wathb Environmental Consulting and our commitment to environmental excellence.',
     hero: {
-      title: '"Wathb" – Your Strategic Partner for Environmental Compliance and Excellence',
+      title: '"Wathb".. Your Strategic Partner for Environmental Compliance and Excellence.',
       description: 'Your certified partner for comprehensive environmental solutions and regulatory compliance in Saudi Arabia.',
       cta: 'Start Your Journey With Us',
     },
