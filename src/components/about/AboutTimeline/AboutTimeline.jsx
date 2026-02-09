@@ -5,7 +5,7 @@ import { useLanguageStore } from '@/store/useLanguageStore';
 import { Container } from '@/components/atoms/Container/Container';
 import { Heading } from '@/components/atoms/Heading/Heading';
 import { Paragraph } from '@/components/atoms/Paragraph/Paragraph';
-import { FileSearch, Lightbulb, Rocket, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
 
 export function AboutTimeline() {
   const { t } = useTranslation();
@@ -16,86 +16,110 @@ export function AboutTimeline() {
 
   const steps = [
     {
-      icon: FileSearch,
+      icon: '/assets/icons/ui/About/Frame (8).svg',
       title: t('about.timeline.steps.step1.title'),
       description: t('about.timeline.steps.step1.description'),
+      highlighted: false,
     },
     {
-      icon: Lightbulb,
+      icon: '/assets/icons/ui/About/Frame (9).svg',
       title: t('about.timeline.steps.step2.title'),
       description: t('about.timeline.steps.step2.description'),
+      highlighted: true,
     },
     {
-      icon: Rocket,
+      icon: '/assets/icons/ui/About/Frame (7).svg',
       title: t('about.timeline.steps.step3.title'),
       description: t('about.timeline.steps.step3.description'),
+      highlighted: false,
     },
     {
-      icon: TrendingUp,
+      icon: '/assets/icons/ui/About/Frame (6).svg',
       title: t('about.timeline.steps.step4.title'),
       description: t('about.timeline.steps.step4.description'),
+      highlighted: false,
+    },
+    {
+      icon: '/assets/icons/ui/About/Frame (5).svg',
+      title: t('about.timeline.steps.step5.title'),
+      description: t('about.timeline.steps.step5.description'),
+      highlighted: false,
+    },
+    {
+      icon: '/assets/icons/ui/About/Frame (4).svg',
+      title: t('about.timeline.steps.step6.title'),
+      description: t('about.timeline.steps.step6.description'),
+      highlighted: false,
     },
   ];
 
   return (
     <section
-      className="py-24 bg-[#1a1a1a] text-white"
+      className="py-24"
+      style={{
+        background: 'linear-gradient(90deg, rgb(243, 248, 236) 0%, rgb(255, 255, 255) 80%)',
+      }}
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       <Container>
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <Heading
-            level="h2"
-            className="text-white text-4xl lg:text-5xl font-bold"
-          >
-            {title}
-          </Heading>
+        <div className="flex items-center justify-center mb-24">
+          <div className="flex items-center gap-4 max-w-5xl">
+            <Heading
+              level="h2"
+              className="text-[#0b2c16] text-4xl lg:text-6xl font-medium text-center leading-tight"
+              style={{ fontFamily: 'var(--font-din-next-lt-arabic)' }}
+            >
+              {title}
+            </Heading>
+            <div className="flex items-center gap-1 shrink-0">
+              <div className="w-2 h-2 rounded-full bg-carousel-active" />
+              <div className="w-16 h-2 rounded-sm bg-carousel-active" />
+            </div>
+          </div>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Horizontal Line */}
-          <div className="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-white/20">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#86ba41] via-[#86ba41]/50 to-white/20" />
-          </div>
-
-          {/* Steps */}
-          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <div
-                  key={index}
-                  className={`relative ${isRTL ? 'text-right' : 'text-left'}`}
-                >
-                  {/* Icon */}
-                  <div className="relative z-10 w-24 h-24 mx-auto lg:mx-0 mb-6 bg-[#86ba41] rounded-full flex items-center justify-center ring-4 ring-white/10">
-                    <Icon className="w-10 h-10 text-white" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="text-center lg:text-left">
-                    <h3 className="text-xl font-bold mb-3 text-white">
-                      {step.title}
-                    </h3>
-                    <Paragraph className="text-white/70 text-sm">
-                      {step.description}
-                    </Paragraph>
-                  </div>
-
-                  {/* Step Number */}
-                  <div
-                    className={`absolute top-0 ${isRTL ? 'left-0' : 'right-0'
-                      } lg:top-8 lg:${isRTL ? 'left' : 'right'}-auto lg:${isRTL ? 'right' : 'left'
-                      }-32 text-6xl font-bold text-white/10`}
-                  >
-                    {(index + 1).toString().padStart(2, '0')}
-                  </div>
+        {/* Timeline Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className={`flex flex-col items-center gap-12 px-4 py-8 rounded-3xl ${
+                step.highlighted ? 'bg-white' : ''
+              }`}
+            >
+              {/* Icon Container */}
+              <div
+                className={`flex items-center justify-center p-2 rounded-full w-24 h-24 ${'bg-[#fdfdfd]'
+                }`}
+              >
+                <div className="relative w-14 h-14">
+                  <Image
+                    src={step.icon}
+                    alt={step.title}
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-              );
-            })}
-          </div>
+              </div>
+
+              {/* Content */}
+              <div className="flex flex-col gap-8 text-center">
+                <h3
+                  className="text-[#141414] text-2xl font-medium leading-tight"
+                  style={{ fontFamily: 'var(--font-din-next-lt-arabic)' }}
+                >
+                  {step.title}
+                </h3>
+                <Paragraph
+                  className="text-grey-600 text-xl leading-normal"
+                  style={{ fontFamily: 'var(--font-din-next-lt-arabic)' }}
+                >
+                  {step.description}
+                </Paragraph>
+              </div>
+            </div>
+          ))}
         </div>
       </Container>
     </section>
