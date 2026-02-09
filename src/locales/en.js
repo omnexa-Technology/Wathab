@@ -86,22 +86,23 @@ export default {
     },
     features: {
       title: 'Why Choose "Wathb" as Your Success Partner?',
+      cta: 'Start Your Journey with Us Now',
       items: {
-        certification: {
-          title: 'Certified Classification (Class A)',
-          description: 'Certified by the National Center for Environmental Compliance (NCEC)',
+        balance: {
+          title: 'Smart Balance Between Environment and Production',
+          description: 'We provide precise environmental consultations that ensure your full compliance without negatively affecting your operational processes or production efficiency.',
         },
-        experience: {
-          title: 'Deep National Experience',
-          description: 'Team contributed to building regulatory frameworks for natural resources in the Kingdom',
+        alliances: {
+          title: 'Global Alliances and Expertise:',
+          description: 'We commit to partnerships with international pioneers and experts to transfer the latest technologies and quality solutions, especially in waste management and recycling',
         },
-        partnerships: {
-          title: 'International Partnerships',
-          description: 'Alliances with leading global experts and companies',
+        legislation: {
+          title: 'Deep Understanding of National Legislation:',
+          description: 'As contributors to building the regulatory frameworks for natural resources in the Kingdom, we possess a comprehensive vision of legislation that ensures your project aligns with the requirements of accelerated development.',
         },
         solutions: {
-          title: 'Integrated Solutions',
-          description: 'From environmental studies to licenses and waste management',
+          title: 'Innovative Technical Solutions:',
+          description: 'We rely on the latest global tools and technologies to provide sustainable and economical environmental solutions at the same time.',
         },
       },
     },
