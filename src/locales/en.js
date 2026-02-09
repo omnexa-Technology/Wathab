@@ -121,23 +121,31 @@ export default {
       },
     },
     timeline: {
-      title: 'Our Values',
+      title: 'What is the work methodology that "Wathb" follows to ensure the success of projects?',
       steps: {
         step1: {
-          title: 'Comprehensive Study and Assessment',
-          description: 'We begin with a precise assessment of your environmental needs',
+          title: 'Excellence and Uniqueness',
+          description: 'Wathb Environmental Consulting views each project as unique, we work hard to be one of its best aspects.',
         },
         step2: {
-          title: 'Planning and Solutions',
-          description: 'We develop an integrated action plan with the best solutions',
+          title: 'Strategic Alignment',
+          description: 'We integrate environmental objectives with your strategic goals and methods, using professional tools for the optimal alignment that ensures lasting success.',
         },
         step3: {
-          title: 'Implementation and Follow-up',
-          description: 'We implement solutions with precise monitoring',
+          title: 'Accurate Analysis',
+          description: 'We rely on accurate data analysis and practical methodologies to identify solutions and sustainable technologies that fit the project context.',
         },
         step4: {
-          title: 'Continuous Improvement',
-          description: 'We ensure continuous compliance and development',
+          title: 'Fruitful Partnership',
+          description: 'We build strategic partnerships with our clients, making us part of their success team, not just an external party making decisions from outside the framework.',
+        },
+        step5: {
+          title: 'Innovation and Development',
+          description: 'We commit to applying modern solutions and research through partnerships with pioneers and experts to transfer the latest technologies and innovative solutions.',
+        },
+        step6: {
+          title: 'Building Capacities',
+          description: 'Knowledge transfer is our goal; therefore, we provide specialized training programs to enhance the environmental competencies of the work team and clients.',
         },
       },
     },
