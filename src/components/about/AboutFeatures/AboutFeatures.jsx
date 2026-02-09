@@ -2,10 +2,8 @@
 
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
-import { Container } from '@/components/atoms/Container/Container';
-import { Heading } from '@/components/atoms/Heading/Heading';
-import { Paragraph } from '@/components/atoms/Paragraph/Paragraph';
-import { CheckCircle } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowLeft } from 'lucide-react';
 
 export function AboutFeatures() {
   const { t } = useTranslation();
@@ -13,21 +11,26 @@ export function AboutFeatures() {
   const isRTL = language === 'ar';
 
   const title = t('about.features.title');
+  const cta = t('about.features.cta');
 
   const features = [
     {
-      title: t('about.features.items.certification.title'),
-      description: t('about.features.items.certification.description'),
+      icon: '/assets/icons/ui/About/Frame.svg',
+      title: t('about.features.items.balance.title'),
+      description: t('about.features.items.balance.description'),
     },
     {
-      title: t('about.features.items.experience.title'),
-      description: t('about.features.items.experience.description'),
+      icon: '/assets/icons/ui/About/Frame (1).svg',
+      title: t('about.features.items.alliances.title'),
+      description: t('about.features.items.alliances.description'),
     },
     {
-      title: t('about.features.items.partnerships.title'),
-      description: t('about.features.items.partnerships.description'),
+      icon: '/assets/icons/ui/About/Frame (2).svg',
+      title: t('about.features.items.legislation.title'),
+      description: t('about.features.items.legislation.description'),
     },
     {
+      icon: '/assets/icons/ui/About/Frame (3).svg',
       title: t('about.features.items.solutions.title'),
       description: t('about.features.items.solutions.description'),
     },
@@ -35,54 +38,74 @@ export function AboutFeatures() {
 
   return (
     <section
-      className="py-24 bg-gray-50"
+      className="py-24 px-8 lg:px-[120px] bg-linear-to-l from-[#eaeaea] to-white"
       dir={isRTL ? 'rtl' : 'ltr'}
     >
-      <Container>
-        <div className={`grid lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
-          {/* Text Content with Features List */}
-          <div className={`${isRTL ? 'lg:order-2' : 'lg:order-1'}`}>
-            <Heading
-              level="h2"
-              className="text-[#0b2c16] text-4xl lg:text-5xl font-bold mb-8"
-            >
+      <div className="flex flex-col lg:flex-row gap-16 items-start max-w-[1440px] mx-auto">
+      {/* Image Section */}
+      <div className="shrink-0 w-full lg:w-[680px] h-[400px] lg:h-[680px] relative rounded-3xl overflow-hidden">
+        <Image
+          src="/assets/images/pages/About/intro1.webp"
+          alt="Environmental Solutions"
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 680px"
+          priority
+        />
+      </div>
+        {/* Content Section */}
+        <div className={`flex-1 flex flex-col gap-12 items-start`}>
+          {/* Section Title with Decorative Element */}
+          <div className={`flex  gap-4 w-full items-center justify-start`}>
+            <div className="flex items-center gap-1 h-2">
+              <div className="w-2 h-2 rounded-full bg-carousel-active" />
+              <div className="w-16 h-2 rounded-sm bg-carousel-active" />
+            </div>
+            <h2 className="text-[#0b2c16] text-4xl font-medium leading-tight">
               {title}
-            </Heading>
+            </h2>
+          </div>
+          {/* Features List */}
+          <div className="flex flex-col gap-12 w-full">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className={`flex gap-6 items-start ${isRTL ? 'flex-row-reverse' : ''}`}
+              >
 
-            <div className="space-y-6">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className={`flex gap-4 ${isRTL ? 'flex-row-reverse text-right' : ''}`}
-                >
-                  <div className="flex-shrink-0 mt-1">
-                    <CheckCircle className="w-6 h-6 text-[#86ba41]" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#0b2c16] mb-2">
-                      {feature.title}
-                    </h3>
-                    <Paragraph className="text-gray-700 leading-relaxed">
-                      {feature.description}
-                    </Paragraph>
+                {/* Text Content */}
+                <div className={`flex-1 flex flex-col items-start`}>
+                  <h3 className={`text-[#222] text-2xl font-medium leading-[56px] ${isRTL ? 'text-center' : 'text-left'}`}>
+                    {feature.title}
+                  </h3>
+                  <p className={`text-grey-600 text-2xl leading-[48px] ${isRTL ? 'text-right' : 'text-left'}`}>
+                    {feature.description}
+                  </p>
+                </div>
+                {/* Icon */}
+                <div className="shrink-0 w-16 h-16 rounded-2xl border border-[#b6b6b6] bg-[#fdfdfd] flex items-center justify-center p-2">
+                  <div className="w-10 h-10 relative">
+                    <Image
+                      src={feature.icon}
+                      alt=""
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-
-          {/* Image */}
-          <div className={`${isRTL ? 'lg:order-1' : 'lg:order-2'}`}>
-            <div className="aspect-[4/3] rounded-lg overflow-hidden">
-              <img
-                src="/assets/images/pages/Home/swiper2.webp"
-                alt="Environmental Solutions"
-                className="w-full h-full object-cover"
-              />
+          {/* CTA Button */}
+          <button className="bg-[#1b6936] hover:bg-[#0b2c16] transition-colors text-white px-6 py-3 rounded-[32px] h-16 flex items-center justify-center gap-4 text-xl font-bold">
+            <div className="w-8 h-8 flex items-center justify-center -rotate-90">
+              <ArrowLeft className="w-5 h-5" />
             </div>
-          </div>
+            <span>{cta}</span>
+          </button>
         </div>
-      </Container>
+
+      </div>
     </section>
   );
 }

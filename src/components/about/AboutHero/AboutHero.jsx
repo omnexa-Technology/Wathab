@@ -126,7 +126,6 @@ export function AboutHero() {
                     />
                   </div>
                 </LocaleLink>
-
                 <LocaleLink href="/" className="hover:opacity-80 transition-opacity">
                   <span
                     className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-normal leading-tight sm:leading-normal lg:leading-[64px]"
@@ -134,7 +133,6 @@ export function AboutHero() {
                     {homeText}
                   </span>
                 </LocaleLink>
-
                 {/* Arrow Icon - Normal for LTR */}
                 <div className="flex items-center justify-center shrink-0">
                   <Image
