@@ -143,9 +143,9 @@ export function OurClientsSection({ className = '', ...props }) {
 
         {/* Client Cards Grid */}
         <div className="grid grid-cols-4 gap-8 w-full">
-          {clientsData.map((client) => (
+          {clientsData.map((client, index) => (
             <ClientCard
-              key={client.id}
+              key={`${client.id}-${index}`}
               logoSrc={client.logoSrc}
               name={client.name}
               imageAlt={`${client.name} logo`}

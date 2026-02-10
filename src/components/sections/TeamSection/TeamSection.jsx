@@ -124,9 +124,9 @@ export function TeamSection({ className = '', ...props }) {
 
         {/* Team Members Grid - Placeholder */}
         <div className="grid grid-cols-4 gap-8 w-full">
-          {teamData.map((member) => (
+          {teamData.map((member, index) => (
             <TeamMemberCard
-              key={member.id}
+              key={`${member.id}-${index}`}
               imageSrc={member.imageSrc}
               name={member.name}
               role={member.role}
