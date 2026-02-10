@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { InnerHero } from '@/components/sections/InnerHero';
 
-export default function page() {
+export default function ClientsPage() {
     return (
-        <div className='h-[100vh] w-full'>
-            <h1 className='m-24 text-8xl font-bold'>عملائنا</h1>
-        </div>
-    )
+        <InnerHero
+            title="عملاءُ وثـب.. مسيرةٌ ممتدة من الثقةِ والامتثال"
+            breadcrumbLabel="عملاؤنا"
+            image="/assets/images/pages/Home/swiper1.webp"
+        />
+    );
 }
