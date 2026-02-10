@@ -2,10 +2,12 @@
 
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
+import { Accordion } from '@/components/ui/accordion';
 import { FaqItem } from '@/components/molecules/FaqItem/FaqItem';
 
 /**
- * FaqSection - Frequently Asked Questions section
+ * FaqSection - Frequently Asked Questions section with accordion
+ * Atomic Design: Organism/Section
  * @param {Object} props
  * @param {string} [props.className=''] - Additional CSS classes
  * @returns {JSX.Element}
@@ -86,40 +88,43 @@ export function FaqSection({ className = '', ...props }) {
               {t('faq.sectionTitle')}
             </h2>
             <div className="flex items-center gap-1 h-2">
-              <div className="w-2 h-2 rounded-full bg-[#86ba41]" />
-              <div className="w-16 h-2 rounded-sm bg-[#86ba41]" />
+              <div className="w-2 h-2 rounded-full bg-carousel-active" />
+              <div className="w-16 h-2 rounded-sm bg-carousel-active" />
             </div>
           </div>
 
           {/* Description */}
-          <p className="font-din font-normal text-[32px] leading-[64px] text-center text-[#595959] w-full max-w-[1112px]">
+          <p className="font-din font-normal text-[32px] leading-[64px] text-center text-grey-600 w-full max-w-[1112px]">
             {t('faq.description')}
           </p>
         </div>
 
         {/* FAQ Grid */}
-        <div className="flex gap-8 items-start w-full">
+        <div className="grid grid-cols-2 gap-8 w-full">
           {/* Column 1 */}
-          <div className="flex flex-col flex-1 gap-10 items-start min-h-0 min-w-0">
+          <Accordion type="single" collapsible className=" gap-10 items-start">
             {faqsColumn1.map((faq) => (
               <FaqItem
                 key={faq.id}
+                id={faq.id}
                 questionKey={faq.questionKey}
                 answerKey={faq.answerKey}
+                className='my-2'
               />
             ))}
-          </div>
-
+          </Accordion>
           {/* Column 2 */}
-          <div className="flex flex-col flex-1 gap-10 items-start min-h-0 min-w-0">
+          <Accordion type="single" collapsible className=" gap-10 items-start">
             {faqsColumn2.map((faq) => (
               <FaqItem
                 key={faq.id}
+                id={faq.id}
                 questionKey={faq.questionKey}
                 answerKey={faq.answerKey}
+                className='my-2'
               />
             ))}
-          </div>
+          </Accordion>
         </div>
       </div>
     </section>
