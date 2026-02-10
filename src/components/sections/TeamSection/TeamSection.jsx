@@ -19,31 +19,90 @@ export function TeamSection({ className = '', ...props }) {
   const teamData = [
     {
       id: 'member-1',
-      imageSrc: '/assets/images/team/member-1.webp',
-      name: 'أحمد محمد',
-      role: 'المدير التنفيذي',
+      imageSrc: 'assets/images/team/Ellipse 7 (3).svg',
+      name: 'مانع أبو دراهم',
+      role: 'مدير عام وثب',
+      linkedin: 'https://www.linkedin.com/in/mane-abudrahem-37a14a95/',
     },
     {
       id: 'member-2',
-      imageSrc: '/assets/images/team/member-2.webp',
-      name: 'سارة أحمد',
-      role: 'مدير العمليات',
+      imageSrc: 'assets/images/team/Ellipse 7 (2).svg',
+      name: 'محمد ال خضير',
+      role: 'أخصائى صحه بيئية',
+      linkedin: 'https://www.linkedin.com/feed/',
     },
     {
       id: 'member-3',
-      imageSrc: '/assets/images/team/member-3.webp',
-      name: 'خالد عبدالله',
-      role: 'مستشار بيئي',
+      imageSrc: 'assets/images/team/Ellipse 7 (1).svg',
+      name: 'محمود فتحى',
+      role: 'مهندس بيئى أول (أخصائى بيئة بحرية)',
+      linkedin: 'https://www.linkedin.com/feed/',
+    },
+    {
+      id: 'member-3',
+      imageSrc: 'assets/images/team/Ellipse 7.svg',
+      name: 'محمود عبد الله',
+      role: 'مهندس بيئى أول (أخصائى بيئة بحرية)',
+      linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
+    },
+    {
+      id: 'member-3',
+      imageSrc: 'assets/images/team/Ellipse 7 (7).svg',
+      name: 'د.أيمن عبد الرحمن',
+      role: 'خبير استخدام الاستشعار عن بعد والذكاء الصناعي ، في الرصد البيئي، عضو المركز الاوربي لابحاث الفضاء.',
+      linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
+    },
+    {
+      id: 'member-3',
+      imageSrc: 'assets/images/team/Ellipse 7 (6).svg',
+      name: 'محمد الفاتح',
+      role: 'مدير الجودة',
+      linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
+    },
+    {
+      id: 'member-3',
+      imageSrc: 'assets/images/team/Ellipse 7 (5).svg',
+      name: 'كستافو',
+      role: '	مستشار وثب، خبير البنك الدولي وبرامج الامم المتحدة الانمائية في قضايا البيئة والمياه ',
+      linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
+    },
+    {
+      id: 'member-3',
+      imageSrc: 'assets/images/team/Ellipse 7 (4).svg',
+      name: 'بيتر',
+      role: '	مستشار وثب ، خبير موارد المياه بالمملكة العربية السعودية والنمذجة الرياضية للمتكونات المائية',
+      linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
+    },
+    {
+      id: 'member-3',
+      imageSrc: 'assets/images/team/womans.svg',
+      name: '',
+      role: 'مهندس بيئى أول (أخصائى بيئة بحرية)',
+      linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
+    },
+    {
+      id: 'member-3',
+      imageSrc: 'assets/images/team/womans.svg',
+      name: '',
+      role: 'مهندس بيئى أول (أخصائى بيئة بحرية)',
+      linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
+    },
+    {
+      id: 'member-3',
+      imageSrc: 'assets/images/team/womans.svg',
+      name: '',
+      role: 'مهندس بيئى أول (أخصائى بيئة بحرية)',
+      linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
     },
   ];
 
   return (
     <section
-      className={`flex flex-col gap-24 items-center px-[120px] py-24 bg-white w-full ${className}`}
+      className={`flex flex-col gap-24 items-center px-[120px] py-24 bg-gray-50 w-full ${className} `}
       dir={isRTL ? 'rtl' : 'ltr'}
       {...props}
     >
-      <div className="flex flex-col gap-24 items-center w-full max-w-[1040px]">
+      <div className="flex flex-col gap-24 items-center w-full ">
         {/* Header */}
         <div className="flex flex-col gap-16 items-center w-full">
           {/* Section Title */}
@@ -64,13 +123,14 @@ export function TeamSection({ className = '', ...props }) {
         </div>
 
         {/* Team Members Grid - Placeholder */}
-        <div className="grid grid-cols-3 gap-8 w-full">
+        <div className="grid grid-cols-4 gap-8 w-full">
           {teamData.map((member) => (
             <TeamMemberCard
               key={member.id}
               imageSrc={member.imageSrc}
               name={member.name}
               role={member.role}
+              linkedin={member.linkedin}
             />
           ))}
         </div>
