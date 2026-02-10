@@ -76,7 +76,7 @@ export default {
     title: 'About Us',
     description: 'Learn about Wathb Environmental Consulting and our commitment to environmental excellence.',
     hero: {
-      title: '"Wathb" – Your Strategic Partner for Environmental Compliance and Excellence',
+      title: '"Wathb".. Your Strategic Partner for Environmental Compliance and Excellence.',
       description: 'Your certified partner for comprehensive environmental solutions and regulatory compliance in Saudi Arabia.',
       cta: 'Start Your Journey With Us',
     },
@@ -86,22 +86,23 @@ export default {
     },
     features: {
       title: 'Why Choose "Wathb" as Your Success Partner?',
+      cta: 'Start Your Journey with Us Now',
       items: {
-        certification: {
-          title: 'Certified Classification (Class A)',
-          description: 'Certified by the National Center for Environmental Compliance (NCEC)',
+        balance: {
+          title: 'Smart Balance Between Environment and Production',
+          description: 'We provide precise environmental consultations that ensure your full compliance without negatively affecting your operational processes or production efficiency.',
         },
-        experience: {
-          title: 'Deep National Experience',
-          description: 'Team contributed to building regulatory frameworks for natural resources in the Kingdom',
+        alliances: {
+          title: 'Global Alliances and Expertise:',
+          description: 'We commit to partnerships with international pioneers and experts to transfer the latest technologies and quality solutions, especially in waste management and recycling',
         },
-        partnerships: {
-          title: 'International Partnerships',
-          description: 'Alliances with leading global experts and companies',
+        legislation: {
+          title: 'Deep Understanding of National Legislation:',
+          description: 'As contributors to building the regulatory frameworks for natural resources in the Kingdom, we possess a comprehensive vision of legislation that ensures your project aligns with the requirements of accelerated development.',
         },
         solutions: {
-          title: 'Integrated Solutions',
-          description: 'From environmental studies to licenses and waste management',
+          title: 'Innovative Technical Solutions:',
+          description: 'We rely on the latest global tools and technologies to provide sustainable and economical environmental solutions at the same time.',
         },
       },
     },
@@ -120,23 +121,31 @@ export default {
       },
     },
     timeline: {
-      title: 'Our Values',
+      title: 'What is the work methodology that "Wathb" follows to ensure the success of projects?',
       steps: {
         step1: {
-          title: 'Comprehensive Study and Assessment',
-          description: 'We begin with a precise assessment of your environmental needs',
+          title: 'Excellence and Uniqueness',
+          description: 'Wathb Environmental Consulting views each project as unique, we work hard to be one of its best aspects.',
         },
         step2: {
-          title: 'Planning and Solutions',
-          description: 'We develop an integrated action plan with the best solutions',
+          title: 'Strategic Alignment',
+          description: 'We integrate environmental objectives with your strategic goals and methods, using professional tools for the optimal alignment that ensures lasting success.',
         },
         step3: {
-          title: 'Implementation and Follow-up',
-          description: 'We implement solutions with precise monitoring',
+          title: 'Accurate Analysis',
+          description: 'We rely on accurate data analysis and practical methodologies to identify solutions and sustainable technologies that fit the project context.',
         },
         step4: {
-          title: 'Continuous Improvement',
-          description: 'We ensure continuous compliance and development',
+          title: 'Fruitful Partnership',
+          description: 'We build strategic partnerships with our clients, making us part of their success team, not just an external party making decisions from outside the framework.',
+        },
+        step5: {
+          title: 'Innovation and Development',
+          description: 'We commit to applying modern solutions and research through partnerships with pioneers and experts to transfer the latest technologies and innovative solutions.',
+        },
+        step6: {
+          title: 'Building Capacities',
+          description: 'Knowledge transfer is our goal; therefore, we provide specialized training programs to enhance the environmental competencies of the work team and clients.',
         },
       },
     },

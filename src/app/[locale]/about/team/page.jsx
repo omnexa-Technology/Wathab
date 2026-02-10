@@ -1,9 +1,20 @@
-import React from 'react'
-
-export default function page() {
+import { InnerHero } from '@/components/sections/InnerHero';
+import { TeamSection } from '@/components/sections/TeamSection/TeamSection';
+import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
+export default function TeamPage() {
     return (
-        <div className='h-[100vh] w-full'>
-            <h1 className='m-24 text-8xl font-bold'>الفريق</h1>
-        </div>
-    )
+        <>
+            <InnerHero
+                title="طموحك البيئي يستحق فريقاً يدرك أبعاده"
+                breadcrumbLabel="الفريق"
+                image="/assets/images/team/heroCover.webp"
+            />
+            <div className='flex justify-center relative w-full'>
+                <TeamSection />
+            </div>
+            <div className='flex justify-center relative w-full my-24'>
+                <ContactCtaSection />
+            </div>
+        </>
+    );
 }
