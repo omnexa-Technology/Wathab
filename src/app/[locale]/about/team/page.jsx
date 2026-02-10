@@ -1,9 +1,11 @@
-import React from 'react'
+import { InnerHero } from '@/components/sections/InnerHero';
 
-export default function page() {
+export default function TeamPage() {
     return (
-        <div className='h-[100vh] w-full'>
-            <h1 className='m-24 text-8xl font-bold'>الفريق</h1>
-        </div>
-    )
+        <InnerHero
+            title="طموحك البيئي يستحق فريقاً يدرك أبعاده"
+            breadcrumbLabel="الفريق"
+            image="/assets/images/pages/Home/swiper1.webp"
+        />
+    );
 }

@@ -2,17 +2,14 @@
 
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
-import LocaleLink from '@/components/LocaleLink';
 import Image from 'next/image';
 
-export function AboutHero() {
+export function InnerHero({ title, description, image, breadcrumbLabel }) {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
   const isRTL = language === 'ar';
 
-  const title = t('about.hero.title');
   const homeText = t('navbar.home');
-  const aboutText = t('navbar.about');
 
   return (
     <section
@@ -22,7 +19,7 @@ export function AboutHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/images/pages/Home/swiper1.webp"
+          src={image}
           alt="Hero Background"
           fill
           className="object-cover"
@@ -50,7 +47,7 @@ export function AboutHero() {
 
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start">
-        <div className="flex flex-col gap-16 sm:gap-24 lg:gap-[120px] items-end w-full max-w-full sm:max-w-[90%] lg:max-w-[724px]">
+        <div className="flex flex-col gap-16 sm:gap-24 lg:gap-[120px] items-start w-full max-w-full sm:max-w-[90%] lg:max-w-[724px]">
           {/* Main Title */}
           <h1
             className={`text-white font-medium
@@ -61,36 +58,28 @@ export function AboutHero() {
             style={{ fontFamily: 'var(--font-family, "DIN Next LT Arabic", sans-serif)' }}
           >
             {title}
+            {description && (
+              <span className="block text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mt-4">
+                {description}
+              </span>
+            )}
           </h1>
 
           {/* Breadcrumb Navigation */}
           <nav
-            className={`flex items-center gap-2 sm:gap-3 w-full
-              ${isRTL ? 'justify-start' : 'justify-start'}
+            className={`flex items-center gap-2 sm:gap-3 w-full justify-start
             `}
             aria-label="Breadcrumb"
           >
             {isRTL ? (
               <>
-
-                {/* Home Icon */}
-                <LocaleLink href="/" className="hover:opacity-80 transition-opacity">
-                  <div className="flex items-center  justify-center shrink-0">
-                    <Image
-                      src="/assets/icons/ui/home-eco.svg"
-                      alt="Home"
-                      width={24}
-                      height={24}
-                      className="w-5 h-5 sm:w-6 sm:h-6"
-                    />
-                  </div>
-                </LocaleLink>
                 <span
                   className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-medium leading-tight sm:leading-snug lg:leading-[56px]"
                   style={{ fontFamily: 'var(--font-family, "DIN Next LT Arabic", sans-serif)' }}
                 >
-                  {homeText}
+                  {breadcrumbLabel}
                 </span>
+
                 {/* Arrow Icon - Double Forward Arrow (Rotated/Flipped for RTL) */}
                 <div className="flex items-center justify-center shrink-0">
                   <div className="transform  scale-y-[-1]">
@@ -103,36 +92,44 @@ export function AboutHero() {
                     />
                   </div>
                 </div>
-                <LocaleLink href="/about" className="hover:opacity-80 transition-opacity">
-                  <span
-                    className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-normal leading-tight sm:leading-normal lg:leading-[64px]"
-                    style={{ fontFamily: '"DIN Next LT Arabic", sans-serif' }}
-                  >
-                    {aboutText}
-                  </span>
-                </LocaleLink>
+
+                <span
+                  className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-normal leading-tight sm:leading-normal lg:leading-[64px]"
+                  style={{ fontFamily: 'var(--font-family, "DIN Next LT Arabic", sans-serif)' }}
+                >
+                  {homeText}
+                </span>
+
+                {/* Home Icon */}
+                <div className="flex items-center  justify-center shrink-0">
+                  <Image
+                    src="/assets/icons/ui/home-eco.svg"
+                    alt="Home"
+                    width={24}
+                    height={24}
+                    className="w-5 h-5 sm:w-6 sm:h-6"
+                  />
+                </div>
               </>
             ) : (
               <>
                 {/* Home Icon */}
-                <LocaleLink href="/" className="hover:opacity-80 transition-opacity">
-                  <div className="flex items-center justify-center shrink-0">
-                    <Image
-                      src="/assets/icons/ui/home-eco.svg"
-                      alt="Home"
-                      width={24}
-                      height={24}
-                      className="w-5 h-5 sm:w-6 sm:h-6"
-                    />
-                  </div>
-                </LocaleLink>
-                <LocaleLink href="/" className="hover:opacity-80 transition-opacity">
-                  <span
-                    className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-normal leading-tight sm:leading-normal lg:leading-[64px]"
-                  >
-                    {homeText}
-                  </span>
-                </LocaleLink>
+                <div className="flex items-center justify-center shrink-0">
+                  <Image
+                    src="/assets/icons/ui/home-eco.svg"
+                    alt="Home"
+                    width={24}
+                    height={24}
+                    className="w-5 h-5 sm:w-6 sm:h-6"
+                  />
+                </div>
+
+                <span
+                  className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-normal leading-tight sm:leading-normal lg:leading-[64px]"
+                >
+                  {homeText}
+                </span>
+
                 {/* Arrow Icon - Normal for LTR */}
                 <div className="flex items-center justify-center shrink-0">
                   <Image
@@ -147,7 +144,7 @@ export function AboutHero() {
                 <span
                   className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-medium leading-tight sm:leading-snug lg:leading-[56px]"
                 >
-                  {aboutText}
+                  {breadcrumbLabel}
                 </span>
               </>
             )}
@@ -162,13 +159,14 @@ export function AboutHero() {
           w-[15%] sm:w-[10%] lg:w-[8%] h-auto aspect-square z-3
         `}
       >
-        <Image
+        {/* <Image
           src="/assets/icons/logo/logo-light.svg"
           alt=""
           fill
           className="object-contain opacity-10 sm:opacity-15 lg:opacity-20"
-        />
+        /> */}
       </div>
     </section>
   );
 }
+
