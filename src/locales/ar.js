@@ -209,6 +209,7 @@ export default {
   sectors: { title: 'القطاعات', description: 'تصفح مجموعتنا من مشاريع الاستشارات البيئية ودراسات الحالة.', slugDescription: 'صفحة تفاصيل هذا المشروع.' },
   articles: { title: 'المقالات', description: 'أحدث المقالات والرؤى في الاستشارات البيئية والاستدامة.', slugDescription: 'محتوى المقال.' },
   contact: { title: 'اتصل بنا', description: 'تواصل مع فريقنا لمناقشة احتياجاتك في الاستشارات البيئية.' },
+  licenses: { title: 'التراخيص و التصاريح', description: 'استخراج التراخيص والتصاريح البيئية اللازمة لمشاريعكم.', sectionTitle: 'التراخيص و التصاريح' },
   headNav: {
     phone: '+966561199191',
     email: 'mana@watheb.sa',
@@ -351,6 +352,8 @@ export default {
   },
   news: {
     sectionTitle: 'أخبارنا',
+    title: 'أخبارنا',
+    description: 'آخر الأخبار والمستجدات والرؤى في مجال الاستشارات البيئية والاستدامة.',
   },
   team: {
     sectionTitle: 'الفريق',
