@@ -1,20 +1,13 @@
-import { headers } from 'next/headers';
-import ar from '@/locales/ar';
-import en from '@/locales/en';
-
-const m = { ar, en };
+import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
+import { buildPageMetadata } from '@/lib/getPageMetadata';
 
 export async function generateMetadata() {
-  const h = await headers();
-  const locale = h.get('x-next-locale') || 'ar';
-  const t = m[locale] || m.ar;
-  return { title: `${t.articles.title} - Wathb`, description: t.articles.description };
+  const { t } = await getLocaleAndTranslations();
+  return buildPageMetadata(t, 'articles');
 }
 
 export default async function ArticlesPage() {
-  const h = await headers();
-  const locale = h.get('x-next-locale') || 'ar';
-  const t = m[locale] || m.ar;
+  const { t } = await getLocaleAndTranslations();
   return (
     <div className='h-[100vh] w-full'>
       <h1 className='m-24 text-8xl font-bold'>{t.articles.title}</h1>
