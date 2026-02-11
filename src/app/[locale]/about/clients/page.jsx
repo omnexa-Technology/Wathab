@@ -2,6 +2,7 @@ import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
 import { buildPageMetadata } from '@/lib/getPageMetadata';
 import { InnerHero } from '@/components/sections/InnerHero';
 import { AboutClientSection } from '@/components/sections/AboutClientSection/AboutClientSection';
+import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
 export async function generateMetadata() {
   const { t } = await getLocaleAndTranslations();
   return buildPageMetadata(t, 'clients');
@@ -19,7 +20,9 @@ export default async function ClientsPage() {
       <div className='flex justify-center relative w-full'>
         <AboutClientSection />
       </div>
+      <div className='flex justify-center relative w-full my-24'>
+        <ContactCtaSection />
+      </div>
     </>
-
   );
 }
