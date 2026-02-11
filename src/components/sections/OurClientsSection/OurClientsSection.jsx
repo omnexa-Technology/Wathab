@@ -1,5 +1,6 @@
 'use client';
 
+import Marquee from 'react-fast-marquee';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { ClientCard } from '@/components/molecules/ClientCard/ClientCard';
@@ -11,103 +12,103 @@ export function OurClientsSection({ className = '', ...props }) {
 
   const clientsData = [
     {
-      id: 'petromin',
+      id: 1,
       logoSrc: '/assets/images/clients/Component141(2).webp',
       name: 'بترو مين',
     },
     {
-      id: 'alfahd',
+      id: 2,
       logoSrc: '/assets/images/clients/image30.webp',
       name: 'شركة الفهد للتجارة والصناعه والمقاولات',
     },
     {
-      id: 'rtcc',
+      id: 3,
       logoSrc: '/assets/images/clients/image27.webp',
       name: 'شركة الراشد للتجارة والمقالاوت',
     },
 
     {
-      id: 'nesco',
+      id: 4,
       logoSrc: '/assets/images/clients/Component141(3).webp',
       name: 'نسكو',
     },
     {
-      id: 'nesco',
+      id: 5,
       logoSrc: '/assets/images/clients/Frame 2147224060.webp',
       name: 'شركة الكابلات السعودية',
     },
     {
-      id: 'nesco',
+      id: 6,
       logoSrc: '/assets/images/clients/image31.webp',
       name: 'شركة الأحمدية العالمية ',
     },
     {
-      id: 'nesco',
+      id: 7,
       logoSrc: '/assets/images/clients/image28.webp',
       name: 'شركة اجيج لصناعة الصلب ومشتقاتة',
     },
     {
-      id: 'nesco',
+      id: 8,
       logoSrc: '/assets/images/clients/image44.webp',
       name: 'مجموعة الصريف',
     },
     {
-      id: 'nesco',
+      id: 9,
       logoSrc: '/assets/images/clients/image54.webp',
       name: 'شركة الكيمياء الوطنية للصناعات الكيميائية',
     },
     {
-      id: 'nesco',
+      id: 10,
       logoSrc: '/assets/images/clients/Component141(4).webp',
       name: 'شركة فاين',
     },
     {
-      id: 'nesco',
+      id: 11,
       logoSrc: '/assets/images/clients/Component141(5).webp',
       name: 'شركة سعف الصناعية',
     },
     {
-      id: 'nesco',
+      id: 12,
       logoSrc: '/assets/images/clients/Component141(1).webp',
       name: 'شركة مجموعة المهيلب للمنتجات الأسمنتية',
     },
     {
-      id: 'nesco',
+      id: 13,
       logoSrc: '/assets/images/clients/Component141.webp',
       name: 'شركة مستورة',
     },
     {
-      id: 'nesco',
+      id: 14,
       logoSrc: '/assets/images/clients/image55.webp',
       name: 'شركة السيل للحفر وصيانة الأبار النفطية',
     },
     {
-      id: 'nesco',
+      id: 15,
       logoSrc: '/assets/images/clients/image52.webp',
       name: 'شركة انساب ',
     },
     {
-      id: 'nesco',
+      id: 16,
       logoSrc: '/assets/images/clients/image49.webp',
       name: 'شركة الصايغ ',
     },
     {
-      id: 'nesco',
+      id: 17,
       logoSrc: '/assets/images/clients/Component141(9).webp',
       name: 'شركة اثيل للمقاولات',
     },
     {
-      id: 'nesco',
+      id: 18,
       logoSrc: '/assets/images/clients/Component141(8).webp',
       name: 'شركة سلطان الدخيل للمقاولات',
     },
     {
-      id: 'nesco',
+      id: 19,
       logoSrc: '/assets/images/clients/Component141(7).webp',
       name: 'شركة محمد البرغش ',
     },
     {
-      id: 'nesco',
+      id: 20,
       logoSrc: '/assets/images/clients/Component141(3).webp',
       name: 'شركة المري ',
     },
@@ -141,17 +142,34 @@ export function OurClientsSection({ className = '', ...props }) {
           </div>
         </div>
 
-        {/* Client Cards Grid */}
-        <div className="grid grid-cols-4 gap-8 w-full">
-          {clientsData.map((client, index) => (
-            <ClientCard
-              key={`${client.id}-${index}`}
-              logoSrc={client.logoSrc}
-              name={client.name}
-              imageAlt={`${client.name} logo`}
-            />
-          ))}
+
+        {/* Client Cards Marquee - Single row, left to right */}
+        <div className="w-full overflow-hidden">
+          <Marquee
+            direction="right"
+            speed={40}
+            pauseOnHover
+            autoFill
+            gradient={false}
+            className="w-full"
+          >
+            {clientsData.map((client, index) => (
+              <div
+                key={`client-${index}`}
+                className="mr-8 shrink-0 w-[280px] flex-none"
+              >
+                <ClientCard
+                  key={`client-${index}`}
+                  logoSrc={client.logoSrc}
+                  name={client.name}
+                  imageAlt={`${client.name} logo`}
+                  className="w-full"
+                />
+              </div>
+            ))}
+          </Marquee>
         </div>
+
       </div>
     </section>
   );
