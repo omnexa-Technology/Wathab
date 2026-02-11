@@ -24,6 +24,5 @@ export default async function ClientsPage() {
         <ContactCtaSection />
       </div>
     </>
-
   );
 }
