@@ -12,7 +12,7 @@ export function ClientCard({
 }) {
   return (
     <div
-      className={`flex flex-col items-center justify-center gap-4 px-6 py-6 bg-white rounded-2xl shadow-[0px_4px_12px_0px_rgba(0,0,0,0.08)] h-64 w-full ${className}`}
+      className={`flex flex-col items-center justify-center gap-4 px-6 py-6 bg-white rounded-2xl shadow-[0px_4px_12px_0px_rgba(0,0,0,0.08)] h-64 w-full hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.16)] transition-all duration-300 ${className}`}
       {...props}
     >
       {/* Logo */}
