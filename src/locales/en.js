@@ -365,7 +365,10 @@ export default {
   },
   faq: {
     sectionTitle: 'Most Important Questions Everything You Need to Know',
+    fullSectionTitle: 'Clear answers to all your questions',
+    subtitle: 'Comprehensive answers for everything you need to know before starting with Wathb',
     description: 'Comprehensive answers to your questions about standards and certifications. We\'ve summarized our partners\' most important inquiries to give you complete clarity before starting with Wathb.',
+    fullIntro: 'We\'ve gathered the most important questions for business owners and projects regarding environmental licenses, regulatory compliance, and how "Wathb" works as your partner in dealing with the National Center for Environmental Compliance Oversight and the National Waste Management Center (MOAN).',
     items: {
       q1: {
         question: 'Why choose "Wathb" as a partner for your success?',
@@ -384,28 +387,60 @@ export default {
         answer: 'You can contact us directly through the contact form or call the service team for a free consultation.',
       },
       q5: {
-        question: 'What distinguishes Wathb from other environmental consulting offices?',
-        answer: 'We are distinguished by our deep understanding of the Saudi market and local requirements, in addition to our international partnerships and extensive expertise.',
+        question: 'What are the official entities and platforms that "Wathb" deals with?',
+        answer: 'We work with the National Center for Environmental Compliance Oversight (NCEC) and the National Waste Management Center (MOAN) as key regulatory bodies in the Kingdom.',
       },
       q6: {
+        question: 'What is Wathb\'s role in achieving environmental compliance for establishments?',
+        answer: 'We help establishments understand and implement regulatory requirements through specialized consultations and support throughout the license and permit process.',
+      },
+      q7: {
+        question: 'What types of environmental licenses does the platform support?',
+        answer: 'We support all types of environmental licenses and permits including environmental impact assessment, environmental authorization, waste permits, and environmental baselines.',
+      },
+      q8: {
+        question: 'Does Wathb provide periodic reports on sustainable compliance performance?',
+        answer: 'Yes, we provide comprehensive periodic reports to monitor compliance performance and deliver recommendations for continuous improvement.',
+      },
+      q9: {
+        question: 'Does Wathb\'s mission end once the environmental license for the establishment is issued?',
+        answer: 'No, we provide ongoing support after issuance to monitor compliance, regulatory updates, and license renewals.',
+      },
+      q10: {
         question: 'What is the "Wathb" platform and what is its vision for the environmental future?',
         answer: 'Wathb is a leading company in environmental consulting, seeking to achieve sustainable development and environmental protection in the Kingdom.',
       },
-      q7: {
+      q11: {
         question: 'What services does the Wathb platform offer in sustainability and environment?',
         answer: 'We offer a comprehensive range of services including environmental impact assessment studies, environmental audits, license extraction, and waste management.',
       },
-      q8: {
+      q12: {
         question: 'What is the work methodology that "Wathb" follows to ensure project success?',
         answer: 'We follow a precise scientific methodology that starts with comprehensive assessment and ends with continuous follow-up to ensure full compliance.',
       },
-      q9: {
+      q13: {
         question: 'How does Wathb help reduce the environmental impact of industrial facilities?',
         answer: 'We provide innovative solutions that help reduce emissions and waste and improve resource efficiency.',
       },
-      q10: {
+      q14: {
+        question: 'How does "Wathb" contribute to supporting Saudi Vision 2030?',
+        answer: 'We contribute to achieving the Vision\'s goals through supporting environmental compliance, sustainable development, and responsible investment.',
+      },
+      q15: {
+        question: 'Does Wathb provide specialized environmental consultations for major projects?',
+        answer: 'Yes, we provide tailored consultations for major projects including impact assessment, compliance, and follow-up.',
+      },
+      q16: {
+        question: 'Does Wathb assist in issuing permits from the National Center for Environmental Compliance?',
+        answer: 'Yes, we accompany our clients through the entire permit and license process with the National Center for Environmental Compliance Oversight.',
+      },
+      q17: {
         question: 'What is meant by the technical support provided by Wathb?',
         answer: 'We provide continuous technical support throughout the project period and beyond, to ensure continuous compliance and constant improvement.',
+      },
+      q18: {
+        question: 'What is the duration to obtain an environmental license through "Wathb"?',
+        answer: 'The duration varies depending on the license type and regulatory requirements; we strive to complete procedures as quickly as possible.',
       },
     },
   },

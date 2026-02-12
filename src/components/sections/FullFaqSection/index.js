@@ -1,0 +1,1 @@
+export { FullFaqSection } from './FullFaqSection';

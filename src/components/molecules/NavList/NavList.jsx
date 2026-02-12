@@ -16,6 +16,7 @@ const navItems = [
       { label: 'نبذة عن وثب', href: '/about' },
       { label: 'الفريق', href: '/about/team' },
       { label: 'عملائنا', href: '/about/clients' },
+      {label: 'الاسألة الشائعة', href: '/about/faq'},
     ]
   },
   {
