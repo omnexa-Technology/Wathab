@@ -30,7 +30,7 @@ export function HeroSlide({
       {...props}
     >
       <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-        <div className={`pointer-events-auto flex flex-col w-full max-w-[960px] ${alignStart} gap-24`}>
+        <div className={`pointer-events-auto flex flex-col w-full ${alignStart} gap-24`}>
           <div className={`flex flex-col ${alignStart} gap-24 relative self-stretch w-full`}>
             <div className={`flex flex-col ${alignStart} gap-16 relative self-stretch w-full`}>
               <h1 className={`self-stretch text-7xl font-bold text-white ${textAlign}`}>
