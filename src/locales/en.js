@@ -206,7 +206,12 @@ export default {
   services: { title: 'Our Services', description: 'Explore our comprehensive range of environmental consulting services designed for your needs.', slugDescription: 'Detail page for this service.' },
   projects: { title: 'Our Projects', description: 'Browse our portfolio of environmental consulting projects and case studies.', slugDescription: 'Detail page for this project.' },
   articles: { title: 'Articles', description: 'Latest articles and insights on environmental consulting and sustainability.', slugDescription: 'Article content.' },
-  contact: { title: 'Contact Us', description: 'Get in touch with our team to discuss your environmental consulting needs.' },
+  contact: {
+    title: 'Contact Us',
+    description: 'Get in touch with our team to discuss your environmental consulting needs.',
+    heroTitle: 'Let\'s draw a sustainable path for your projects together.. Contact us',
+    breadcrumbLabel: 'Contact Us',
+  },
   licenses: { title: 'Environmental Licenses and Permits', description: 'Obtaining environmental licenses and permits necessary for your projects.', sectionTitle: 'Environmental Licenses and Permits' },
   sectors: { title: 'Our Sectors', description: 'Browse our portfolio of environmental consulting projects and case studies.', slugDescription: 'Detail page for this project.' },
   headNav: {

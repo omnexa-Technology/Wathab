@@ -49,7 +49,6 @@ export function HeroSlide({
           </div>
         </div>
       </FadeContent>
-
     </div>
   );
 }
