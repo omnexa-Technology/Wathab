@@ -3,7 +3,7 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import Image from 'next/image';
-
+import Link from 'next/link';
 export function InnerHero({ title, description, image, breadcrumbLabel }) {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
@@ -73,12 +73,24 @@ export function InnerHero({ title, description, image, breadcrumbLabel }) {
           >
             {isRTL ? (
               <>
-                <span
-                  className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-medium leading-tight sm:leading-snug lg:leading-[56px]"
-                  style={{ fontFamily: 'var(--font-family, "DIN Next LT Arabic", sans-serif)' }}
-                >
-                  {breadcrumbLabel}
-                </span>
+                {/* Home Icon */}
+                <div className="flex items-center  justify-center shrink-0">
+                  <Image
+                    src="/assets/icons/ui/home-eco.svg"
+                    alt="Home"
+                    width={24}
+                    height={24}
+                    className="w-5 h-5 sm:w-6 sm:h-6"
+                  />
+                </div>
+                <Link href="/">
+                  <span
+                    className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-normal leading-tight sm:leading-normal lg:leading-[64px]"
+                    style={{ fontFamily: 'var(--font-family, "DIN Next LT Arabic", sans-serif)' }}
+                  >
+                    {homeText}
+                  </span>
+                </Link>
 
                 {/* Arrow Icon - Double Forward Arrow (Rotated/Flipped for RTL) */}
                 <div className="flex items-center justify-center shrink-0">
@@ -92,24 +104,12 @@ export function InnerHero({ title, description, image, breadcrumbLabel }) {
                     />
                   </div>
                 </div>
-
                 <span
-                  className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-normal leading-tight sm:leading-normal lg:leading-[64px]"
+                  className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-medium leading-tight sm:leading-snug lg:leading-[56px]"
                   style={{ fontFamily: 'var(--font-family, "DIN Next LT Arabic", sans-serif)' }}
                 >
-                  {homeText}
+                  {breadcrumbLabel}
                 </span>
-
-                {/* Home Icon */}
-                <div className="flex items-center  justify-center shrink-0">
-                  <Image
-                    src="/assets/icons/ui/home-eco.svg"
-                    alt="Home"
-                    width={24}
-                    height={24}
-                    className="w-5 h-5 sm:w-6 sm:h-6"
-                  />
-                </div>
               </>
             ) : (
               <>
