@@ -56,11 +56,11 @@ const navItems = [
     href: '/licenses',
     key: 'navbar.licenses'
   },
-  {
-    type: 'link',
-    href: '/contact',
-    key: 'navbar.contact'
-  },
+  // {
+  //   type: 'link',
+  //   href: '/contact',
+  //   key: 'navbar.contact'
+  // },
 ];
 
 export function NavList({ className = '', ...props }) {
