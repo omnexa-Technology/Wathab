@@ -1,15 +1,13 @@
 'use client';
-
 import Marquee from 'react-fast-marquee';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { ClientCard } from '@/components/molecules/ClientCard/ClientCard';
-
 export function OurClientsSection({ className = '', ...props }) {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
   const isRTL = language === 'ar';
-  
+
   const clientsData = [
     {
       id: 1,
@@ -113,7 +111,7 @@ export function OurClientsSection({ className = '', ...props }) {
       name: 'شركة المري ',
     },
   ];
-  const duplicatedClients = [...clientsData, ...clientsData];
+
   return (
     <section
       className={`flex flex-col items-start gap-0 px-[120px] py-24 bg-gradient-to-l from-[#fdfdfd] to-white w-full ${className}`}
@@ -141,47 +139,20 @@ export function OurClientsSection({ className = '', ...props }) {
             </p>
           </div>
         </div>
-
-
         {/* Client Cards Marquee - Single row, left to right */}
         <div className="w-full overflow-hidden">
-          {/* <Marquee
-            play={true}
-            direction="right"
-            speed={60}
+          <Marquee
+            play
+            direction={isRTL ? 'left' : 'right'}
+            speed={70}
+            delay={0}
             pauseOnHover
-            autoFill={false}
             gradient={false}
+            autoFill
+            loop={0}
             className="w-full"
           >
             {clientsData.map((client, index) => (
-              <div
-                key={`client-${index}`}
-                className="mr-8 shrink-0 w-[280px] flex-none"
-              >
-                <ClientCard
-                  key={`client-${index}`}
-                  logoSrc={client.logoSrc}
-                  name={client.name}
-                  imageAlt={`${client.name} logo`}
-                  className="w-full"
-                />
-              </div>
-            ))}
-          </Marquee> */}
-
-
-          <Marquee
-            play={true}
-            direction={isRTL ? "left" : "right"}
-            speed={70}
-            delay={0}
-            pauseOnHover={true}
-            gradient={false}
-            loop={0} // 0 = infinite
-            className="w-full"
-          >
-            {duplicatedClients.map((client, index) => (
               <div
                 key={`client-${client.id}-${index}`}
                 className="mr-8 shrink-0 w-[280px] flex-none"
@@ -195,9 +166,7 @@ export function OurClientsSection({ className = '', ...props }) {
               </div>
             ))}
           </Marquee>
-
         </div>
-
       </div>
     </section >
   );
