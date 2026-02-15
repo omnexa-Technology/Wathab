@@ -9,7 +9,7 @@ const linkBaseClass =
   ' flex h-12 items-center text-green-900 justify-center gap-2.5 px-4 py-0 rounded-[40px] font-[number:var(--body-font-weight)] text-[length:var(--body-font-size)] tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] [font-style:var(--body-font-style)] ';
 
 const linkActiveClass =
-  ' font-[number:var(--text-20bold-font-weight)] text-[length:var(--text-20bold-font-size)] tracking-[var(--text-20bold-letter-spacing)] leading-[var(--text-20bold-line-height)] [font-style:var(--text-20bold-font-style)] text-[#FFFFFF]';
+  ' font-[number:var(--text-20bold-font-weight)] text-[length:var(--text-20bold-font-size)] tracking-[var(--text-20bold-letter-spacing)] leading-[var(--text-20bold-line-height)] [font-style:var(--text-20bold-font-style)] text-[#1B6936]';
 
 const linkInactiveClass = 'text-grey-600';
 
