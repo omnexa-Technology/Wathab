@@ -16,14 +16,16 @@ const navItems = [
       { label: 'نبذة عن وثب', href: '/about' },
       { label: 'الفريق', href: '/about/team' },
       { label: 'عملائنا', href: '/about/clients' },
-      {label: 'الاسألة الشائعة', href: '/about/faq'},
+      { label: 'الاسألة الشائعة', href: '/about/faq' },
     ]
   },
   {
     type: 'dropdown',
     key: 'navbar.services',
     items: [
+      { label: 'خدماتنا', href: '/services' },
       { label: 'إعداد خطط الإدارة البيئية', href: '/services/environmental-management-plans' },
+
       { label: 'إعداد خطط المعالجه و إعادة التأهيل البيئى', href: '/services/rehabilitation-and-treatment-plans' },
       { label: 'دراسات تقييم الأثر البيئي', href: '/services/environmental-impact-assessment' },
       { label: 'دراسات التدقيق البيئي', href: '/services/environmental-audit' },

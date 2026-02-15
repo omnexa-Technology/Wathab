@@ -16,7 +16,7 @@ export default function AboutPage() {
   const { t } = useTranslation();
 
   const heroTitle = t('about.hero.title');
-  const aboutBreadcrumbLabel = t('navbar.about');
+  const aboutBreadcrumbLabel = t('navbar.about'); 
 
   return (
     <>
