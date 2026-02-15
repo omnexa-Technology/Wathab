@@ -11,28 +11,13 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-interface DropdownItem {
-  label: string;
-  href: string;
-}
 
-interface NavDropdownProps {
-  label: string;
-  translationKey?: string;
-  items: DropdownItem[];
-  className?: string;
-}
-
-/**
- * NavDropdown - Navigation dropdown molecule component
- * Uses shadcn dropdown menu with styling that matches the existing NavLink atom
- */
 export function NavDropdown({
   label,
   translationKey,
   items,
   className = '',
-}: NavDropdownProps) {
+}) {
   const { t } = useTranslation();
   const pathname = usePathname();
 
@@ -53,7 +38,7 @@ export function NavDropdown({
     'flex h-12 items-center justify-center gap-2 px-4 py-0 rounded-[40px] font-[number:var(--body-font-weight)] text-[length:var(--body-font-size)] tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] [font-style:var(--body-font-style)] transition-colors duration-200';
 
   const triggerActiveClass =
-    'font-[number:var(--text-20bold-font-weight)] text-[length:var(--text-20bold-font-size)] text-white';
+    'font-[number:var(--text-20bold-font-weight)] text-[length:var(--text-20bold-font-size)] text-[#1B6936]';
 
   const triggerInactiveClass = 'text-grey-600 hover:text-[#1B6936]';
 
@@ -92,9 +77,9 @@ export function NavDropdown({
           return (
             <DropdownMenuItem
               key={index}
-              className={`cursor-pointer rounded-md px-3 py-2 text-right transition-colors ${isItemActive
-                  ? 'bg-[#1B6936]/10 text-[#1B6936] font-semibold'
-                  : 'text-gray-700 hover:bg-gray-100'
+              className={`cursor-pointer rounded-md px-3 py-2 text-right transition-colors outline-none focus:text-[#1B6936] focus:bg-[#1B6936]/10 data-[highlighted]:text-[#1B6936] data-[highlighted]:bg-[#1B6936]/10 ${isItemActive
+                ? 'bg-[#1B6936]/10 text-[#1B6936] font-semibold'
+                : 'text-gray-700 hover:bg-[#1B6936]/10 hover:text-[#1B6936]'
                 }`}
               asChild
             >
