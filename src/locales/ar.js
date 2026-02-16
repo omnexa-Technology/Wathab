@@ -206,7 +206,25 @@ export default {
     }
   },
   services: { title: 'خدماتنا', description: 'مجموعة شاملة من خدمات الاستشارات البيئية المصممة لاحتياجاتك.', slugDescription: 'صفحة تفاصيل هذه الخدمة.' },
-  sectors: { title: 'القطاعات', description: 'تصفح مجموعتنا من مشاريع الاستشارات البيئية ودراسات الحالة.', slugDescription: 'صفحة تفاصيل هذا المشروع.' },
+  sectors: {
+    title: 'القطاعات',
+    description: 'تصفح مجموعتنا من مشاريع الاستشارات البيئية ودراسات الحالة.',
+    slugDescription: 'صفحة تفاصيل هذا المشروع.',
+    heroTitle: 'حلول بيئية متكاملة تلبي تطلعات كبرى الصناعات',
+    breadcrumbLabel: 'القطاعات',
+    grid: {
+      title: 'تنوع في القطاعات.. ووحدة في معايير الجودة والامتثال',
+      portsMaritime: 'الموانئ والقطاع البحري',
+      powerGeneration: 'توليد الطاقة',
+      infrastructureWaste: 'دراسات في البنية التحتية وإدارة النفايات',
+      petrochemicals: 'البتروكيماويات',
+      wastewaterTreatment: 'معالجة مياه الصرف الصحي',
+      landReclamation: 'استصلاح الأراضي والتجريف البحري',
+      transportation: 'أنظمة النقل',
+      oilGas: 'النفط والغاز',
+      steelAluminum: 'صناعة الصلب والألمنيوم',
+    },
+  },
   articles: { title: 'المقالات', description: 'أحدث المقالات والرؤى في الاستشارات البيئية والاستدامة.', slugDescription: 'محتوى المقال.' },
   contact: {
     title: 'اتصل بنا',
