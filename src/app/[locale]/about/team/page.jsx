@@ -1,7 +1,7 @@
 import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
 import { buildPageMetadata } from '@/lib/getPageMetadata';
 import { InnerHero } from '@/components/sections/InnerHero';
-import { TeamSection } from '@/components/sections/TeamSection/TeamSection';
+import { TeamMemberSection } from '@/components/sections/TeamMemberSection/TeamMemberSection';
 import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
 
 export async function generateMetadata() {
@@ -18,9 +18,7 @@ export default async function TeamPage() {
                 breadcrumbLabel={t.team.sectionTitle}
                 image="/assets/images/team/heroCover.webp"
             />
-            <div className='flex justify-center relative w-full'>
-                <TeamSection />
-            </div>
+            <TeamMemberSection />
             <div className='flex justify-center relative w-full my-24'>
                 <ContactCtaSection />
             </div>

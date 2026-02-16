@@ -1,16 +1,10 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
-import { TeamMemberCard } from '@/components/molecules/TeamMemberCard/TeamMemberCard';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from '@/components/ui/carousel';
+import { TeamMemberCardAlt } from '@/components/molecules/TeamMemberCardAlt/TeamMemberCardAlt';
 
+// Static team data - same as TeamSection but used for grid layout
 const TEAM_DATA = [
   {
     id: 'member-0',
@@ -91,39 +85,58 @@ const TEAM_DATA = [
   },
 ];
 
-export function TeamSection() {
+/**
+ * TeamMemberSection - Displays all team members in a grid layout
+ * Used specifically for the team page
+ * @param {Object} props
+ * @param {string} [props.className=''] - Additional CSS classes
+ * @returns {JSX.Element}
+ */
+export function TeamMemberSection({ className = '' }) {
+  const { t } = useTranslation();
+  const language = useLanguageStore((s) => s.language);
+  const isRTL = language === 'ar';
 
-  const language = useLanguageStore((s) => s.language)
-  const isRTL = language === "ar"
-
-  const carouselOptions = useMemo(
-    () => ({
-      align: "start",
-      containScroll: "trimSnaps",
-      dragFree: false,
-      slidesToScroll: 1,
-      direction: isRTL ? "rtl" : "ltr",
-    }),
-    [isRTL]
-  )
   return (
-    <section dir={isRTL ? "rtl" : "ltr"} className="py-24 ">
+    <section
+      dir={isRTL ? 'rtl' : 'ltr'}
+      className={`py-24 px-8 lg:px-[120px] bg-linear-to-l from-[#f8fcf9] to-[#fdfdfd] ${className}`}
+    >
       <div className="w-full max-w-7xl mx-auto">
-        <Carousel opts={carouselOptions} className="relative ">
-          <CarouselContent>
-            {TEAM_DATA.map((member) => (
-              <CarouselItem
-                key={member.id}
-                className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
-              >
-                <TeamMemberCard {...member} />
-              </CarouselItem>
+        {/* Header Section */}
+        <div className="flex flex-col gap-16 items-center mb-16">
+          {/* Title */}
+          <div className="flex items-center justify-center w-full">
+            <h2 className="font-din font-bold text-[48px] leading-[80px] text-[#0b2c16] text-center">
+              {t('team.title')}
+            </h2>
+          </div>
+
+          {/* Description */}
+          <p className="font-din font-normal text-[32px] leading-[64px] text-grey-600 text-center w-full whitespace-pre-wrap">
+            {t('team.description')}
+          </p>
+        </div>
+
+        {/* Team Members Grid */}
+        <div className="flex flex-col gap-12">
+          {/* First 8 members - 2 rows of 4 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TEAM_DATA.slice(0, 8).map((member) => (
+              <TeamMemberCardAlt key={member.id} {...member} />
             ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+          </div>
+
+          {/* Last 3 members - centered */}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1266px]">
+              {TEAM_DATA.slice(8).map((member) => (
+                <TeamMemberCardAlt key={member.id} {...member} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }

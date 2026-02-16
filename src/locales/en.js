@@ -211,6 +211,20 @@ export default {
     description: 'Get in touch with our team to discuss your environmental consulting needs.',
     heroTitle: 'Let\'s draw a sustainable path for your projects together.. Contact us',
     breadcrumbLabel: 'Contact Us',
+    info: {
+      location: {
+        value: 'Saudi Arabia – Dammam – Al-Athir District',
+        label: 'Office Location',
+      },
+      phone: {
+        value: '+966561199191',
+        label: 'Contact Us',
+      },
+      email: {
+        value: 'mana@watheb.sa',
+        label: 'Email',
+      },
+    },
   },
   licenses: { title: 'Environmental Licenses and Permits', description: 'Obtaining environmental licenses and permits necessary for your projects.', sectionTitle: 'Environmental Licenses and Permits' },
   sectors: { title: 'Our Sectors', description: 'Browse our portfolio of environmental consulting projects and case studies.', slugDescription: 'Detail page for this project.' },
@@ -407,6 +421,7 @@ export default {
   },
   team: {
     sectionTitle: 'The Team',
+    title: 'Engineering minds.. shaping the present of resources and building your future',
     description: 'Because we believe that leadership begins with precision; Wathb comprises a select group of engineers and international experts who shaped the features of the Kingdom\'s natural resources, to be your most trusted partner in the journey of compliance and excellence.',
   },
   contactCta: {
