@@ -2,38 +2,38 @@
 
 import { Clock } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLanguageStore } from '@/store/useLanguageStore';
 
 export function BusinessHours({ className = '', ...props }) {
   const { t } = useTranslation();
+  const language = useLanguageStore((s) => s.language);
+  const isRTL = language === 'ar';
 
   const businessHours = [
-    { day: t('footer.businessHours.friday'), hours: t('footer.businessHours.fridayStatus'), isOpen: false },
     { day: t('footer.businessHours.weekdays'), hours: t('footer.businessHours.weekdaysHours'), isOpen: true },
   ];
 
   return (
-    <div className={`inline-flex items-start gap-2 ${className}`} {...props}>
-      <div className="inline-flex flex-col items-start gap-6">
-        {businessHours.map((schedule, index) => (
-          <div key={index} className="flex items-start justify-between self-stretch w-full">
-            <Clock className="w-6 h-6 text-[#86BA41] shrink-0 mx-1" />
-            <p className="font-body font-[number:var(--body-font-weight)] text-[#b6b6b6] text-[length:var(--body-font-size)] leading-[var(--body-line-height)] tracking-[var(--body-letter-spacing)] whitespace-nowrap [direction:rtl] [font-style:var(--body-font-style)]">
-              {schedule.day}
-            </p>
-            <div className='flex items-center gap-2 mx-1'>
-              <p
-                className={`font-body font-[number:var(--body-font-weight)] ${schedule.isOpen ? 'text-white' : 'text-[#86ba41]'
-                  } ${schedule.isOpen
-                    ? 'text-[length:var(--sub-body-font-size)] font-sub-body font-[number:var(--sub-body-font-weight)] tracking-[var(--sub-body-letter-spacing)] leading-[var(--sub-body-line-height)] [font-style:var(--sub-body-font-style)]'
-                    : 'text-[length:var(--body-font-size)] tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] [font-style:var(--body-font-style)]'
-                  } whitespace-nowrap [direction:rtl]`}
-              >
-                {schedule.hours}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className={`inline-flex flex-col items-start gap-4 w-full min-w-0 sm:gap-6 ${className}`} {...props}>
+      {businessHours.map((schedule, index) => (
+        <div
+          key={index}
+          className={`flex items-center gap-2 sm:gap-3 w-full min-w-0 ${isRTL ? 'flex-row-reverse justify-end' : 'justify-start'}`}
+        >
+          <p className="font-din font-normal text-[#b6b6b6] text-sm sm:text-base leading-relaxed flex-1 min-w-0 text-right [direction:rtl]">
+            {schedule.day}
+          </p>
+          <p
+            className={`font-din text-sm sm:text-base leading-relaxed shrink-0 [direction:rtl] ${
+              schedule.isOpen ? 'text-white' : 'text-[#86ba41]'
+            }`}
+          >
+            {schedule.hours}
+          </p>
+          <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-[#86BA41] shrink-0" aria-hidden />
+
+        </div>
+      ))}
     </div>
   );
 }

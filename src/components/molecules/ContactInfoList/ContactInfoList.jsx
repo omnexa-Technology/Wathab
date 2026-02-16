@@ -16,27 +16,21 @@ export function ContactInfoList({ className = '', ...props }) {
   ];
 
   return (
-    <div 
-      className={`flex flex-col gap-8 self-stretch w-full ${
-        isRTL ? 'items-end' : 'items-start'
-      } ${className}`} 
+    <div
+      className={`flex flex-col gap-4 self-stretch w-full min-w-0 sm:gap-6 lg:gap-8 ${isRTL ? 'items-end' : 'items-start'} ${className}`}
       {...props}
     >
       {contactInfo.map((item, index) => (
-        <div 
-          key={index} 
-          className={`flex items-center gap-2 self-stretch w-full ${
-            isRTL ? 'justify-end' : 'justify-start'
-          }`}
+        <div
+          key={index}
+          className={`flex items-center gap-2 sm:gap-3 self-stretch w-full min-w-0 ${isRTL ? 'flex-row-reverse justify-end' : 'justify-start'}`}
         >
-          <item.icon className="w-6 h-6 text-[#86BA41] shrink-0" />
-          <p 
-            className={`font-body font-[number:var(--body-font-weight)] text-[#b6b6b6] text-[length:var(--body-font-size)] tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] [font-style:var(--body-font-style)] flex-1 ${
-              isRTL ? 'text-right' : 'text-left'
-            }`}
+          <p
+            className={`font-din font-normal text-[#b6b6b6] text-sm leading-relaxed sm:text-base sm:leading-7 flex-1 min-w-0 ${isRTL ? 'text-right' : 'text-left'}`}
           >
             {item.text}
           </p>
+          <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#86BA41] shrink-0" aria-hidden />
         </div>
       ))}
     </div>
