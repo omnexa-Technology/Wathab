@@ -13,6 +13,7 @@ import {
   FileCheck,
   Globe,
   Users,
+  GraduationCap,
 } from 'lucide-react';
 
 const CARD_ICONS = [
@@ -25,6 +26,7 @@ const CARD_ICONS = [
   FileCheck,
   Globe,
   Users,
+  GraduationCap,
 ];
 
 const CARD_KEYS = [
