@@ -9,12 +9,21 @@ export function FooterBrand({ className = '', ...props }) {
   const language = useLanguageStore((s) => s.language);
 
   return (
-    <div className={`flex flex-col items-end gap-12 flex-1 ${className}`} {...props}>
-      <div className={`flex flex-col ${language === 'ar' ? 'items-start' : 'items-end'} gap-8 self-stretch w-full`}>
-        <div className="inline-flex items-center gap-[6.86px]">
-          <Logo src="/assets/icons/logo/logo-dark.svg" alt="Wathb Logo" width={208} height={51} className="w-[208.74px] h-auto" />
+    <div
+      className={`flex flex-col gap-6 flex-1 min-w-0 sm:gap-8 lg:gap-12 ${language === 'ar' ? 'items-end' : 'items-start'} ${className}`}
+      {...props}
+    >
+      <div className={`flex flex-col gap-6 w-full min-w-0 sm:gap-8 ${language === 'ar' ? 'items-end' : 'items-start'}`}>
+        <div className="inline-flex items-center gap-[6.86px] shrink-0">
+          <Logo
+            src="/assets/icons/logo/logo-dark.svg"
+            alt="Wathb Logo"
+            width={208}
+            height={51}
+            className="w-full h-auto max-w-[180px] sm:max-w-[200px] lg:max-w-[208px]"
+          />
         </div>
-        <p className="flex items-center justify-center self-stretch font-sub-body font-[number:var(--sub-body-font-weight)] text-[#939393] text-[length:var(--sub-body-font-size)] tracking-[var(--sub-body-letter-spacing)] leading-[var(--sub-body-line-height)] [direction:rtl] [font-style:var(--sub-body-font-style)]">
+        <p className="font-din font-normal text-[#939393] text-sm leading-relaxed sm:text-base sm:leading-8 text-right max-w-full [direction:rtl]">
           {t('footer.description')}
         </p>
       </div>
