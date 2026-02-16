@@ -1,0 +1,1 @@
+export { ServicesGridCard } from './ServicesGridCard';
