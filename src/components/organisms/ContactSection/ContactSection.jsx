@@ -4,13 +4,6 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { ContactInfoCard } from '@/components/molecules/ContactInfoCard/ContactInfoCard';
 
-/**
- * ContactSection - Displays contact information cards (location, phone, email)
- * @param {Object} props
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
-
 export function ContactSection({ className = '' }) {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
@@ -43,6 +36,7 @@ export function ContactSection({ className = '' }) {
       className={`bg-white py-12 px-8 lg:px-[120px] ${className}`}
     >
       <div className="w-full max-w-7xl mx-auto">
+
         {/* Contact Cards Grid */}
         <div className="flex flex-col md:flex-row gap-8 items-stretch">
           {contactItems.map((item) => (
