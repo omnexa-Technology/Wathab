@@ -8,16 +8,19 @@ export function CopyrightText({ className = '', ...props }) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className={`inline-flex flex-wrap items-center gap-0 ${className}`} {...props}>
-      <span className="flex items-center justify-center font-text-20regular font-[number:var(--text-20regular-font-weight)] text-[#b6b6b6] text-[length:var(--text-20regular-font-size)] tracking-[var(--text-20regular-letter-spacing)] leading-[var(--text-20regular-line-height)] whitespace-nowrap [font-style:var(--text-20regular-font-style)]">
+    <div
+      className={`inline-flex flex-wrap items-center justify-center gap-1 sm:gap-2 text-center ${className}`}
+      {...props}
+    >
+      <span className="font-din font-normal text-[#b6b6b6] text-sm sm:text-base leading-relaxed">
         {currentYear}
       </span>
-      <Copyright className="w-5 h-5 text-[#b6b6b6] mx-1" />
-      <p className="flex items-center justify-center whitespace-nowrap [direction:rtl]">
-        <span className="text-[#b6b6b6] leading-[var(--text-20regular-line-height)] font-text-20regular [font-style:var(--text-20regular-font-style)] font-[number:var(--text-20regular-font-weight)] tracking-[var(--text-20regular-letter-spacing)] text-[length:var(--text-20regular-font-size)]">
+      <Copyright className="w-4 h-4 sm:w-5 sm:h-5 text-[#b6b6b6] shrink-0" aria-hidden />
+      <p className="flex flex-wrap items-center justify-center gap-x-1 [direction:rtl]">
+        <span className="font-din font-normal text-[#b6b6b6] text-sm sm:text-base leading-relaxed">
           {t('footer.copyright')}{' '}
         </span>
-        <span className="font-text-20bold font-[number:var(--text-20bold-font-weight)] text-[#86ba41] underline [font-style:var(--text-20bold-font-style)] tracking-[var(--text-20bold-letter-spacing)] leading-[var(--text-20bold-line-height)] text-[length:var(--text-20bold-font-size)]">
+        <span className="font-din font-bold text-[#86ba41] underline text-sm sm:text-base leading-relaxed">
           {t('footer.company')}
         </span>
       </p>
