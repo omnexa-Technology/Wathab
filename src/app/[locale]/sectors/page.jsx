@@ -1,6 +1,8 @@
 import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
 import { buildPageMetadata } from '@/lib/getPageMetadata';
-
+import { InnerHero } from '@/components/sections/InnerHero';
+import { SectorsGrid } from '@/components/sections/SectorsGrid/SectorsGrid';
+import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
 export async function generateMetadata() {
   const { t } = await getLocaleAndTranslations();
   return buildPageMetadata(t, 'sectors');
@@ -9,9 +11,17 @@ export async function generateMetadata() {
 export default async function ProjectsPage() {
   const { t } = await getLocaleAndTranslations();
   return (
-    <div className='h-[100vh] w-full'>
-      <h1 className='m-24 text-8xl font-bold'>{t.sectors.title}</h1>
-      <p className='m-24 text-3xl font-medium' >{t.sectors.description}</p>
-    </div>
+    <>
+      <InnerHero
+        title={t.sectors.heroTitle}
+        breadcrumbLabel={t.sectors.breadcrumbLabel}
+        image="/assets/images/Sectors/HeroSectors.webp"
+      />
+      <SectorsGrid />
+      {/* Section 13: Contact CTA (تواصل معنا) */}
+      <div className="flex justify-center relative w-full my-24">
+        <ContactCtaSection />
+      </div>
+    </>
   );
 }
