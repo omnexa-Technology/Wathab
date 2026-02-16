@@ -361,6 +361,7 @@ export default {
   },
   team: {
     sectionTitle: 'The Team',
+    title: 'Engineering minds.. shaping the present of resources and building your future',
     description: 'Because we believe that leadership begins with precision; Wathb comprises a select group of engineers and international experts who shaped the features of the Kingdom\'s natural resources, to be your most trusted partner in the journey of compliance and excellence.',
   },
   contactCta: {
