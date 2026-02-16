@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { Card, CardDescription, CardFooter, CardTitle } from '@/components/ui/card';
 
 /**
- * TeamMemberCard - Displays a single team member with image, name, role, and LinkedIn link
+ * TeamMemberCardAlt - Displays a single team member with image, name, role, and LinkedIn link
+ * Uses the same styling as TeamMemberCard for consistency
  * @param {Object} props
  * @param {string} props.imageSrc - Image URL for the team member
  * @param {string} props.name - Team member name
@@ -15,7 +16,7 @@ import { Card, CardDescription, CardFooter, CardTitle } from '@/components/ui/ca
  * @param {string} [props.className=''] - Additional CSS classes
  * @returns {JSX.Element}
  */
-export const TeamMemberCard = React.memo(function TeamMemberCard({
+export const TeamMemberCardAlt = React.memo(function TeamMemberCardAlt({
   imageSrc,
   name,
   role,
@@ -32,7 +33,6 @@ export const TeamMemberCard = React.memo(function TeamMemberCard({
           <Image
             src={imageSrc}
             alt={name || 'Team member'}
-
             fill
             className="object-cover"
           />
@@ -70,7 +70,6 @@ export const TeamMemberCard = React.memo(function TeamMemberCard({
           </CardFooter>
         </div>
       </Card>
-
     </div>
   );
 });

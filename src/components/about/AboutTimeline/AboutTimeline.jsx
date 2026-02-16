@@ -2,9 +2,6 @@
 
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
-import { Container } from '@/components/atoms/Container/Container';
-import { Heading } from '@/components/atoms/Heading/Heading';
-import { Paragraph } from '@/components/atoms/Paragraph/Paragraph';
 import Image from 'next/image';
 
 export function AboutTimeline() {
@@ -16,16 +13,16 @@ export function AboutTimeline() {
 
   const steps = [
     {
-      icon: '/assets/icons/ui/About/Frame (8).svg',
+      icon: '/assets/icons/ui/About/Frame (9).svg',
       title: t('about.timeline.steps.step1.title'),
       description: t('about.timeline.steps.step1.description'),
       highlighted: false,
     },
     {
-      icon: '/assets/icons/ui/About/Frame (9).svg',
+      icon: '/assets/icons/ui/About/Button.svg',
       title: t('about.timeline.steps.step2.title'),
       description: t('about.timeline.steps.step2.description'),
-      highlighted: true,
+      highlighted: false,
     },
     {
       icon: '/assets/icons/ui/About/Frame (7).svg',
@@ -55,24 +52,22 @@ export function AboutTimeline() {
 
   return (
     <section
-      className="py-24"
+      className="py-24 lg:px-[120px]"
       style={{
-        background: 'linear-gradient(90deg, rgb(243, 248, 236) 0%, rgb(255, 255, 255) 80%)',
+        background: 'linear-gradient(-90deg, rgb(243, 248, 236) 0%, rgb(255, 255, 255) 80%)',
       }}
       dir={isRTL ? 'rtl' : 'ltr'}
     >
-      <Container>
+      <div className=" mx-auto flex flex-col gap-24 items-center">
         {/* Section Title */}
-        <div className="flex items-center justify-center mb-24">
-          <div className="flex items-center gap-4 max-w-5xl">
-            <Heading
-              level="h2"
-              className="text-[#0b2c16] text-4xl lg:text-6xl font-medium text-center leading-tight"
-              style={{ fontFamily: 'var(--font-din-next-lt-arabic)' }}
+        <div className="flex items-center justify-center w-full">
+          <div className="flex gap-4 items-center justify-center max-w-[1338px] w-full">
+            <h2
+              className="font-din font-medium text-[#0b2c16] text-[64px] leading-[108px] text-center whitespace-pre-wrap flex-1"
             >
               {title}
-            </Heading>
-            <div className="flex items-center gap-1 shrink-0">
+            </h2>
+            <div className="flex items-center gap-1 h-2 shrink-0">
               <div className="w-2 h-2 rounded-full bg-carousel-active" />
               <div className="w-16 h-2 rounded-sm bg-carousel-active" />
             </div>
@@ -80,20 +75,19 @@ export function AboutTimeline() {
         </div>
 
         {/* Timeline Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+        <div className="flex gap-6 items-center w-full ">
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center gap-12 px-4 py-8 rounded-3xl ${
-                step.highlighted ? 'bg-white' : ''
-              }`}
+              className={`flex flex-col items-center gap-12 px-4 py-8 rounded-3xl min-w-[260px] w-[260px] transition-all duration-500 ease-in-out cursor-pointer hover:scale-105 hover:shadow-2xl hover:bg-white group ${step.highlighted ? 'bg-white shadow-lg' : ''
+                }`}
             >
               {/* Icon Container */}
               <div
-                className={`flex items-center justify-center p-2 rounded-full w-24 h-24 ${'bg-[#fdfdfd]'
-                }`}
+                className={`flex items-center justify-center p-2 rounded-full w-24 h-24 transition-all duration-500 ease-in-out group-hover:scale-110  ${step.highlighted ? 'bg-[#1b6936]' : 'bg-[#fdfdfd] group-hover:bg-[#1b6936]'
+                  }`}
               >
-                <div className="relative w-14 h-14">
+                <div className="relative w-14 h-14 transition-transform duration-500">
                   <Image
                     src={step.icon}
                     alt={step.title}
@@ -104,24 +98,18 @@ export function AboutTimeline() {
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-8 text-center">
-                <h3
-                  className="text-[#141414] text-2xl font-medium leading-tight"
-                  style={{ fontFamily: 'var(--font-din-next-lt-arabic)' }}
-                >
+              <div className="flex flex-col gap-8 text-center w-full">
+                <h3 className="font-din font-medium text-[#141414] text-2xl leading-[48px] w-full whitespace-pre-wrap transition-colors duration-300 group-hover:text-[#1b6936]">
                   {step.title}
                 </h3>
-                <Paragraph
-                  className="text-grey-600 text-xl leading-normal"
-                  style={{ fontFamily: 'var(--font-din-next-lt-arabic)' }}
-                >
+                <p className="font-din font-normal text-grey-600 text-xl leading-normal w-full whitespace-pre-wrap transition-colors duration-300 group-hover:text-[#141414]">
                   {step.description}
-                </Paragraph>
+                </p>
               </div>
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
