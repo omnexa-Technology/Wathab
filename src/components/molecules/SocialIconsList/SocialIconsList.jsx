@@ -12,7 +12,10 @@ export function SocialIconsList({ className = '', ...props }) {
   ];
 
   return (
-    <div className={`inline-flex items-start justify-end gap-2 ${className}`} {...props}>
+    <div
+      className={`inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 lg:justify-end ${className}`}
+      {...props}
+    >
       {socialIcons.map((social, index) => (
         <SocialIconButton key={index} icon={social.icon} bgColor={social.bgColor} href={social.href} />
       ))}

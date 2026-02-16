@@ -9,9 +9,9 @@ export function MainLayout({ children }) {
         {/* <HeadNav /> */}
         <Navbar />
       </header>
-      <main>
+      {/* <main>
         {children}
-      </main>
+      </main> */}
       <footer>
         <Footer />
       </footer>
