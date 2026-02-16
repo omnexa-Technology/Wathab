@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo } from 'react';
-import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { TeamMemberCard } from '@/components/molecules/TeamMemberCard/TeamMemberCard';
 import {
@@ -12,9 +11,7 @@ import {
   CarouselNext,
 } from '@/components/ui/carousel';
 
-// Static team data - moved outside component to prevent recreation on every render
 const TEAM_DATA = [
-
   {
     id: 'member-0',
     imageSrc: '/assets/images/team/Ellipse 7 (3).svg',
@@ -94,16 +91,8 @@ const TEAM_DATA = [
   },
 ];
 
-
-
-/**
- * TeamSection - Displays the company team members
- * @param {Object} props
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
 export function TeamSection() {
-  const { t } = useTranslation()
+
   const language = useLanguageStore((s) => s.language)
   const isRTL = language === "ar"
 
@@ -117,11 +106,9 @@ export function TeamSection() {
     }),
     [isRTL]
   )
-
   return (
     <section dir={isRTL ? "rtl" : "ltr"} className="py-24 ">
       <div className="w-full max-w-7xl mx-auto">
-
         <Carousel opts={carouselOptions} className="relative ">
           <CarouselContent>
             {TEAM_DATA.map((member) => (
@@ -133,11 +120,9 @@ export function TeamSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-
       </div>
     </section>
   )
