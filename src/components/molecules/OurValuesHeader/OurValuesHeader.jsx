@@ -10,11 +10,13 @@ export function OurValuesHeader({ titleKey = 'ourValues.sectionTitle', className
   const { t } = useTranslation();
 
   return (
-    <header className={`inline-flex items-center justify-center gap-4 relative flex-[0_0_auto] ${className}`}>
+    <header
+      className={`inline-flex items-center justify-center gap-3 flex-shrink-0 sm:gap-4 ${className}`}
+    >
       <GreenDotsDecoration />
-      <h1 className="text-white text-5xl font-bold">
+      <h2 className="font-din font-bold text-white text-2xl leading-tight sm:text-3xl md:text-4xl lg:text-5xl tracking-normal text-center">
         {t(titleKey)}
-      </h1>
+      </h2>
     </header>
   );
 }
