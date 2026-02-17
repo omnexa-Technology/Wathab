@@ -19,9 +19,7 @@ export default async function ProjectsPage() {
       />
       <SectorsGrid />
       {/* Section 13: Contact CTA (تواصل معنا) */}
-      <div className="flex justify-center relative w-full my-24">
-        <ContactCtaSection />
-      </div>
+      image.pngimage.png
     </>
   );
 }
