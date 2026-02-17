@@ -16,7 +16,7 @@ export default async function LicensesPage() {
       <InnerHero
         title={t.licenses.title}
         breadcrumbLabel={t.licenses.breadcrumbLabel}
-        image="/assets/images/pages/Home/swiper1.webp"
+        image="/assets/images/licenses/header.webp"
       />
       <LicensesGrid />
       <div className="flex justify-center relative w-full my-24">
