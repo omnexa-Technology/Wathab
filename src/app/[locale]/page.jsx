@@ -88,7 +88,7 @@ export default function HomePage() {
       </div>
 
       {/* Section 8: Achievements (إنجازاتنا) */}
-      <div className="flex justify-center relative w-full">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
         <AchievementsSection />
       </div>
 
