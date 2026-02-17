@@ -1,5 +1,8 @@
 import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
 import { buildPageMetadata } from '@/lib/getPageMetadata';
+import { InnerHero } from '@/components/sections/InnerHero';
+import { LicensesGrid } from '@/components/sections/LicensesGrid/LicensesGrid';
+import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
 
 export async function generateMetadata() {
   const { t } = await getLocaleAndTranslations();
@@ -9,9 +12,16 @@ export async function generateMetadata() {
 export default async function LicensesPage() {
   const { t } = await getLocaleAndTranslations();
   return (
-    <div className='h-[100vh] w-full'>
-      <h1 className='m-24 text-8xl font-bold'>{t.licenses.title}</h1>
-      <p className='m-24 text-3xl font-medium'>{t.licenses.description}</p>
-    </div>
+    <>
+      <InnerHero
+        title={t.licenses.title}
+        breadcrumbLabel={t.licenses.breadcrumbLabel}
+        image="/assets/images/pages/Home/swiper1.webp"
+      />
+      <LicensesGrid />
+      <div className="flex justify-center relative w-full my-24">
+        <ContactCtaSection />
+      </div>
+    </>
   );
 }

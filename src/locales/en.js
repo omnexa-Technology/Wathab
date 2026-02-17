@@ -212,7 +212,25 @@ export default {
     heroTitle: 'Let\'s draw a sustainable path for your projects together.. Contact us',
     breadcrumbLabel: 'Contact Us',
   },
-  licenses: { title: 'Environmental Licenses and Permits', description: 'Obtaining environmental licenses and permits necessary for your projects.', sectionTitle: 'Environmental Licenses and Permits' },
+  licenses: {
+    title: 'Environmental Licenses and Permits',
+    description: 'Obtaining environmental licenses and permits necessary for your projects.',
+    sectionTitle: 'Environmental Licenses and Permits',
+    breadcrumbLabel: 'Licenses',
+    grid: {
+      title: 'Our Licenses and Certifications',
+      license1: {
+        title: 'Environmental Studies and Consulting Services License Category A',
+        description: 'As a Category (A) classified consulting office with the National Center for Environmental Compliance (NCEC), at Wathb we provide more than just studies; we build a bridge that connects strict environmental requirements with your operational efficiency. We work to transform sustainability strategies into daily operational protocols that ensure the protection of your projects in the Saudi market, enabling you to reduce environmental footprint while maximizing resource efficiency and minimizing costs. We don\'t just ensure your compliance, we create added value for your business.',
+        alt: 'Environmental License Certificate from the National Center for Environmental Compliance',
+      },
+      license2: {
+        title: 'License to Implement Treatment and Rehabilitation Plans',
+        description: 'At Wathb, we are proud to enhance our operational capabilities by obtaining a license to implement environmental treatment and rehabilitation plans. We don\'t just create plans, but we have the authority and technical expertise for field supervision and implementation of engineering solutions to rehabilitate damaged sites, ensuring the restoration of environmental balance and transforming sites into sustainable assets that comply with national and international standards.',
+        alt: 'Environmental Treatment and Rehabilitation License',
+      },
+    },
+  },
   sectors: {
     title: 'Our Sectors',
     description: 'Browse our portfolio of environmental consulting projects and case studies.',
