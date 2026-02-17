@@ -16,9 +16,12 @@ export function ValueCard({
 }) {
   return (
     <Card
-      className={`flex flex-col items-center justify-center gap-8 ${paddingTop} pb-0 px-0 relative flex-1 grow border-0 bg-transparent shadow-none ${className}`}
+      className={`flex flex-col items-center justify-center gap-5 pb-0 px-0 relative flex-1 min-w-0 w-full border-0 bg-transparent shadow-none
+        sm:gap-6
+        lg:grow lg:gap-8 ${paddingTop}
+        ${className}`}
     >
-      <CardContent className="p-0">
+      <CardContent className="p-0 w-full min-w-0">
         <ValueCardContent
           iconSrc={iconSrc}
           iconAlt={iconAlt}

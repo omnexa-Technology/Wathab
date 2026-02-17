@@ -1,7 +1,5 @@
 'use client';
 
-
-
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { OurValuesHeader } from '@/components/molecules/OurValuesHeader/OurValuesHeader';
 import { ValueCard } from '@/components/molecules/ValueCard/ValueCard';
@@ -17,7 +15,7 @@ export function OurValuesSection({ className = '' }) {
       iconAlt: 'Sustainability icon',
       titleKey: 'ourValues.values.sustainability.title',
       descriptionKey: 'ourValues.values.sustainability.description',
-      paddingTop: 'pt-24',
+      paddingTop: 'lg:pt-24',
     },
     {
       id: 'transparency',
@@ -33,7 +31,7 @@ export function OurValuesSection({ className = '' }) {
       iconAlt: 'Cooperation icon',
       titleKey: 'ourValues.values.cooperation.title',
       descriptionKey: 'ourValues.values.cooperation.description',
-      paddingTop: 'pt-[120px]',
+      paddingTop: 'lg:pt-[120px]',
     },
     {
       id: 'excellence',
@@ -48,11 +46,18 @@ export function OurValuesSection({ className = '' }) {
   return (
     <section
       dir={isRTL ? 'rtl' : 'ltr'}
-      className={`flex flex-col w-[1920px] items-center gap-24 px-[120px] py-24 relative bg-[#222222] ${className}`}
+      className={`flex flex-col w-full max-w-full items-center overflow-x-hidden bg-[#222222] min-w-0
+        gap-10 px-4 py-12
+        sm:gap-12 sm:px-5 sm:py-14
+        md:gap-14 md:px-6 md:py-16
+        lg:gap-20 lg:px-12 lg:py-24
+        xl:gap-24 xl:px-16
+        2xl:gap-24 2xl:px-[120px] 2xl:py-24
+        ${className}`}
     >
       <OurValuesHeader />
 
-      <div className="flex items-start gap-12 relative self-stretch w-full flex-[0_0_auto]">
+      <div className="flex flex-col items-stretch gap-8 w-full min-w-0 self-stretch sm:gap-10 md:gap-12 lg:flex-row lg:items-start lg:gap-12 xl:gap-16">
         {valuesData.map((value) => (
           <ValueCard
             key={value.id}
