@@ -93,7 +93,7 @@ export default function HomePage() {
       </div>
 
       {/* Section 10: Our Clients (عملائنا) */}
-      <div className="flex justify-center relative w-full">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
         <OurClientsSection />
       </div>
       {/* Section 9: Why Choose Us (لماذا تختار حلولنا البيئية) */}
