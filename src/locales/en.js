@@ -321,6 +321,54 @@ export default {
         description: 'Obtaining the necessary environmental licenses and permits for your projects',
       },
     },
+    
+    grid: {
+      mainTitle: '10 integrated environmental services to empower your business',
+      introDescription: 'From licenses and permits for "National Center for Waste Management (Mawan) and National Center for Environmental Compliance" to site treatment and rehabilitation: we offer professional solutions that ensure your facilities comply with the highest legal and technical standards throughout the Kingdom.',
+      cards: {
+        card1: {
+          title: 'Environmental Impact Assessment Studies',
+          description: 'Preparation of environmental impact assessment studies for projects with medium and high impact, Category (2) and Category (3).',
+        },
+        card2: {
+          title: 'Preparation of Environmental Treatment and Rehabilitation Plans',
+          description: 'Preparation of environmental treatment and rehabilitation plans for sites affected by various activities, according to the Center\'s requirements.',
+        },
+        card3: {
+          title: 'Preparation of Environmental Management Plans',
+          description: 'Preparation of environmental management plans for projects and facilities with potential environmental impact, Category (1).',
+        },
+        card4: {
+          title: 'Waste Management (Mawan)',
+          description: 'Preparation and implementation of waste management plans for facilities and projects, according to the waste management system and requirements.',
+        },
+        card5: {
+          title: 'Preparation of Environmental Records and Reports',
+          description: 'Preparation and updating of periodic environmental records and reports required by the National Center for Environmental Compliance.',
+        },
+        card6: {
+          title: 'Environmental Audit Studies',
+          description: 'Implementation of environmental audit work for facilities and projects aiming to assess the level of environmental compliance for facilities.',
+        },
+        card7: {
+          title: 'Environmental Consultations for Compliance and Licensing',
+          description: 'Providing environmental consultations for facilities and projects to support compliance with the environmental system and its executive regulations.',
+        },
+        card8: {
+          title: 'Implementation of Environmental Treatment and Rehabilitation Plans',
+          description: 'Implementation and supervision of environmental treatment and rehabilitation work approved by the National Center for Environmental Compliance.',
+        },
+        card9: {
+          title: 'Environmental Training and Capacity Building',
+          description: 'Designing and implementing specialized training and capacity building programs in the field of environmental compliance, including environmental system requirements.',
+        },
+        card10: {
+          title: 'Preparation of Noise Correction and Modeling Plans',
+          description: 'Providing environmental measurement and assessment services, sound propagation modeling, and sound level assessment services.',
+        },
+      },
+    },
+    
   },
   clients: {
     sectionTitle: 'Our Clients',
