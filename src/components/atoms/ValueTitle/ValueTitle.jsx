@@ -5,10 +5,15 @@
 
 export function ValueTitle({ children, className = '' }) {
   return (
-    <h4
-      className={`mt-[-1.00px] font-h4 font-[number:var(--h4-font-weight)] text-white text-4xl font-semibold leading-[var(--h4-line-height)] relative self-stretch text-center tracking-[var(--h4-letter-spacing)] [direction:rtl] [font-style:var(--h4-font-style)] ${className}`}
+    <h3
+      className={`font-din font-semibold text-white self-stretch text-center tracking-normal [direction:rtl] [font-style:var(--h4-font-style)]
+        text-xl leading-snug
+        sm:text-2xl sm:leading-tight
+        md:text-3xl
+        lg:text-4xl lg:leading-[var(--h4-line-height)]
+        ${className}`}
     >
       {children}
-    </h4>
+    </h3>
   );
 }
