@@ -108,7 +108,7 @@ export default function HomePage() {
       </div>
 
       {/* Section 12: Team (الفريق) */}
-      <div className="flex justify-center relative w-full">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
         <TeamSection />
       </div>
 
