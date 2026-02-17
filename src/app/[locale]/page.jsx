@@ -83,7 +83,7 @@ export default function HomePage() {
       </div>
 
       {/* Section 7: Our Services (خدماتنا) */}
-      <div className="flex justify-center relative w-full">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
         <OurServicesSection />
       </div>
 

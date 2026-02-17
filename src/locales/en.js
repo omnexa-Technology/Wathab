@@ -324,6 +324,7 @@ export default {
   services: {
     sectionTitle: 'Our Services',
     requestServiceNow: 'Request Service Now',
+    discoverMoreServices: 'Discover More Services',
     description: 'We offer integrated environmental solutions including permit extraction, compliance reports, waste management licenses (Mawan) and recycling. We also excel in pollution treatment, site rehabilitation, and closure plans with the highest standards of accuracy and best costs.',
     items: {
       eia: {
