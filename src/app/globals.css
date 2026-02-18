@@ -241,30 +241,33 @@ body {
   animation: achievements-image-scale 700ms ease-out forwards;
 }
 
-/* Hover-to-expand achievements carousel - Figma: 680px height */
-.achievements-carousel {
-  min-height: 680px;
-}
-
-@media (max-width: 768px) {
-  .achievements-carousel {
-    min-height: 400px;
-  }
-}
-
+/* Hover-to-expand achievements carousel - height set via Tailwind in component */
 .achievements-carousel-card {
   flex-shrink: 0;
 }
 
 .achievements-carousel-card-expanded {
   flex: 1 1 55%;
-  min-width: min(400px, 80vw);
+  min-width: min(320px, 85vw);
+}
+
+@media (min-width: 1024px) {
+  .achievements-carousel-card-expanded {
+    min-width: min(400px, 80vw);
+  }
 }
 
 .achievements-carousel-card-collapsed {
-  flex: 0 1 80px;
-  min-width: 80px;
+  flex: 0 1 64px;
+  min-width: 64px;
   opacity: 0.85;
+}
+
+@media (min-width: 640px) {
+  .achievements-carousel-card-collapsed {
+    flex: 0 1 80px;
+    min-width: 80px;
+  }
 }
 
 .achievements-carousel-card-collapsed:hover {
