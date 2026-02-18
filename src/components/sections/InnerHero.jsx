@@ -46,7 +46,7 @@ export function InnerHero({ title, description, image, breadcrumbLabel }) {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start">
+      <div className="relative z-20 w-full max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start">
         <div className="flex flex-col gap-16 sm:gap-24 lg:gap-[120px] items-start w-full max-w-full sm:max-w-[90%] lg:max-w-[724px]">
           {/* Main Title */}
           <h1
