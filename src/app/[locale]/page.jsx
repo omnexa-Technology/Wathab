@@ -78,7 +78,7 @@ export default function HomePage() {
       </div>
 
       {/* Section 6: Our Values (قيمنا) */}
-      <div className="flex justify-center relative w-full mt-25">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0 mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-24">
         <OurValuesSection />
       </div>
 

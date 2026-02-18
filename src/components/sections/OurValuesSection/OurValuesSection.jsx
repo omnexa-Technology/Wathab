@@ -47,17 +47,22 @@ export function OurValuesSection({ className = '' }) {
     <section
       dir={isRTL ? 'rtl' : 'ltr'}
       className={`flex flex-col w-full max-w-full items-center overflow-x-hidden bg-[#222222] min-w-0
-        gap-10 px-4 py-12
-        sm:gap-12 sm:px-5 sm:py-14
-        md:gap-14 md:px-6 md:py-16
+        gap-8 px-4 py-10
+        sm:gap-10 sm:px-5 sm:py-12
+        md:gap-12 md:px-6 md:py-16
         lg:gap-20 lg:px-12 lg:py-24
-        xl:gap-24 xl:px-16
+        xl:gap-24 xl:px-16 xl:py-24
         2xl:gap-24 2xl:px-[120px] 2xl:py-24
         ${className}`}
     >
       <OurValuesHeader />
 
-      <div className="flex flex-col items-stretch gap-8 w-full min-w-0 self-stretch sm:gap-10 md:gap-12 lg:flex-row lg:items-start lg:gap-12 xl:gap-16">
+      <div className="flex flex-col items-stretch gap-8 w-full max-w-full min-w-0 self-stretch
+        sm:gap-10
+        md:gap-12
+        lg:flex-row lg:items-start lg:gap-12 lg:flex-wrap
+        xl:gap-16 xl:flex-nowrap
+        2xl:gap-24">
         {valuesData.map((value) => (
           <ValueCard
             key={value.id}
