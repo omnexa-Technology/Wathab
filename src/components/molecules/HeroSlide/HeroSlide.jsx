@@ -40,9 +40,9 @@ export function HeroSlide({
                 {t(descriptionKey)}
               </h4>
             </div>
-            <Link href='/ar/contact' className={`inline-flex h-auto items-center justify-center gap-4 px-6 py-2.5 bg-[#1b6936] hover:bg-[#1b6936]/90 rounded-[32px] ${ctaOrder}`}>
-              <ArrowLeft className="w-8 h-8 text-white" aria-hidden />
-              <span className="text-2xl font-bold text-white   [font-style:var(--text-20bold-font-style)] whitespace-nowrap">
+            <Link href='/ar/contact' className={`inline-flex h-auto items-center justify-center gap-4 px-6 py-2.5 bg-white hover:bg-[#1b6936]/90 rounded-[32px] ${ctaOrder}`}>
+              <ArrowLeft className="w-8 h-8 text-[#1b6036]" aria-hidden />
+              <span className="text-2xl font-bold text-[#1b6036]   [font-style:var(--text-20bold-font-style)] whitespace-nowrap">
                 {t(ctaKey)}
               </span>
             </Link>
