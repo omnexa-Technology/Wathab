@@ -13,10 +13,10 @@ export function FooterBrand({ className = '', ...props }) {
       className={`flex flex-col gap-6 flex-1 min-w-0 sm:gap-8 lg:gap-12 ${language === 'ar' ? 'items-end' : 'items-start'} ${className}`}
       {...props}
     >
-      <div className={`flex flex-col gap-6 w-full min-w-0 sm:gap-8 ${language === 'ar' ? 'items-end' : 'items-start'}`}>
+      <div className={`flex flex-col gap-6 w-full min-w-0 sm:gap-8 ${language === 'ar' ? 'items-start' : 'items-start'}`}>
         <div className="inline-flex items-center gap-[6.86px] shrink-0">
           <Logo
-            src="/assets/icons/logo/logo-dark.svg"
+            src="/assets/icons/logo/dark1.svg"
             alt="Wathb Logo"
             width={208}
             height={51}
