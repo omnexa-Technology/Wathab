@@ -42,17 +42,17 @@ export function AboutFeatures() {
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       <div className="flex flex-col lg:flex-row gap-16 items-start max-w-[1440px] mx-auto">
-      {/* Image Section */}
-      <div className="shrink-0 w-full lg:w-[680px] h-[400px] lg:h-[680px] relative rounded-3xl overflow-hidden">
-        <Image
-          src="/assets/images/pages/About/intro1.webp"
-          alt="Environmental Solutions"
-          fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 680px"
-          priority
-        />
-      </div>
+        {/* Image Section */}
+        <div className="shrink-0 w-full lg:w-[680px] h-[400px] lg:h-[680px] relative rounded-3xl overflow-hidden">
+          <Image
+            src="/assets/images/pages/About/about1.webp"
+            alt="Environmental Solutions"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 680px"
+            priority
+          />
+        </div>
         {/* Content Section */}
         <div className={`flex-1 flex flex-col gap-12 items-start`}>
           {/* Section Title with Decorative Element */}

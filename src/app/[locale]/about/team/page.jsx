@@ -5,18 +5,18 @@ import { TeamMemberSection } from '@/components/sections/TeamMemberSection/TeamM
 import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
 
 export async function generateMetadata() {
-  const { t } = await getLocaleAndTranslations();
-  return buildPageMetadata(t, 'team');
+    const { t } = await getLocaleAndTranslations();
+    return buildPageMetadata(t, 'team');
 }
 
 export default async function TeamPage() {
-  const { t } = await getLocaleAndTranslations();
+    const { t } = await getLocaleAndTranslations();
     return (
         <>
             <InnerHero
                 title={t.team.sectionTitle}
                 breadcrumbLabel={t.team.sectionTitle}
-                image="/assets/images/team/heroCover.webp"
+                image="/assets/images/pages/About/heroTeam.webp"
             />
             <TeamMemberSection />
             <div className='flex justify-center relative w-full my-24'>
