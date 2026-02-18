@@ -97,7 +97,7 @@ export default function HomePage() {
         <OurClientsSection />
       </div>
       {/* Section 9: Why Choose Us (لماذا تختار حلولنا البيئية) */}
-      <div className="flex justify-center relative w-full">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
         <WhyChooseSection />
       </div>
 
