@@ -24,7 +24,7 @@ export default function AboutPage() {
       <InnerHero
         title={heroTitle}
         breadcrumbLabel={aboutBreadcrumbLabel}
-        image="/assets/images/pages/Home/swiper1.webp"
+        image="/assets/images/pages/About/heroAbout.webp"
       />
 
       {/* Intro Section with Image Grid */}

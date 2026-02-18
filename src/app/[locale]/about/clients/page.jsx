@@ -15,7 +15,7 @@ export default async function ClientsPage() {
       <InnerHero
         title={t.clients.subtitle}
         breadcrumbLabel={t.clients.sectionTitle}
-        image="/assets/images/pages/Home/swiper1.webp"
+        image="/assets/images/pages/About/heroClients.webp"
       />
       <div className='flex justify-center relative w-full'>
         <AboutClientSection />
