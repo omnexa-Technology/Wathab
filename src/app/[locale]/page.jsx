@@ -83,17 +83,17 @@ export default function HomePage() {
       </div>
 
       {/* Section 7: Our Services (خدماتنا) */}
-      <div className="flex justify-center relative w-full">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
         <OurServicesSection />
       </div>
 
       {/* Section 8: Achievements (إنجازاتنا) */}
-      <div className="flex justify-center relative w-full">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
         <AchievementsSection />
       </div>
 
       {/* Section 10: Our Clients (عملائنا) */}
-      <div className="flex justify-center relative w-full">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
         <OurClientsSection />
       </div>
       {/* Section 9: Why Choose Us (لماذا تختار حلولنا البيئية) */}
@@ -108,7 +108,7 @@ export default function HomePage() {
       </div>
 
       {/* Section 12: Team (الفريق) */}
-      <div className="flex justify-center relative w-full">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
         <TeamSection />
       </div>
 
@@ -118,7 +118,7 @@ export default function HomePage() {
       </div>
 
       {/* Section 14: FAQ (الأسئلة الشائعة) */}
-      <div className="flex justify-center relative w-full">
+      <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
         <FaqSection />
       </div>
     </>

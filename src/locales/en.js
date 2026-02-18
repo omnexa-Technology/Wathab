@@ -324,6 +324,7 @@ export default {
   services: {
     sectionTitle: 'Our Services',
     requestServiceNow: 'Request Service Now',
+    discoverMoreServices: 'Discover More Services',
     description: 'We offer integrated environmental solutions including permit extraction, compliance reports, waste management licenses (Mawan) and recycling. We also excel in pollution treatment, site rehabilitation, and closure plans with the highest standards of accuracy and best costs.',
     items: {
       eia: {
@@ -445,6 +446,7 @@ export default {
   },
   team: {
     sectionTitle: 'The Team',
+    discoverMore: 'Discover More About Us',
     title: 'Engineering minds.. shaping the present of resources and building your future',
     description: 'Because we believe that leadership begins with precision; Wathb comprises a select group of engineers and international experts who shaped the features of the Kingdom\'s natural resources, to be your most trusted partner in the journey of compliance and excellence.',
   },
