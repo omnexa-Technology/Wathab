@@ -1,0 +1,1 @@
+export { ArticleIcon } from './ArticleIcon';
