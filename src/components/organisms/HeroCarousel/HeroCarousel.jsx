@@ -9,7 +9,6 @@ import { CarouselNavigation } from '@/components/molecules/CarouselNavigation/Ca
 import { CarouselPagination } from '@/components/molecules/CarouselPagination/CarouselPagination';
 import { HeroSlide } from '@/components/molecules/HeroSlide/HeroSlide';
 
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -83,8 +82,24 @@ export function HeroCarousel({
           <SwiperSlide key={slide.id || index}>
             {slide.imageSrc && (
               <div className="absolute inset-0 z-0">
+                <div
+                  className="absolute top-0 right-0 h-full w-full sm:w-[70%] lg:w-[56.25%] z-1"
+                  style={{
+                    background: isRTL
+                      ? 'linear-gradient(90.5deg, rgba(27, 105, 54, 0) 0.35%, rgb(27, 105, 54) 99.74%)'
+                      : 'linear-gradient(270.5deg, rgba(27, 105, 54, 0) 0.35%, rgb(27, 105, 54) 99.74%)'
+                  }}
+                />
+                <div
+                  className="absolute top-0 left-0 sm:left-[30%] lg:left-[48.125%] h-full w-full sm:w-[70%] lg:w-[51.875%] z-2"
+                  style={{
+                    background: isRTL
+                      ? 'linear-gradient(90.46deg, rgba(27, 105, 54, 0) 0.35%, rgba(27, 105, 54, 0.9) 99.74%)'
+                      : 'linear-gradient(270.46deg, rgba(27, 105, 54, 0) 0.35%, rgba(27, 105, 54, 0.9) 99.74%)'
+                  }}
+                />
                 <Image
-                  src={slide.imageSrc}
+                  src='/assets/images/pages/Home/HeroHome.webp'
                   alt="hero cover"
                   fill
                   className="object-cover"
@@ -123,6 +138,6 @@ export function HeroCarousel({
           onSlideChange={handlePaginationClick}
         />
       </div>
-    </div>
+    </div >
   );
 }
