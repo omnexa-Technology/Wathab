@@ -1,5 +1,8 @@
 import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
 import { buildPageMetadata } from '@/lib/getPageMetadata';
+import { InnerHero } from '@/components/sections/InnerHero';
+import { ArticlesGrid } from '@/components/sections/ArticlesGrid';
+import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
 
 export async function generateMetadata() {
   const { t } = await getLocaleAndTranslations();
@@ -9,9 +12,16 @@ export async function generateMetadata() {
 export default async function ArticlesPage() {
   const { t } = await getLocaleAndTranslations();
   return (
-    <div className='h-[100vh] w-full'>
-      <h1 className='m-24 text-8xl font-bold'>{t.articles.title}</h1>
-      <p className='m-24 text-3xl font-medium'>{t.articles.description}</p>
-    </div>
+    <>
+      <InnerHero
+        title={t.articles.title}
+        breadcrumbLabel={t.articles.breadcrumbLabel}
+        image="/assets/images/Articels/Hero.webp"
+      />
+      <ArticlesGrid />
+      <div className="flex justify-center relative w-full my-24">
+        <ContactCtaSection />
+      </div>
+    </>
   );
 }
