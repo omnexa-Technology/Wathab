@@ -205,7 +205,36 @@ export default {
   },
   services: { title: 'Our Services', description: 'Explore our comprehensive range of environmental consulting services designed for your needs.', slugDescription: 'Detail page for this service.' },
   projects: { title: 'Our Projects', description: 'Browse our portfolio of environmental consulting projects and case studies.', slugDescription: 'Detail page for this project.' },
-  articles: { title: 'Articles', description: 'Latest articles and insights on environmental consulting and sustainability.', slugDescription: 'Article content.' },
+  articles: {
+    title: 'Record of Leadership - Our Strategic Achievements Across Sectors',
+    description: 'Latest articles and insights on environmental consulting and sustainability.',
+    slugDescription: 'Article content.',
+    breadcrumbLabel: 'Achievement Record',
+    grid: {
+      article1: {
+        title: 'Industrial Sector (Environmental Impact Studies)',
+        project: 'Providing comprehensive Environmental Impact Assessment (EIA) studies for major factories in strategic fields, including the petrochemicals and iron industries, at multiple locations across the Kingdom',
+        achievement: 'Successfully completed rehabilitation of damaged soil and vegetation, allowing project completion and site handover without recording any violations or pending environmental obligations.',
+      },
+      article2: {
+        title: 'Real Estate and Tourism Sector (Environmental Management Plans)',
+        project: 'Preparation and development of integrated Environmental Management Plans (EMP) for a luxury tourist resort development project on the Red Sea coast.',
+        achievement: 'Ensuring complete and effective protection of marine biodiversity and sensitive ecosystems throughout construction and operation phases, while complying with the highest international and local environmental standards.',
+      },
+      article3: {
+        title: 'Infrastructure (Audit and Rehabilitation)',
+        project: 'Conducting comprehensive environmental audits and preparing detailed rehabilitation plans for quarry construction sites in several regions of the Kingdom.',
+        achievement: 'Successfully completed rehabilitation of damaged soil and vegetation, allowing project completion and site handover without recording any violations or pending environmental obligations.',
+      },
+      article4: {
+        title: 'Renewable Energy (Compliance and Monitoring)',
+        project: 'Working on a modern project in its early implementation stages within the clean energy sector, as well as renewable energy in several regions of the Kingdom',
+        achievement: 'Completion of initial Environmental Site Assessment (ESA) and establishment of advanced environmental monitoring programs to ensure full and continuous compliance with all clean energy project requirements and standards.',
+      },
+      projectLabel: 'Project:',
+      achievementLabel: 'Achievement:',
+    },
+  },
   contact: {
     title: 'Contact Us',
     description: 'Get in touch with our team to discuss your environmental consulting needs.',

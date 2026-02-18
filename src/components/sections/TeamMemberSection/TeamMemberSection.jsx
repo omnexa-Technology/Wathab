@@ -4,7 +4,6 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { TeamMemberCardAlt } from '@/components/molecules/TeamMemberCardAlt/TeamMemberCardAlt';
 
-// Static team data - same as TeamSection but used for grid layout
 const TEAM_DATA = [
   {
     id: 'member-0',
@@ -14,18 +13,11 @@ const TEAM_DATA = [
     linkedin: 'https://www.linkedin.com/in/mane-abudrahem-37a14a95/',
   },
   {
-    id: 'member-1',
-    imageSrc: '/assets/images/team/Ellipse 7 (2).svg',
-    name: 'محمد ال خضير',
-    role: 'أخصائى صحه بيئية',
-    linkedin: 'https://www.linkedin.com/feed/',
-  },
-  {
-    id: 'member-2',
-    imageSrc: '/assets/images/team/Ellipse 7 (1).svg',
-    name: 'محمد فتحى',
-    role: 'مهندس بيئى أول (أخصائى بيئة بحرية)',
-    linkedin: 'https://www.linkedin.com/in/mohamed-fathy-366a77293/',
+    id: 'member-5',
+    imageSrc: '/assets/images/team/Ellipse 7 (6).svg',
+    name: 'محمد الفاتح',
+    role: 'مدير الجودة',
+    linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
   },
   {
     id: 'member-3',
@@ -35,17 +27,24 @@ const TEAM_DATA = [
     linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
   },
   {
+    id: 'member-2',
+    imageSrc: '/assets/images/team/Ellipse 7 (1).svg',
+    name: 'محمد فتحى',
+    role: 'مهندس بيئى أول (أخصائى بيئة بحرية)',
+    linkedin: 'https://www.linkedin.com/in/mohamed-fathy-366a77293/',
+  },
+  {
+    id: 'member-1',
+    imageSrc: '/assets/images/team/Ellipse 7 (2).svg',
+    name: 'محمد ال خضير',
+    role: 'أخصائى صحه بيئية',
+    linkedin: 'https://www.linkedin.com/feed/',
+  },
+  {
     id: 'member-4',
     imageSrc: '/assets/images/team/Ellipse 7 (7).svg',
     name: 'د.أيمن عبد الرحمن',
     role: 'خبير استخدام الاستشعار عن بعد والذكاء الصناعي ، في الرصد البيئي، عضو المركز الاوربي لابحاث الفضاء.',
-    linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
-  },
-  {
-    id: 'member-5',
-    imageSrc: '/assets/images/team/Ellipse 7 (6).svg',
-    name: 'محمد الفاتح',
-    role: 'مدير الجودة',
     linkedin: 'https://www.linkedin.com/in/mahmoud-abdallah-133009218/',
   },
   {
@@ -85,13 +84,6 @@ const TEAM_DATA = [
   },
 ];
 
-/**
- * TeamMemberSection - Displays all team members in a grid layout
- * Used specifically for the team page
- * @param {Object} props
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
 export function TeamMemberSection({ className = '' }) {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
