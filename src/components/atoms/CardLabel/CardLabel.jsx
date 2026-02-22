@@ -2,10 +2,6 @@
 
 import { cn } from '../../../lib/utils';
 
-/**
- * CardLabel - Text label atom for carousel cards
- * Provides consistent typography for card content
- */
 export function CardLabel({ children, variant = 'description', className = '' }) {
   const variantClasses = {
     title: 'font-din font-medium text-[32px] leading-[56px] text-white',
