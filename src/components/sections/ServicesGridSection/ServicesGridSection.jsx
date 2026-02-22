@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { ServicesGridCard } from '@/components/molecules/ServicesGridCard/ServicesGridCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { ServicesGridCard } from '../../molecules/ServicesGridCard/ServicesGridCard';
 import {
   FileText,
   Leaf,

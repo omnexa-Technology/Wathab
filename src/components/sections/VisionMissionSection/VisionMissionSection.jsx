@@ -2,9 +2,9 @@
 
 
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { VisionMissionCard } from '@/components/molecules/VisionMissionCard/VisionMissionCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { VisionMissionCard } from '../../molecules/VisionMissionCard/VisionMissionCard';
 
 export function VisionMissionSection({ className = '' }) {
   const { t } = useTranslation();

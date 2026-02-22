@@ -1,9 +1,9 @@
 'use client';
 
 import { usePathname, useRouter } from 'next/navigation';
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { Icon } from '@/components/atoms/Icon/Icon';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { Icon } from '../../../components/atoms/Icon/Icon';
 
 export function LanguageSwitcher() {
   const { t } = useTranslation();

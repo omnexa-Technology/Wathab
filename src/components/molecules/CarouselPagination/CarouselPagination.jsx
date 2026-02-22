@@ -1,7 +1,7 @@
 'use client';
 
-import { CarouselPaginationDot } from '@/components/atoms/CarouselPaginationDot/CarouselPaginationDot';
-import { useTranslation } from '@/hooks/useTranslation';
+import { CarouselPaginationDot } from '../../atoms/CarouselPaginationDot/CarouselPaginationDot';
+import { useTranslation } from '../../../hooks/useTranslation';
 
 /**
  * Carousel pagination indicator list

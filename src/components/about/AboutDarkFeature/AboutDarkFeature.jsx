@@ -1,10 +1,10 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { Container } from '@/components/atoms/Container/Container';
-import { Heading } from '@/components/atoms/Heading/Heading';
-import { Paragraph } from '@/components/atoms/Paragraph/Paragraph';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { Container } from '../../../components/atoms/Container/Container';
+import { Heading } from '../../../components/atoms/Heading/Heading';
+import { Paragraph } from '@../../../omponents/atoms/Paragraph/Paragraph';
 import { Lightbulb, Target } from 'lucide-react';
 
 export function AboutDarkFeature() {

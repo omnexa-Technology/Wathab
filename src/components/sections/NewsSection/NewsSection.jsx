@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { ArticleCard } from '@/components/molecules/ArticleCard/ArticleCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { ArticleCard } from '../../molecules/ArticleCard/ArticleCard';
 import Link from 'next/link';
 
 const FALLBACK_ARTICLES = [

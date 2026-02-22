@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { Container } from '@/components/atoms/Container/Container';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { Container } from '../../../components/atoms/Container/Container';
 import Image from 'next/image';
 
 export function AboutIntro() {

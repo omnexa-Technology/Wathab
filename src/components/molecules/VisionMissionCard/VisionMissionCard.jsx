@@ -4,10 +4,10 @@
  * Features: glass-morphism effect, green border, backdrop blur
  */
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from '../../ui/card';
 // import { CardTitle } from "@/components/atoms/CardTitle/CardTitle";
-import { CardDescription } from "@/components/atoms/CardDescription/CardDescription";
-import FadeContent from "@/components/FadeContent";
+import { CardDescription } from '../../atoms/CardDescription/CardDescription';
+import FadeContent from '../../FadeContent';
 export function VisionMissionCard({
   title,
   description,

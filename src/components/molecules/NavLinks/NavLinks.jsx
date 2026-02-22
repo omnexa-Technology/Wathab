@@ -1,6 +1,6 @@
 'use client';
 
-import { NavLink } from '@/components/atoms/NavLink/NavLink';
+import { NavLink } from '../../../components/atoms/NavLink/NavLink';
 
 const navItems = [
   { href: '/', key: 'navbar.home' },

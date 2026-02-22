@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
+import { useTranslation } from '../../../hooks/useTranslation';
 
 /**
  * ReasonCard - Single reason item: number badge + title + description.

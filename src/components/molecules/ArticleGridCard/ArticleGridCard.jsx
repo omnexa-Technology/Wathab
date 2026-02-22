@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 // import { ArticleIcon } from '@/components/atoms/ArticleIcon';
-import { useLanguageStore } from '@/store/useLanguageStore';
+import { useLanguageStore } from '../../../store/useLanguageStore';
 export function ArticleGridCard({
   imageSrc,
   iconSrc,

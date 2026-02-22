@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
-import { buildPageMetadata } from '@/lib/getPageMetadata';
-import { sanityFetch } from '@/lib/sanity';
-import { urlFor } from '@/lib/sanity';
-import { SERVICE_BY_SLUG_QUERY } from '@/lib/queries';
+import { getLocaleAndTranslations } from '../../../../lib/getLocaleAndTranslations';
+import { buildPageMetadata } from '../../../../lib/getPageMetadata';
+import { sanityFetch } from '../../../../lib/sanity';
+import { urlFor } from '../../../../lib/sanity';
+import { SERVICE_BY_SLUG_QUERY } from '../../../../lib/queries';
 
 export async function generateMetadata({ params }) {
   const { slug } = await Promise.resolve(params);

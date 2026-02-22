@@ -1,20 +1,20 @@
-import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
-import { sanityFetch, urlFor } from '@/lib/sanity';
-import { NEWS_LIST_QUERY } from '@/lib/queries';
-import { HeroCarousel } from '@/components/organisms/HeroCarousel/HeroCarousel';
-import { StatsSection } from '@/components/organisms/StatsSection/StatsSection';
-import { OurAbout } from '@/components/organisms/OurAbout/OurAbout';
-// import { AboutSection } from '@/components/sections/AboutSection/AboutSection';
-import { VisionMissionSection } from '@/components/sections/VisionMissionSection';
-import { OurValuesSection } from '@/components/sections/OurValuesSection';
-import { OurServicesSection } from '@/components/sections/OurServicesSection/OurServicesSection';
-import { AchievementsSection } from '@/components/sections/AchievementsSection/AchievementsSection';
-import { WhyChooseSection } from '@/components/sections/WhyChooseSection/WhyChooseSection';
-import { OurClientsSection } from '@/components/sections/OurClientsSection/OurClientsSection';
-import { NewsSection } from '@/components/sections/NewsSection/NewsSection';
-import { TeamSection } from '@/components/sections/TeamSection/TeamSection';
-import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
-import { FaqSection } from '@/components/sections/FaqSection/FaqSection';
+import { getLocaleAndTranslations } from '../../lib/getLocaleAndTranslations';
+import { sanityFetch, urlFor } from '../../lib/sanity';
+import { NEWS_LIST_QUERY } from '../../lib/queries';
+import { HeroCarousel } from '../../components/organisms/HeroCarousel/HeroCarousel';
+import { StatsSection } from '../../components/organisms/StatsSection/StatsSection';
+import { OurAbout } from '../../components/organisms/OurAbout/OurAbout';
+// import { AboutSection } from '../../components/sections/AboutSection/AboutSection';
+import { VisionMissionSection } from '../../components/sections/VisionMissionSection';
+import { OurValuesSection } from '../../components/sections/OurValuesSection';
+import { OurServicesSection } from '../../components/sections/OurServicesSection/OurServicesSection';
+import { AchievementsSection } from '../../components/sections/AchievementsSection/AchievementsSection';
+import { WhyChooseSection } from '../../components/sections/WhyChooseSection/WhyChooseSection';
+import { OurClientsSection } from '../../components/sections/OurClientsSection/OurClientsSection';
+import { NewsSection } from '../../components/sections/NewsSection/NewsSection';
+import { TeamSection } from '../../components/sections/TeamSection/TeamSection';
+import { ContactCtaSection } from '../../components/sections/ContactCtaSection/ContactCtaSection';
+import { FaqSection } from '../../components/sections/FaqSection/FaqSection';
 
 const heroSlides = [
   {

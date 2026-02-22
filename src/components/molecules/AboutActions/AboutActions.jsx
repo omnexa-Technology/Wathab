@@ -5,7 +5,7 @@
  * Action buttons group for the About section
  */
 
-import { ActionButton } from '@/components/atoms/ActionButton/ActionButton';
+import { ActionButton } from '../../../components/atoms/ActionButton/ActionButton';
 import { ArrowRight, Download } from 'lucide-react';
 
 export function AboutActions({

@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { LogoBlock } from '@/components/molecules/LogoBlock/LogoBlock';
-import { NavList } from '@/components/molecules/NavList/NavList';
-import { NavActions } from '@/components/molecules/NavActions/NavActions';
+import { LogoBlock } from '../../molecules/LogoBlock/LogoBlock';
+import { NavList } from '../../molecules/NavList/NavList';
+import { NavActions } from '../../molecules/NavActions/NavActions';
 
 /**
  * Main navigation bar – Anima design.

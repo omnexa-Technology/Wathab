@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { Link } from '@/i18n/routing';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { Link } from '../../../i18n/routing';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 

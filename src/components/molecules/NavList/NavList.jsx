@@ -1,7 +1,7 @@
 'use client';
 
-import { NavItem } from '@/components/atoms/NavItem/NavItem';
-import { NavDropdown } from '@/components/molecules/NavDropdown/NavDropdown';
+import { NavItem } from '../../atoms/NavItem/NavItem';
+import { NavDropdown } from '../NavDropdown/NavDropdown';
 
 const navItems = [
   {

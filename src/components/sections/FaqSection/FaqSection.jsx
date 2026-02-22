@@ -1,9 +1,9 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { Accordion } from '@/components/ui/accordion';
-import { FaqItem } from '@/components/molecules/FaqItem/FaqItem';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { Accordion } from '../../ui/accordion.jsx';
+import { FaqItem } from '../../molecules/FaqItem/FaqItem';
 
 /**
  * FaqSection - Frequently Asked Questions section with accordion

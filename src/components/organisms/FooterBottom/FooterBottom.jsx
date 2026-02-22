@@ -1,9 +1,9 @@
 'use client';
 
-import { SocialIconsList } from '@/components/molecules/SocialIconsList/SocialIconsList';
-import { CopyrightText } from '@/components/molecules/CopyrightText/CopyrightText';
-import { FooterLink } from '@/components/atoms/FooterLink/FooterLink';
-import { useTranslation } from '@/hooks/useTranslation';
+import { SocialIconsList } from '../../molecules/SocialIconsList/SocialIconsList';
+import { CopyrightText } from '../../molecules/CopyrightText/CopyrightText';
+import { FooterLink } from '../../atoms/FooterLink/FooterLink';
+import { useTranslation } from '../../../hooks/useTranslation';
 
 export function FooterBottom({ className = '', ...props }) {
   const { t } = useTranslation();

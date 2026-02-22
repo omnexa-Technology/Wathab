@@ -4,17 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-/**
- * ArticleCard - Displays an article/news card with hover effects
- * @param {Object} props
- * @param {string} props.imageSrc - Path to article image
- * @param {string} props.title - Article title
- * @param {string} props.date - Article publication date
- * @param {string} props.excerpt - Article excerpt
- * @param {string} [props.href='#'] - Link to full article
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
+
 export function ArticleCard({
   imageSrc,
   title,

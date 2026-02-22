@@ -1,8 +1,8 @@
-import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
-import { buildPageMetadata } from '@/lib/getPageMetadata';
-import { sanityFetch, urlFor } from '@/lib/sanity';
-import { NEWS_LIST_QUERY } from '@/lib/queries';
-import { ArticleCard } from '@/components/molecules/ArticleCard/ArticleCard';
+import { getLocaleAndTranslations } from '../../../lib/getLocaleAndTranslations';
+import { buildPageMetadata } from '../../../lib/getPageMetadata';
+import { sanityFetch, urlFor } from '../../../lib/sanity';
+import { NEWS_LIST_QUERY } from '../../../lib/queries';
+import { ArticleCard } from '../../../components/molecules/ArticleCard/ArticleCard';
 
 const FALLBACK_IMAGE = '/assets/images/pages/Home/news1.webp';
 const NEWS_LIST_LIMIT = 100;

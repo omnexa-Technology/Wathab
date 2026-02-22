@@ -1,7 +1,7 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import LocaleLink from '@/components/LocaleLink';
+import { useTranslation } from '../../../hooks/useTranslation';
+import LocaleLink from '../../components/LocaleLink';
 
 export function HeroSection() {
   const { t } = useTranslation();

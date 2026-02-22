@@ -1,11 +1,11 @@
 'use client';
 
-import { ContactInfoList } from '@/components/molecules/ContactInfoList/ContactInfoList';
-import { BusinessHours } from '@/components/molecules/BusinessHours/BusinessHours';
-import { FooterLinkList } from '@/components/molecules/FooterLinkList/FooterLinkList';
-import { FooterBrand } from '@/components/molecules/FooterBrand/FooterBrand';
-import { SectionDivider } from '@/components/atoms/SectionDivider/SectionDivider';
-import { useTranslation } from '@/hooks/useTranslation';
+import { ContactInfoList } from '../../molecules/ContactInfoList/ContactInfoList';
+import { BusinessHours } from '../../molecules/BusinessHours/BusinessHours';
+import { FooterLinkList } from '../../molecules/FooterLinkList/FooterLinkList';
+import { FooterBrand } from '../../molecules/FooterBrand/FooterBrand';
+import { SectionDivider } from '../../atoms/SectionDivider/SectionDivider';
+import { useTranslation } from '../../../hooks/useTranslation';
 
 export function FooterMain({ className = '', ...props }) {
   const { t } = useTranslation();

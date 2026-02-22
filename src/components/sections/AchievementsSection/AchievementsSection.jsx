@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { AchievementCard } from '@/components/molecules/AchievementCard/AchievementCard';
-import { Link } from '@/i18n/routing';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { AchievementCard } from '../../molecules/AchievementCard/AchievementCard';
+import { Link } from '../../../i18n/routing';
 import Image from 'next/image';
 
 /**

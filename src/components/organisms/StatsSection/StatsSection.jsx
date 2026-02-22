@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
-import { StatCard } from '@/components/molecules/StatCard/StatCard';
+import { StatCard } from '../../molecules/StatCard/StatCard';
 
 const STATS_DATA = [
   {

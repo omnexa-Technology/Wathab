@@ -1,10 +1,10 @@
-import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
-import { buildPageMetadata } from '@/lib/getPageMetadata';
-import { sanityFetch, urlFor } from '@/lib/sanity';
-import { SERVICES_LIST_QUERY } from '@/lib/queries';
-import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
-import { InnerHero } from '@/components/sections/InnerHero';
-import { ServicesGridSection } from '@/components/sections/ServicesGridSection';
+import { getLocaleAndTranslations } from '../../../lib/getLocaleAndTranslations';
+import { buildPageMetadata } from '../../../lib/getPageMetadata';
+import { sanityFetch, urlFor } from '../../../lib/sanity';
+import { SERVICES_LIST_QUERY } from '../../../lib/queries';
+import { ContactCtaSection } from '../../../components/sections/ContactCtaSection/ContactCtaSection';
+import { InnerHero } from '../../../components/sections/InnerHero';
+import { ServicesGridSection } from '../../../components/sections/ServicesGridSection';
 
 export async function generateMetadata() {
   const { t } = await getLocaleAndTranslations();

@@ -1,8 +1,8 @@
 'use client';
 
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { OurValuesHeader } from '@/components/molecules/OurValuesHeader/OurValuesHeader';
-import { ValueCard } from '@/components/molecules/ValueCard/ValueCard';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { OurValuesHeader } from '../../molecules/OurValuesHeader/OurValuesHeader';
+import { ValueCard } from '../../molecules/ValueCard/ValueCard';
 
 export function OurValuesSection({ className = '' }) {
   const language = useLanguageStore((s) => s.language);

@@ -3,8 +3,8 @@
  * Wraps shadcn/ui Card around ValueCardContent with custom styling
  */
 
-import { Card, CardContent } from '@/components/ui/card';
-import { ValueCardContent } from '@/components/molecules/ValueCardContent/ValueCardContent';
+import { Card, CardContent } from '../../ui/card';
+import { ValueCardContent } from '../ValueCardContent/ValueCardContent';
 
 export function ValueCard({
   iconSrc,
