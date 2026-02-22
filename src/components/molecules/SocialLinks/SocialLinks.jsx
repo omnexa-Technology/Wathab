@@ -1,6 +1,6 @@
 'use client';
 
-import { Icon } from '@/components/atoms/Icon/Icon';
+import { Icon } from '../../../components/atoms/Icon/Icon';
 
 const socialLinks = [
   { name: 'whatsapp', href: '#' },

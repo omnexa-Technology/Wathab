@@ -1,24 +1,15 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
 import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from '@/components/ui/accordion';
-import { AccordionIcon } from '@/components/atoms/AccordionIcon';
+} from '../../ui/accordion.jsx';
+import { AccordionIcon } from '../../atoms/AccordionIcon';
 
-/**
- * FaqItem - Accordion-style FAQ item using shadcn accordion
- * Atomic Design: Molecule
- * @param {Object} props
- * @param {string} props.id - Unique identifier for the accordion item
- * @param {string} props.questionKey - Translation key for question
- * @param {string} props.answerKey - Translation key for answer
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
+
 export function FaqItem({
   id,
   questionKey,

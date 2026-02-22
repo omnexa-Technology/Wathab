@@ -1,17 +1,11 @@
 'use client';
 
-/**
- * AboutSection
- * Main About section component composed using Atomic Design principles
- * Features: Full i18n support, RTL/LTR layout adaptation, responsive design
- */
-
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { SectionHeading } from '@/components/molecules/SectionHeading/SectionHeading';
-import { AboutContent } from '@/components/molecules/AboutContent/AboutContent';
-import { AboutImage } from '@/components/molecules/AboutImage/AboutImage';
-import { AboutActions } from '@/components/molecules/AboutActions/AboutActions';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { SectionHeading } from '../../../components/molecules/SectionHeading/SectionHeading';
+import { AboutContent } from '../../../components/molecules/AboutContent/AboutContent';
+import { AboutImage } from '../../../components/molecules/AboutImage/AboutImage';
+import { AboutActions } from '../../../components/molecules/AboutActions/AboutActions';
 
 export function AboutSection({ className = '' }) {
   const { t } = useTranslation();

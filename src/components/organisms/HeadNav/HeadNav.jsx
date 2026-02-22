@@ -1,9 +1,9 @@
 'use client';
 
-import { Container } from '@/components/atoms/Container/Container';
-import { SocialLinks } from '@/components/molecules/SocialLinks/SocialLinks';
-import { useTranslation } from '@/hooks/useTranslation';
-import { ContactItem } from '@/components/atoms/ContactItem/ContactItem';
+import { Container } from '../../../components/atoms/Container/Container';
+import { SocialLinks } from '../../../components/molecules/SocialLinks/SocialLinks';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { ContactItem } from '../../../components/atoms/ContactItem/ContactItem';
 
 export function HeadNav() {
   const { t } = useTranslation();

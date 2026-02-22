@@ -1,8 +1,8 @@
 'use client';
 
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
 
 export function ContactInfoList({ className = '', ...props }) {
   const { t } = useTranslation();

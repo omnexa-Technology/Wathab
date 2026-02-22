@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { ArticleGridCard } from '@/components/molecules/ArticleGridCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { ArticleGridCard } from '../../../components/molecules/ArticleGridCard';
 
 
 export function ArticlesGrid({ className = '' }) {

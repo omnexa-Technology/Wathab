@@ -1,8 +1,8 @@
 'use client';
 
 import { Clock } from 'lucide-react';
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
 
 export function BusinessHours({ className = '', ...props }) {
   const { t } = useTranslation();

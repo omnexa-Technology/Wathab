@@ -1,16 +1,16 @@
 'use client';
 
-import { InnerHero } from '@/components/sections/InnerHero';
-import { useTranslation } from '@/hooks/useTranslation';
-import { AboutIntro } from '@/components/about/AboutIntro';
-import { AboutFeatures } from '@/components/about/AboutFeatures';
+import { InnerHero } from '../../../components/sections/InnerHero';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { AboutIntro } from '../../../components/about/AboutIntro';
+import { AboutFeatures } from '../../../components/about/AboutFeatures';
 // import { AboutDarkFeature } from '@/components/about/AboutDarkFeature';
-import { AboutTimeline } from '@/components/about/AboutTimeline';
+import { AboutTimeline } from '../../../components/about/AboutTimeline';
 // import { AboutStats } from '@/components/about/AboutStats';
 // import { AboutCTA } from '@/components/about/AboutCTA';
-import { VisionMissionSection } from '@/components/sections/VisionMissionSection';
-import { OurValuesSection } from '@/components/sections/OurValuesSection';
-import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
+import { VisionMissionSection } from '../../../components/sections/VisionMissionSection';
+import { OurValuesSection } from '../../../components/sections/OurValuesSection';
+import { ContactCtaSection } from '../../../components/sections/ContactCtaSection/ContactCtaSection';
 
 export default function AboutPage() {
   const { t } = useTranslation();

@@ -1,8 +1,8 @@
 'use client';
 
-import { Logo } from '@/components/atoms/Logo/Logo';
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
+import { Logo } from '../../atoms/Logo/Logo';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
 
 export function FooterBrand({ className = '', ...props }) {
   const { t } = useTranslation();

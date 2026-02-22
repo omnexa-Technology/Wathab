@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { TeamMemberCardAlt } from '@/components/molecules/TeamMemberCardAlt/TeamMemberCardAlt';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { TeamMemberCardAlt } from '../../../components/molecules/TeamMemberCardAlt/TeamMemberCardAlt';
 
 const TEAM_DATA = [
   {

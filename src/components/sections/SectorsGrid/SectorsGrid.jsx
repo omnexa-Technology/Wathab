@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { SectorCard } from '@/components/molecules/SectorCard/SectorCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { SectorCard } from '../../../components/molecules/SectorCard/SectorCard';
 
 /**
  * SectorsGrid - Displays a grid of sector cards with title

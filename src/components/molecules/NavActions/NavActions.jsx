@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { Globe, Sun } from 'lucide-react';
 import Image from 'next/image';
-import LocaleLink from '@/components/LocaleLink';
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { SearchButton } from '@/components/atoms/SearchButton/SearchButton';
+import LocaleLink from '../../LocaleLink';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { SearchButton } from '../../atoms/SearchButton/SearchButton';
 
 const THEME_STORAGE_KEY = 'app-theme';
 

@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Card, CardDescription, CardFooter, CardTitle } from '@/components/ui/card';
+import { Card, CardDescription, CardFooter, CardTitle } from '../../ui/card';
 
 /**
  * TeamMemberCard - Displays a single team member with image, name, role, and LinkedIn link

@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { CounterNumber } from '@/components/counter-number';
-import { CountIcon } from '@/components/atoms/CountIcon/CountIcon';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { CounterNumber } from '../../counter-number';
+import { CountIcon } from '../../atoms/CountIcon/CountIcon';
 
 export function StatCard({
   iconSrc,

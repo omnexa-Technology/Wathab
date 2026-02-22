@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import ar from '@/locales/ar';
-import en from '@/locales/en';
+import { useLanguageStore } from '../store/useLanguageStore';
+import ar from '../locales/ar';
+import en from '../locales/en';
 
 const locales = { ar, en };
 

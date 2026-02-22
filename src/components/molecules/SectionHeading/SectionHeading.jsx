@@ -3,8 +3,8 @@
  * Combines Indicator and Heading for section titles
  */
 
-import { Heading } from '@/components/atoms/Heading/Heading';
-import { Indicator } from '@/components/atoms/Indicator/Indicator';
+import { Heading } from '../../../components/atoms/Heading/Heading';
+import { Indicator } from '../../../components/atoms/Indicator/Indicator';
 
 export function SectionHeading({
   title,

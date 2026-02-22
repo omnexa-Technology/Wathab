@@ -1,8 +1,8 @@
 'use client';
 
-import { FooterMain } from '@/components/organisms/FooterMain/FooterMain';
-import { FooterBottom } from '@/components/organisms/FooterBottom/FooterBottom';
-import { WhatsAppButton } from '@/components/atoms/WhatsAppButton/WhatsAppButton';
+import { FooterMain } from '../FooterMain/FooterMain';
+import { FooterBottom } from '../FooterBottom/FooterBottom';
+import { WhatsAppButton } from '../../atoms/WhatsAppButton/WhatsAppButton';
 
 export function Footer() {
   return (

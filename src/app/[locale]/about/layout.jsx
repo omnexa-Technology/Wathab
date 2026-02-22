@@ -1,5 +1,5 @@
-import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
-import { buildPageMetadata } from '@/lib/getPageMetadata';
+import { getLocaleAndTranslations } from '../../../lib/getLocaleAndTranslations';
+import { buildPageMetadata } from '../../../lib/getPageMetadata';
 
 export async function generateMetadata() {
   const { t } = await getLocaleAndTranslations();

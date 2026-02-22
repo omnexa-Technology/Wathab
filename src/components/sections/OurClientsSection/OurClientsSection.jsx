@@ -1,9 +1,9 @@
 'use client';
 
 import Marquee from 'react-fast-marquee';
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { ClientCard } from '@/components/molecules/ClientCard/ClientCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { ClientCard } from '../../molecules/ClientCard/ClientCard';
 
 export function OurClientsSection({ className = '', ...props }) {
   const { t } = useTranslation();

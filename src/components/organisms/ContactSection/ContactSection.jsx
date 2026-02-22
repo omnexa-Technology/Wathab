@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { ContactInfoCard } from '@/components/molecules/ContactInfoCard/ContactInfoCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { ContactInfoCard } from '../../../components/molecules/ContactInfoCard/ContactInfoCard';
 
 export function ContactSection({ className = '' }) {
   const { t } = useTranslation();

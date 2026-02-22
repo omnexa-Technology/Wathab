@@ -1,6 +1,6 @@
 'use client';
 
-import { SocialIconButton } from '@/components/atoms/SocialIconButton/SocialIconButton';
+import { SocialIconButton } from '../../atoms/SocialIconButton/SocialIconButton';
 
 export function SocialIconsList({ className = '', ...props }) {
   const socialIcons = [
