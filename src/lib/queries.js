@@ -39,26 +39,33 @@ const serviceListFields = `
   "slug": slug.current,
   title,
   description,
+  mainImage {
+    asset->{ _id, url, metadata { lqip } },
+    alt
+  },
   image {
     asset->{ _id, url, metadata { lqip } },
     alt
   }
 `;
 
-/** Services list */
-export const SERVICES_LIST_QUERY = `*[_type == "service" && defined(slug.current)] | order(_createdAt desc) {
+/** Services list - fetches type "services" (plural) to match Sanity content */
+export const SERVICES_LIST_QUERY = `*[_type == "services"] | order(_createdAt desc) {
   ${serviceListFields}
 }`;
 
-/** Single service by slug */
-export const SERVICE_BY_SLUG_QUERY = `*[_type == "service" && slug.current == $slug][0] {
+/** Single service by slug or _id (type "services") */
+export const SERVICE_BY_SLUG_QUERY = `*[_type == "services" && (slug.current == $slug || _id == $slug)][0] {
   _id,
   "slug": slug.current,
   title,
   description,
-  image {
+  mainImage {
     asset->{ _id, url, metadata { lqip } },
     alt
   },
-  body
+  image {
+    asset->{ _id, url, metadata { lqip } },
+    alt
+  }
 }`;

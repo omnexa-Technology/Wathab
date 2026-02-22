@@ -16,15 +16,18 @@ export default async function ServicesPage() {
   const services = await sanityFetch(SERVICES_LIST_QUERY);
   const list = Array.isArray(services) ? services : [];
 
-  const items = list.map((s, index) => ({
-    title: s.title ?? '',
-    description: s.description ?? '',
-    imageUrl: s.image?.asset?.url
-      ? urlFor(s.image).width(224).height(224).url()
-      : undefined,
-    slug: s.slug ?? '',
-    variant: index === 0 ? 'dark' : 'light',
-  }));
+  const items = list.map((s, index) => {
+    const imageSource = s.mainImage ?? s.image;
+    return {
+      title: s.title ?? '',
+      description: s.description ?? '',
+      imageUrl: imageSource?.asset?.url
+        ? urlFor(imageSource).width(224).height(224).url()
+        : undefined,
+      slug: s.slug ?? s._id ?? '',
+      variant: index === 0 ? 'dark' : 'light',
+    };
+  });
 
   return (
     <>

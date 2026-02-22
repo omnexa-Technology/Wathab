@@ -18,9 +18,10 @@ export default async function ServiceSlugPage({ params }) {
   const doc = await sanityFetch(SERVICE_BY_SLUG_QUERY, { slug });
   if (!doc) notFound();
 
+  const imageSource = doc?.mainImage ?? doc?.image;
   const imageUrl =
-    doc.image?.asset?.url
-      ? urlFor(doc.image).width(1200).height(630).url()
+    imageSource?.asset?.url
+      ? urlFor(imageSource).width(1200).height(630).url()
       : null;
 
   return (
@@ -30,7 +31,7 @@ export default async function ServiceSlugPage({ params }) {
         <div className="relative m-24 h-[400px] w-full max-w-4xl">
           <Image
             src={imageUrl}
-            alt={doc.image?.alt ?? doc.title ?? ''}
+            alt={(doc?.mainImage ?? doc?.image)?.alt ?? doc?.title ?? ''}
             fill
             className="object-cover"
           />
