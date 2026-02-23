@@ -65,10 +65,17 @@ const navItems = [
   // },
 ];
 
-export function NavList({ className = '', ...props }) {
+export function NavList({ className = '', serviceItems, ...props }) {
+  const resolvedNavItems = navItems.map((item) => {
+    if (item.type === 'dropdown' && item.key === 'navbar.services' && serviceItems?.length > 0) {
+      return { ...item, items: serviceItems };
+    }
+    return item;
+  });
+
   return (
     <ul className={`flex items-center justify-end gap-2  ${className}`} dir="rtl" {...props}>
-      {navItems.map((item, index) => {
+      {resolvedNavItems.map((item) => {
         if (item.type === 'dropdown') {
           return (
             <li key={item.key}>

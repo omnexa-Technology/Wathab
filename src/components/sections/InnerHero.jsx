@@ -105,8 +105,9 @@ export function InnerHero({ title, description, image, breadcrumbLabel }) {
                   </div>
                 </div>
                 <span
-                  className="text-white text-center text-lg sm:text-2xl lg:text-[32px] font-medium leading-tight sm:leading-snug lg:leading-[56px]"
-                  style={{ fontFamily: 'var(--font-family, "DIN Next LT Arabic", sans-serif)' }}
+                  className="bloc text-white text-start max-w-[700px] text-lg sm:text-2xl lg:text-[32px]font-medium leading-relaxed sm:leading-relaxed lg:leading-[1.6] break-words " style={{
+                    fontFamily: '"DIN Next LT Arabic", sans-serif',
+                  }}
                 >
                   {breadcrumbLabel}
                 </span>
