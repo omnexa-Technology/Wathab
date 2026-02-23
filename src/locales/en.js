@@ -472,6 +472,12 @@ export default {
     sectionTitle: 'Our News',
     title: 'Our News',
     description: 'Latest news, updates, and insights in environmental consulting and sustainability.',
+    heroTitle: 'Environmental Knowledge Center.. Visions that Lead Sustainability',
+    breadcrumbLabel: 'Our News',
+    searchPlaceholder: 'Search for News',
+    latestArticlesTitle: 'Latest Articles',
+    noResults: 'No results found.',
+    noArticles: 'No articles yet.',
   },
   team: {
     sectionTitle: 'The Team',
