@@ -4,7 +4,7 @@ import { getLocaleAndTranslations } from '../../../../lib/getLocaleAndTranslatio
 import { buildPageMetadata } from '../../../../lib/getPageMetadata';
 import { sanityFetch } from '../../../../lib/sanity';
 import { urlFor } from '../../../../lib/sanity';
-import { NEWS_BY_SLUG_QUERY } from '../../../../lib/queries';
+import { NEWS_BY_SLUG_QUERY, NEWS_BY_ID_QUERY } from '../../../../lib/queries';
 
 function formatNewsDate(iso) {
   if (!iso) return '';
@@ -20,15 +20,22 @@ function formatNewsDate(iso) {
 }
 
 export async function generateMetadata({ params }) {
-  const { id } = await Promise.resolve(params || {});
+  const { id } = await (params ?? Promise.resolve({}));
   const { t } = await getLocaleAndTranslations();
   return buildPageMetadata(t, 'news', { slug: id });
 }
 
 export default async function NewsIdPage({ params }) {
-  const { id } = await Promise.resolve(params || {});
+  const resolved = await (params ?? Promise.resolve({}));
+  const rawId = resolved?.id ?? '';
+  const id = typeof rawId === 'string' ? decodeURIComponent(rawId).trim() : '';
   const { t } = await getLocaleAndTranslations();
-  const doc = await sanityFetch(NEWS_BY_SLUG_QUERY, { slug: id });
+
+  // Prefer _id (stable, no encoding issues); fallback to slug for old links
+  let doc = id ? await sanityFetch(NEWS_BY_ID_QUERY, { id }) : null;
+  if (!doc && id) {
+    doc = await sanityFetch(NEWS_BY_SLUG_QUERY, { slug: id });
+  }
   if (!doc) notFound();
 
   const imageUrl =
@@ -39,7 +46,7 @@ export default async function NewsIdPage({ params }) {
   return (
     <div className="h-[100vh] w-full">
       <h1 className="m-24 text-8xl font-bold">
-        {doc.title ?? t.news.title} {id}
+        {doc.title ?? t.news.title}
       </h1>
       {imageUrl && (
         <div className="relative m-24 h-[400px] w-full max-w-4xl">

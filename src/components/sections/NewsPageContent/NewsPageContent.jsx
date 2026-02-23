@@ -122,19 +122,16 @@ export function NewsPageContent({ articles = [], locale }) {
           ) : (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                {pageItems.map((item) => {
-                  const slug = item.slug ?? item._id;
-                  return (
-                    <ArticleCard
-                      key={item._id}
-                      imageSrc={item.imageSrc}
-                      title={item.title ?? ''}
-                      date={formatNewsDate(item.publishedAt)}
-                      excerpt={item.excerpt ?? ''}
-                      href={`${basePath}/${slug}`}
-                    />
-                  );
-                })}
+                {pageItems.map((item) => (
+                  <ArticleCard
+                    key={item._id}
+                    imageSrc={item.imageSrc}
+                    title={item.title ?? ''}
+                    date={formatNewsDate(item.publishedAt)}
+                    excerpt={item.excerpt ?? ''}
+                    href={`${basePath}/${item._id}`}
+                  />
+                ))}
               </div>
 
               {/* Pagination */}
@@ -264,18 +261,15 @@ export function NewsPageContent({ articles = [], locale }) {
                   {searchQuery.trim() ? t('news.noResults') : t('news.noArticles')}
                 </p>
               ) : (
-                latestForSidebar.map((item) => {
-                  const slug = item.slug ?? item._id;
-                  return (
+                latestForSidebar.map((item) => (
                     <LatestArticleItem
                       key={item._id}
                       imageSrc={item.imageSrc}
                       title={item.title ?? ''}
                       date={formatNewsDate(item.publishedAt)}
-                      href={`${basePath}/${slug}`}
+                      href={`${basePath}/${item._id}`}
                     />
-                  );
-                })
+                  ))
               )}
             </div>
           </div>

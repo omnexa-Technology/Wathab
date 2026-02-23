@@ -34,6 +34,20 @@ export const NEWS_BY_SLUG_QUERY = `*[_type == "news" && slug.current == $slug][0
   body
 }`;
 
+/** Single news by _id (fallback when slug match fails, e.g. encoding) */
+export const NEWS_BY_ID_QUERY = `*[_type == "news" && _id == $id][0] {
+  _id,
+  "slug": slug.current,
+  title,
+  excerpt,
+  publishedAt,
+  mainImage {
+    asset->{ _id, url, metadata { lqip } },
+    alt
+  },
+  body
+}`;
+
 const serviceListFields = `
   _id,
   "slug": slug.current,
