@@ -5,7 +5,8 @@ import { routing } from './i18n/routing';
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
 
-  // Protect /studio — redirect to /login if no valid session
+  // ── Task 3 & 6: Protect /studio ─────────────────────────────────────────
+  // Unauthenticated → redirect to /login
   if (pathname.startsWith('/studio')) {
     const token = await getToken({
       req: request,
@@ -21,7 +22,22 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  // Locale routing
+  // ── Task 4: Prevent authenticated users from seeing /login ───────────────
+  // Authenticated → redirect to /studio
+  if (pathname === '/login') {
+    const token = await getToken({
+      req: request,
+      secret: process.env.NEXTAUTH_SECRET,
+    });
+
+    if (token) {
+      return NextResponse.redirect(new URL('/studio', request.url));
+    }
+
+    return NextResponse.next();
+  }
+
+  // ── Locale routing ───────────────────────────────────────────────────────
   if (pathname === '/') {
     return NextResponse.redirect(new URL('/ar', request.url));
   }
@@ -43,5 +59,6 @@ export const config = {
     '/',
     '/(ar|en)/:path*',
     '/studio/:path*',
+    '/login',
   ],
 };
