@@ -479,6 +479,7 @@ export default {
     latestArticlesTitle: 'المشاركات الاخيرة',
     noResults: 'لا توجد نتائج.',
     noArticles: 'لا توجد مقالات حالياً.',
+    shareOn: 'شارك علي',
   },
   team: {
     sectionTitle: 'الفريق',

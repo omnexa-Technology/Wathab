@@ -478,6 +478,7 @@ export default {
     latestArticlesTitle: 'Latest Articles',
     noResults: 'No results found.',
     noArticles: 'No articles yet.',
+    shareOn: 'Share on',
   },
   team: {
     sectionTitle: 'The Team',
