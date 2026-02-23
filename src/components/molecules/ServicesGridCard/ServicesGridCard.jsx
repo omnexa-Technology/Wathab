@@ -2,7 +2,6 @@
 
 import { useTranslation } from '../../../hooks/useTranslation';
 import { useLanguageStore } from '../../../store/useLanguageStore';
-import { Link } from '../../../i18n/routing';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 
@@ -55,14 +54,16 @@ export function ServicesGridCard({
         </p>
       </div>
 
-      {/* CTA: Request Service Now */}
-      <Link
-        href="/contact"
+      {/* CTA: Request Service Now → WhatsApp */}
+      <a
+        href="https://wa.me/966561199191"
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#1b6936] text-white font-din font-semibold text-base hover:opacity-90 transition-opacity w-fit"
       >
         <span>{t('services.requestServiceNow')}</span>
         <ChevronRight className={`w-5 h-5 shrink-0 ${isRTL ? 'rotate-180' : ''}`} aria-hidden />
-      </Link>
+      </a>
     </>
   );
 
