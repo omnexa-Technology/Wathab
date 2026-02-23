@@ -22,9 +22,7 @@ export default function LoginPage() {
       <div className="flex flex-col gap-4 p-6 md:p-10">
         <div className="flex justify-center gap-2 md:justify-start">
           <Link href="/" className="flex items-center gap-2 font-medium">
-            <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-              <GalleryVerticalEnd className="size-4" />
-            </div>
+            <Image src="/assets/icons/logo/logoAbout.svg" alt="Logo" width={70} height={70} />
             Whathab
           </Link>
         </div>
@@ -34,14 +32,17 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <div className="bg-muted relative hidden lg:block">
+
+
+      <div className=" relative hidden lg:block rounded-sen-lg bg-white">
         <Image
-          src="/placeholder.svg"
+          src="/assets/images/Login/login.webp"
           alt="Login background"
           fill
-          className="object-cover dark:brightness-[0.2] dark:grayscale"
+          className="object-cover dark:brightness-[0.2] dark:grayscale rounded-4xl"
         />
       </div>
+
     </div>
   );
 }

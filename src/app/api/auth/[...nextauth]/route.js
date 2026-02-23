@@ -40,21 +40,23 @@ const handler = NextAuth({
             `*[_type == "user" && username == $username][0]{ _id, username, password }`,
             { username: credentials.username }
           );
-
+          console.log(user), 'user1';
           if (!user) return null;
 
           // Support bcrypt-hashed and plain-text passwords
           let isValid = false;
           try {
             isValid = await bcrypt.compare(credentials.password, user.password);
+            
           } catch {
             isValid = credentials.password === user.password;
           }
-
+          console.log(isValid, 'isValid1');
           if (!isValid) return null;
 
           return { id: user._id, name: user.username };
-        } catch {
+        } catch (error) {
+          console.log(error, 'error1');
           return null;
         }
       },
