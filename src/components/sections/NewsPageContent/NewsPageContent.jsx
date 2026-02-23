@@ -112,86 +112,6 @@ export function NewsPageContent({ articles = [], locale }) {
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-        {/* Sidebar */}
-        <aside className="w-full lg:w-[380px] shrink-0 flex flex-col gap-10">
-          {/* Search */}
-          <div className="flex gap-2">
-            <div className="relative flex-1 flex items-center bg-white border border-[#e5e5e5] rounded-xl overflow-hidden focus-within:border-[#1b6936] focus-within:ring-2 focus-within:ring-[#1b6936]/20">
-              <span className="pl-4 text-[#0b2c16]/50" aria-hidden>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.35-4.35" />
-                </svg>
-              </span>
-              <input
-                type="search"
-                value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
-                  setCurrentPage(1);
-                }}
-                placeholder={t('news.searchPlaceholder')}
-                className="flex-1 py-4 pr-4 pl-2 font-din text-[#0b2c16] placeholder:text-[#0b2c16]/50 outline-none bg-transparent"
-                aria-label={t('news.searchPlaceholder')}
-              />
-            </div>
-            <button
-              type="button"
-              className="shrink-0 w-14 h-14 flex items-center justify-center bg-[#0b2c16] text-white rounded-xl hover:bg-[#1b6936] transition-colors"
-              aria-label={t('news.searchPlaceholder')}
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.35-4.35" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Latest Articles */}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-din font-medium text-2xl text-[#0b2c16]">
-              {t('news.latestArticlesTitle')}
-            </h3>
-            <div className="flex flex-col gap-1">
-              {latestForSidebar.length === 0 ? (
-                <p className="font-din text-[#0b2c16]/70 py-4">
-                  {searchQuery.trim() ? t('news.noResults') : t('news.noArticles')}
-                </p>
-              ) : (
-                latestForSidebar.map((item) => {
-                  const slug = item.slug ?? item._id;
-                  return (
-                    <LatestArticleItem
-                      key={item._id}
-                      imageSrc={item.imageSrc}
-                      title={item.title ?? ''}
-                      date={formatNewsDate(item.publishedAt)}
-                      href={`${basePath}/${slug}`}
-                    />
-                  );
-                })
-              )}
-            </div>
-          </div>
-        </aside>
 
         {/* Main grid */}
         <div className="flex-1 min-w-0">
@@ -252,11 +172,10 @@ export function NewsPageContent({ articles = [], locale }) {
                           key={num}
                           type="button"
                           onClick={() => setCurrentPage(num)}
-                          className={`min-w-[44px] h-11 px-3 rounded-lg font-din font-medium text-lg flex items-center justify-center transition-colors ${
-                            pageIndex === num
+                          className={`min-w-[44px] h-11 px-3 rounded-lg font-din font-medium text-lg flex items-center justify-center transition-colors ${pageIndex === num
                               ? 'bg-[#0b2c16] text-white'
                               : 'text-[#0b2c16] hover:bg-[#e5e5e5]'
-                          }`}
+                            }`}
                         >
                           {num}
                         </button>
@@ -295,6 +214,72 @@ export function NewsPageContent({ articles = [], locale }) {
             </>
           )}
         </div>
+
+        {/* Sidebar */}
+        <aside className="w-full lg:w-[380px] shrink-0 flex flex-col gap-10">
+          {/* Search */}
+          <div className="flex gap-2">
+            <div className="relative flex-1 flex items-center bg-white border border-[#e5e5e5] rounded-xl overflow-hidden focus-within:border-[#1b6936] focus-within:ring-2 focus-within:ring-[#1b6936]/20">
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setCurrentPage(1);
+                }}
+                placeholder={t('news.searchPlaceholder')}
+                className="flex-1 py-4 pr-4 pl-2 font-din text-[#0b2c16] placeholder:text-[#0b2c16]/50 outline-none bg-transparent"
+                aria-label={t('news.searchPlaceholder')}
+              />
+            </div>
+            <button
+              type="button"
+              className="shrink-0 w-14 h-14 flex items-center justify-center bg-[#0b2c16] text-white rounded-xl hover:bg-[#1b6936] transition-colors"
+              aria-label={t('news.searchPlaceholder')}
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Latest Articles */}
+          <div className="flex flex-col gap-4">
+            <h3 className="font-din font-medium text-2xl text-[#0b2c16]">
+              {t('news.latestArticlesTitle')}
+            </h3>
+            <div className="flex flex-col gap-1">
+              {latestForSidebar.length === 0 ? (
+                <p className="font-din text-[#0b2c16]/70 py-4">
+                  {searchQuery.trim() ? t('news.noResults') : t('news.noArticles')}
+                </p>
+              ) : (
+                latestForSidebar.map((item) => {
+                  const slug = item.slug ?? item._id;
+                  return (
+                    <LatestArticleItem
+                      key={item._id}
+                      imageSrc={item.imageSrc}
+                      title={item.title ?? ''}
+                      date={formatNewsDate(item.publishedAt)}
+                      href={`${basePath}/${slug}`}
+                    />
+                  );
+                })
+              )}
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   );
