@@ -2,14 +2,7 @@
 
 import Image from 'next/image';
 
-/**
- * LicenseCard - Displays a license image card
- * @param {Object} props
- * @param {string} props.image - Image source path
- * @param {string} props.alt - Alt text for the image
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
+
 export function LicenseCard({ image, alt, className = '' }) {
   return (
     <div

@@ -2,15 +2,7 @@
 
 import Image from 'next/image';
 
-/**
- * ContactInfoCard - Displays contact information with icon, value, and label
- * @param {Object} props
- * @param {string} props.icon - Icon SVG path
- * @param {string} props.value - Contact value (phone, email, address)
- * @param {string} props.label - Label text
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
+
 export function ContactInfoCard({ icon, value, label, className = '' }) {
   return (
     <div

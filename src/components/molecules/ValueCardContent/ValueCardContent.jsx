@@ -3,11 +3,11 @@
  * Composes icon, title, and description for a value card
  */
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { ValueIcon } from '@/components/atoms/ValueIcon/ValueIcon';
-import { ValueTitle } from '@/components/atoms/ValueTitle/ValueTitle';
-import { ValueDescription } from '@/components/atoms/ValueDescription/ValueDescription';
-import FadeContent from '@/components/FadeContent';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { ValueIcon } from '../../atoms/ValueIcon/ValueIcon';
+import { ValueTitle } from '../../atoms/ValueTitle/ValueTitle';
+import { ValueDescription } from '../../atoms/ValueDescription/ValueDescription';
+import FadeContent from '../../FadeContent';
 
 export function ValueCardContent({
   iconSrc,

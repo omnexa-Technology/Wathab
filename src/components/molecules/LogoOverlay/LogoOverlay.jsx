@@ -1,7 +1,3 @@
-/**
- * LogoOverlay Molecule
- * Glass morphism overlay with company logo
- */
 
 import Image from 'next/image';
 

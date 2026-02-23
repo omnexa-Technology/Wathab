@@ -1,7 +1,7 @@
 'use client';
 
 import { Copyright } from 'lucide-react';
-import { useTranslation } from '@/hooks/useTranslation';
+import { useTranslation } from '../../../hooks/useTranslation';
 
 export function CopyrightText({ className = '', ...props }) {
   const { t } = useTranslation();

@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { ReasonCard } from '@/components/molecules/ReasonCard/ReasonCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { ReasonCard } from '../../molecules/ReasonCard/ReasonCard';
 
 /**
  * WhyChooseSection - Displays reasons why customers should choose the company.

@@ -1,51 +1,34 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { MainCarouselCard } from '@/components/molecules/MainCarouselCard/MainCarouselCard';
-import { SideCarouselCard } from '@/components/molecules/SideCarouselCard/SideCarouselCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { MainCarouselCard } from '../../molecules/MainCarouselCard/MainCarouselCard';
+import { SideCarouselCard } from '../../molecules/SideCarouselCard/SideCarouselCard';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
+} from '../../ui/carousel';
 import Link from 'next/link';
-
-interface ImpactItem {
-  id: string;
-  type: 'main' | 'side';
-  imageSrc: string;
-  imageAlt?: string;
-  iconSrc?: string;
-  iconAlt?: string;
-  title?: string;
-  description?: string;
-}
-
-interface ImpactCarouselSectionProps {
-  className?: string;
-}
 
 /**
  * ImpactCarouselSection - Statistics/Impact carousel organism
  * Features one large main card with multiple narrow side cards in a carousel layout
  * Uses shadcn Carousel (Embla-based) with RTL support
  */
-export function ImpactCarouselSection({
-  className = ''
-}: ImpactCarouselSectionProps) {
+export function ImpactCarouselSection({ className = '' }) {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
   const isRTL = language === 'ar';
 
   // Exclusive hover: only one card expanded at a time; driven by activeIndex
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   // Placeholder data - will be replaced with real API data
-  const impactData: ImpactItem[] = [
+  const impactData = [
     // Side cards before main card
     {
       id: 'side-1',
@@ -166,10 +149,10 @@ export function ImpactCarouselSection({
                     <MainCarouselCard
                       imageSrc={item.imageSrc}
                       imageAlt={item.imageAlt}
-                      iconSrc={item.iconSrc!}
+                      iconSrc={item.iconSrc}
                       iconAlt={item.iconAlt}
-                      title={item.title!}
-                      description={item.description!}
+                      title={item.title}
+                      description={item.description}
                       isActive={activeIndex === index}
                       onHover={() => setActiveIndex(index)}
                       onLeave={() => setActiveIndex(null)}

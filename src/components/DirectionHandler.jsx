@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useLanguageStore } from '@/store/useLanguageStore';
+import { useLanguageStore } from '../store/useLanguageStore.js';
 
 export function DirectionHandler() {
   const language = useLanguageStore((s) => s.language);

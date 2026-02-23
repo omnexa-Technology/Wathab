@@ -1,10 +1,10 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
 import Image from 'next/image';
-import { Indicator } from '@/components/atoms/Indicator/Indicator';
-import FadeContent from '@/components/FadeContent';
+import { Indicator } from '../../atoms/Indicator/Indicator';
+import FadeContent from '../../FadeContent';
 
 export function OurAbout({ className = '', ...props }) {
     const { t } = useTranslation();

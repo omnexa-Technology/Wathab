@@ -1,7 +1,7 @@
 'use client';
 
-import { Logo } from '@/components/atoms/Logo/Logo';
-import LocaleLink from '@/components/LocaleLink';
+import { Logo } from '../../atoms/Logo/Logo';
+import LocaleLink from '../../LocaleLink';
 
 export function LogoBlock({ className = '', ...props }) {
   return (

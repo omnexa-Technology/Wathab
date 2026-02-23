@@ -1,18 +1,8 @@
 'use client';
 
-import { CardImage } from '@/components/atoms/CardImage/CardImage';
-import { CardLabel } from '@/components/atoms/CardLabel/CardLabel';
-import { cn } from '@/lib/utils';
-
-interface SideCarouselCardProps {
-  imageSrc: string;
-  imageAlt?: string;
-  title?: string;
-  isActive?: boolean;
-  onHover?: () => void;
-  onLeave?: () => void;
-  className?: string;
-}
+import { CardImage } from '../../atoms/CardImage/CardImage';
+import { CardLabel } from '../../atoms/CardLabel/CardLabel';
+import { cn } from '../../../lib/utils';
 
 /**
  * SideCarouselCard - Expansion (scale, image zoom, title) driven by isActive from parent.
@@ -25,7 +15,7 @@ export function SideCarouselCard({
   onHover,
   onLeave,
   className = '',
-}: SideCarouselCardProps) {
+}) {
   return (
     <div
       className={cn(

@@ -1,9 +1,9 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { ServiceCard } from '@/components/molecules/ServiceCard/ServiceCard';
-import { Link } from '@/i18n/routing';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { ServiceCard } from '../../molecules/ServiceCard/ServiceCard';
+import { Link } from '../../../i18n/routing';
 
 export function OurServicesSection({ className = '', ...props }) {
   const { t } = useTranslation();

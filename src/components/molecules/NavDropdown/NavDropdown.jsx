@@ -2,14 +2,14 @@
 
 import { usePathname } from 'next/navigation';
 import { ChevronDown } from 'lucide-react';
-import { useTranslation } from '@/hooks/useTranslation';
-import LocaleLink from '@/components/LocaleLink';
+import { useTranslation } from '../../../hooks/useTranslation';
+import LocaleLink from '../../LocaleLink';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from '../../ui/dropdown-menu';
 
 
 export function NavDropdown({

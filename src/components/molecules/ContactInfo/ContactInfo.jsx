@@ -1,7 +1,7 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { ContactItem } from '@/components/atoms/ContactItem/ContactItem';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { ContactItem } from '../../../components/atoms/ContactItem/ContactItem';
 
 export function ContactInfo() {
   const { t } = useTranslation();

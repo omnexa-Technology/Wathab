@@ -1,6 +1,6 @@
 'use client';
 
-import LocaleLink from '@/components/LocaleLink';
+import LocaleLink from '../../LocaleLink';
 
 export function FooterLink({ href, variant = 'default', children, className = '', ...props }) {
   const baseClass =

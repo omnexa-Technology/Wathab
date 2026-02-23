@@ -1,17 +1,17 @@
 'use client';
 
 import { useMemo } from 'react';
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { TeamMemberCard } from '@/components/molecules/TeamMemberCard/TeamMemberCard';
-import { Link } from '@/i18n/routing';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { TeamMemberCard } from '../../molecules/TeamMemberCard/TeamMemberCard';
+import { Link } from '../../../i18n/routing';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-} from '@/components/ui/carousel';
+} from '../../ui/carousel';
 
 const TEAM_DATA = [
   { id: 'member-0', imageSrc: '/assets/images/team/Ellipse 7 (3).svg', name: 'مانع أبو دراهم', role: 'مدير عام وثب', linkedin: 'https://www.linkedin.com/in/mane-abudrahem-37a14a95/' },

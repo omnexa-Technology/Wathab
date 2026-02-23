@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import { routing } from '../../i18n/routing';
-import { DirectionHandler } from '@/components/DirectionHandler';
-import { MainLayout } from '@/components/templates/MainLayout/MainLayout';
-import ar from '@/locales/ar';
-import en from '@/locales/en';
+import { DirectionHandler } from '../../components/DirectionHandler';
+import { MainLayout } from '../../components/templates/MainLayout/MainLayout';
+import ar from '../../locales/ar';
+import en from '../../locales/en';
 import '../globals.css';
 
 const locales = { ar, en };

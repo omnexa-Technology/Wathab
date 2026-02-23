@@ -1,22 +1,9 @@
 'use client';
 
-import { CardImage } from '@/components/atoms/CardImage/CardImage';
-import { CardBadge } from '@/components/atoms/CardBadge/CardBadge';
-import { CardLabel } from '@/components/atoms/CardLabel/CardLabel';
-import { cn } from '@/lib/utils';
-
-interface MainCarouselCardProps {
-  imageSrc: string;
-  imageAlt?: string;
-  iconSrc: string;
-  iconAlt?: string;
-  title: string;
-  description: string;
-  isActive?: boolean;
-  onHover?: () => void;
-  onLeave?: () => void;
-  className?: string;
-}
+import { CardImage } from '../../atoms/CardImage/CardImage';
+import { CardBadge } from '../../atoms/CardBadge/CardBadge';
+import { CardLabel } from '../../atoms/CardLabel/CardLabel';
+import { cn } from '../../../lib/utils';
 
 /**
  * MainCarouselCard - Expansion (scale, image zoom, description) driven by isActive from parent.
@@ -32,7 +19,7 @@ export function MainCarouselCard({
   onHover,
   onLeave,
   className = '',
-}: MainCarouselCardProps) {
+}) {
   return (
     <div
       className={cn(
