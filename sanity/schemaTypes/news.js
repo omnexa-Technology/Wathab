@@ -19,6 +19,22 @@ export default {
             }
         },
         {
+            name: 'mainImage',
+            title: 'Main image',
+            type: 'image',
+            options: {
+                hotspot: true
+            },
+            fields: [
+                {
+                    name: 'alt',
+                    title: 'Alternative text',
+                    type: 'string',
+                    description: 'Important for SEO and accessibility.'
+                }
+            ]
+        },
+        {
             name: 'content',
             title: 'Content',
             type: 'text'
