@@ -473,6 +473,13 @@ export default {
     sectionTitle: 'أخبارنا',
     title: 'أخبارنا',
     description: 'آخر الأخبار والمستجدات والرؤى في مجال الاستشارات البيئية والاستدامة.',
+    heroTitle: 'مركز المعرفة البيئية.. رؤى تقود الاستدامة',
+    breadcrumbLabel: 'أخبارنا',
+    searchPlaceholder: 'بحث عن الأخبار',
+    latestArticlesTitle: 'المشاركات الاخيرة',
+    noResults: 'لا توجد نتائج.',
+    noArticles: 'لا توجد مقالات حالياً.',
+    shareOn: 'شارك علي',
   },
   team: {
     sectionTitle: 'الفريق',
