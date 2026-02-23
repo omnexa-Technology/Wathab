@@ -13,7 +13,7 @@ import { NavActions } from '../../molecules/NavActions/NavActions';
 
 const SCROLL_TOP_THRESHOLD = 10;
 
-export function Navbar({ className = '', ...props }) {
+export function Navbar({ className = '', serviceItems, ...props }) {
   const [isVisible, setIsVisible] = useState(true);
   const prevScrollY = useRef(0);
   const ticking = useRef(false);
@@ -62,7 +62,7 @@ export function Navbar({ className = '', ...props }) {
       <div className="flex w-full max-w-[1680px] items-center justify-between gap-6 px-4">
         <LogoBlock />
         <div className="flex flex-1 items-center justify-center">
-          <NavList />
+          <NavList serviceItems={serviceItems} />
         </div>
         <NavActions />
       </div>
