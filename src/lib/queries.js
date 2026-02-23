@@ -69,3 +69,32 @@ export const SERVICE_BY_SLUG_QUERY = `*[_type == "services" && (slug.current == 
     alt
   }
 }`;
+
+/** Full service detail page by slug + locale (type "service-details") */
+export const SERVICE_DETAIL_QUERY = `*[_type == "service-details" && slug.current == $slug && language == $locale][0]{
+  _id,
+  "slug": slug.current,
+  title,
+  language,
+  description,
+  content,
+  faq[] {
+    question,
+    answer
+  },
+  seo {
+    metaTitle,
+    metaDescription,
+    keywords,
+    noIndex,
+    ogImage {
+      asset->{ _id, url }
+    }
+  }
+}`;
+
+/** All service-details for a given locale — used to build the navbar services dropdown */
+export const SERVICES_NAV_QUERY = `*[_type == "service-details" && language == $locale]{
+  title,
+  "slug": slug.current
+} | order(title asc)`;

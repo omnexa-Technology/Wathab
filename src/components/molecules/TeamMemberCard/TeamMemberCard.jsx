@@ -24,14 +24,14 @@ export const TeamMemberCard = React.memo(function TeamMemberCard({
   ...props
 }) {
   return (
-    <div className="w-full min-w-0 h-full">
+    <div className="w-full min-w-0 ">
       <Card
         className={`flex flex-col items-center bg-gray-50 border-none shadow-[0px_4px_12px_0px_rgba(0,0,0,0.08)] rounded-2xl overflow-hidden w-full min-w-0
           gap-3 p-3
           sm:gap-4 sm:p-4
           md:gap-5
           lg:gap-6 lg:p-4
-          h-[320px] sm:h-[360px] md:h-[420px] lg:h-[500px] xl:h-[590px]
+          h-[320px] sm:h-[360px] md:h-[420px]
           ${className}`}
       >
         <div className="relative shrink-0 rounded-full overflow-hidden border-2 border-carousel-active
@@ -70,7 +70,7 @@ export const TeamMemberCard = React.memo(function TeamMemberCard({
             </p>
           </CardDescription>
 
-          <CardFooter className="mt-auto pt-1 sm:pt-2">
+          <CardFooter className="pt-1 sm:pt-2">
             <Link
               href={linkedin}
               target="_blank"
