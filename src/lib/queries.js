@@ -20,7 +20,19 @@ export const NEWS_LIST_QUERY = `*[_type == "news" && defined(slug.current)] | or
   ${newsListFields}
 }`;
 
-/** Single news by slug (for /news/[id]) */
+/** Portable Text projection: spreads all block fields + expands image assets inline */
+const newsContentProjection = `
+  content[] {
+    ...,
+    _type == "image" => {
+      "imageUrl": asset->url,
+      alt,
+      caption
+    }
+  }
+`;
+
+/** Single news by slug */
 export const NEWS_BY_SLUG_QUERY = `*[_type == "news" && slug.current == $slug][0] {
   _id,
   "slug": slug.current,
@@ -31,10 +43,10 @@ export const NEWS_BY_SLUG_QUERY = `*[_type == "news" && slug.current == $slug][0
     asset->{ _id, url, metadata { lqip } },
     alt
   },
-  content
+  ${newsContentProjection}
 }`;
 
-/** Single news by _id (fallback when slug match fails, e.g. encoding) */
+/** Single news by _id (fallback when slug match fails, e.g. URL encoding) */
 export const NEWS_BY_ID_QUERY = `*[_type == "news" && _id == $id][0] {
   _id,
   "slug": slug.current,
@@ -45,7 +57,7 @@ export const NEWS_BY_ID_QUERY = `*[_type == "news" && _id == $id][0] {
     asset->{ _id, url, metadata { lqip } },
     alt
   },
-  content
+  ${newsContentProjection}
 }`;
 
 const serviceListFields = `
