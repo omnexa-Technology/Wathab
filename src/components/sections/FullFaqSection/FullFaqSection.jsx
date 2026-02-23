@@ -1,9 +1,9 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { Accordion } from '@/components/ui/accordion';
-import { FaqItem } from '@/components/molecules/FaqItem/FaqItem';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { Accordion } from '../../ui/accordion.jsx';
+import { FaqItem } from '../../../components/molecules/FaqItem/FaqItem';
 
 /**
  * FullFaqSection - Full FAQ page section with 18 questions in two columns

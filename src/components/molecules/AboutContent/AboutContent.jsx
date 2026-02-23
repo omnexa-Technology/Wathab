@@ -3,7 +3,7 @@
  * Renders multiple paragraphs with consistent spacing
  */
 
-import { Paragraph } from '@/components/atoms/Paragraph/Paragraph';
+import { Paragraph } from '../../../components/atoms/Paragraph/Paragraph';
 
 export function AboutContent({
   paragraphs = [],

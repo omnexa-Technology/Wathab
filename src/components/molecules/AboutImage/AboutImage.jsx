@@ -5,7 +5,7 @@
 
 import Image from 'next/image';
 import { LogoOverlay } from '@/components/molecules/LogoOverlay/LogoOverlay';
-import FadeContent from '@/components/FadeContent';
+import FadeContent from '../../FadeContent';
 export function AboutImage({
   logoTextSrc = 'assets/icons/logo/logo-dark1.svg',
   logoTextAlt = 'Company Logo',

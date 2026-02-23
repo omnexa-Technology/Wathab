@@ -1,7 +1,7 @@
 'use client';
 
-import { SectionDivider } from '@/components/atoms/SectionDivider/SectionDivider';
-import { FooterLink } from '@/components/atoms/FooterLink/FooterLink';
+import { SectionDivider } from '../../atoms/SectionDivider/SectionDivider';
+import { FooterLink } from '../../atoms/FooterLink/FooterLink';
 
 export function FooterLinkList({ title, links, className = '', ...props }) {
   return (

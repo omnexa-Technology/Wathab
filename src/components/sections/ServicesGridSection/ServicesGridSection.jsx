@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { ServicesGridCard } from '@/components/molecules/ServicesGridCard/ServicesGridCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { ServicesGridCard } from '../../molecules/ServicesGridCard/ServicesGridCard';
 import {
   FileText,
   Leaf,
@@ -45,7 +45,11 @@ const CARD_KEYS = [
 /** Cards at 1-based positions 3 and 8 use dark variant (index 2 and 7). */
 const DARK_INDICES = [0];
 
-export function ServicesGridSection({ className = '', ...props }) {
+/**
+ * @param {Object} props
+ * @param {Array<{ title: string, description: string, imageUrl?: string, slug?: string, variant?: 'light'|'dark' }>} [props.items] - When set, render cards from Sanity; otherwise use translation keys.
+ */
+export function ServicesGridSection({ items, className = '', ...props }) {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
   const isRTL = language === 'ar';
@@ -67,17 +71,27 @@ export function ServicesGridSection({ className = '', ...props }) {
           </p>
         </div>
 
-        {/* 3x3 Grid */}
+        {/* Grid: Sanity items or static keys */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-          {CARD_KEYS.map((baseKey, index) => (
-            <ServicesGridCard
-              key={baseKey}
-              icon={CARD_ICONS[index]}
-              titleKey={`${baseKey}.title`}
-              descriptionKey={`${baseKey}.description`}
-              variant={DARK_INDICES.includes(index) ? 'dark' : 'light'}
-            />
-          ))}
+          {items && items.length > 0
+            ? items.map((item, index) => (
+                <ServicesGridCard
+                  key={item.slug ?? index}
+                  title={item.title}
+                  description={item.description}
+                  imageUrl={item.imageUrl}
+                  variant={item.variant ?? (DARK_INDICES.includes(index) ? 'dark' : 'light')}
+                />
+              ))
+            : CARD_KEYS.map((baseKey, index) => (
+                <ServicesGridCard
+                  key={baseKey}
+                  icon={CARD_ICONS[index]}
+                  titleKey={`${baseKey}.title`}
+                  descriptionKey={`${baseKey}.description`}
+                  variant={DARK_INDICES.includes(index) ? 'dark' : 'light'}
+                />
+              ))}
         </div>
       </div>
     </section>

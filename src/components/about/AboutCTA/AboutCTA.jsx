@@ -1,12 +1,12 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { Container } from '@/components/atoms/Container/Container';
-import { Heading } from '@/components/atoms/Heading/Heading';
-import { Paragraph } from '@/components/atoms/Paragraph/Paragraph';
-import { Button } from '@/components/atoms/Button/Button';
-import LocaleLink from '@/components/LocaleLink';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { Container } from '../../../components/atoms/Container/Container';
+import { Heading } from '../../../components/atoms/Heading/Heading';
+import { Paragraph } from '../../../components/atoms/Paragraph/Paragraph';
+import { Button } from '../../../components/atoms/Button/Button';
+import LocaleLink from '../../../components/LocaleLink';
 
 export function AboutCTA() {
   const { t } = useTranslation();

@@ -3,8 +3,8 @@
  * Composes section title with green dots decoration
  */
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { GreenDotsDecoration } from '@/components/atoms/GreenDotsDecoration/GreenDotsDecoration';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { GreenDotsDecoration } from '../../atoms/GreenDotsDecoration/GreenDotsDecoration';
 
 export function OurValuesHeader({ titleKey = 'ourValues.sectionTitle', className = '' }) {
   const { t } = useTranslation();

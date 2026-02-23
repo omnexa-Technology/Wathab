@@ -1,47 +1,52 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { ArticleCard } from '@/components/molecules/ArticleCard/ArticleCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { ArticleCard } from '../../molecules/ArticleCard/ArticleCard';
 import Link from 'next/link';
+
+const FALLBACK_ARTICLES = [
+  {
+    id: 'article-1',
+    imageSrc: '/assets/images/pages/Home/news3.webp',
+    title: 'الاصلاحات والانشاءات البيئية',
+    date: '12 July 2023',
+    excerpt: 'من ناحية نساعدكم في دمج ممارسات التنمية المستدامة وكفاءة الموارد، كما نخفّض تكاليف التشغيل على المدى الطويل',
+    href: '/articles/environmental-reforms',
+  },
+  {
+    id: 'article-2',
+    imageSrc: '/assets/images/pages/Home/news2.webp',
+    title: 'الأصلاحات البيئية',
+    date: '12 July 2023',
+    excerpt: 'تطوير حلول مستدامة للحفاظ على البيئة وتحسين جودة الحياة',
+    href: '/articles/environmental-solutions',
+  },
+  {
+    id: 'article-3',
+    imageSrc: '/assets/images/pages/Home/news1.webp',
+    title: 'التنمية المستدامة',
+    date: '12 July 2023',
+    excerpt: 'مشاريع تنموية تراعي البيئة وتحقق التوازن بين التقدم والحفاظ على الموارد',
+    href: '/articles/sustainable-development',
+  },
+];
 
 /**
  * NewsSection - Displays latest news and articles
  * @param {Object} props
+ * @param {Array<{ imageSrc: string, title: string, date: string, excerpt: string, href: string }>} [props.articles] - When provided (e.g. from Sanity), use these instead of fallback
  * @param {string} [props.className=''] - Additional CSS classes
  * @returns {JSX.Element}
  */
-export function NewsSection({ className = '', ...props }) {
+export function NewsSection({ articles, className = '', ...props }) {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
   const isRTL = language === 'ar';
 
-  const articlesData = [
-    {
-      id: 'article-1',
-      imageSrc: '/assets/images/pages/Home/news3.webp',
-      title: 'الاصلاحات والانشاءات البيئية',
-      date: '12 July 2023',
-      excerpt: 'من ناحية نساعدكم في دمج ممارسات التنمية المستدامة وكفاءة الموارد، كما نخفّض تكاليف التشغيل على المدى الطويل',
-      href: '/articles/environmental-reforms',
-    },
-    {
-      id: 'article-2',
-      imageSrc: '/assets/images/pages/Home/news2.webp',
-      title: 'الأصلاحات البيئية',
-      date: '12 July 2023',
-      excerpt: 'تطوير حلول مستدامة للحفاظ على البيئة وتحسين جودة الحياة',
-      href: '/articles/environmental-solutions',
-    },
-    {
-      id: 'article-3',
-      imageSrc: '/assets/images/pages/Home/news1.webp',
-      title: 'التنمية المستدامة',
-      date: '12 July 2023',
-      excerpt: 'مشاريع تنموية تراعي البيئة وتحقق التوازن بين التقدم والحفاظ على الموارد',
-      href: '/articles/sustainable-development',
-    },
-  ];
+  const articlesData = articles && articles.length > 0
+    ? articles.map((a, i) => ({ id: `article-${i}`, ...a }))
+    : FALLBACK_ARTICLES;
 
   return (
     <section
@@ -81,7 +86,7 @@ export function NewsSection({ className = '', ...props }) {
 
         {/* Article Cards */}
         <div className="grid grid-cols-3 gap-8 w-full">
-          {articlesData.map((article) => (
+          {articlesData.slice(0, 3).map((article) => (
             <ArticleCard
               key={article.id}
               imageSrc={article.imageSrc}

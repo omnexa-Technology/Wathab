@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { LicenseContentCard } from '@/components/molecules/LicenseContentCard/LicenseContentCard';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { LicenseContentCard } from '../../../components/molecules/LicenseContentCard/LicenseContentCard';
 
 /**
  * LicensesGrid - Displays licenses with alternating image and content layout

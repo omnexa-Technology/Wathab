@@ -4,10 +4,10 @@ import { useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
-import { useLanguageStore } from '@/store/useLanguageStore';
-import { CarouselNavigation } from '@/components/molecules/CarouselNavigation/CarouselNavigation';
-import { CarouselPagination } from '@/components/molecules/CarouselPagination/CarouselPagination';
-import { HeroSlide } from '@/components/molecules/HeroSlide/HeroSlide';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { CarouselNavigation } from '../../molecules/CarouselNavigation/CarouselNavigation';
+import { CarouselPagination } from '../../molecules/CarouselPagination/CarouselPagination';
+import { HeroSlide } from '../../molecules/HeroSlide/HeroSlide';
 
 import 'swiper/css';
 import 'swiper/css/navigation';

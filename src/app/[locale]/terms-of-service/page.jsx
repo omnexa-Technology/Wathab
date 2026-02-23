@@ -1,5 +1,5 @@
 import React from 'react'
-import { InnerHero } from '@/components/sections/InnerHero';
+import { InnerHero } from '../../../components/sections/InnerHero';
 function page() {
     return (
         <div>

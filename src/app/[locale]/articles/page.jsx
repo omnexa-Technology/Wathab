@@ -1,8 +1,8 @@
-import { getLocaleAndTranslations } from '@/lib/getLocaleAndTranslations';
-import { buildPageMetadata } from '@/lib/getPageMetadata';
-import { InnerHero } from '@/components/sections/InnerHero';
-import { ArticlesGrid } from '@/components/sections/ArticlesGrid';
-import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
+import { getLocaleAndTranslations } from '../../../lib/getLocaleAndTranslations';
+import { buildPageMetadata } from '../../../lib/getPageMetadata';
+import { InnerHero } from '../../../components/sections/InnerHero';
+import { ArticlesGrid } from '../../../components/sections/ArticlesGrid';
+import { ContactCtaSection } from '../../../components/sections/ContactCtaSection/ContactCtaSection';
 
 export async function generateMetadata() {
   const { t } = await getLocaleAndTranslations();

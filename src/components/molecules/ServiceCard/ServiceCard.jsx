@@ -1,9 +1,9 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
+import { useTranslation } from '../../../hooks/useTranslation';
+import { useLanguageStore } from '../../../store/useLanguageStore';
 import Image from 'next/image';
-import LocaleLink from '@/components/LocaleLink';
+import LocaleLink from '../../LocaleLink';
 import { ArrowRightIcon } from 'lucide-react';
 
 const COVER_SERVICE_SRC = '/assets/icons/ui/Cover-service.svg';

@@ -1,20 +1,20 @@
-'use client';
-
-
-import { HeroCarousel } from '@/components/organisms/HeroCarousel/HeroCarousel';
-import { StatsSection } from '@/components/organisms/StatsSection/StatsSection';
-import { OurAbout } from '@/components/organisms/OurAbout/OurAbout';
-// import { AboutSection } from '@/components/sections/AboutSection/AboutSection';
-import { VisionMissionSection } from '@/components/sections/VisionMissionSection';
-import { OurValuesSection } from '@/components/sections/OurValuesSection';
-import { OurServicesSection } from '@/components/sections/OurServicesSection/OurServicesSection';
-import { AchievementsSection } from '@/components/sections/AchievementsSection/AchievementsSection';
-import { WhyChooseSection } from '@/components/sections/WhyChooseSection/WhyChooseSection';
-import { OurClientsSection } from '@/components/sections/OurClientsSection/OurClientsSection';
-import { NewsSection } from '@/components/sections/NewsSection/NewsSection';
-import { TeamSection } from '@/components/sections/TeamSection/TeamSection';
-import { ContactCtaSection } from '@/components/sections/ContactCtaSection/ContactCtaSection';
-import { FaqSection } from '@/components/sections/FaqSection/FaqSection';
+import { getLocaleAndTranslations } from '../../lib/getLocaleAndTranslations';
+import { sanityFetch, urlFor } from '../../lib/sanity';
+import { NEWS_LIST_QUERY } from '../../lib/queries';
+import { HeroCarousel } from '../../components/organisms/HeroCarousel/HeroCarousel';
+import { StatsSection } from '../../components/organisms/StatsSection/StatsSection';
+import { OurAbout } from '../../components/organisms/OurAbout/OurAbout';
+// import { AboutSection } from '../../components/sections/AboutSection/AboutSection';
+import { VisionMissionSection } from '../../components/sections/VisionMissionSection';
+import { OurValuesSection } from '../../components/sections/OurValuesSection';
+import { OurServicesSection } from '../../components/sections/OurServicesSection/OurServicesSection';
+import { AchievementsSection } from '../../components/sections/AchievementsSection/AchievementsSection';
+import { WhyChooseSection } from '../../components/sections/WhyChooseSection/WhyChooseSection';
+import { OurClientsSection } from '../../components/sections/OurClientsSection/OurClientsSection';
+import { NewsSection } from '../../components/sections/NewsSection/NewsSection';
+import { TeamSection } from '../../components/sections/TeamSection/TeamSection';
+import { ContactCtaSection } from '../../components/sections/ContactCtaSection/ContactCtaSection';
+import { FaqSection } from '../../components/sections/FaqSection/FaqSection';
 
 const heroSlides = [
   {
@@ -43,7 +43,43 @@ const heroSlides = [
   },
 ];
 
-export default function HomePage() {
+const FALLBACK_IMAGE = '/assets/images/pages/Home/news1.webp';
+
+function formatNewsDate(iso) {
+  if (!iso) return '';
+  try {
+    return new Date(iso).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+  } catch {
+    return iso;
+  }
+}
+
+export default async function HomePage() {
+  const { locale } = await getLocaleAndTranslations();
+  const news = await sanityFetch(NEWS_LIST_QUERY, { limit: 3 });
+  const list = Array.isArray(news) ? news : [];
+  const articles =
+    list.length > 0
+      ? list.map((item) => {
+          const slug = item.slug ?? item._id;
+          const imageSrc =
+            item.mainImage?.asset?.url
+              ? urlFor(item.mainImage).width(600).height(400).url()
+              : FALLBACK_IMAGE;
+          return {
+            imageSrc,
+            title: item.title ?? '',
+            date: formatNewsDate(item.publishedAt),
+            excerpt: item.excerpt ?? '',
+            href: `/${locale}/news/${slug}`,
+          };
+        })
+      : undefined;
+
   return (
     <>
       {/* Section 1: Hero Carousel */}
@@ -104,7 +140,7 @@ export default function HomePage() {
 
       {/* Section 11: News/Articles (المركز الإعلامي) */}
       <div className="flex justify-center relative w-full">
-        <NewsSection />
+        <NewsSection articles={articles} />
       </div>
 
       {/* Section 12: Team (الفريق) */}

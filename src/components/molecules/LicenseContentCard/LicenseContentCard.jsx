@@ -2,17 +2,7 @@
 
 import Image from 'next/image';
 
-/**
- * LicenseContentCard - Displays license information with image and content
- * @param {Object} props
- * @param {string} props.image - Image source path
- * @param {string} props.alt - Alt text for the image
- * @param {string} props.title - License title
- * @param {string} props.description - License description
- * @param {boolean} [props.imageOnLeft=false] - Whether image is on left side
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
+
 export function LicenseContentCard({
   image,
   alt,

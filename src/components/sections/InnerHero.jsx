@@ -1,7 +1,7 @@
 'use client';
 
-import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageStore } from '@/store/useLanguageStore';
+import { useTranslation } from '../../hooks/useTranslation';
+import { useLanguageStore } from '../../store/useLanguageStore';
 import Image from 'next/image';
 import Link from 'next/link';
 export function InnerHero({ title, description, image, breadcrumbLabel }) {
