@@ -240,6 +240,33 @@ export default {
     description: 'Get in touch with our team to discuss your environmental consulting needs.',
     heroTitle: 'Let\'s draw a sustainable path for your projects together.. Contact us',
     breadcrumbLabel: 'Contact Us',
+    form: {
+      title: 'Send Your Message Now',
+      subtitle: 'Whether you need engineering consultation or compliance support, we are here to help.',
+      name: { label: 'Full Name', placeholder: 'Enter first and last name' },
+      email: { label: 'Email', placeholder: 'example@gmail.com' },
+      phone: { label: 'Phone Number', placeholder: 'xxx xxx xxx' },
+      countryCode: '+966',
+      service: { label: 'Service Type', placeholder: 'Select service type' },
+      message: { label: 'Details', placeholder: 'Write your message details' },
+      submit: 'Start Your Journey With Us',
+      success: { title: 'Message sent successfully', description: 'Our team will contact you soon' },
+      error: 'An error occurred, please try again',
+    },
+    info: {
+      location: {
+        value: 'Saudi Arabia – Riyadh – Al Mosafa District – Al Kharj Road',
+        label: 'Office Location',
+      },
+      phone: {
+        value: '+966 56 119 9191',
+        label: 'Phone',
+      },
+      email: {
+        value: 'mana@watheb.sa',
+        label: 'Email',
+      },
+    },
   },
   licenses: {
     title: 'Environmental Licenses and Permits',

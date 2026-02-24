@@ -2,42 +2,52 @@
 
 import Image from 'next/image';
 
-
-export function ContactInfoCard({ icon, value, label, className = '' }) {
-  return (
-    <div
-      className={`flex-1 min-w-0  border-grey-50 rounded-2xl px-4 py-8 flex flex-col gap-0 items-center transition-all duration-300 hover:border-carousel-active hover:shadow-lg ${className}`}
-    >
-      <div className="flex gap-4 items-start justify-end w-full">
-
-        {/* Icon */}
-        <div className="relative w-16 h-16 shrink-0 flex items-center justify-center">
-          {/* Background circle */}
-          <div className="absolute inset-0 bg-[#f8f8f8] rounded-full" />
-          {/* Icon */}
-          <div className="relative w-6 h-6 z-10">
-            <Image
-              src={icon}
-              alt={label}
-              fill
-              className="object-contain"
-            />
-          </div>
+export function ContactInfoCard({ icon, value, label, href, isRTL, className = '' }) {
+  const content = (
+    <>
+      {/* Icon */}
+      {/* Content */}
+      <div className="flex shrink-0 w-14 h-14 rounded-full bg-[#E8F0EB] items-center justify-center">
+        <div className="relative w-6 h-6">
+          <Image
+            src={icon}
+            alt=""
+            fill
+            className="object-contain"
+            sizes="24px"
+          />
         </div>
-        {/* Content */}
-        <div className="flex-1 flex flex-col gap-8 items-end justify-center text-right">
-          {/* Value */}
-          <p className="font-din font-medium text-2xl leading-[48px] text-grey-900 w-full whitespace-pre-wrap">
-            {value}
-          </p>
-          {/* Label */}
-          <p className="font-din font-normal text-2xl leading-[48px] text-grey-500 w-full whitespace-pre-wrap">
-            {label}
-          </p>
-        </div>
-
-
       </div>
+      <div className={`flex flex-col gap-1 min-w-0 items-start`}>
+        <p className="font-din text-xl font-medium text-[#141414] leading-tight whitespace-pre-wrap break-words">
+          {value}
+        </p>
+        <p className="font-din text-sm font-normal text-[#595959] leading-relaxed ">
+          {label}
+        </p>
+      </div>
+    </>
+  );
+
+  const sharedClasses =
+    `flex flex-1 min-w-0 gap-4 items-center rounded-2xl border border-[#E5E5E5] bg-white px-6 py-6 transition-all duration-300 hover:border-[#1B6936]/30 hover:shadow-md `;
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={`${sharedClasses} ${className}`}
+        target={href.startsWith('mailto:') || href.startsWith('tel:') ? undefined : '_blank'}
+        rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <div className={`${sharedClasses} ${className}`}>
+      {content}
     </div>
   );
 }
