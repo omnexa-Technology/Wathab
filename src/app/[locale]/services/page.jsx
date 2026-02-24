@@ -17,12 +17,12 @@ export default async function ServicesPage() {
   const list = Array.isArray(services) ? services : [];
 
   const items = list.map((s, index) => {
-    const imageSource = s.mainImage ?? s.image;
+    const iconSource = s.icon;
     return {
       title: s.title ?? '',
       description: s.description ?? '',
-      imageUrl: imageSource?.asset?.url
-        ? urlFor(imageSource).width(224).height(224).url()
+      imageUrl: iconSource?.asset?.url
+        ? urlFor(iconSource).width(224).height(224).url()
         : undefined,
       slug: s.slug ?? s._id ?? '',
       variant: index === 0 ? 'dark' : 'light',
