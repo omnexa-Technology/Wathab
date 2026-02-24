@@ -260,6 +260,33 @@ export default {
     description: 'تواصل مع فريقنا لمناقشة احتياجاتك في الاستشارات البيئية.',
     heroTitle: 'لنرسم معاً مساراً مستداماً لمشاريعكم.. تواصلوا معنا',
     breadcrumbLabel: 'تواصل معنا',
+    form: {
+      title: 'أرسل رسالتك الآن',
+      subtitle: 'سواء كنت بحاجة إلى استشارة هندسية أو دعم الامتثال، نحن هنا لمساعدتك.',
+      name: { label: 'الاسم الكامل', placeholder: 'أدخل الاسم الأول والأخير' },
+      email: { label: 'البريد الإلكتروني', placeholder: 'example@gmail.com' },
+      phone: { label: 'رقم الهاتف', placeholder: 'xxx xxx xxx' },
+      countryCode: '+966',
+      service: { label: 'نوع الخدمة', placeholder: 'اختر نوع الخدمة' },
+      message: { label: 'التفاصيل', placeholder: 'اكتب تفاصيل رسالتك' },
+      submit: 'ابدأ رحلتك معنا الآن',
+      success: { title: 'تم إرسال رسالتك بنجاح', description: 'سوف يقوم فريقنا بالتواصل معك قريباً' },
+      error: 'حدث خطأ أثناء الإرسال، حاول مرة أخرى',
+    },
+    info: {
+      location: {
+        value: 'المملكة العربية السعودية – الرياض – حي المصفاة – طريق الخرج',
+        label: 'موقع المكتب',
+      },
+      phone: {
+        value: '+966 56 119 9191',
+        label: 'الهاتف',
+      },
+      email: {
+        value: 'mana@watheb.sa',
+        label: 'البريد الإلكتروني',
+      },
+    },
   },
   licenses: {
     title: 'بوابتكم للامتثال والاعتمادات البيئية الرسمية',
