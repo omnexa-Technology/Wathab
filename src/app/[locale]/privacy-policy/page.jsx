@@ -20,7 +20,9 @@ export default async function PrivacyPolicyPage() {
         image="/assets/images/privacy-policy/hero.webp"
       />
       <PrivacyPolicyContent />
-      <PrivacyPolicyContactSection />
+      <div className="flex justify-center relative w-full my-24 ">
+        <PrivacyPolicyContactSection />
+      </div>
     </>
   );
 }

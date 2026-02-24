@@ -20,7 +20,9 @@ export default async function TermsOfServicePage() {
         image="/assets/images/terms-of-service/hero.webp"
       />
       <TermsOfServiceContent />
-      <PrivacyPolicyContactSection />
+      <div className="flex justify-center relative w-full my-24 ">
+        <PrivacyPolicyContactSection />
+      </div>
     </>
   );
 }
