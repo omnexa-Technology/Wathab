@@ -71,8 +71,8 @@ export function ArticleCard({
         {isHovered && (
           <div className="flex items-center justify-end">
             <div className="bg-[#1b6936] rounded-full p-2 w-16 h-16 flex items-center justify-center animate-in fade-in duration-300">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21.3334 10.6667L10.6667 21.3333M10.6667 21.3333H21.3334M10.6667 21.3333V10.6667" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M22.6654 22.6673L9.33203 9.33398M9.33203 9.33398V21.334M9.33203 9.33398H21.332" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
           </div>
