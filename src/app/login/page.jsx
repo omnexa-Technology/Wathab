@@ -39,7 +39,7 @@ export default function LoginPage() {
           src="/assets/images/Login/login.webp"
           alt="Login background"
           fill
-          className="object-cover dark:brightness-[0.2] dark:grayscale rounded-4xl"
+          className="object-cover rounded-4xl"
         />
       </div>
 

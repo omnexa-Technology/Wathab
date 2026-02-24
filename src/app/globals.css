@@ -194,51 +194,6 @@
   /* Navigation button hover */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not(.dark) {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --card: #1e293b;
-    --card-foreground: #f8fafc;
-    --popover: #1e293b;
-    --popover-foreground: #f8fafc;
-    --primary: #f8fafc;
-    --primary-foreground: #0f172a;
-    --secondary: #1e293b;
-    --secondary-foreground: #f8fafc;
-    --muted: #1e293b;
-    --muted-foreground: #94a3b8;
-    --accent: #1e293b;
-    --accent-foreground: #f8fafc;
-    --destructive: #7f1d1d;
-    --destructive-foreground: #fca5a5;
-    --border: #1e293b;
-    --input: #1e293b;
-    --ring: #475569;
-  }
-}
-
-html.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --card: #1e293b;
-  --card-foreground: #f8fafc;
-  --popover: #1e293b;
-  --popover-foreground: #f8fafc;
-  --primary: #f8fafc;
-  --primary-foreground: #0f172a;
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #fca5a5;
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #475569;
-}
 
 html,
 body {
@@ -246,8 +201,8 @@ body {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #ffffff;
+  color: #171717;
 }
 
 .about-green-cut-rtl {
