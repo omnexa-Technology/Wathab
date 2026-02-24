@@ -1,32 +1,25 @@
-/**
- * VisionMissionCard Molecule
- * Composed card component for displaying vision/mission content
- * Features: glass-morphism effect, green border, backdrop blur
- */
-
-import { Card, CardContent } from '../../ui/card';
-// import { CardTitle } from "@/components/atoms/CardTitle/CardTitle";
-import { CardDescription } from '../../atoms/CardDescription/CardDescription';
 import FadeContent from '../../FadeContent';
-export function VisionMissionCard({
-  title,
-  description,
-  className = '',
-}) {
+
+/**
+ * VisionMissionCard — Figma nodes 3658:3170 (desktop) / 4180:18570 (mobile)
+ * Semi-transparent card with green border for Vision & Mission content.
+ */
+export function VisionMissionCard({ title, description, className = '' }) {
   return (
-    <Card
-      className={`w-full rounded-2xl border-[3px] border-[#86ba41] backdrop-blur-[6px] backdrop-brightness-100 backdrop-saturate-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_4px_rgba(0,0,0,0.13),inset_-1px_0_4px_rgba(0,0,0,0.11)] ${className}`}
+    <div
+      className={`w-full rounded-lg md:rounded-2xl border border-carousel-active md:border-3 bg-[rgba(26,28,15,0.08)] backdrop-blur-sm flex flex-col gap-6 md:gap-14 p-4 sm:p-6 md:px-10 md:py-16 ${className}`}
     >
-      <CardContent className="flex flex-col items-end justify-end gap-14 px-10 py-16">
-        <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-          <CardDescription className="text-white">{description}</CardDescription>
-        </FadeContent>
-        {/* <CardTitle className="text-start text-white">{title}</CardTitle> */}
-        <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-          <h1 className="text-start text-5xl font-bold rotate-180 flex items-end justify-start text-white">{title}</h1>
-        </FadeContent>
-      </CardContent>
-    </Card>
+      <FadeContent blur duration={1000} easing="ease-out" initialOpacity={0}>
+        <h3 className="font-din text-base sm:text-xl md:text-4xl lg:text-[48px] lg:leading-[normal] font-medium md:font-normal text-white leading-7 sm:leading-8">
+          {title}
+        </h3>
+      </FadeContent>
+
+      <FadeContent blur duration={1000} easing="ease-out" initialOpacity={0}>
+        <p className="font-din text-xs sm:text-sm md:text-2xl lg:text-[32px] lg:leading-[64px] text-[#e8e8e8] leading-6 sm:leading-7">
+          {description}
+        </p>
+      </FadeContent>
+    </div>
   );
 }
-

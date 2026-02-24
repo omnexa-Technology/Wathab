@@ -39,7 +39,7 @@ export function OurServicesSection({ className = '', ...props }) {
 
   return (
     <section
-      className={`flex flex-col items-center justify-end w-full overflow-x-hidden min-w-0 bg-[#f9f9f9]
+      className={`flex flex-col items-center justify-end w-full overflow-x-hidden min-w-0
         px-4 py-12
         sm:px-5 sm:py-14
         md:px-6 md:py-16
@@ -83,14 +83,14 @@ export function OurServicesSection({ className = '', ...props }) {
 
           {/* Featured card — full width on mobile, flex-1 on lg */}
           <div className="w-full min-w-0 lg:flex-1 lg:min-h-[390px]">
-            <ServiceCard
+            {/* <ServiceCard
               iconSrc={servicesData[0].iconSrc}
               titleKey={servicesData[0].titleKey}
               descriptionKey={servicesData[0].descriptionKey}
               variant="featured"
               href={servicesData[0].href}
               className="w-full h-full min-h-[320px] sm:min-h-[360px] lg:min-h-[390px]"
-            />
+            /> */}
           </div>
         </div>
 
