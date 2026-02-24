@@ -1,15 +1,12 @@
 'use client';
 
 import { useTranslation } from '../../../hooks/useTranslation';
-import { useLanguageStore } from '../../../store/useLanguageStore';
+// import { useLanguageStore } from '../../../store/useLanguageStore';
 import { Phone, Mail, MapPin } from 'lucide-react';
-
-const ICON_CLASS = 'w-6 h-6 text-[#1b6936] shrink-0';
-
 export function PrivacyPolicyContactSection({ className = '', ...props }) {
   const { t } = useTranslation();
-  const language = useLanguageStore((s) => s.language);
-  const isRTL = language === 'ar';
+  // const language = useLanguageStore((s) => s.language);
+
 
   const items = [
     {
@@ -33,12 +30,13 @@ export function PrivacyPolicyContactSection({ className = '', ...props }) {
     <section
       className={`
     w-full
-    px-6
+    mx-16
     py-10
     bg-[#1b6936]
     bg-[url('/assets/icons/ui/cover-contact.svg')]
     bg-cover
     rounded-3xl
+
     ${className}
   `}
       dir="rtl"
@@ -60,7 +58,7 @@ export function PrivacyPolicyContactSection({ className = '', ...props }) {
           {items.map(({ icon: Icon, value, label }) => (
             <div
               key={label}
-              className="flex flex-col items-center text-center gap-4"
+              className="flex flex-col items-center text-center gap-4 "
             >
               {/* Icon */}
               <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center">
