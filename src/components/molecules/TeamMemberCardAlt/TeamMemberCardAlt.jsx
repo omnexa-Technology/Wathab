@@ -60,7 +60,7 @@ export const TeamMemberCardAlt = React.memo(function TeamMemberCardAlt({
             >
               <div className="w-15 h-15 bg-[#1B6936] rounded-full flex items-center justify-center">
                 <Image
-                  src="/assets/icons/social/linkedin.svg"
+                  src="/assets/icons/social/linkedIn1.svg"
                   alt="LinkedIn"
                   width={24}
                   height={24}

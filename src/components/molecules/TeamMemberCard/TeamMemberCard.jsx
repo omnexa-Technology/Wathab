@@ -79,7 +79,7 @@ export const TeamMemberCard = React.memo(function TeamMemberCard({
               aria-label={`${name} LinkedIn`}
             >
               <Image
-                src="/assets/icons/social/linkedin.svg"
+                src="/assets/icons/social/linkedIn1.svg"
                 alt=""
                 width={24}
                 height={24}
