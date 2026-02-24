@@ -65,11 +65,7 @@ const serviceListFields = `
   "slug": slug.current,
   title,
   description,
-  mainImage {
-    asset->{ _id, url, metadata { lqip } },
-    alt
-  },
-  image {
+  icon {
     asset->{ _id, url, metadata { lqip } },
     alt
   }
@@ -86,11 +82,7 @@ export const SERVICE_BY_SLUG_QUERY = `*[_type == "services" && (slug.current == 
   "slug": slug.current,
   title,
   description,
-  mainImage {
-    asset->{ _id, url, metadata { lqip } },
-    alt
-  },
-  image {
+  icon {
     asset->{ _id, url, metadata { lqip } },
     alt
   }
