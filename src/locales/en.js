@@ -515,6 +515,22 @@ export default {
       lastUpdate: { heading: 'Last Update Date', body: 'This policy was last updated in line with current practices and applicable regulations.' },
     },
   },
+  termsOfService: {
+    title: 'Usage Policy and Digital Compliance Framework',
+    description: 'Usage Policy and Digital Compliance Framework for Wathab Environmental Consulting.',
+    breadcrumbLabel: 'Usage Policy',
+    sections: {
+      intro: { heading: 'Introduction', body: 'This Usage Policy and Digital Compliance Framework sets out the terms of use for the Wathab Environmental Consulting platform and the responsibilities of users and the operator. We are committed to providing content and services that comply with national standards and with the National Center for Environmental Compliance Oversight and the National Waste Management Center (MOAN), while protecting users\' rights and data.' },
+      commitments: { heading: 'Our Commitments', body: 'We are committed to the highest standards of technical accuracy in studies and consulting services, to providing up-to-date knowledge content aligned with national lists, and to ensuring transparency and regulatory compliance in all our digital practices.' },
+      termsAndConditions: { heading: 'Terms and Conditions of Use', body: 'Users must comply with the published terms of use, must not use the platform for unlawful purposes, and must respect intellectual property rights and the content provided. We also protect user data in accordance with applicable data protection regulations.' },
+      restrictions: { heading: 'Restrictions on Use', body: 'It is prohibited to use the platform to publish content that violates regulations, to attempt to breach systems, or to exploit services in a way that harms other users or the operator. We reserve the right to restrict or suspend non-compliant accounts.' },
+      externalLinks: { heading: 'Links and External Parties', body: 'The platform may include links to external sites or parties. We are not responsible for the content or practices of those parties and advise users to review their privacy policies and terms.' },
+      digitalPrivacy: { heading: 'Digital Protection and Privacy', body: 'We apply appropriate technical and organizational measures to protect data and digital privacy in line with national regulations. We do not share your personal data with third parties for marketing purposes without your consent.' },
+      dataProtectionGuidelines: { heading: 'Data Protection Guidelines', body: 'We advise you not to share passwords, to use secure channels when contacting us, and to report any suspicious activity promptly. You may exercise your rights of access, correction, and deletion by contacting us.' },
+      dataDeletion: { heading: 'Data Deletion and Privacy', body: 'You may request the deletion or modification of your personal data by contacting us at the designated email. We are committed to responding within the timeframes set out in the personal data protection regulations.' },
+      relatedLegislation: { heading: 'Related Legislation and Policies', body: 'This usage policy and related decisions are subject to the regulations in force in the Kingdom of Saudi Arabia, including the personal data protection system and regulations related to environmental and digital compliance.' },
+    },
+  },
   faq: {
     sectionTitle: 'Most Important Questions Everything You Need to Know',
     fullSectionTitle: 'Clear answers to all your questions',
