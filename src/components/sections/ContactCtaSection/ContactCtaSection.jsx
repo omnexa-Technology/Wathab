@@ -3,7 +3,7 @@
 import { useTranslation } from '../../../hooks/useTranslation';
 import { useLanguageStore } from '../../../store/useLanguageStore';
 import { ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import LocaleLink from '../../LocaleLink';
 
 /**
  * ContactCtaSection - Call-to-action section encouraging users to contact
@@ -42,7 +42,7 @@ export function ContactCtaSection({ className = '', ...props }) {
         </div>
 
         {/* CTA Button */}
-        <Link
+        <LocaleLink
           href="/contact"
           className="group flex items-center gap-4 px-6 h-16 bg-white rounded-[32px] transition-colors"
         >
@@ -53,7 +53,7 @@ export function ContactCtaSection({ className = '', ...props }) {
           <div className="w-8 h-8 flex items-center justify-center">
             <ArrowLeft className="text-[#1B6936] transition-all duration-300 group-hover:rotate-45" />
           </div>
-        </Link>
+        </LocaleLink>
 
       </div>
     </section>
