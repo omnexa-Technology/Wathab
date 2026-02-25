@@ -29,16 +29,10 @@ export function PrivacyPolicyContactSection({ className = '', ...props }) {
   return (
     <section
       className={`
-    w-full
-    mx-16
-    py-10
-    bg-[#1b6936]
-    bg-[url('/assets/icons/ui/cover-contact.svg')]
-    bg-cover
-    rounded-3xl
-
-    ${className}
-  `}
+        w-full mx-16 py-10 bg-[#1b6936] 
+        bg-[url('/assets/icons/ui/cover-contact.svg')] bg-cover rounded-3xl
+        ${className}
+      `}
       dir="rtl"
       {...props}
     >
