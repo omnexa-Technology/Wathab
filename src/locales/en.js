@@ -509,6 +509,7 @@ export default {
     noResults: 'No results found.',
     noArticles: 'No articles yet.',
     shareOn: 'Share on',
+    discoverMore: 'Discover More',
   },
   team: {
     sectionTitle: 'The Team',

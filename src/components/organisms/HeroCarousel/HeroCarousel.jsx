@@ -18,7 +18,7 @@ export function HeroCarousel({
   slides = [],
   autoplayDelay = 5000,
   loop = true,
-  className = '',
+  
   ...props
 }) {
   const swiperRef = useRef(null);
@@ -48,17 +48,9 @@ export function HeroCarousel({
 
   return (
     <div
-      className={`relative w-full min-h-screen ${className}`}
+      className={`relative w-full min-h-screen `}
       {...props}
     >
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 pointer-events-none z-10" />
-
-      {/* Decorative vectors */}
-      <div className="absolute w-[22.92%] h-[40.74%] top-[59.26%] left-[77.08%] opacity-[0.16] pointer-events-none z-0">
-        {/* Vector images would go here */}
-      </div>
-
       {/* Main Swiper Container */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
@@ -72,9 +64,7 @@ export function HeroCarousel({
           disableOnInteraction: false,
         }}
         effect="fade"
-        fadeEffect={{
-          crossFade: true,
-        }}
+        fadeEffect={{ crossFade: true }}
         speed={800}
         className="w-full h-screen"
       >
@@ -82,8 +72,9 @@ export function HeroCarousel({
           <SwiperSlide key={slide.id || index}>
             {slide.imageSrc && (
               <div className="absolute inset-0 z-0">
+                {/* Green gradient overlays */}
                 <div
-                  className="absolute top-0 right-0 h-full w-full sm:w-[70%] lg:w-[56.25%] z-1"
+                  className="absolute top-0 right-0 h-full w-full sm:w-[70%] lg:w-[56.25%] z-[1]"
                   style={{
                     background: isRTL
                       ? 'linear-gradient(90.5deg, rgba(27, 105, 54, 0) 0.35%, rgb(27, 105, 54) 99.74%)'
@@ -91,7 +82,7 @@ export function HeroCarousel({
                   }}
                 />
                 <div
-                  className="absolute top-0 left-0 sm:left-[30%] lg:left-[48.125%] h-full w-full sm:w-[70%] lg:w-[51.875%] z-2"
+                  className="absolute top-0 left-0 sm:left-[30%] lg:left-[48.125%] h-full w-full sm:w-[70%] lg:w-[51.875%] z-[2]"
                   style={{
                     background: isRTL
                       ? 'linear-gradient(90.46deg, rgba(27, 105, 54, 0) 0.35%, rgba(27, 105, 54, 0.9) 99.74%)'
@@ -106,12 +97,15 @@ export function HeroCarousel({
                   sizes="100vw"
                   priority={index === 0}
                 />
-                <div className=" flex w-full max-w-[1680px] items-center ltr:justify-start rtl:justify-start gap-12 absolute top-[204px] ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2 px-4 z-100">
+
+                {/* Slide content — responsive vertical offset */}
+                <div className="flex w-full max-w-[1680px] items-center ltr:justify-start rtl:justify-start absolute ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2 z-[100]
+                  top-[80px] sm:top-[100px] md:top-[140px] lg:top-[180px] xl:top-[204px]
+                  px-4 sm:px-5 md:px-6 lg:px-8">
                   <HeroSlide
                     titleKey={slide.titleKey}
                     descriptionKey={slide.descriptionKey}
                     ctaKey={slide.ctaKey}
-                    ctaHref={slide.ctaHref}
                   />
                 </div>
               </div>
@@ -121,7 +115,9 @@ export function HeroCarousel({
       </Swiper>
 
       {/* Navigation Controls */}
-      <div className="w-7xl fex items-start justify-start absolute bottom-16 z-30">
+      <div className="absolute z-30 bottom-8 sm:bottom-10 lg:bottom-16
+        flex justify-start items-center left-3/5 lg:left-auto  top-1/4 lg:top-auto  
+        lg:inset-x-auto lg:ltr:left-8 lg:rtl:right-8 ">
         <CarouselNavigation
           onPrev={handlePrev}
           onNext={handleNext}
@@ -130,14 +126,25 @@ export function HeroCarousel({
         />
       </div>
 
-      {/* RTL/LTR: Pagination — left in LTR, right in RTL */}
-      <div className="absolute top-[204px] ltr:left-8 rtl:right-8 z-30">
+      {/* Pagination — beside slide content.
+          Mobile: vertically centered on the side.
+          Tablet+: aligned with hero content top offsets. */}
+      <div className="absolute z-30
+        top-1/2 -translate-y-1/3
+        ltr:left-4 rtl:right-4
+        rotate-90
+        lg:rotate-0
+        left-4/7 lg:left-auto
+        sm:translate-y-0 sm:ltr:left-6 sm:rtl:right-6
+        md:top-[140px]
+        lg:ltr:left-8 lg:rtl:right-8 lg:top-[180px]
+        xl:top-[204px]">
         <CarouselPagination
           totalSlides={slides.length}
           activeIndex={activeIndex}
           onSlideChange={handlePaginationClick}
         />
       </div>
-    </div >
+    </div>
   );
 }
