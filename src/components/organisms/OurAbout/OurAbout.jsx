@@ -77,18 +77,18 @@ export function OurAbout({ className = '', ...props }) {
                             </div>
                             <h2
                                 // id="about-section-title"
-                                className="me-2 w-fit font-h2 text-white text-7xl text-start whitespace-nowrap relative [font-style:var(--h2-font-style)]"
+                                className="me-2 w-fit font-h2 text-foreground md:text-white text-7xl text-start whitespace-nowrap relative [font-style:var(--h2-font-style)]"
                             >
                                 {t('about.section.title')}
                             </h2>
                         </header>
                         {/* Content section with heading and description */}
                         <div className="flex flex-col ltr:items-start rtl:items-end gap-6 md:gap-16 relative self-stretch w-full flex-[0_0_auto]">
-                            <h3 className="self-stretch font-din text-5xl text-white leading-[1.4] relative text-start">
+                            <h3 className="self-stretch font-din text-5xl text-foreground md:text-white leading-[1.4] relative text-start">
                                 {t('about.section.heading')}
                             </h3>
 
-                            <p className="self-stretch font-text-32regular text-[#eaeaea] text-3xl leading-[1.8] relative text-start">
+                            <p className="self-stretch font-text-32regular text-gray-700 md:text-[#eaeaea] text-3xl leading-[1.8] relative text-start">
                                 {t('about.section.description')}
                             </p>
                         </div>

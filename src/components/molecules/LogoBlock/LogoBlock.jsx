@@ -5,14 +5,14 @@ import LocaleLink from '../../LocaleLink';
 
 export function LogoBlock({ className = '', ...props }) {
   return (
-    <div className={`flex items-center gap-[6.35px] ${className}`} {...props}>
-      <LocaleLink href="/" className="flex items-center gap-[6.35px]" aria-label="Home">
+    <div className={`flex items-center gap-1.5 sm:gap-[6.35px] ${className}`} {...props}>
+      <LocaleLink href="/" className="flex items-center gap-1.5 sm:gap-[6.35px]" aria-label="Home">
         <Logo
           src="/assets/icons/logo/logo-light.svg"
           alt="Wathb Logo"
           width={193}
           height={48}
-          className="w-[193.17px] h-auto"
+          className="w-28 h-auto sm:w-36 md:w-40 lg:w-[193.17px] max-w-full object-contain"
         />
       </LocaleLink>
     </div>
