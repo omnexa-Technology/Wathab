@@ -7,11 +7,14 @@ export default {
   },
   navbar: {
     brand: 'Wathb',
+    menuTitle: 'Menu',
     home: 'Home',
     about: 'About',
     services: 'Services',
     projects: 'Projects',
     articles: 'Articles',
+    news: 'News',
+    licenses: 'Licenses',
     contact: 'Contact',
   },
   home: {

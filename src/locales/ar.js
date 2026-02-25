@@ -7,6 +7,7 @@ export default {
   },
   navbar: {
     brand: 'وثب',
+    menuTitle: 'القائمة',
     home: 'الرئيسية',
     about: 'عن وثب',
     services: 'الخدمات',

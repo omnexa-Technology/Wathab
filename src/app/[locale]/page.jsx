@@ -155,7 +155,7 @@ export default async function HomePage() {
 
       {/* Section 14: FAQ (الأسئلة الشائعة) */}
       <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
-        <FaqSection />
+        <FaqSection />  
       </div>
     </>
   );

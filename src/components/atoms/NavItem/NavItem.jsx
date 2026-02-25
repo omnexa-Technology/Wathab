@@ -8,6 +8,9 @@ import { useTranslation } from '../../../hooks/useTranslation';
 const linkBaseClass =
   ' flex h-12 items-center text-green-900 justify-center gap-2.5 px-4 py-0 rounded-[40px] font-[number:var(--body-font-weight)] text-[length:var(--body-font-size)] tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] [font-style:var(--body-font-style)] ';
 
+const linkBaseClassMobile =
+  ' flex w-full min-h-[48px] items-center justify-start gap-2.5 px-4 py-3 rounded-none text-right font-[number:var(--body-font-weight)] text-[length:var(--body-font-size)] tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] [font-style:var(--body-font-style)] touch-manipulation ';
+
 const linkActiveClass =
   ' font-[number:var(--text-20bold-font-weight)] text-[length:var(--text-20bold-font-size)] tracking-[var(--text-20bold-letter-spacing)] leading-[var(--text-20bold-line-height)] [font-style:var(--text-20bold-font-style)] text-[#1B6936]';
 
@@ -22,8 +25,9 @@ const triggerClass =
 /**
  * Single nav entry: link or dropdown trigger.
  * Preserves routing and active state; uses Anima design tokens.
+ * variant: 'desktop' | 'mobile' for layout and touch targets.
  */
-export function NavItem({ href, translationKey, hasDropdown = false, dropdownContent, children, className = '', ...props }) {
+export function NavItem({ href, translationKey, hasDropdown = false, dropdownContent, children, variant = 'desktop', wrapperClassName = '', className = '', ...props }) {
   const { t } = useTranslation();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -66,11 +70,14 @@ export function NavItem({ href, translationKey, hasDropdown = false, dropdownCon
     );
   }
 
+  const isMobile = variant === 'mobile';
+  const linkClass = `${isMobile ? linkBaseClassMobile : linkBaseClass} ${isActive ? linkActiveClass : linkInactiveClass} ${className}`;
+
   return (
-    <li>
+    <li className={wrapperClassName || undefined}>
       <LocaleLink
         href={href}
-        className={`${linkBaseClass} ${isActive ? linkActiveClass : linkInactiveClass} ${className} `}
+        className={linkClass}
         {...props}
       >
         {isActive ? <span className={activeUnderlineClass}>{label}</span> : label}

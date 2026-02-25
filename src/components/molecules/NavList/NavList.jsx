@@ -65,7 +65,7 @@ const navItems = [
   // },
 ];
 
-export function NavList({ className = '', serviceItems, ...props }) {
+export function NavList({ className = '', serviceItems, variant = 'desktop', ...props }) {
   const resolvedNavItems = navItems.map((item) => {
     if (item.type === 'dropdown' && item.key === 'navbar.services' && serviceItems?.length > 0) {
       return { ...item, items: serviceItems };
@@ -73,16 +73,23 @@ export function NavList({ className = '', serviceItems, ...props }) {
     return item;
   });
 
+  const isMobile = variant === 'mobile';
+
   return (
-    <ul className={`flex items-center justify-end gap-2  ${className}`} dir="rtl" {...props}>
+    <ul
+      className={`flex items-center justify-end gap-2 flex-col lg:flex-row lg:items-center lg:justify-end lg:gap-2 ${isMobile ? 'w-full gap-0' : ''} ${className}`}
+      dir="rtl"
+      {...props}
+    >
       {resolvedNavItems.map((item) => {
         if (item.type === 'dropdown') {
           return (
-            <li key={item.key}>
+            <li key={item.key} className={isMobile ? 'w-full border-b border-gray-100 last:border-b-0' : ''}>
               <NavDropdown
                 translationKey={item.key}
                 label={item.key}
                 items={item.items}
+                variant={variant}
               />
             </li>
           );
@@ -93,6 +100,8 @@ export function NavList({ className = '', serviceItems, ...props }) {
             key={item.href}
             href={item.href}
             translationKey={item.key}
+            variant={variant}
+            wrapperClassName={isMobile ? 'w-full border-b border-gray-100 last:border-b-0' : ''}
           />
         );
       })}

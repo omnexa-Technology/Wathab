@@ -16,10 +16,12 @@ export function NavDropdown({
   label,
   translationKey,
   items,
+  variant = 'desktop',
   className = '',
 }) {
   const { t } = useTranslation();
   const pathname = usePathname();
+  const isMobile = variant === 'mobile';
 
   const locale = (pathname && pathname.split('/')[1]) || 'ar';
   const normalizedPath = pathname.replace(`/${locale}`, '') || '/';
@@ -33,9 +35,11 @@ export function NavDropdown({
 
   const displayLabel = translationKey ? t(translationKey) : label;
 
-  // Style classes matching NavItem
+  // Style classes matching NavItem; mobile: full width, touch-friendly
   const triggerBaseClass =
     'flex h-12 items-center justify-center gap-2 px-4 py-0 rounded-[40px] font-[number:var(--body-font-weight)] text-[length:var(--body-font-size)] tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] [font-style:var(--body-font-style)] transition-colors duration-200';
+  const triggerBaseClassMobile =
+    'flex w-full min-h-[48px] items-center justify-start gap-2 px-4 py-3 rounded-none text-right font-[number:var(--body-font-weight)] text-[length:var(--body-font-size)] leading-[var(--body-line-height)] touch-manipulation';
 
   const triggerActiveClass =
     'font-[number:var(--text-20bold-font-weight)] text-[length:var(--text-20bold-font-size)] text-[#1B6936]';
@@ -48,7 +52,7 @@ export function NavDropdown({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className={`${triggerBaseClass} ${isAnyItemActive ? triggerActiveClass : triggerInactiveClass
+        className={`${isMobile ? triggerBaseClassMobile : triggerBaseClass} ${isAnyItemActive ? triggerActiveClass : triggerInactiveClass
           } ${className} bg-transparent hover:bg-transparent border-none outline-none focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0`}
       >
         {isAnyItemActive ? (
@@ -64,7 +68,7 @@ export function NavDropdown({
         )}
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        align="end"
+        align={isMobile ? 'start' : 'end'}
         className="min-w-[200px] bg-white border border-gray-200 shadow-lg rounded-lg p-2"
         dir="rtl"
       >
