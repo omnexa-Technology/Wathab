@@ -13,7 +13,7 @@ export function OurAbout({ className = '', ...props }) {
 
   return (
     <section
-      className={`flex justify-center relative w-full max-w-[1918px] h-[871px] mx-auto overflow-hidden ${className}`}
+      className={`flex justify-center relative w-full max-w-[1918px] h-[871px] mx-auto overflow-hidden ${className}  lg:bg-none `}
       aria-labelledby="about-section-title"
       {...props}
     >
@@ -22,8 +22,17 @@ export function OurAbout({ className = '', ...props }) {
       {/* Mobile/Tablet: relative flow layout */}
       <div className="relative md:absolute md:left-1/2 md:-translate-x-1/2 md:top-0 w-full md:w-[1918px] min-h-[871px] md:h-[871px] px-4 md:px-0 py-12 md:py-0">
         {/* Background decorative patterns - hidden on mobile */}
+        {/* <div
+            className={` md:block absolute w-full h-[650px] top-[221px] bg-[#1B6936] xl:bg-[url('/assets/icons/logo/cover-about.svg')]  about-green-cut-rtl `}
+                /> */}
+
         <div
-          className={`hidden md:block absolute w-full h-[650px] top-[221px] bg-[#1B6936] bg-[url('/assets/icons/logo/cover-about.svg')] ${isRTL ? 'about-green-cut-rtl' : 'about-green-cut-ltr'}`}
+          className={`
+            md:block absolute w-full h-[650px] top-[221px] 
+            bg-[#1B6936] bg-[url('/assets/images/responsive.svg')] 
+            xl:bg-[url('/assets/icons/logo/cover-about.svg')]
+            lg:[clip-path:polygon(310px_0,100%_0,100%_100%,0_100%,0_668px)]
+          `}
         />
 
         {/* Company profile image - positioned LEFT in RTL, RIGHT in LTR */}
@@ -37,7 +46,7 @@ export function OurAbout({ className = '', ...props }) {
             w-[280px] h-[280px] 
             md:w-[602px] md:h-[602px] 
             flex items-center justify-center 
-            bg-white rounded-full
+            lg:bg-white rounded-full
             mb-8 md:mb-0
           `}
         >
@@ -55,7 +64,7 @@ export function OurAbout({ className = '', ...props }) {
         {/* Text content - positioned RIGHT in RTL, LEFT in LTR */}
         {/* Mobile: full width, stacked below image */}
         {/* Desktop: absolute positioned */}
-        <article
+        {/* <article
           className={`
             flex flex-col 
             w-full md:w-[1052px] 
@@ -65,8 +74,43 @@ export function OurAbout({ className = '', ...props }) {
             md:left-2/3 md:-translate-x-1/2 md:top-1/3
             text-start
           `}
+          dir={isRTL ? 'rtl' : 'ltr'} */}
+
+        <article
+          className={`
+    flex flex-col
+
+    w-full
+    md:max-w-[720px]
+    lg:max-w-[880px]
+
+    mx-auto
+    md:mx-0
+
+    px-6
+    md:px-0
+
+    items-start
+    rtl:items-end
+
+    gap-8 md:gap-10 lg:gap-16
+
+    relative
+    md:absolute
+
+    md:top-[260px]
+
+    md:rtl:right-[120px]
+    md:ltr:left-[120px]
+
+    lg:rtl:right-[180px]
+    lg:ltr:left-[180px]
+
+    text-start
+  `}
           dir={isRTL ? 'rtl' : 'ltr'}
         >
+        
           {/* Section header with title and decorative indicator */}
           <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
             <header className="inline-flex items-center justify-start w-full relative">
@@ -77,18 +121,18 @@ export function OurAbout({ className = '', ...props }) {
               </div>
               <h2
                 // id="about-section-title"
-                className="me-2 w-fit font-h2 text-foreground md:text-white text-7xl text-start whitespace-nowrap relative [font-style:var(--h2-font-style)]"
+                className="me-2 w-fit font-h2  text-white text-3xl md:text-5xl lg:text-7xl text-start whitespace-nowrap relative [font-style:var(--h2-font-style)]"
               >
                 {t('about.section.title')}
               </h2>
             </header>
             {/* Content section with heading and description */}
             <div className="flex flex-col ltr:items-start rtl:items-end gap-6 md:gap-16 relative self-stretch w-full flex-[0_0_auto]">
-              <h3 className="self-stretch font-din text-5xl text-foreground md:text-white leading-[1.4] relative text-start">
+              <h3 className="self-stretch font-din text-xl md:text-3xl lg:text-5xl  text-white leading-[1.4] relative text-start">
                 {t('about.section.heading')}
               </h3>
 
-              <p className="self-stretch font-text-32regular text-gray-700 md:text-[#eaeaea] text-3xl leading-[1.8] relative text-start">
+              <p className="self-stretch font-text-32regular text-[#eaeaea]   text-2xl md:text-lg lg:text-3xl leading-[1.8] relative text-start">
                 {t('about.section.description')}
               </p>
             </div>
