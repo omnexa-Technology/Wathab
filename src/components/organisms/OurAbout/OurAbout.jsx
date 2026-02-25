@@ -13,7 +13,7 @@ export function OurAbout({ className = '', ...props }) {
 
   return (
     <section
-      className={`flex justify-center relative w-full max-w-[1918px] h-[871px] mx-auto overflow-hidden ${className}  lg:bg-none `}
+      className={`flex justify-center relative w-full h-[871px] mx-auto overflow-hidden ${className}  lg:bg-none `}
       aria-labelledby="about-section-title"
       {...props}
     >
