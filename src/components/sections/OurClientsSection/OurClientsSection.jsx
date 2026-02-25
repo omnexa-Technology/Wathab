@@ -1,6 +1,5 @@
 'use client';
 
-import Marquee from 'react-fast-marquee';
 import { useTranslation } from '../../../hooks/useTranslation';
 import { useLanguageStore } from '../../../store/useLanguageStore';
 import { ClientCard } from '../../molecules/ClientCard/ClientCard';
@@ -32,6 +31,8 @@ export function OurClientsSection({ className = '', ...props }) {
     { id: 19, logoSrc: '/assets/images/clients/Component141(7).webp', name: 'شركة محمد البرغش ' },
     { id: 20, logoSrc: '/assets/images/clients/Component141(3).webp', name: 'شركة المري ' },
   ];
+
+  const duplicatedClients = [...clientsData, ...clientsData];
 
   return (
     <section
@@ -79,23 +80,13 @@ export function OurClientsSection({ className = '', ...props }) {
           </div>
         </div>
 
-        {/* Client Cards Marquee */}
-        <div className="w-full min-w-0 overflow-hidden">
-          <Marquee
-            play
-            direction={isRTL ? 'left' : 'right'}
-            speed={70}
-            delay={0}
-            pauseOnHover
-            gradient={false}
-            autoFill
-            loop={0}
-            className="w-full"
-          >
-            {clientsData.map((client, index) => (
+        {/* Client Cards Marquee
+        <div className="w-full overflow-hidden whitespace-nowrap">
+          <div className={`flex ${isRTL ? 'animate-marquee-rtl' : 'animate-marquee-ltr'}`}>
+            {duplicatedClients.map((client, index) => (
               <div
-                key={`client-${client.id}-${index}`}
-                className="shrink-0 w-[240px] sm:w-[260px] lg:w-[280px] flex-none mr-4 sm:mr-6 lg:mr-8 rtl:mr-0 rtl:ml-4 sm:rtl:ml-6 lg:rtl:ml-8"
+                key={`${client.id}-${index}`}
+                className="flex-shrink-0 w-[240px] sm:w-[260px] lg:w-[280px] mr-4 sm:mr-6 lg:mr-8"
               >
                 <ClientCard
                   logoSrc={client.logoSrc}
@@ -105,7 +96,42 @@ export function OurClientsSection({ className = '', ...props }) {
                 />
               </div>
             ))}
-          </Marquee>
+          </div>
+        </div> */}
+
+        {/* Client Cards Marquee */}
+        <div className="w-full overflow-hidden">
+
+          <div
+            className={`
+      flex
+      w-max
+      ${isRTL ? 'animate-marquee-rtl' : 'animate-marquee-ltr'}
+    `}
+          >
+
+            {duplicatedClients.map((client, index) => (
+              <div
+                key={`${client.id}-${index}`}
+                className="
+          flex-shrink-0
+          w-[240px]
+          sm:w-[260px]
+          lg:w-[280px]
+          mr-4 sm:mr-6 lg:mr-8
+        "
+              >
+                <ClientCard
+                  logoSrc={client.logoSrc}
+                  name={client.name}
+                  imageAlt={`${client.name} logo`}
+                  className="w-full"
+                />
+              </div>
+            ))}
+
+          </div>
+
         </div>
       </div>
     </section>

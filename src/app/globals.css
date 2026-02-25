@@ -339,3 +339,32 @@ body {
 .animate-accordion-up {
   animation: accordion-up 300ms cubic-bezier(0.87, 0, 0.13, 1);
 }
+/* Seamless marquee animations */
+
+@keyframes marquee-ltr {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.animate-marquee-ltr {
+  animation: marquee-ltr 40s linear infinite;
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 40s linear infinite;
+}
