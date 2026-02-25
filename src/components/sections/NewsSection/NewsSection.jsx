@@ -55,18 +55,12 @@ export function NewsSection({ articles: articlesProp, className = '', ...props }
     if (articlesProp?.length > 0) return;
     let cancelled = false;
     sanityClient
-      .fetch(NEWS_LIST_QUERY, { limit: 10})
+      .fetch(NEWS_LIST_QUERY, { limit: 10 })
       .then((data) => {
         if (cancelled) return;
-        // #region agent log
-        fetch('/api/debug-log',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'bc4867',location:'NewsSection.jsx:fetch.then',message:'Raw Sanity data',data:{isArray:Array.isArray(data),count:Array.isArray(data)?data.length:null,firstRaw:Array.isArray(data)?{_id:data[0]?._id,title:data[0]?.title,slug:data[0]?.slug,hasMainImage:!!data[0]?.mainImage,assetUrl:data[0]?.mainImage?.asset?.url??null,excerpt:data[0]?.excerpt??null,publishedAt:data[0]?.publishedAt??null}:data},timestamp:Date.now(),hypothesisId:'H-A H-C'})}).catch(()=>{});
-        // #endregion
         const mapped = Array.isArray(data)
           ? data.map((item, i) => mapSanityArticle(item, i, language))
           : [];
-        // #region agent log
-        fetch('/api/debug-log',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'bc4867',location:'NewsSection.jsx:fetch.mapped',message:'Mapped articles',data:{count:mapped.length,firstMapped:mapped[0]??null},timestamp:Date.now(),hypothesisId:'H-A H-C'})}).catch(()=>{});
-        // #endregion
         setSanityArticles(mapped);
       })
       .finally(() => {
@@ -109,23 +103,7 @@ export function NewsSection({ articles: articlesProp, className = '', ...props }
     emblaApi?.reInit();
   }, [articlesData, emblaApi]);
 
-
-  useEffect(() => {
-    if (!emblaApi || articlesData.length === 0) return;
-    const viewport = emblaApi.rootNode();
-    const firstSlide = viewport?.querySelector('.embla-slide-debug');
-    // #region agent log
-    fetch('/api/debug-log',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'bc4867',location:'NewsSection.jsx:dom-measure',message:'DOM measurement after embla ready',data:{viewportH:viewport?.offsetHeight??null,viewportW:viewport?.offsetWidth??null,firstSlideH:firstSlide?.offsetHeight??null,firstSlideDisplay:firstSlide?getComputedStyle(firstSlide).display:null,firstChildTag:firstSlide?.firstElementChild?.tagName??null,firstChildH:firstSlide?.firstElementChild?.offsetHeight??null,firstChildDisplay:firstSlide?.firstElementChild?getComputedStyle(firstSlide.firstElementChild).display:null},timestamp:Date.now(),hypothesisId:'H-B'})}).catch(()=>{});
-    // #endregion
-  }, [emblaApi, articlesData]);
-
   const scrollSnaps = emblaApi ? emblaApi.scrollSnapList() : articlesData.map((_, i) => i);
-
-  useEffect(() => {
-    // #region agent log
-    fetch('/api/debug-log',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'bc4867',location:'NewsSection.jsx:render-effect',message:'Post-render state',data:{isLoading,articlesCount:articlesData.length,firstArticle:articlesData[0]??null,emblaReady:!!emblaApi,scrollSnapsCount:scrollSnaps.length,articlesPropLength:articlesProp?.length??null},timestamp:Date.now(),hypothesisId:'H-A H-B H-C'})}).catch(()=>{});
-    // #endregion
-  });
 
   return (
     <section
@@ -164,7 +142,7 @@ export function NewsSection({ articles: articlesProp, className = '', ...props }
             className="flex items-center gap-2 text-[#1b6936] hover:opacity-80 transition-opacity"
           >
             <span className="font-din font-medium text-xl leading-tight sm:text-2xl md:text-3xl lg:text-[32px] lg:leading-[56px]">
-              اكتشف المزيد
+              {t('news.discoverMore')}
             </span>
             <div className="w-6 h-6 flex items-center justify-center sm:w-8 sm:h-8" aria-hidden>
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -190,18 +168,10 @@ export function NewsSection({ articles: articlesProp, className = '', ...props }
         {!isLoading && articlesData.length > 0 && (
           <div className="overflow-hidden w-full min-w-0" ref={emblaRef}>
             <div className="flex gap-4 sm:gap-6">
-              {articlesData.map((article, idx) => (
+              {articlesData.map((article) => (
                 <div
                   key={article.id}
-                  className="embla-slide-debug shrink-0 grow-0 flex flex-col basis-[90%] min-w-0 sm:basis-[80%] md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)]"
-                  ref={(el) => {
-                    if (el && idx === 0) {
-                      // #region agent log
-                      const child = el.firstElementChild;
-                      fetch('/api/debug-log',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:'bc4867',location:'NewsSection.jsx:slide-0-ref',message:'First slide mounted POST-FIX',data:{slideHeight:el.offsetHeight,slideWidth:el.offsetWidth,childTag:child?.tagName??null,childDisplay:child?getComputedStyle(child).display:null,childHeight:child?.offsetHeight??null,articleData:{id:article.id,title:article.title,imageSrc:article.imageSrc,href:article.href}},timestamp:Date.now(),hypothesisId:'H-B'})}).catch(()=>{});
-                      // #endregion
-                    }
-                  }}
+                  className="shrink-0 grow-0 flex flex-col basis-[90%] min-w-0 sm:basis-[80%] md:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)]"
                 >
                   <ArticleCard
                     imageSrc={article.imageSrc}
@@ -220,7 +190,7 @@ export function NewsSection({ articles: articlesProp, className = '', ...props }
         {/* No results */}
         {!isLoading && articlesData.length === 0 && (
           <p className="text-center text-[#595959] font-din py-12">
-            لا توجد أخبار متاحة حالياً
+            {t('news.noResults')}
           </p>
         )}
 

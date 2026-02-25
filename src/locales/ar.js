@@ -508,6 +508,7 @@ export default {
     noResults: 'لا توجد نتائج.',
     noArticles: 'لا توجد مقالات حالياً.',
     shareOn: 'شارك علي',
+    discoverMore: 'اكتشف المزيد',
   },
   team: {
     sectionTitle: 'الفريق',

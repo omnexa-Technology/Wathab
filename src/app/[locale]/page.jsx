@@ -93,9 +93,7 @@ export default async function HomePage() {
 
       {/* Section 2: Stats/Counters */}
       <div className="flex justify-center relative w-full">
-
         <StatsSection />
-
       </div>
 
       {/* Section 3: Our About (نبذة عن وثب) */}

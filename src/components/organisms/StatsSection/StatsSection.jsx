@@ -1,4 +1,4 @@
-'use client';
+  'use client';
 
 import { useRef, useState, useEffect } from 'react';
 import { StatCard } from '../../molecules/StatCard/StatCard';
@@ -58,7 +58,14 @@ export function StatsSection({ className = '', ...props }) {
   return (
     <section
       ref={sectionRef}
-      className={`flex w-full max-w-[1680px] flex-wrap items-stretch justify-center gap-6 px-4 py-8 md:flex-nowrap md:justify-between ${className}`}
+      className={`w-full max-w-[1680px] mx-auto
+        grid grid-cols-1  gap-4 px-4 py-8
+        sm:gap-5 sm:px-5
+        md:grid-cols-2 md:gap-6 md:px-6 md:py-10
+        lg:grid-cols-3 
+        xl:grid-cols-4
+        lg:px-12 lg:gap-8
+        ${className}`}
       aria-label="Statistics"
       {...props}
     >
@@ -69,7 +76,7 @@ export function StatsSection({ className = '', ...props }) {
           value={isInView ? stat.value : 0}
           labelKey={stat.labelKey}
           duration={1800}
-          className="min-w-0 flex-1 basis-full md:basis-0"
+          className="min-w-0 w-full"
         />
       ))}
     </section>
