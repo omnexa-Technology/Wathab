@@ -80,7 +80,7 @@ export function OurAbout({ className = '', ...props }) {
           className={`
     flex flex-col
 
-    w-full
+    w-[100vw]
     md:max-w-[720px]
     lg:max-w-[880px]
 
