@@ -291,7 +291,8 @@ export function NewsArticleContent({
           <div className={`flex items-center justify-between bg-[#fdfdfd] rounded-3xl px-8 py-6 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}>
             {/* Label — on the end side (left in RTL) */}
             <p className="font-din font-medium text-[24px] leading-[48px] text-[#303030]">
-              {t('news.shareOn')}
+              {/* {t('news.shareOn')} */}
+              شارك على
             </p>
 
 
