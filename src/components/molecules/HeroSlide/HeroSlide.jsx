@@ -61,20 +61,35 @@ export function HeroSlide({
           </div>
 
           {/* CTA Button */}
-          <LocaleLink
-            href="/contact"
-            className={`inline-flex items-center justify-center bg-white hover:bg-[#1b6936]/90 rounded-[32px] transition-colors ${ctaOrder}
-              gap-3 px-4 py-2 h-10
-              sm:gap-3 sm:px-5 sm:py-2.5 sm:h-11
-              lg:gap-4 lg:px-6 lg:h-auto lg:py-2.5`}
-          >
-            <ArrowLeft className="text-[#1b6036] shrink-0
-              w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" aria-hidden />
-            <span className="font-bold text-[#1b6036] whitespace-nowrap
-              text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-              {t(ctaKey)}
-            </span>
-          </LocaleLink>
+          <div className="group">
+            <LocaleLink
+              href="/contact"
+              className={`inline-flex items-center justify-center 
+    bg-white hover:bg-[#1b6936]/90 
+    rounded-[32px] transition-colors ${ctaOrder}
+    gap-3 px-4 py-2 h-10
+    sm:gap-3 sm:px-5 sm:py-2.5 sm:h-11
+    lg:gap-4 lg:px-6 lg:h-auto lg:py-2.5`}
+            >
+
+              <ArrowLeft
+                className="text-[#1b6036] shrink-0
+      group-hover:text-white
+      w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8"
+                aria-hidden
+              />
+
+              <span
+                className="font-bold text-[#1b6036]
+      group-hover:text-white
+      whitespace-nowrap
+      text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+              >
+                {t(ctaKey)}
+              </span>
+
+            </LocaleLink>
+          </div>
         </div>
       </FadeContent>
     </div>
