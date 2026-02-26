@@ -54,9 +54,15 @@ export function OurValuesSection({ className = '' }) {
         xl:gap-24 xl:px-16 xl:py-24
         2xl:gap-24 2xl:px-[120px] 2xl:py-24
         ${className}`}
+      style={{
+        backgroundImage: "url('/assets/icons/ui/bgsx2.svg')",
+        backgroundPosition: 'center',
+        backgroundRepeat: 'repeat'
+      }}
     >
+      
       <OurValuesHeader />
-
+      
       <div className="flex flex-col items-stretch gap-8 w-full max-w-full min-w-0 self-stretch
         sm:gap-10
         md:gap-12
