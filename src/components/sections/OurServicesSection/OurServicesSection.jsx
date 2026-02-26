@@ -107,31 +107,19 @@ export function OurServicesSection({ className = '', ...props }) {
           gap-8 sm:gap-10 md:gap-12 lg:gap-16">
           
           {/* Featured Service Card */}
-          <div className="w-full min-w-0">
-            <ServiceCard
-              iconSrc={servicesData[0].iconSrc}
-              titleKey={servicesData[0].titleKey}
-              descriptionKey={servicesData[0].descriptionKey}
-              variant="featured"
-              href={servicesData[0].href}
-              className="w-full 
-                min-h-[280px] 
-                sm:min-h-[320px] 
-                md:min-h-[360px] 
-                lg:min-h-[400px]
-                xl:min-h-[440px]"
-            />
-          </div>
+          {/* <div className="w-full min-w-0">
+          </div> */}
 
           {/* Standard Service Cards Grid */}
           <div className="w-full min-w-0">
             <div className="grid w-full min-w-0
               grid-cols-1 gap-4
               sm:gap-6
-              md:grid-cols-2 md:gap-6
+              md:grid-cols-3 md:gap-6
               lg:gap-8
               xl:gap-10">
-              {servicesData.slice(1).map((service) => (
+                
+              {servicesData.map((service) => (
                 <ServiceCard
                   key={service.id}
                   iconSrc={service.iconSrc}

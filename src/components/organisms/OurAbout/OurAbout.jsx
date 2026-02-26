@@ -30,7 +30,7 @@ export function OurAbout({ className = '', ...props }) {
           className={`
             md:block absolute w-full h-[650px] top-[221px] 
             bg-[#1B6936] bg-[url('/assets/images/responsive.svg')] 
-            xl:bg-[url('/assets/icons/logo/cover-about.svg')]
+            xl:bg-[url('/assets/icons/ui/cover-contact.svg')] bg-cover
             lg:[clip-path:polygon(310px_0,100%_0,100%_100%,0_100%,0_668px)]
           `}
         />
