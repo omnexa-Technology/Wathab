@@ -4,12 +4,28 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import { ContactForm } from './ContactForm';
 import { ContactCard } from './ContactCard';
+import Link from 'next/link';
 
+import {
+  SiFacebook,
+  SiInstagram,
+  SiWhatsapp,
+  SiTiktok,
+  SiX
+} from "react-icons/si";
 export function ContactSection() {
   const { t } = useTranslation();
   const language = useLanguageStore((s) => s.language);
   const isRTL = language === 'ar';
 
+
+  const SOCIAL_ICONS = [
+    { id: 'twitter', icon: SiX },
+    { id: 'instagram', icon: SiInstagram },
+    { id: 'whatsapp', icon: SiWhatsapp },
+    { id: 'tiktok', icon: SiTiktok },
+    { id: 'facebook', icon: SiFacebook },
+  ];
   return (
     <section
       dir={isRTL ? 'rtl' : 'ltr'}
@@ -18,8 +34,34 @@ export function ContactSection() {
       <div className="mx-auto flex max-w-[1680px] flex-col gap-[96px] md:flex-row md:items-start">
 
         {/* Right column - Card */}
-        <div className="flex w-full justify-center md:w-[680px] md:shrink-0">
+        <div className="flex flex-col gap-4 w-full justify-center md:w-[680px] md:shrink-0">
           <ContactCard />
+          <div className="flex flex-wrap justify-center gap-5 w-full mt-5">
+            {SOCIAL_ICONS.map(({ id, icon: Icon }) => (
+              <Link
+                key={id}
+                href="#"
+                className="
+      group flex items-center justify-center
+      w-[60px] h-[60px]
+      rounded-full
+      bg-[#E8F0EB]
+      ring-1 ring-[#1B6936]
+      hover:bg-[#1B6936]
+      transition-all duration-300
+    "
+              >
+                <Icon
+                  size={26}
+                  className="
+        text-[#1B6936]
+        group-hover:text-white
+        transition-colors
+      "
+                />
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Left column - Form */}
@@ -35,8 +77,8 @@ export function ContactSection() {
           </div>
         </div>
 
-        
+
       </div>
-    </section>
+    </section >
   );
 }

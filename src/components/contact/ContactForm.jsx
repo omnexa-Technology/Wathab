@@ -19,7 +19,7 @@ const schema = z.object({
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mohamed1.shamseldeen@gmail.com';
 
 export function ContactForm() {
   const { t } = useTranslation();

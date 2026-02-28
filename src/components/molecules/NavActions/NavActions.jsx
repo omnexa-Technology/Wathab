@@ -1,9 +1,9 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+// import { usePathname, useRouter } from 'next/navigation';
 import LocaleLink from '../../LocaleLink';
 import { useTranslation } from '../../../hooks/useTranslation';
-import { useLanguageStore } from '../../../store/useLanguageStore';
+// import { useLanguageStore } from '../../../store/useLanguageStore';
 import { SearchButton } from '../../atoms/SearchButton/SearchButton';
 
 const ctaClass =

@@ -29,8 +29,7 @@ export function OurAbout({ className = '', ...props }) {
         <div
           className={`
             md:block absolute w-full h-[650px] top-[221px] 
-            bg-[#1B6936] bg-[url('/assets/images/responsive.svg')] 
-            xl:bg-[url('/assets/icons/ui/cover-contact.svg')] bg-cover
+            bg-[#1B6936] ourabout-cover-bg bg-cover
             lg:[clip-path:polygon(310px_0,100%_0,100%_100%,0_100%,0_668px)]
           `}
         />
@@ -115,22 +114,22 @@ export function OurAbout({ className = '', ...props }) {
           <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
             <header className="inline-flex items-center justify-start w-full relative">
 
-              <div className={`inline-flex items-start justify-center gap-2 md:gap-4 relative flex-[0_0_auto] `}>
+              <div className={`md:mr-28 lg:mr-0 inline-flex items-start justify-center gap-2 md:gap-4 relative flex-[0_0_auto] `}>
                 {/* Decorative green indicator dots */}
-                <Indicator />
+                <Indicator  className="ml-5"/>
               </div>
               <h2
                 // id="about-section-title"
-                className="me-2 w-fit font-h2  text-white text-3xl md:text-5xl lg:text-7xl text-start whitespace-nowrap relative [font-style:var(--h2-font-style)]"
+                className="md:mr-28 lg:mr-0 me-2 w-fit font-h2  text-white text-3xl md:text-5xl lg:text-7xl  text-start whitespace-nowrap relative [font-style:var(--h2-font-style)]"
               >
                 {t('about.section.title')}
               </h2>
             </header>
             {/* Content section with heading and description */}
             <div className="flex flex-col ltr:items-start rtl:items-end gap-6 md:gap-16 relative self-stretch w-full flex-[0_0_auto]">
-              <h3 className="self-stretch font-din text-xl md:text-3xl lg:text-5xl  text-white leading-[1.4] relative text-start">
+              <h4 className="self-stretch font-din text-xl md:text-3xl lg:text-4xl mt-3 text-white leading-[1.4] relative text-start">
                 {t('about.section.heading')}
-              </h3>
+              </h4>
 
               <p className="self-stretch font-text-32regular text-[#eaeaea]   text-2xl md:text-lg lg:text-3xl leading-[1.8] relative text-start">
                 {t('about.section.description')}
