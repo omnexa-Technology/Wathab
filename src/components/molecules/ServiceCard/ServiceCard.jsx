@@ -24,6 +24,7 @@ export function ServiceCard({
   const isFeatured = variant === 'featured';
 
   const cardBg = isFeatured ? 'bg-[#1b6936]' : 'bg-[#e8f0eb]';
+  const buttonBg = isFeatured ? 'bg-[#1b6936]' : 'bg-[#e8f0eb]';
   const titleColor = isFeatured ? 'text-white' : 'text-[#222222]';
   const descColor = isFeatured ? 'text-[#eaeaea]' : 'text-[#595959]';
 
@@ -71,7 +72,7 @@ export function ServiceCard({
       </div>
 
       {/* Content */}
-      <div className="flex flex-col gap-4 items-start w-full min-w-0 relative z-10 sm:gap-5 lg:gap-6">
+      <div className="relative flex flex-col gap-4 items-start w-full min-w-0 z-10 sm:gap-5 lg:gap-6">
         <div className="flex flex-col gap-3 items-start w-full min-w-0 sm:gap-4">
           <h3 className={`font-din font-bold text-start w-full min-w-0 ${titleColor}
             text-lg leading-snug
@@ -88,22 +89,10 @@ export function ServiceCard({
         </div>
 
         {/* Footer Actions - touch-friendly, wrap on small */}
-        <div className="flex flex-wrap items-center justify-between gap-3 w-full min-w-0 sm:gap-4">
-          {isFeatured && (
-            <LocaleLink
-              href={href}
-              className="flex items-center justify-center gap-2 px-4 py-3 sm:gap-3 sm:px-6 sm:py-3.5 bg-white hover:bg-white/95 rounded-full min-h-[44px] sm:min-h-[48px] transition-colors font-din font-bold text-[#1b6936] text-sm sm:text-base lg:text-lg"
-            >
-              <span>{t('services.requestServiceNow')}</span>
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 rtl:rotate-180" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                <path d="M5 12h14M14 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </LocaleLink>
-          )}
-
+        <div className="flex bottom-0 left-0  flex-wrap items-center justify-between  gap-3 w-full min-w-0 sm:gap-4">
           <LocaleLink
             href={href}
-            className="flex items-center justify-center gap-2 px-4 py-3 sm:gap-2 sm:px-6.5 sm:py-3.5 rounded-full bg-[#1B6936] hover:opacity-90 transition-opacity font-din font-normal text-white text-sm sm:text-base lg:text-lg min-h-[44px] sm:min-h-[48px]"
+            className="bottom-0 flex items-center justify-center gap-2 px-4 py-3 sm:gap-2 sm:px-6.5 sm:py-3.5 rounded-full bg-[#1B6936] hover:opacity-90 transition-opacity font-din font-normal text-white text-sm sm:text-base lg:text-lg min-h-[44px] sm:min-h-[48px]"
           >
             <span>{t('achievements.discoverMore')}</span>
             <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 rtl:rotate-180" aria-hidden />
