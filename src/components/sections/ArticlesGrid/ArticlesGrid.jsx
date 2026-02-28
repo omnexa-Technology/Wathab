@@ -53,9 +53,9 @@ export function ArticlesGrid({ className = '' }) {
   return (
     <section
       dir={isRTL ? 'rtl' : 'ltr'}
-      className={`bg-white py-24 px-8 lg:px-[120px] ${className}`}
+      className={`bg-white py-12 px-5 sm:px-8 lg:py-24 lg:px-[120px] ${className}`}
     >
-      <div className="w-full max-w-[1680px] mx-auto flex flex-col gap-24">
+      <div className="w-full max-w-[1680px] mx-auto flex flex-col gap-16 lg:gap-24">
         {articles.map((article) => (
           <ArticleGridCard
             key={article.id}

@@ -18,7 +18,7 @@ export function ContactCtaSection({ className = '', ...props }) {
     <section
       className={`
         flex items-center justify-center w-full relative overflow-hidden
-        bg-[#1B6936] bg-[url('/assets/icons/ui/cover-contact.svg')] bg-cover
+        bg-[#1B6936] contact-cover-bg bg-cover
         px-4 py-10 mx-0 rounded-2xl
         sm:px-6 sm:py-12 sm:mx-4 sm:rounded-3xl
         md:px-10 md:py-16 md:mx-6
