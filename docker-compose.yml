@@ -1,0 +1,22 @@
+# Wathab – production Docker Compose
+# Usage: docker compose --env-file .env.production up -d --build
+# Ensure .env.production exists with: NEXT_PUBLIC_SANITY_*, SANITY_API_TOKEN,
+# NEXTAUTH_*, ADMIN_*, NEXT_PUBLIC_SITE_URL
+
+services:
+  wathab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wathab:latest
+    container_name: wathab
+    env_file:
+      - .env.production
+    ports:
+      - "3001:3000"
+    restart: unless-stopped
+    # Optional: limit memory on small droplets (adjust to your plan)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 768M
