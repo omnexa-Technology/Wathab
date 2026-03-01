@@ -8,9 +8,9 @@ import { cn } from '@/lib/utils';
 export function ContactCard() {
   return (
     <div className="relative w-full max-w-[680px] shrink-0">
-      {/* Ghost card behind */}
+      {/* Ghost card behind: two backgrounds (overlay + SVG) via CSS class to avoid Tailwind url() resolve error */}
       <div
-        className="absolute inset-0 rounded-[24px] bg-[rgba(11,44,22,0.16)] -rotate-4 contact-cover-bg"
+        className="absolute inset-0 rounded-[24px] -rotate-4 contact-card-cover-bg"
         aria-hidden
       />
       {/* Main card */}
