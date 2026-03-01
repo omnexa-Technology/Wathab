@@ -1,0 +1,106 @@
+name: Wathab CI/CD Deployment
+
+# Trigger workflow on push to master or develop
+on:
+  push:
+    branches:
+      - master
+      - develop
+
+jobs:
+  deploy:
+    name: Deploy Wathab to Production Server
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      # -------------------------------
+      # Step 1: Checkout code
+      # -------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # -------------------------------
+      # Step 2: Set up SSH
+      # -------------------------------
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+
+      # -------------------------------
+      # Step 3: Add server to known_hosts
+      # -------------------------------
+      - name: Add server to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      # -------------------------------
+      # Step 4: Test SSH connection
+      # -------------------------------
+      - name: Test SSH connectivity
+        run: ssh -v ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "echo SSH connection successful"
+
+      # -------------------------------
+      # Step 5: Sync project to server
+      # -------------------------------
+      - name: Sync project to server
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+            mkdir -p ${{ secrets.APP_DIR }}
+            cd ${{ secrets.APP_DIR }}
+            git fetch origin master
+            git reset --hard origin/master
+          "
+
+      # -------------------------------
+      # Step 6: Build and deploy Docker container
+      # -------------------------------
+      - name: Build and run Docker container on server
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+            set -e
+
+            APP_DIR=${{ secrets.APP_DIR }}
+            ENV_FILE=\$APP_DIR/.env.production
+            CONTAINER_NAME=wathab
+
+            echo 'Starting deployment on server....'
+
+            cd \$APP_DIR
+            echo 'Current directory: \$APP_DIR'
+
+            # Pull latest base images (optional)
+            echo 'Pulling latest Docker base images...'
+            docker compose pull || echo 'No new images to pull'
+
+            # Build Docker image
+            echo 'Building Docker image...'
+            docker compose --env-file \$ENV_FILE build || { echo 'Docker build failed'; exit 1; }
+
+            # Stop old container if exists
+            if docker ps -a --format '{{.Names}}' | grep -Eq '^'\$CONTAINER_NAME'\$'; then
+              echo 'Stopping old container...'
+              docker stop \$CONTAINER_NAME || echo 'Warning: Could not stop container'
+              docker rm \$CONTAINER_NAME || echo 'Warning: Could not remove container'
+            fi
+
+            # Start new container
+            echo 'Starting new container...'
+            docker compose --env-file \$ENV_FILE up -d || { echo 'Docker run failed'; exit 1; }
+
+            # Verify container
+            if docker ps --filter 'name='\$CONTAINER_NAME --format '{{.Names}}' | grep -Eq '^'\$CONTAINER_NAME'\$'; then
+              echo 'Deployment successful! Container is running.'
+            else
+              echo 'Error: Container failed to start!'; exit 1
+            fi
+
+            # Log deployment commit
+            COMMIT_HASH=\$(git rev-parse --short HEAD)
+            echo \"Deployed commit: \$COMMIT_HASH\" >> \$APP_DIR/deploy.log
+            echo 'Deployment finished.'
+          "
