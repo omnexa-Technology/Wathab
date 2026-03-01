@@ -1,7 +1,17 @@
-# Wathab – production Docker Compose
-# Usage: docker compose --env-file .env.production up -d --build
-# Ensure .env.production exists with: NEXT_PUBLIC_SANITY_*, SANITY_API_TOKEN,
-# NEXTAUTH_*, ADMIN_*, NEXT_PUBLIC_SITE_URL
+# ============================================================================
+# Wathab – Production Docker Compose
+# ============================================================================
+# Usage:
+#   docker compose --env-file .env.production up -d --build
+#
+# Environment variables required in .env.production:
+#   NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET,
+#   SANITY_API_TOKEN, NEXTAUTH_SECRET, NEXTAUTH_URL,
+#   ADMIN_USERNAME, ADMIN_PASSWORD, NEXT_PUBLIC_SITE_URL
+#
+# Port mapping: Host 3001 → Container 3000
+#   (port 3000 on host is reserved for Omnexa backend)
+# ============================================================================
 
 services:
   wathab:
@@ -15,8 +25,25 @@ services:
     ports:
       - "3001:3000"
     restart: unless-stopped
-    # Optional: limit memory on small droplets (adjust to your plan)
+
+    # ── Health check: ensures container is serving traffic ──
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    # ── Logging: JSON driver with rotation to prevent disk fill ──
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    # ── Resource limits for small servers (uncomment as needed) ──
     # deploy:
     #   resources:
     #     limits:
     #       memory: 768M
+    #       cpus: "1.0"
