@@ -1,6 +1,6 @@
 name: Wathab CI/CD Deployment
 
-# Trigger workflow only on push to master branch
+# Trigger workflow on push to master or develop
 on:
   push:
     branches:
@@ -21,13 +21,12 @@ jobs:
         uses: actions/checkout@v3
 
       # -------------------------------
-      # Step 2: Set up SSH to server
+      # Step 2: Set up SSH
       # -------------------------------
-      - name: Setup SSH
+      - name: Setup SSH agent
         uses: webfactory/ssh-agent@v0.9.1
         with:
           ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
-
 
       # -------------------------------
       # Step 3: Add server to known_hosts
@@ -35,22 +34,30 @@ jobs:
       - name: Add server to known_hosts
         run: |
           mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
 
       # -------------------------------
-      # Step 4: Copy repo to server
+      # Step 4: Test SSH connection
+      # -------------------------------
+      - name: Test SSH connectivity
+        run: ssh -v ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "echo SSH connection successful"
+
+      # -------------------------------
+      # Step 5: Sync project to server
       # -------------------------------
       - name: Sync project to server
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
-            mkdir -p /var/www/wathab &&
-            cd /var/www/wathab &&
-            git fetch origin master &&
+            mkdir -p ${{ secrets.APP_DIR }}
+            cd ${{ secrets.APP_DIR }}
+            git fetch origin master
             git reset --hard origin/master
           "
 
       # -------------------------------
-      # Step 5: Deploy using Docker Compose
+      # Step 6: Build and deploy Docker container
       # -------------------------------
       - name: Build and run Docker container on server
         run: |
@@ -65,6 +72,11 @@ jobs:
 
             cd \$APP_DIR
             echo 'Current directory: \$APP_DIR'
+
+            # Pull latest base images (optional)
+            echo 'Pulling latest Docker base images...'
+            docker compose pull || echo 'No new images to pull'
+
             # Build Docker image
             echo 'Building Docker image...'
             docker compose --env-file \$ENV_FILE build || { echo 'Docker build failed'; exit 1; }
@@ -84,8 +96,7 @@ jobs:
             if docker ps --filter 'name='\$CONTAINER_NAME --format '{{.Names}}' | grep -Eq '^'\$CONTAINER_NAME'\$'; then
               echo 'Deployment successful! Container is running.'
             else
-              echo 'Error: Container failed to start!'
-              exit 1
+              echo 'Error: Container failed to start!'; exit 1
             fi
 
             # Log deployment commit
