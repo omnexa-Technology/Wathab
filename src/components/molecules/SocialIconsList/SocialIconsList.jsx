@@ -4,11 +4,14 @@ import { SocialIconButton } from '../../atoms/SocialIconButton/SocialIconButton'
 
 export function SocialIconsList({ className = '', ...props }) {
   const socialIcons = [
-    { icon: 'twitter', bgColor: 'bg-[#1f1e17]', href: 'https://twitter.com' },
+    {
+      icon: 'twitter', bgColor: 'bg-[#1f1e17]', href: 'https://x.com/WathebEnv'},
     { icon: 'instagram', bgColor: 'bg-[#1f1e17]', href: 'https://instagram.com' },
     { icon: 'whatsapp', bgColor: 'bg-[#1f1e17]', href: 'https://wa.me/966561199191' },
-    { icon: 'tiktok', bgColor: 'bg-[#1f1e17]', href: 'https://tiktok.com' },
-    { icon: 'facebook', bgColor: 'bg-[#1b6936]', href: 'https://facebook.com' },
+    { icon: 'tiktok', bgColor: 'bg-[#1f1e17]', href: 'https://www.tiktok.com/@watheb2' },
+    {
+      icon: 'facebook', bgColor: 'bg-[#1b6936]', href: 'https://www.facebook.com/profile.php?id=61584283496346'
+    },
   ];
 
   return (

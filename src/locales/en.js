@@ -47,8 +47,7 @@ export default {
       about: 'About Wathb',
       services: 'Services',
       sectors: 'Sectors',
-      successStories: 'Success Stories',
-      mediaCenter: 'Media Center',
+      news: 'News',
       licenses: 'Licenses',
     },
     policies: {
@@ -247,6 +246,7 @@ export default {
       title: 'Send Your Message Now',
       subtitle: 'Whether you need engineering consultation or compliance support, we are here to help.',
       name: { label: 'Full Name', placeholder: 'Enter first and last name' },
+      company: { label: 'Company', placeholder: 'Enter company name' },
       email: { label: 'Email', placeholder: 'example@gmail.com' },
       phone: { label: 'Phone Number', placeholder: 'xxx xxx xxx' },
       countryCode: '+966',
