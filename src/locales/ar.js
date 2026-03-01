@@ -47,8 +47,7 @@ export default {
       about: 'عن وثب',
       services: 'الخدمات',
       sectors: 'القطاعات',
-      successStories: 'قصص نجاحنا',
-      mediaCenter: 'المركز الإعلامي',
+      news: 'اخبارنا',
       licenses: 'التراخيص',
     },
     policies: {
@@ -265,6 +264,7 @@ export default {
       title: 'أرسل رسالتك الآن',
       subtitle: 'سواء كنت بحاجة إلى استشارة هندسية أو دعم الامتثال، نحن هنا لمساعدتك.',
       name: { label: 'الاسم الكامل', placeholder: 'أدخل الاسم الأول والأخير' },
+      company: { label: 'الشركة', placeholder: 'أدخل اسم الشركة' },
       email: { label: 'البريد الإلكتروني', placeholder: 'example@gmail.com' },
       phone: { label: 'رقم الهاتف', placeholder: 'xxx xxx xxx' },
       countryCode: '+966',
@@ -276,7 +276,7 @@ export default {
     },
     info: {
       location: {
-        value: 'المملكة العربية السعودية – الرياض – حي المصفاة – طريق الخرج',
+        value: 'المملكة العربية السعودية – الدمام - حي الاثير',
         label: 'موقع المكتب',
       },
       phone: {
@@ -311,7 +311,7 @@ export default {
   headNav: {
     phone: '+966561199191',
     email: 'mana@watheb.sa',
-    address: 'المملكة العربية السعودية – الرياض – حي المصفاة – طريق الخرج',
+    address: 'المملكة العربية السعودية – الدمام - حي الاثير',
   },
   carousel: {
     navigation: {
