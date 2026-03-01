@@ -28,8 +28,17 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
 
+
       # -------------------------------
-      # Step 3: Copy repo to server
+      # Step 3: Add server to known_hosts
+      # -------------------------------
+      - name: Add server to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      # -------------------------------
+      # Step 4: Copy repo to server
       # -------------------------------
       - name: Sync project to server
         run: |
@@ -41,7 +50,7 @@ jobs:
           "
 
       # -------------------------------
-      # Step 4: Deploy using Docker Compose
+      # Step 5: Deploy using Docker Compose
       # -------------------------------
       - name: Build and run Docker container on server
         run: |
