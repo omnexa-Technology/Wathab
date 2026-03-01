@@ -1,13 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import { useTranslation } from '../../../hooks/useTranslation';
 import { useLanguageStore } from '../../../store/useLanguageStore';
 import { ClientCard } from '../../../components/molecules/ClientCard/ClientCard';
+
+const CLIENTS_PER_PAGE_MOBILE = 4;
 
 export function AboutClientSection({ className = '', ...props }) {
     const { t } = useTranslation();
     const language = useLanguageStore((s) => s.language);
     const isRTL = language === 'ar';
+    const [currentPage, setCurrentPage] = useState(1);
 
     const clientsData = [
         {
@@ -113,45 +117,155 @@ export function AboutClientSection({ className = '', ...props }) {
         },
     ];
 
+    const totalPages = Math.ceil(clientsData.length / CLIENTS_PER_PAGE_MOBILE);
+    const handlePrev = () => setCurrentPage((p) => Math.max(1, p - 1));
+    const handleNext = () =>
+        setCurrentPage((p) => Math.min(totalPages, p + 1));
+
     return (
         <section
-            className={`flex flex-col items-start gap-0 px-[120px] py-24 bg-gradient-to-l from-[#fdfdfd] to-white w-full ${className}`}
+            className={`
+                flex flex-col items-start gap-0 w-full
+                bg-linear-to-l from-[#fdfdfd] to-white
+                px-5 py-12
+                sm:px-6 sm:py-14
+                md:px-8 md:py-16
+                lg:px-12 lg:py-20
+                xl:px-16 xl:py-24
+                2xl:px-[120px] 2xl:py-24
+                ${className}
+            `}
             dir={isRTL ? 'rtl' : 'ltr'}
             {...props}
         >
-            <div className="flex flex-col gap-24 items-start w-full max-w-[1680px] mx-auto">
+            <div className="flex flex-col gap-12 sm:gap-14 md:gap-16 lg:gap-20 xl:gap-24 items-start w-full max-w-[1680px] mx-auto">
                 {/* Header */}
-                <div className="flex flex-col gap-16 items-center w-full">
+                <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center w-full">
                     {/* Section Title */}
-                    <div className="flex items-center justify-center gap-4 w-full">
-                        <div className="flex items-center gap-1 h-2">
-                            <div className="w-2 h-2 rounded-full bg-[#86ba41]" />
-                            <div className="w-16 h-2 rounded-sm bg-[#86ba41]" />
+                    <div className="flex items-center justify-center gap-2 sm:gap-4 w-full flex-wrap">
+                        <div className="flex items-center gap-1 h-1.5 sm:h-2 shrink-0">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-carousel-active" />
+                            <div className="w-10 h-1.5 sm:w-16 sm:h-2 rounded-sm bg-carousel-active" />
                         </div>
-                        <h2 className="font-din font-medium text-[64px] leading-[108px] text-[#0b2c16]">
+                        <h2 className="font-din font-medium text-[#0b2c16] text-2xl leading-8 sm:text-3xl sm:leading-10 md:text-4xl md:leading-[48px] lg:text-5xl lg:leading-[64px] xl:text-[56px] xl:leading-[80px] 2xl:text-[64px] 2xl:leading-[108px]">
                             {t('clients.sectionTitle')}
                         </h2>
                     </div>
 
                     {/* Subtitle */}
-                    <div className="bg-[rgba(134,186,65,0.01)] flex items-center justify-center px-8 py-8 rounded-2xl rounded-tr-2xl rounded-tl-2xl rounded-br-2xl rounded-bl-4">
-                        <p className="font-din font-normal text-5xl leading-normal text-center text-[#303030]">
+                    <div className="bg-[rgba(134,186,65,0.01)] flex items-center justify-center px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8 rounded-2xl w-full max-w-4xl">
+                        <p className="font-din font-normal text-center text-[#303030] text-base leading-relaxed sm:text-lg sm:leading-7 md:text-xl md:leading-8 lg:text-2xl lg:leading-9 xl:text-3xl xl:leading-normal 2xl:text-5xl 2xl:leading-normal">
                             {t('clients.subtitle')}
                         </p>
                     </div>
                 </div>
 
-                {/* Client Cards Grid */}
-                <div className="grid grid-cols-4 gap-8 w-full">
-                    {clientsData.map((client) => (
-                        <ClientCard
-                            key={client.id}
-                            logoSrc={client.logoSrc}
-                            name={client.name}
-                            imageAlt={`${client.name} logo`}
-                        />
-                    ))}
+                {/* Client Cards Grid - responsive cols; on mobile show only current page */}
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+                    {clientsData.map((client, index) => {
+                        const pageIndex =
+                            Math.floor(index / CLIENTS_PER_PAGE_MOBILE) + 1;
+                        const visibleOnMobile = pageIndex === currentPage;
+                        return (
+                            <div
+                                key={client.id}
+                                className={
+                                    visibleOnMobile ? '' : 'hidden md:block'
+                                }
+                            >
+                                <ClientCard
+                                    logoSrc={client.logoSrc}
+                                    name={client.name}
+                                    imageAlt={`${client.name} logo`}
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
+
+                {/* Pagination - mobile only */}
+                {totalPages > 1 && (
+                    <div className="flex md:hidden items-center justify-center gap-4 w-full">
+                        <button
+                            type="button"
+                            onClick={handlePrev}
+                            disabled={currentPage <= 1}
+                            className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-lg border-2 border-[#1b6936] text-[#1b6936] disabled:border-[#b6b6b6] disabled:text-[#b6b6b6] disabled:cursor-not-allowed hover:bg-[#1b6936]/5 transition-colors"
+                            aria-label={isRTL ? 'الصفحة السابقة' : 'Previous page'}
+                        >
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 32 32"
+                                fill="none"
+                                className={`w-5 h-5 sm:w-6 sm:h-6 ${isRTL ? '' : 'rotate-180'}`}
+                                aria-hidden
+                            >
+                                <path
+                                    d="M14.6667 8L6.66667 16L14.6667 24M24 8L16 16L24 24"
+                                    stroke="currentColor"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </button>
+
+                        <div className="flex items-center justify-center gap-1.5 sm:gap-2">
+                            {Array.from(
+                                { length: totalPages },
+                                (_, i) => (isRTL ? totalPages - i : i + 1)
+                            ).map((num) => (
+                                <button
+                                    key={num}
+                                    type="button"
+                                    onClick={() => setCurrentPage(num)}
+                                    className={`
+                                        min-w-[40px] sm:min-w-[48px] h-10 sm:h-12 px-2 sm:px-3 rounded-lg font-din text-sm sm:text-base flex items-center justify-center transition-colors
+                                        ${
+                                            currentPage === num
+                                                ? 'bg-[#1b6936] text-white font-bold'
+                                                : 'bg-[#fbfdfc] text-[#b6b6b6] font-normal hover:bg-[#f0f0f0]'
+                                        }
+                                    `}
+                                    aria-label={t('clients.sectionTitle')}
+                                    aria-current={
+                                        currentPage === num
+                                            ? 'true'
+                                            : undefined
+                                    }
+                                >
+                                    {num}
+                                </button>
+                            ))}
+                        </div>
+
+                        <button
+                            type="button"
+                            onClick={handleNext}
+                            disabled={currentPage >= totalPages}
+                            className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-lg border-2 border-[#1b6936] text-[#1b6936] disabled:border-[#b6b6b6] disabled:text-[#b6b6b6] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#1b6936]/5 transition-colors"
+                            aria-label={isRTL ? 'الصفحة التالية' : 'Next page'}
+                        >
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 32 32"
+                                fill="none"
+                                className={`w-5 h-5 sm:w-6 sm:h-6 ${isRTL ? 'rotate-180' : ''}`}
+                                aria-hidden
+                            >
+                                <path
+                                    d="M14.6667 8L6.66667 16L14.6667 24M24 8L16 16L24 24"
+                                    stroke="currentColor"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );

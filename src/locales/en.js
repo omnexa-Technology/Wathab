@@ -399,7 +399,7 @@ export default {
         description: 'Obtaining the necessary environmental licenses and permits for your projects',
       },
     },
-    
+
     grid: {
       mainTitle: '10 integrated environmental services to empower your business',
       introDescription: 'From licenses and permits for "National Center for Waste Management (Mawan) and National Center for Environmental Compliance" to site treatment and rehabilitation: we offer professional solutions that ensure your facilities comply with the highest legal and technical standards throughout the Kingdom.',
@@ -446,7 +446,7 @@ export default {
         },
       },
     },
-    
+
   },
   clients: {
     sectionTitle: 'Our Clients',

@@ -416,6 +416,7 @@ body {
 }
 
 @media (min-width: 80rem) {
+
   /* xl breakpoint */
   .ourabout-cover-bg {
     background-image: url('/assets/icons/ui/cover-contact.svg');
