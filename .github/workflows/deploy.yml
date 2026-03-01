@@ -68,7 +68,7 @@ jobs:
             ENV_FILE=\$APP_DIR/.env.production
             CONTAINER_NAME=wathab
 
-            echo 'Starting deployment on server...'
+            echo 'Starting deployment on server....'
 
             cd \$APP_DIR
             echo 'Current directory: \$APP_DIR'
