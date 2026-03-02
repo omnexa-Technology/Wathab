@@ -17,8 +17,8 @@ export function HeroSlide({
   const language = useLanguageStore((s) => s.language);
   const isRTL = language === 'ar';
 
-  const alignStart = isRTL ? 'items-start' : 'items-end';
-  const textAlign = isRTL ? 'text-start' : 'text-end';
+  const alignStart = 'items-start';
+  const textAlign = 'text-start';
   const ctaOrder = isRTL ? 'flex-row-reverse' : 'flex-row';
   const selfAlign = isRTL ? 'self-end' : 'self-start';
 
