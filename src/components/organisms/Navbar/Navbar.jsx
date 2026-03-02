@@ -52,6 +52,7 @@ export function Navbar({ className = '', serviceItems, ...props }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  
   // Lock body scroll when mobile menu is open; prevent layout shift
   useEffect(() => {
     if (typeof document === 'undefined') return;
