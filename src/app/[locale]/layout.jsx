@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Toaster } from 'sonner';
 import { routing } from '../../i18n/routing';
+import { DirectionProvider } from '@/components/ui/direction-provider';
 import { DirectionHandler } from '../../components/DirectionHandler';
 import { MainLayout } from '../../components/templates/MainLayout/MainLayout';
 import ar from '../../locales/ar';
@@ -24,11 +25,13 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale} dir={dir} className="font-din">
       <body>
-        <DirectionHandler />
-        <Toaster richColors position="top-center" />
-        <MainLayout>
-          {children}
-        </MainLayout>
+        <DirectionProvider direction={dir}>
+          <DirectionHandler />
+          <Toaster richColors position="top-center" />
+          <MainLayout>
+            {children}
+          </MainLayout>
+        </DirectionProvider>
       </body>
     </html>
   );

@@ -78,7 +78,6 @@ export function Navbar({ className = '', serviceItems, ...props }) {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 flex w-full h-16 sm:h-[72px] lg:h-[88px] items-center justify-center bg-white px-0 py-3 sm:py-4 transition-transform duration-300 ease-out overflow-hidden ${isVisible ? 'translate-y-0' : '-translate-y-full'} ${className}`}
         data-colors-mode="light"
-        dir="rtl"
         aria-label="Main navigation"
         {...props}
       >
@@ -131,7 +130,6 @@ export function Navbar({ className = '', serviceItems, ...props }) {
         {/* Drawer panel – slides from start (left in RTL) */}
         <div
           className={`absolute top-0 start-0 w-full max-w-sm sm:max-w-md h-full bg-white shadow-xl flex flex-col transition-transform duration-300 ease-out overflow-hidden ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
-          dir="rtl"
         >
           {/* Drawer header: spacer for nav bar height + close */}
           <div className="flex items-center justify-between flex-shrink-0 h-16 sm:h-[72px] px-4 sm:px-5 border-b border-gray-100">

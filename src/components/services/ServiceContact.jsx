@@ -85,7 +85,7 @@ export function ServiceContact({ serviceName, t }) {
               <div className="flex flex-col gap-2">
                 <label htmlFor="contact-name" className="font-din font-medium text-[#303030] text-sm">
                   {ct.name || (isRTL ? 'الاسم الكامل' : 'Full Name')}
-                  <span className="text-red-500 mr-1">*</span>
+                  <span className="text-red-500 me-1">*</span>
                 </label>
                 <input
                   id="contact-name"
@@ -117,7 +117,7 @@ export function ServiceContact({ serviceName, t }) {
             <div className="flex flex-col gap-2">
               <label htmlFor="contact-email" className="font-din font-medium text-[#303030] text-sm">
                 {ct.email || (isRTL ? 'البريد الإلكتروني' : 'Email Address')}
-                <span className="text-red-500 mr-1">*</span>
+                <span className="text-red-500 me-1">*</span>
               </label>
               <input
                 id="contact-email"
@@ -134,7 +134,7 @@ export function ServiceContact({ serviceName, t }) {
             <div className="flex flex-col gap-2">
               <label htmlFor="contact-message" className="font-din font-medium text-[#303030] text-sm">
                 {ct.message || (isRTL ? 'رسالتك' : 'Your Message')}
-                <span className="text-red-500 mr-1">*</span>
+                <span className="text-red-500 me-1">*</span>
               </label>
               <textarea
                 id="contact-message"
