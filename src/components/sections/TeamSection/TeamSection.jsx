@@ -83,7 +83,7 @@ export function TeamSection({ className = '', ...props }) {
         {/* Carousel */}
         <div className="relative w-full min-w-0">
           <Carousel opts={carouselOptions} className="relative w-full">
-            <CarouselContent className="-ml-3 sm:-ml-4">
+            <CarouselContent className="-ms-3 sm:-ms-4">
               {TEAM_DATA.map((member) => (
                 <CarouselItem
                   key={member.id}

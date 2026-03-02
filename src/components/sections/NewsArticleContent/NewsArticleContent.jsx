@@ -260,7 +260,7 @@ export function NewsArticleContent({
             >
               {formatDate(date, locale)}
             </time>
-          <div className="flex flex-col mr-7">
+          <div className="flex flex-col me-7">
             <Image src='/assets/icons/logo/logo-light.svg' alt='logo' width={200} height={100} />
           </div>
           </div>

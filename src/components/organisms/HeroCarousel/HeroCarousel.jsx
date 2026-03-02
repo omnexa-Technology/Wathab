@@ -74,7 +74,7 @@ export function HeroCarousel({
               <div className="absolute inset-0 z-0">
                 {/* Green gradient overlays */}
                 <div
-                  className="absolute top-0 right-0 h-full w-full sm:w-[70%] lg:w-[56.25%] z-[1]"
+                  className={`absolute top-0 h-full z-[1] ${isRTL ? 'right-0 w-full sm:w-[70%] lg:w-[56.25%]' : 'left-0 w-full sm:w-[70%] lg:w-[56.25%]'}`}
                   style={{
                     background: isRTL
                       ? 'linear-gradient(90.5deg, rgba(27, 105, 54, 0) 0.35%, rgb(27, 105, 54) 99.74%)'
@@ -82,7 +82,7 @@ export function HeroCarousel({
                   }}
                 />
                 <div
-                  className="absolute top-0 left-0 sm:left-[30%] lg:left-[48.125%] h-full w-full sm:w-[70%] lg:w-[51.875%] z-[2]"
+                  className={`absolute top-0 h-full z-[2] ${isRTL ? 'left-0 sm:left-[30%] lg:left-[48.125%] w-full sm:w-[70%] lg:w-[51.875%]' : 'right-0 sm:right-[30%] lg:right-[48.125%] w-full sm:w-[70%] lg:w-[51.875%]'}`}
                   style={{
                     background: isRTL
                       ? 'linear-gradient(90.46deg, rgba(27, 105, 54, 0) 0.35%, rgba(27, 105, 54, 0.9) 99.74%)'

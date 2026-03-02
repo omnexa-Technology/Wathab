@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+/*
+ * Tailwind CSS default breakpoints (mobile-first, min-width)
+ * Use in classes: sm:, md:, lg:, xl:, 2xl:
+ * ┌─────────┬──────────┬──────────┬─────────────────────────────┐
+ * │ Prefix  │ min-width │ rem      │ Applied range               │
+ * ├─────────┼──────────┼──────────┼─────────────────────────────┤
+ * │ (none)  │ 0        │ 0        │ 0px and up (all screens)     │
+ * │ sm      │ 640px    │ 40rem    │ 640px and up                 │
+ * │ md      │ 768px    │ 48rem    │ 768px and up                 │
+ * │ lg      │ 1024px   │ 64rem    │ 1024px and up                │
+ * │ xl      │ 1280px   │ 80rem    │ 1280px and up                │
+ * │ 2xl     │ 1536px   │ 96rem    │ 1536px and up                │
+ * └─────────┴──────────┴──────────┴─────────────────────────────┘
+ * Ranges: default 0–639px | sm 640–767px | md 768–1023px | lg 1024–1279px | xl 1280–1535px | 2xl 1536px+
+ */
+
 @font-face {
   font-family: "DIN Next LT Arabic";
   font-style: normal;
@@ -204,8 +220,8 @@ body {
   background: #ffffff;
   color: #171717;
 }
-
-.about-green-cut-rtl {
+/* 
+.about-green-cut-ltr {
   clip-path: polygon(310px 0,
       100% 0,
       100% 100%,
@@ -213,13 +229,13 @@ body {
       0 668px);
 }
 
-.about-green-cut-ltr {
+.about-green-cut-rtl {
   clip-path: polygon(0 0,
       calc(100% - 310px) 0,
       100% 668px,
       100% 100%,
       0 100%);
-}
+} */
 
 /* Achievements section: content enter/exit and image scale (transform + opacity only) */
 @keyframes achievements-content-enter {
@@ -315,6 +331,7 @@ body {
     height: 0;
     opacity: 0;
   }
+
   to {
     height: var(--radix-accordion-content-height);
     opacity: 1;
@@ -326,6 +343,7 @@ body {
     height: var(--radix-accordion-content-height);
     opacity: 1;
   }
+
   to {
     height: 0;
     opacity: 0;
@@ -339,6 +357,7 @@ body {
 .animate-accordion-up {
   animation: accordion-up 300ms cubic-bezier(0.87, 0, 0.13, 1);
 }
+
 /* Seamless marquee animations */
 
 @keyframes marquee-ltr {
@@ -375,6 +394,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -383,4 +403,31 @@ body {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Shared background image for contact cover elements (avoids Tailwind arbitrary-url path issues) */
+.contact-cover-bg {
+  background-image: url('/assets/icons/ui/cover-contact.svg');
+}
+
+/* ContactCard ghost layer only: two backgrounds (overlay + SVG) */
+.contact-card-cover-bg {
+  background-image:
+    linear-gradient(rgba(11, 44, 22, 0.16), rgba(11, 44, 22, 0.16)),
+    url('/assets/icons/ui/cover-contact.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* OurAbout background: responsive.svg on smaller screens, contact cover from xl and up */
+.ourabout-cover-bg {
+  background-image: url('/assets/images/responsive.svg');
+}
+
+@media (min-width: 80rem) {
+
+  /* xl breakpoint */
+  .ourabout-cover-bg {
+    background-image: url('/assets/icons/ui/cover-contact.svg');
+  }
 }

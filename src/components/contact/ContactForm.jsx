@@ -13,13 +13,14 @@ import { cn } from '@/lib/utils';
 
 const schema = z.object({
   name: z.string().min(3, 'Name must be at least 3 characters'),
+  company: z.string().optional(),
   email: z.string().email('Invalid email'),
   phone: z.string().min(10, 'Phone must be at least 10 digits'),
   service: z.string().min(1, 'Please select a service'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/maqdbegw';
 
 export function ContactForm() {
   const { t } = useTranslation();
@@ -33,6 +34,7 @@ export function ContactForm() {
     resolver: zodResolver(schema),
     defaultValues: {
       name: '',
+      company: '',
       email: '',
       phone: '',
       service: '',
@@ -84,6 +86,25 @@ export function ContactForm() {
       </div>
 
       <div>
+        <Label htmlFor="company" className="text-[20px] font-medium text-[#141414]">
+          {t('contact.form.company.label')}
+        </Label>
+        <Input
+          id="company"
+          {...register('company')}
+          placeholder={t('contact.form.company.placeholder')}
+          className={cn(
+            'mt-2 h-16 rounded-lg border-[#eaeaea] text-[20px]',
+            errors.company && 'border-destructive'
+          )}
+          disabled={isFormSubmitting}
+        />
+        {errors.company && (
+          <p className="mt-1 text-sm text-destructive">{errors.company.message}</p>
+        )}
+      </div>
+
+      <div>
         <Label htmlFor="email" className="text-[20px] font-medium text-[#141414]">
           {t('contact.form.email.label')}
         </Label>
@@ -108,9 +129,7 @@ export function ContactForm() {
           {t('contact.form.phone.label')}
         </Label>
         <div className="mt-2 flex gap-2">
-          <span className="flex h-16 items-center rounded-lg border border-[#eaeaea] bg-muted px-4 text-[20px] text-muted-foreground">
-            {t('contact.form.countryCode')}
-          </span>
+          
           <Input
             id="phone"
             type="tel"

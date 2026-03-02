@@ -42,29 +42,40 @@ export function FullFaqSection({ className = '', ...props }) {
     { id: 'faq-18', questionKey: 'faq.items.q18.question', answerKey: 'faq.items.q18.answer' },
   ];
 
-  const faqItemClassName = 'bg-[#f5f5f5] border-2 border-[#eaeaea] rounded-2xl px-6 py-8 my-2';
+  const faqItemClassName =
+    'bg-[#f5f5f5] border-2 border-[#eaeaea] rounded-xl lg:rounded-2xl px-4 py-5 sm:px-5 sm:py-6 lg:px-6 lg:py-8 my-2';
 
   return (
     <section
-      className={`flex flex-col gap-24 items-start px-[120px] py-24 bg-white w-full ${className}`}
+      className={`
+        flex flex-col items-start w-full bg-white
+        px-5 py-12
+        sm:px-6 sm:py-14
+        md:px-8 md:py-16
+        lg:px-12 lg:py-20
+        xl:px-16 xl:py-24
+        2xl:px-[120px] 2xl:py-24
+        gap-12 sm:gap-14 md:gap-16 lg:gap-20 xl:gap-24 2xl:gap-24
+        ${className}
+      `}
       dir={isRTL ? 'rtl' : 'ltr'}
       {...props}
     >
-      <div className="flex flex-col gap-24 items-start w-full max-w-[1680px] mx-auto">
+      <div className="flex flex-col items-start w-full max-w-[1680px] mx-auto gap-12 sm:gap-14 md:gap-16 lg:gap-20 xl:gap-24 2xl:gap-24">
         {/* Header - Title + Intro */}
-        <div className="flex flex-col gap-16 items-center justify-center w-full">
-          <h2 className="font-din font-medium text-[64px] leading-[108px] text-[#0b2c16] text-center">
+        <div className="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center justify-center w-full">
+          <h2 className="font-din font-medium text-[#0b2c16] text-center w-full text-2xl leading-8 sm:text-3xl sm:leading-10 md:text-4xl md:leading-[48px] lg:text-5xl lg:leading-[64px] xl:text-[56px] xl:leading-[80px] 2xl:text-[64px] 2xl:leading-[108px]">
             {t('faq.fullSectionTitle')}
           </h2>
           <p
-            className={`font-din font-normal text-[32px] leading-[64px] text-center text-[#303030] w-full max-w-[1112px] ${isRTL ? 'text-right' : 'text-left'}`}
+            className={`font-din font-normal text-center text-[#303030] w-full max-w-[1112px] text-base leading-7 sm:text-lg sm:leading-8 md:text-xl md:leading-8 lg:text-2xl lg:leading-9 xl:text-[28px] xl:leading-[56px] 2xl:text-[32px] 2xl:leading-[64px] ${isRTL ? 'text-right' : 'text-left'}`}
           >
             {t('faq.fullIntro')}
           </p>
         </div>
 
-        {/* FAQ Grid - Two columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+        {/* FAQ Grid - One column on mobile, two from md */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 w-full">
           <Accordion type="single" collapsible className="gap-0">
             {faqsColumn1.map((faq) => (
               <FaqItem

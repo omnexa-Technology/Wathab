@@ -58,7 +58,7 @@ export function NavDropdown({
         {isAnyItemActive ? (
           <span className={activeUnderlineClass}>
             {displayLabel}
-            <ChevronDown className="inline-block w-4 h-4 mr-1" />
+            <ChevronDown className="inline-block w-4 h-4 me-1" />
           </span>
         ) : (
           <>
@@ -70,7 +70,6 @@ export function NavDropdown({
       <DropdownMenuContent
         align={isMobile ? 'start' : 'end'}
         className="min-w-[200px] bg-white border border-gray-200 shadow-lg rounded-lg p-2"
-        dir="rtl"
       >
         {items.map((item, index) => {
           const itemNormalizedHref = item.href === '/' ? '/' : item.href;

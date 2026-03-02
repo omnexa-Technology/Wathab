@@ -47,8 +47,7 @@ export default {
       about: 'About Wathb',
       services: 'Services',
       sectors: 'Sectors',
-      successStories: 'Success Stories',
-      mediaCenter: 'Media Center',
+      news: 'News',
       licenses: 'Licenses',
     },
     policies: {
@@ -247,6 +246,7 @@ export default {
       title: 'Send Your Message Now',
       subtitle: 'Whether you need engineering consultation or compliance support, we are here to help.',
       name: { label: 'Full Name', placeholder: 'Enter first and last name' },
+      company: { label: 'Company', placeholder: 'Enter company name' },
       email: { label: 'Email', placeholder: 'example@gmail.com' },
       phone: { label: 'Phone Number', placeholder: 'xxx xxx xxx' },
       countryCode: '+966',
@@ -399,7 +399,7 @@ export default {
         description: 'Obtaining the necessary environmental licenses and permits for your projects',
       },
     },
-    
+
     grid: {
       mainTitle: '10 integrated environmental services to empower your business',
       introDescription: 'From licenses and permits for "National Center for Waste Management (Mawan) and National Center for Environmental Compliance" to site treatment and rehabilitation: we offer professional solutions that ensure your facilities comply with the highest legal and technical standards throughout the Kingdom.',
@@ -446,7 +446,7 @@ export default {
         },
       },
     },
-    
+
   },
   clients: {
     sectionTitle: 'Our Clients',

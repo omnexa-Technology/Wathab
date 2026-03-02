@@ -29,9 +29,8 @@ export function OurAbout({ className = '', ...props }) {
         <div
           className={`
             md:block absolute w-full h-[650px] top-[221px] 
-            bg-[#1B6936] bg-[url('/assets/images/responsive.svg')] 
-            xl:bg-[url('/assets/icons/ui/cover-contact.svg')] bg-cover
-            lg:[clip-path:polygon(310px_0,100%_0,100%_100%,0_100%,0_668px)]
+            bg-[#1B6936] ourabout-cover-bg bg-cover
+            ${isRTL ? 'lg:[clip-path:polygon(310px_0,100%_0,100%_100%,0_100%,0_668px)]' : 'lg:[clip-path:polygon(0_0,calc(100%-310px)_0,100%_668px,100%_100%,0_100%)]'}
           `}
         />
 
@@ -76,13 +75,12 @@ export function OurAbout({ className = '', ...props }) {
           `}
           dir={isRTL ? 'rtl' : 'ltr'} */}
 
-        <article
+        {/* <article
           className={`
     flex flex-col
 
-    w-[100vw]
-    md:max-w-[720px]
-    lg:max-w-[880px]
+    w-full
+  
 
     mx-auto
     md:mx-0
@@ -90,8 +88,7 @@ export function OurAbout({ className = '', ...props }) {
     px-6
     md:px-0
 
-    items-start
-    rtl:items-end
+    items-start rtl:items-end
 
     gap-8 md:gap-10 lg:gap-16
 
@@ -109,28 +106,62 @@ export function OurAbout({ className = '', ...props }) {
     text-start
   `}
           dir={isRTL ? 'rtl' : 'ltr'}
+        > */}
+
+        <article
+          className="
+    flex flex-col
+
+    w-full
+
+    md:max-w-[720px]
+    lg:max-w-[880px]
+
+    mx-auto
+    md:mx-0
+
+    px-6
+    md:px-0
+
+    items-start rtl:items-end
+
+    gap-8 md:gap-10 lg:gap-16
+
+    relative
+    md:absolute
+
+    md:top-[260px]
+
+    md:rtl:right-[120px]
+    md:ltr:left-[120px]
+
+    lg:rtl:right-[180px]
+    lg:ltr:left-[180px]
+
+    text-start
+  " dir={isRTL ? 'rtl' : 'ltr'}
         >
-        
+
           {/* Section header with title and decorative indicator */}
           <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
             <header className="inline-flex items-center justify-start w-full relative">
 
-              <div className={`inline-flex items-start justify-center gap-2 md:gap-4 relative flex-[0_0_auto] `}>
+              <div className="md:me-28 lg:me-0 inline-flex items-start justify-center gap-2 md:gap-4 relative flex-[0_0_auto]">
                 {/* Decorative green indicator dots */}
-                <Indicator />
+                <Indicator className="ms-5" />
               </div>
               <h2
                 // id="about-section-title"
-                className="me-2 w-fit font-h2  text-white text-3xl md:text-5xl lg:text-7xl text-start whitespace-nowrap relative [font-style:var(--h2-font-style)]"
+                className="md:me-28 lg:me-0 me-2 w-fit font-h2 text-white text-3xl md:text-5xl lg:text-7xl text-start whitespace-nowrap relative [font-style:var(--h2-font-style)]"
               >
                 {t('about.section.title')}
               </h2>
             </header>
             {/* Content section with heading and description */}
-            <div className="flex flex-col ltr:items-start rtl:items-end gap-6 md:gap-16 relative self-stretch w-full flex-[0_0_auto]">
-              <h3 className="self-stretch font-din text-xl md:text-3xl lg:text-5xl  text-white leading-[1.4] relative text-start">
+            <div className="flex flex-col items-start rtl:items-end gap-6 md:gap-16 relative self-stretch w-full flex-[0_0_auto]">
+              <h4 className="self-stretch font-din text-xl md:text-3xl lg:text-4xl mt-3 text-white leading-[1.4] relative text-start">
                 {t('about.section.heading')}
-              </h3>
+              </h4>
 
               <p className="self-stretch font-text-32regular text-[#eaeaea]   text-2xl md:text-lg lg:text-3xl leading-[1.8] relative text-start">
                 {t('about.section.description')}

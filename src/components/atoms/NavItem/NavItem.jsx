@@ -6,7 +6,7 @@ import LocaleLink from '../../LocaleLink';
 import { useTranslation } from '../../../hooks/useTranslation';
 
 const linkBaseClass =
-  ' flex h-12 items-center text-green-900 justify-center gap-2.5 px-4 py-0 rounded-[40px] font-[number:var(--body-font-weight)] text-[length:var(--body-font-size)] tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] [font-style:var(--body-font-style)] ';
+  ' flex h-12 items-center hover:text-green-900 justify-center gap-2.5 px-4 py-0 rounded-[40px] font-semibold lg:font-bold md:text-sm lg:text-base  tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] [font-style:var(--body-font-style)] ';
 
 const linkBaseClassMobile =
   ' flex w-full min-h-[48px] items-center justify-start gap-2.5 px-4 py-3 rounded-none text-right font-[number:var(--body-font-weight)] text-[length:var(--body-font-size)] tracking-[var(--body-letter-spacing)] leading-[var(--body-line-height)] [font-style:var(--body-font-style)] touch-manipulation ';

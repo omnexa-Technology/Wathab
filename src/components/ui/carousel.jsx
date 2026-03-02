@@ -90,7 +90,7 @@ const CarouselContent = React.forwardRef(
       <div ref={carouselRef} className="overflow-hidden">
         <div
           ref={ref}
-          className={cn("flex -ml-4", className)}
+          className={cn("flex -ms-4", className)}
           {...props}
         />
       </div>
@@ -104,7 +104,7 @@ const CarouselItem = React.forwardRef(
       <div
         ref={ref}
         className={cn(
-          "min-w-0 shrink-0 grow-0 basis-full pl-4",
+          "min-w-0 shrink-0 grow-0 basis-full ps-4",
           className
         )}
         {...props}
