@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-export function SocialIconButton({ icon,  href, className = '', ...props }) {
+export function SocialIconButton({ icon, href, bgColor = '', className = '', ...props }) {
   const iconPaths = {
     whatsapp: '/assets/icons/social/whatsapp.svg',
     facebook: '/assets/icons/social/facebook.svg',
@@ -18,7 +18,7 @@ export function SocialIconButton({ icon,  href, className = '', ...props }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center w-12 h-12 rounded-3xl hover:bg-[#1b6936] hover:opacity-90 transition-opacity ${className}`}
+      className={`inline-flex items-center justify-center w-12 h-12 rounded-3xl ${bgColor} hover:bg-[#1b6936] hover:opacity-90 transition-opacity ${className}`}
       aria-label={`${icon} social link`}
       {...props}
     >
