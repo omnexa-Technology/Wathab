@@ -73,7 +73,7 @@ export function ServicesNavSidebar({ services = [], sectionLabel }) {
                 {/* Active arrow — points toward content (flips with RTL) */}
                 {isActive && (
                   <svg
-                    className={`shrink-0 w-4 h-4 opacity-70 ${isRTL ? 'mr-auto rotate-180' : 'ml-auto'}`}
+                    className={`shrink-0 w-4 h-4 opacity-70 ms-auto ${isRTL ? 'rotate-180' : ''}`}
                     viewBox="0 0 16 16"
                     fill="none"
                     aria-hidden

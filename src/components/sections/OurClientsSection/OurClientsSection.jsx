@@ -86,7 +86,7 @@ export function OurClientsSection({ className = '', ...props }) {
             {duplicatedClients.map((client, index) => (
               <div
                 key={`${client.id}-${index}`}
-                className="flex-shrink-0 w-[240px] sm:w-[260px] lg:w-[280px] mr-4 sm:mr-6 lg:mr-8"
+                className="flex-shrink-0 w-[240px] sm:w-[260px] lg:w-[280px] me-4 sm:me-6 lg:me-8"
               >
                 <ClientCard
                   logoSrc={client.logoSrc}
@@ -118,7 +118,7 @@ export function OurClientsSection({ className = '', ...props }) {
           w-[240px]
           sm:w-[260px]
           lg:w-[280px]
-          mr-4 sm:mr-6 lg:mr-8
+          me-4 sm:me-6 lg:me-8
         "
               >
                 <ClientCard

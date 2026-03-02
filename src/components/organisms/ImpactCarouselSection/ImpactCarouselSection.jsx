@@ -136,7 +136,7 @@ export function ImpactCarouselSection({ className = '' }) {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-4 md:-ml-8">
+            <CarouselContent className="-ms-4 md:-ms-8">
               {impactData.map((item, index) => (
                 <CarouselItem
                   key={item.id}
