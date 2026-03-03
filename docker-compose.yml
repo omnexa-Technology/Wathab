@@ -15,7 +15,7 @@
 
 services:
   wathab:
-    image: ghcr.io/omnexa-technology/whathab:latest
+    image: ghcr.io/omnexa-technology/wathab:latest
     container_name: wathab
 
     env_file:
