@@ -95,7 +95,7 @@ export function HeroCarousel({
                   fill
                   className="object-cover"
                   sizes="100vw"
-                  priority={index === 0}
+                  // priority={index === 0}
                 />
 
                 {/* Slide content — responsive vertical offset */}

@@ -1,4 +1,12 @@
 import { defineType, defineField } from 'sanity'
+
+/**
+ * Service Details content type — full detail pages at /services/[slug].
+ * Each document is language-aware (en/ar) and can reference translations
+ * (equivalent service-details documents in the other language).
+ *
+ * @see services — listing cards on /services page
+ */
 export default defineType({
     name: 'service-details',
     title: 'Service Details',
@@ -119,7 +127,7 @@ export default defineType({
                 }
             ]
         }),
-        // translations reference
+        // translations — references other service-details documents (en ↔ ar)
         defineField({
             name: 'translations',
             title: 'Translations',
@@ -127,9 +135,24 @@ export default defineType({
             of: [
                 {
                     type: 'reference',
-                    to: [{ type: 'services' }]
+                    to: [{ type: 'service-details' }]
                 }
-            ]
+            ],
+            description: 'Link to equivalent documents in other languages (e.g. EN ↔ AR).'
         })
     ],
+    preview: {
+        select: {
+            title: 'title',
+            language: 'language',
+            media: 'seo.ogImage'
+        },
+        prepare({ title, language, media }) {
+            const langTag = language ? `[${language.toUpperCase()}]` : '[?]'
+            return {
+                title: title ? `${langTag} ${title}` : 'Untitled Service Detail',
+                media
+            }
+        }
+    }
 })
