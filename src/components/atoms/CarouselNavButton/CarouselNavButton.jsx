@@ -2,16 +2,7 @@
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-/**
- * Navigation button for carousel (previous/next)
- * @param {Object} props
- * @param {'prev' | 'next'} [props.direction='next'] - Button direction
- * @param {() => void} [props.onClick] - Click handler
- * @param {boolean} [props.disabled=false] - Disabled state
- * @param {string} [props.ariaLabel] - Accessibility label
- * @param {string} [props.className=''] - Additional CSS classes
- * @returns {JSX.Element}
- */
+
 export function CarouselNavButton({
   direction = 'next',
   onClick,

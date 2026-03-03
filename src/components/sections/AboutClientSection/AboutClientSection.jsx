@@ -7,115 +7,41 @@ import { ClientCard } from '../../../components/molecules/ClientCard/ClientCard'
 
 const CLIENTS_PER_PAGE_MOBILE = 4;
 
+const PREDEFINED_CLIENTS = [
+  { id: 'petromin', logoSrc: '/assets/images/clients/Component141(2).webp' },
+  { id: 'alfahd', logoSrc: '/assets/images/clients/image30.webp' },
+  { id: 'rtcc', logoSrc: '/assets/images/clients/image27.webp' },
+  { id: 'nesco', logoSrc: '/assets/images/clients/Component141(3).webp' },
+  { id: 'saudi-cables', logoSrc: '/assets/images/clients/Frame 2147224060.webp' },
+  { id: 'ahmadia', logoSrc: '/assets/images/clients/image31.webp' },
+  { id: 'ajeeg', logoSrc: '/assets/images/clients/image28.webp' },
+  { id: 'sareef', logoSrc: '/assets/images/clients/image44.webp' },
+  { id: 'national-chemistry', logoSrc: '/assets/images/clients/image54.webp' },
+  { id: 'fine', logoSrc: '/assets/images/clients/Component141(4).webp' },
+  { id: 'saaf', logoSrc: '/assets/images/clients/Component141(5).webp' },
+  { id: 'mahaib', logoSrc: '/assets/images/clients/Component141(1).webp' },
+  { id: 'mastoura', logoSrc: '/assets/images/clients/Component141.webp' },
+  { id: 'alseel', logoSrc: '/assets/images/clients/image55.webp' },
+  { id: 'ansab', logoSrc: '/assets/images/clients/image52.webp' },
+  { id: 'alsayeg', logoSrc: '/assets/images/clients/image49.webp' },
+  { id: 'atheel', logoSrc: '/assets/images/clients/Component141(9).webp' },
+  { id: 'sultan-aldukhil', logoSrc: '/assets/images/clients/Component141(8).webp' },
+  { id: 'albarghash', logoSrc: '/assets/images/clients/Component141(7).webp' },
+  { id: 'almarai', logoSrc: '/assets/images/clients/Component141(3).webp' },
+];
+
 export function AboutClientSection({ className = '', ...props }) {
     const { t } = useTranslation();
     const language = useLanguageStore((s) => s.language);
     const isRTL = language === 'ar';
     const [currentPage, setCurrentPage] = useState(1);
 
-    const clientsData = [
-        {
-            id: 'petromin',
-            logoSrc: '/assets/images/clients/Component141(2).webp',
-            name: 'بترو مين',
-        },
-        {
-            id: 'alfahd',
-            logoSrc: '/assets/images/clients/image30.webp',
-            name: 'شركة الفهد للتجارة والصناعه والمقاولات',
-        },
-        {
-            id: 'rtcc',
-            logoSrc: '/assets/images/clients/image27.webp',
-            name: 'شركة الراشد للتجارة والمقالاوت',
-        },
-
-        {
-            id: 'nesco',
-            logoSrc: '/assets/images/clients/Component141(3).webp',
-            name: 'نسكو',
-        },
-        {
-            id: 'saudi-cables',
-            logoSrc: '/assets/images/clients/Frame 2147224060.webp',
-            name: 'شركة الكابلات السعودية',
-        },
-        {
-            id: 'ahmadia',
-            logoSrc: '/assets/images/clients/image31.webp',
-            name: 'شركة الأحمدية العالمية ',
-        },
-        {
-            id: 'ajeeg',
-            logoSrc: '/assets/images/clients/image28.webp',
-            name: 'شركة اجيج لصناعة الصلب ومشتقاتة',
-        },
-        {
-            id: 'sareef',
-            logoSrc: '/assets/images/clients/image44.webp',
-            name: 'مجموعة الصريف',
-        },
-        {
-            id: 'national-chemistry',
-            logoSrc: '/assets/images/clients/image54.webp',
-            name: 'شركة الكيمياء الوطنية للصناعات الكيميائية',
-        },
-        {
-            id: 'fine',
-            logoSrc: '/assets/images/clients/Component141(4).webp',
-            name: 'شركة فاين',
-        },
-        {
-            id: 'saaf',
-            logoSrc: '/assets/images/clients/Component141(5).webp',
-            name: 'شركة سعف الصناعية',
-        },
-        {
-            id: 'mahaib',
-            logoSrc: '/assets/images/clients/Component141(1).webp',
-            name: 'شركة مجموعة المهيلب للمنتجات الأسمنتية',
-        },
-        {
-            id: 'mastoura',
-            logoSrc: '/assets/images/clients/Component141.webp',
-            name: 'شركة مستورة',
-        },
-        {
-            id: 'alseel',
-            logoSrc: '/assets/images/clients/image55.webp',
-            name: 'شركة السيل للحفر وصيانة الأبار النفطية',
-        },
-        {
-            id: 'ansab',
-            logoSrc: '/assets/images/clients/image52.webp',
-            name: 'شركة انساب ',
-        },
-        {
-            id: 'alsayeg',
-            logoSrc: '/assets/images/clients/image49.webp',
-            name: 'شركة الصايغ ',
-        },
-        {
-            id: 'atheel',
-            logoSrc: '/assets/images/clients/Component141(9).webp',
-            name: 'شركة اثيل للمقاولات',
-        },
-        {
-            id: 'sultan-aldukhil',
-            logoSrc: '/assets/images/clients/Component141(8).webp',
-            name: 'شركة سلطان الدخيل للمقاولات',
-        },
-        {
-            id: 'albarghash',
-            logoSrc: '/assets/images/clients/Component141(7).webp',
-            name: 'شركة محمد البرغش ',
-        },
-        {
-            id: 'almarai',
-            logoSrc: '/assets/images/clients/Component141(3).webp',
-            name: 'شركة المري ',
-        },
-    ];
+    const clientNames = t('clients.list');
+    const namesArray = Array.isArray(clientNames) ? clientNames : [];
+    const clientsData = PREDEFINED_CLIENTS.map((client, index) => ({
+        ...client,
+        name: namesArray[index] ?? '',
+    }));
 
     const totalPages = Math.ceil(clientsData.length / CLIENTS_PER_PAGE_MOBILE);
     const handlePrev = () => setCurrentPage((p) => Math.max(1, p - 1));

@@ -3,7 +3,7 @@
 import { useTranslation } from '../../../hooks/useTranslation';
 import { useLanguageStore } from '../../../store/useLanguageStore';
 import Image from 'next/image';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 export function AboutFeatures() {
   const { t } = useTranslation();
@@ -38,7 +38,7 @@ export function AboutFeatures() {
 
   return (
     <section
-      className="py-24 px-8 lg:px-[120px] bg-linear-to-l from-[#eaeaea] to-white"
+      className={`py-24 px-8 lg:px-[120px] ${isRTL ? 'bg-linear-to-r' : 'bg-linear-to-l'} from-[#eaeaea] to-white`}
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       <div className="flex flex-col lg:flex-row gap-16 items-start max-w-[1440px] mx-auto">
@@ -70,15 +70,14 @@ export function AboutFeatures() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`flex gap-6 items-start ${isRTL ? 'flex-row-reverse' : ''}`}
+                className={`flex gap-6 items-start ${!isRTL ? 'flex-row-reverse' : ''}`}
               >
-
-                {/* Text Content */}
-                <div className={`flex-1 flex flex-col items-start`}>
-                  <h3 className={`text-[#222] text-2xl font-medium leading-[56px] ${isRTL ? 'text-center' : 'text-left'}`}>
+                {/* Text Content - icon appears left for English (flex-row-reverse), right for Arabic (RTL) */}
+                <div className="flex-1 flex flex-col items-start min-w-0">
+                  <h3 className={`text-[#222] text-2xl font-medium leading-tight ${isRTL ? 'text-right' : 'text-left'}`}>
                     {feature.title}
                   </h3>
-                  <p className={`text-grey-600 text-2xl leading-[48px] ${isRTL ? 'text-right' : 'text-left'}`}>
+                  <p className={`text-grey-600 text-xl leading-relaxed mt-1 ${isRTL ? 'text-right' : 'text-left'}`}>
                     {feature.description}
                   </p>
                 </div>
@@ -96,11 +95,17 @@ export function AboutFeatures() {
               </div>
             ))}
           </div>
-          {/* CTA Button */}
-          <button className="bg-[#1b6936] hover:bg-[#0b2c16] transition-colors text-white px-6 py-3 rounded-[32px] h-16 flex items-center justify-center gap-4 text-xl font-bold">
-            <div className="w-8 h-8 flex items-center justify-center -rotate-90">
-              <ArrowLeft className="w-5 h-5" />
-            </div>
+          {/* CTA Button - arrow direction matches reading direction (right for English, left for Arabic) */}
+          <button className={`bg-[#1b6936] hover:bg-[#0b2c16] transition-colors text-white px-6 py-3 rounded-[32px] h-16 flex items-center justify-center gap-4 text-xl font-bold ${isRTL ? 'flex-row-reverse' : ''}`}>
+            {isRTL ? (
+              <div className="w-8 h-8 flex items-center justify-center rotate-90">
+                <ArrowLeft className="w-5 h-5" />
+              </div>
+            ) : (
+              <div className="w-8 h-8 flex items-center justify-center">
+                <ArrowRight className="w-5 h-5" />
+              </div>
+            )}
             <span>{cta}</span>
           </button>
         </div>

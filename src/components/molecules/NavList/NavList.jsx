@@ -7,36 +7,21 @@ const navItems = [
   {
     type: 'link',
     href: '/',
-    key: 'navbar.home'
+    key: 'navbar.home',
   },
   {
     type: 'dropdown',
     key: 'navbar.about',
     items: [
-      { label: 'نبذة عن وثب', href: '/about' },
-      { label: 'الفريق', href: '/about/team' },
-      { label: 'عملائنا', href: '/about/clients' },
-      { label: 'الاسألة الشائعة', href: '/about/faq' },
-    ]
+      { key: 'navbar.aboutOverview', href: '/about' },
+      { key: 'navbar.aboutTeam', href: '/about/team' },
+      { key: 'navbar.aboutClients', href: '/about/clients' },
+      { key: 'navbar.aboutFaq', href: '/about/faq' },
+    ],
   },
   {
     type: 'dropdown',
     key: 'navbar.services',
-    // items: [
-    //   { label: 'خدماتنا', href: '/services' },
-    //   { label: 'إعداد خطط الإدارة البيئية', href: '/services/environmental-management-plans' },
-
-    //   { label: 'إعداد خطط المعالجه و إعادة التأهيل البيئى', href: '/services/rehabilitation-and-treatment-plans' },
-    //   { label: 'دراسات تقييم الأثر البيئي', href: '/services/environmental-impact-assessment' },
-    //   { label: 'دراسات التدقيق البيئي', href: '/services/environmental-audit' },
-    //   { label: 'إعداد السجلات والتقارير البيئية', href: '/services/environmental-records-and-reports' },
-    //   { label: 'إدارةالنفايات (موان)', href: '/services/ports-waste-management' },
-    //   { label: 'تنفيذ خطط المعاجة و إعادة التأهيل البيئى', href: '/services/rehabilitation-plan-implementation' },
-    //   { label: 'إعداد الخطط التصحيحية للضوضاء و نمذجة الصوت', href: '/services/noise-correction-and-modeling' },
-    //   { label: 'الستشارات البيئية للإمتثال و التراخيص', href: '/services/environmental-compliance-and-permits' },
-    //   { label: 'التدريب و بناء القدرات البيئية', href: '/services/environmental-training-and-capacity-building' },
-    // ]
-
   },
   {
     type: 'link',
@@ -58,17 +43,14 @@ const navItems = [
     href: '/licenses',
     key: 'navbar.licenses'
   },
-  // {
-  //   type: 'link',
-  //   href: '/contact',
-  //   key: 'navbar.contact'
-  // },
 ];
 
 export function NavList({ className = '', serviceItems, variant = 'desktop', ...props }) {
   const resolvedNavItems = navItems.map((item) => {
-    if (item.type === 'dropdown' && item.key === 'navbar.services' && serviceItems?.length > 0) {
-      return { ...item, items: serviceItems };
+    if (item.type === 'dropdown' && item.key === 'navbar.services') {
+      const staticServicesLink = { key: 'navbar.servicesAll', href: '/services' };
+      const dynamicItems = serviceItems ?? [];
+      return { ...item, items: [staticServicesLink, ...dynamicItems] };
     }
     return item;
   });

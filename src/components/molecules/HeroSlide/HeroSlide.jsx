@@ -18,12 +18,13 @@ export function HeroSlide({
   const isRTL = language === 'ar';
 
   const alignStart = 'items-start';
-  const textAlign = 'text-start';
+  const textAlign = isRTL ? 'text-right' : 'text-left';
   const ctaOrder = isRTL ? 'flex-row-reverse' : 'flex-row';
   const selfAlign = isRTL ? 'self-end' : 'self-start';
 
   return (
     <div
+      dir={isRTL ? 'rtl' : 'ltr'}
       className={`flex flex-col pointer-events-none ${alignStart} ${selfAlign} ${className}
         gap-8 p-4 pt-16
         sm:gap-10 sm:p-6 sm:pt-20
@@ -71,11 +72,11 @@ export function HeroSlide({
     sm:gap-3 sm:px-5 sm:py-2.5 sm:h-11
     lg:gap-4 lg:px-6 lg:h-auto lg:py-2.5`}
             >
-
               <ArrowLeft
                 className="text-[#1b6036] shrink-0
       group-hover:text-white
-      w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8"
+      w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8
+      rtl:rotate-180"
                 aria-hidden
               />
 
