@@ -155,6 +155,7 @@ export function OurAbout({ className = '', ...props }) {
                 className="md:me-28 lg:me-0 me-2 w-fit font-h2 text-white text-3xl md:text-5xl lg:text-7xl text-start whitespace-nowrap relative [font-style:var(--h2-font-style)]"
               >
                 {t('about.section.title')}
+                
               </h2>
             </header>
             {/* Content section with heading and description */}

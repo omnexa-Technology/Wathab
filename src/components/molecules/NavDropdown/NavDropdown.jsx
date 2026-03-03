@@ -87,7 +87,7 @@ export function NavDropdown({
               asChild
             >
               <LocaleLink href={item.href} className="w-full block">
-                {item.label}
+                {item.key ? t(item.key) : item.label}
               </LocaleLink>
             </DropdownMenuItem>
           );

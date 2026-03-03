@@ -99,7 +99,7 @@ export function HeroCarousel({
                 />
 
                 {/* Slide content — responsive vertical offset */}
-                <div className="flex w-full max-w-[1680px] items-center ltr:justify-start rtl:justify-start absolute ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2 z-[100]
+                <div className="flex w-full max-w-[1680px] items-center justify-start absolute ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2 z-[100]
                   top-[80px] sm:top-[100px] md:top-[140px] lg:top-[180px] xl:top-[204px]
                   px-4 sm:px-5 md:px-6 lg:px-8">
                   <HeroSlide
@@ -115,9 +115,12 @@ export function HeroCarousel({
       </Swiper>
 
       {/* Navigation Controls */}
-      <div className="absolute z-30 bottom-8 sm:bottom-10 lg:bottom-16
-        flex justify-start items-center left-3/5 lg:left-auto  top-1/4 lg:top-auto  
-        lg:inset-x-auto lg:ltr:left-8 lg:rtl:right-8 ">
+      <div className="absolute z-30
+        bottom-8 sm:bottom-10 lg:bottom-16
+        left-1/2 -translate-x-1/2
+        lg:left-auto lg:right-auto lg:translate-x-0
+        lg:ltr:left-8 lg:rtl:right-8
+        flex items-center">
         <CarouselNavigation
           onPrev={handlePrev}
           onNext={handleNext}
@@ -130,14 +133,11 @@ export function HeroCarousel({
           Mobile: vertically centered on the side.
           Tablet+: aligned with hero content top offsets. */}
       <div className="absolute z-30
-        top-1/2 -translate-y-1/3
+        top-1/2 -translate-y-1/2 rotate-90
         ltr:left-4 rtl:right-4
-        rotate-90
-        lg:rotate-0
-        left-4/7 lg:left-auto
-        sm:translate-y-0 sm:ltr:left-6 sm:rtl:right-6
-        md:top-[140px]
-        lg:ltr:left-8 lg:rtl:right-8 lg:top-[180px]
+        sm:ltr:left-6 sm:rtl:right-6
+        md:top-[140px] md:translate-y-0 md:rotate-0 md:ltr:left-6 md:rtl:right-6
+        lg:top-[180px] lg:ltr:left-8 lg:rtl:right-8
         xl:top-[204px]">
         <CarouselPagination
           totalSlides={slides.length}
