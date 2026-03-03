@@ -41,7 +41,9 @@ jobs:
           docker build \
             --build-arg NEXT_PUBLIC_SANITY_PROJECT_ID=${{ secrets.PROJECT_ID }} \
             --build-arg NEXT_PUBLIC_SANITY_DATASET=${SANITY_DATASET:-production} \
+            -t ghcr.io/omnexa-technology/wathab:${{ github.sha }} \
             -t ghcr.io/omnexa-technology/wathab:latest .
+          docker push ghcr.io/omnexa-technology/wathab:${{ github.sha }}
           docker push ghcr.io/omnexa-technology/wathab:latest
 
       # -------------------------------
@@ -60,5 +62,5 @@ jobs:
           ssh -o ServerAliveInterval=30 -o StrictHostKeyChecking=accept-new "${SERVER_USER}@${SERVER_IP}" "
             cd /home/wathab/apps/wathab
             docker compose pull
-            docker compose up -d
+            docker compose up -d --force-recreate
           "
