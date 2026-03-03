@@ -113,7 +113,6 @@ export function HeroCarousel({
           </SwiperSlide>
         ))}
       </Swiper>
-
       {/* Navigation Controls */}
       <div className="absolute z-30
         bottom-8 sm:bottom-10 lg:bottom-16
@@ -128,8 +127,6 @@ export function HeroCarousel({
           isEnd={isEnd && !loop}
         />
       </div>
-
-
       {/* Pagination — beside slide content. 
           Mobile: vertically centered on the side.
           Tablet+: aligned with hero content top offsets. */}
