@@ -220,8 +220,8 @@ body {
   background: #ffffff;
   color: #171717;
 }
-
-.about-green-cut-rtl {
+/* 
+.about-green-cut-ltr {
   clip-path: polygon(310px 0,
       100% 0,
       100% 100%,
@@ -229,13 +229,13 @@ body {
       0 668px);
 }
 
-.about-green-cut-ltr {
+.about-green-cut-rtl {
   clip-path: polygon(0 0,
       calc(100% - 310px) 0,
       100% 668px,
       100% 100%,
       0 100%);
-}
+} */
 
 /* Achievements section: content enter/exit and image scale (transform + opacity only) */
 @keyframes achievements-content-enter {
