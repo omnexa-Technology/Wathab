@@ -15,31 +15,16 @@
 
 services:
   wathab:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: wathab:latest
+    image: ghcr.io/omnexa-technology/whathab:latest
     container_name: wathab
+
     env_file:
       - .env.production
+
     ports:
-      - "3001:3000"
+      - '3001:3000'
+
     restart: unless-stopped
-
-    # ── Health check: ensures container is serving traffic ──
-    healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
-
-    # ── Logging: JSON driver with rotation to prevent disk fill ──
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "3"
 
     # ── Resource limits for small servers (uncomment as needed) ──
     # deploy:
