@@ -18,7 +18,7 @@ export function HeroCarousel({
   slides = [],
   autoplayDelay = 5000,
   loop = true,
-  
+
   ...props
 }) {
   const swiperRef = useRef(null);
@@ -130,13 +130,15 @@ export function HeroCarousel({
       {/* Pagination — beside slide content. 
           Mobile: vertically centered on the side.
           Tablet+: aligned with hero content top offsets. */}
-      <div className="absolute z-30
-        top-1/2 -translate-y-1/2 rotate-90
-        ltr:left-4 rtl:right-4
-        sm:ltr:left-6 sm:rtl:right-6
-        md:top-[140px] md:translate-y-0 md:rotate-0 md:ltr:left-6 md:rtl:right-6
-        lg:top-[180px] lg:ltr:left-8 lg:rtl:right-8
-        xl:top-[204px]">
+      <div
+        className="absolute z-30 hidden md:block
+    top-1/2 -translate-y-1/2 rotate-90
+    ltr:left-4 rtl:right-4
+    sm:ltr:left-6 sm:rtl:right-6
+    md:top-[140px] md:translate-y-0 md:rotate-0 md:ltr:left-6 md:rtl:right-6
+    lg:top-[180px] lg:ltr:left-8 lg:rtl:right-8
+    xl:top-[204px]"
+      >
         <CarouselPagination
           totalSlides={slides.length}
           activeIndex={activeIndex}
