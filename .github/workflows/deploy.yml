@@ -9,7 +9,12 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment: production
+    permissions:
+      contents: read
+      packages: write
+    env:
+      SERVER_IP: ${{ secrets.SERVER_IP }}
+      SERVER_USER: ${{ secrets.SERVER_USER }}
 
     steps:
       # -------------------------------
@@ -30,9 +35,14 @@ jobs:
       # Build & Push Docker Image
       # -------------------------------
       - name: Build and push Docker image
+        env:
+          SANITY_DATASET: ${{ vars.SANITY_DATASET }}
         run: |
-          docker build -t ghcr.io/omnexa-technology/whathab:latest .
-          docker push ghcr.io/omnexa-technology/whathab:latest
+          docker build \
+            --build-arg NEXT_PUBLIC_SANITY_PROJECT_ID=${{ secrets.PROJECT_ID }} \
+            --build-arg NEXT_PUBLIC_SANITY_DATASET=${SANITY_DATASET:-production} \
+            -t ghcr.io/omnexa-technology/wathab:latest .
+          docker push ghcr.io/omnexa-technology/wathab:latest
 
       # -------------------------------
       # Setup SSH
@@ -42,19 +52,12 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
 
-      - name: Add server to known_hosts
-        run: |
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-
       # -------------------------------
       # Deploy on server (NO BUILD)
       # -------------------------------
       - name: Deploy on server
         run: |
-          ssh -o ServerAliveInterval=30 \
-              ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          ssh -o ServerAliveInterval=30 -o StrictHostKeyChecking=accept-new "${SERVER_USER}@${SERVER_IP}" "
             cd /home/wathab/apps/wathab
             docker compose pull
             docker compose up -d
