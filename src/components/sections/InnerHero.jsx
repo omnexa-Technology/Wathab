@@ -2,6 +2,7 @@
 
 import { useTranslation } from '../../hooks/useTranslation';
 import { useLanguageStore } from '../../store/useLanguageStore';
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 export function InnerHero({ title, description, image, breadcrumbLabel }) {
@@ -29,7 +30,7 @@ export function InnerHero({ title, description, image, breadcrumbLabel }) {
 
       {/* Green Gradient Overlays */}
       <div
-        className="absolute top-0 right-0 h-full w-full sm:w-[70%] lg:w-[56.25%] z-1"
+        className={`absolute top-0 h-full w-full sm:w-[70%] lg:w-[56.25%] z-1 ${isRTL ? 'right-0' : 'left-0'}`}
         style={{
           background: isRTL
             ? 'linear-gradient(90.5deg, rgba(27, 105, 54, 0) 0.35%, rgb(27, 105, 54) 99.74%)'
@@ -37,7 +38,7 @@ export function InnerHero({ title, description, image, breadcrumbLabel }) {
         }}
       />
       <div
-        className="absolute top-0 left-0 sm:left-[30%] lg:left-[48.125%] h-full w-full sm:w-[70%] lg:w-[51.875%] z-2"
+        className={`absolute top-0 h-full w-full sm:w-[70%] lg:w-[51.875%] z-2 ${isRTL ? 'left-0 sm:left-[30%] lg:left-[48.125%]' : 'right-0 sm:right-[30%] lg:right-[48.125%]'}`}
         style={{
           background: isRTL
             ? 'linear-gradient(90.46deg, rgba(27, 105, 54, 0) 0.35%, rgba(27, 105, 54, 0.9) 99.74%)'
@@ -47,19 +48,28 @@ export function InnerHero({ title, description, image, breadcrumbLabel }) {
 
       {/* Content Container */}
       <div className="relative z-20 w-full max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-start">
-        <div className="flex flex-col gap-16 sm:gap-24 lg:gap-[120px] items-start w-full max-w-full sm:max-w-[90%] lg:max-w-[724px]">
+        <div
+          className={cn(
+            'flex flex-col gap-16 sm:gap-24 items-start w-full max-w-full sm:max-w-[90%]',
+            isRTL ? 'lg:gap-[120px] lg:max-w-[724px]' : 'lg:gap-[80px] lg:max-w-[650px]'
+          )}
+        >
           {/* Main Title */}
           <h1
-            className={`text-white font-medium
-              text-3xl sm:text-4xl md:text-5xl lg:text-[64px]
-              leading-tight sm:leading-snug md:leading-normal lg:leading-[108px]
-              ${isRTL ? 'text-right' : 'text-left'}
-            `}
+            className={cn(
+              'text-white font-medium text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-tight sm:leading-snug md:leading-normal',
+              isRTL ? 'lg:leading-[108px] text-right' : 'lg:leading-[84px] text-left'
+            )}
             style={{ fontFamily: 'var(--font-family, "DIN Next LT Arabic", sans-serif)' }}
           >
             {title}
             {description && (
-              <span className="block text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mt-4">
+              <span
+                className={cn(
+                  'block mt-4 text-base sm:text-lg md:text-xl lg:text-2xl',
+                  isRTL ? 'leading-relaxed' : 'leading-[1.4]'
+                )}
+              >
                 {description}
               </span>
             )}

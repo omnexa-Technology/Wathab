@@ -76,7 +76,7 @@ export function NewsSection({ articles: articlesProp, className = '', ...props }
     []
   );
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(carouselOptions);
+  const [emblaRef, emblaApi] = useEmblaCarousel(carouselOptions); 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);

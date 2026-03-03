@@ -39,7 +39,7 @@ export function LanguageSwitcher({ className = ' cursor-pointer', variant = 'def
   const targetLabel = t(`common.languages.${targetLang}`);
 
   return (
-    
+
     <button
       type="button"
       onClick={handleToggle}

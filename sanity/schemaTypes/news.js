@@ -37,6 +37,21 @@ export default defineType({
     }),
 
     defineField({
+      name: 'language',
+      title: 'Language',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Arabic', value: 'ar' },
+          { title: 'English', value: 'en' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'ar',
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',
@@ -136,6 +151,18 @@ export default defineType({
             },
           ],
         }),
+      ],
+    }),
+
+    defineField({
+      name: 'translations',
+      title: 'Translations',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'news' }],
+        },
       ],
     }),
   ],
