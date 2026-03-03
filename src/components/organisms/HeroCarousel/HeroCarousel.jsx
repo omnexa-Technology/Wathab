@@ -129,6 +129,7 @@ export function HeroCarousel({
         />
       </div>
 
+
       {/* Pagination — beside slide content. 
           Mobile: vertically centered on the side.
           Tablet+: aligned with hero content top offsets. */}
