@@ -2,7 +2,7 @@
 
 import LocaleLink from '../../LocaleLink';
 import { useTranslation } from '../../../hooks/useTranslation';
-import { SearchButton } from '../../atoms/SearchButton/SearchButton';
+// import { SearchButton } from '../../atoms/SearchButton/SearchButton';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 
 /** Shared Figma nav button style – Contact & Language switcher */
@@ -15,7 +15,7 @@ export function NavActions({ className = '', ...props }) {
   return (
     <div className={`flex items-center gap-4 sm:gap-6 ${className}`} {...props}>
       <LanguageSwitcher className={navButtonClass} />
-      <SearchButton className="text-white [&_svg]:text-white hover:opacity-80 transition-opacity" />
+      {/* <SearchButton className="text-white [&_svg]:text-white hover:opacity-80 transition-opacity" /> */}
       <LocaleLink href="/contact" className={navButtonClass}>
         {t('navbar.contact')}
       </LocaleLink>
