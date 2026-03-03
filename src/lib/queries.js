@@ -71,8 +71,8 @@ const serviceListFields = `
   }
 `;
 
-/** Services list - fetches type "services" (plural) to match Sanity content */
-export const SERVICES_LIST_QUERY = `*[_type == "services"] | order(_createdAt desc) {
+/** Services list - fetches type "services" for given locale (pass $locale: 'en' | 'ar') */
+export const SERVICES_LIST_QUERY = `*[_type == "services" && language == $locale] | order(_createdAt desc) {
   ${serviceListFields}
 }`;
 
@@ -116,3 +116,16 @@ export const SERVICES_NAV_QUERY = `*[_type == "service-details" && language == $
   title,
   "slug": slug.current
 } | order(title asc)`;
+
+/**
+ * Example: Fetch a service with its translations (services type).
+ * *[_type == "services" && language == $locale][0] {
+ *   _id, title, description, icon { asset->{ url }, alt }, language,
+ *   "translations": translations[]-> { _id, title, language }
+ * }
+ *
+ * Example: Fetch service-details with translations.
+ * *[_type == "service-details" && slug.current == $slug && language == $locale][0] {
+ *   ..., "translations": translations[]-> { _id, title, language, "slug": slug.current }
+ * }
+ */
