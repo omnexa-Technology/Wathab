@@ -119,7 +119,7 @@ export function HeroCarousel({
         bottom-8 sm:bottom-10 lg:bottom-16
         left-1/2 -translate-x-1/2
         lg:left-auto lg:right-auto lg:translate-x-0
-        lg:ltr:left-8 lg:rtl:right-8
+        lg:ltr:left-1/9 lg:rtl:right-1/9
         flex items-center">
         <CarouselNavigation
           onPrev={handlePrev}
@@ -129,7 +129,7 @@ export function HeroCarousel({
         />
       </div>
 
-      {/* Pagination — beside slide content.
+      {/* Pagination — beside slide content. 
           Mobile: vertically centered on the side.
           Tablet+: aligned with hero content top offsets. */}
       <div className="absolute z-30
