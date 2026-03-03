@@ -12,8 +12,8 @@ export async function generateMetadata() {
 }
 
 export default async function ServicesPage() {
-  const { t } = await getLocaleAndTranslations();
-  const services = await sanityFetch(SERVICES_LIST_QUERY);
+  const { t, locale } = await getLocaleAndTranslations();
+  const services = await sanityFetch(SERVICES_LIST_QUERY, { locale });
   const list = Array.isArray(services) ? services : [];
 
   const items = list.map((s, index) => {
