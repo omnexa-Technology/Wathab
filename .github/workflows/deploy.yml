@@ -31,9 +31,8 @@ jobs:
       # -------------------------------
       - name: Build and push Docker image
         run: |
-          IMAGE=ghcr.io/${{ github.repository_owner }}/wathab:latest
-          docker build -t $IMAGE .
-          docker push $IMAGE
+          docker build -t ghcr.io/omnexa-technology/whathab:latest .
+          docker push ghcr.io/omnexa-technology/whathab:latest
 
       # -------------------------------
       # Setup SSH
