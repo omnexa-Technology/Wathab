@@ -8,16 +8,9 @@ import { LogoBlock } from '../../molecules/LogoBlock/LogoBlock';
 import { NavList } from '../../molecules/NavList/NavList';
 import { NavActions } from '../../molecules/NavActions/NavActions';
 
-/**
- * Main navigation bar – Anima design.
- * RTL layout, fixed header with scroll-based hide/show.
- * Mobile-first: hamburger + drawer on small screens; full nav from lg.
- * Uses transform (not top) for GPU-friendly animation and no layout shift.
- */
-
 const SCROLL_TOP_THRESHOLD = 10;
 
-export function Navbar({ className = '', serviceItems, ...props }) {
+export function Navbar({ serviceItems, ...props }) {
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const prevScrollY = useRef(0);
@@ -52,7 +45,7 @@ export function Navbar({ className = '', serviceItems, ...props }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  
+
   // Lock body scroll when mobile menu is open; prevent layout shift
   useEffect(() => {
     if (typeof document === 'undefined') return;
@@ -69,7 +62,7 @@ export function Navbar({ className = '', serviceItems, ...props }) {
   const pathname = usePathname();
   const { t } = useTranslation();
   useEffect(() => {
-    setIsMobileMenuOpen(false);
+    queueMicrotask(() => setIsMobileMenuOpen(false));
   }, [pathname]);
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -77,20 +70,20 @@ export function Navbar({ className = '', serviceItems, ...props }) {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 flex w-full h-16 sm:h-[72px] lg:h-[88px] items-center justify-center bg-white px-0 py-3 sm:py-4 transition-transform duration-300 ease-out overflow-hidden ${isVisible ? 'translate-y-0' : '-translate-y-full'} ${className}`}
+        className={`fixed top-0 left-0 right-0 z-50 flex w-full h-20 sm:h-[72px] min-[1300px]:h-[88px] items-center justify-center bg-white px-0 py-3 sm:py-4 transition-transform duration-300 ease-out overflow-hidden ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
         data-colors-mode="light"
         aria-label="Main navigation"
         {...props}
       >
-        <div className="flex w-full max-w-[1680px] items-center justify-between gap-4 sm:gap-6 px-4 sm:px-5 md:px-6 lg:px-4 lg:gap-12">
+        <div className="flex w-full items-center justify-between">
           {/* Logo – right in RTL */}
           <LogoBlock className="flex-shrink-0 min-w-0" />
 
           {/* Desktop: center nav + actions */}
-          <div className="hidden lg:flex flex-1 items-center justify-center min-w-0">
+          <div className="hidden min-[1300px]:flex flex-1 items-center justify-center min-w-0">
             <NavList serviceItems={serviceItems} />
           </div>
-          <div className="hidden lg:flex items-center flex-shrink-0">
+          <div className="hidden min-[1300px]:flex items-center flex-shrink-0">
             <NavActions />
           </div>
 
@@ -101,7 +94,7 @@ export function Navbar({ className = '', serviceItems, ...props }) {
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav-drawer"
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-            className="flex lg:hidden min-h-[44px] min-w-[44px] sm:min-h-[48px] sm:min-w-[48px] items-center justify-center rounded-xl border border-gray-200 bg-white shadow-sm text-[#1B6936] hover:bg-gray-50 active:bg-gray-100 transition-colors touch-manipulation"
+            className="flex min-[1300px]:hidden min-h-[44px] mx-3 min-w-[44px] sm:min-h-[48px] sm:min-w-[48px] items-center justify-center rounded-xl border border-gray-200 bg-white shadow-sm text-[#1B6936] hover:bg-gray-50 active:bg-gray-100 transition-colors touch-manipulation"
           >
             {isMobileMenuOpen ? (
               <X className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden />
@@ -118,7 +111,7 @@ export function Navbar({ className = '', serviceItems, ...props }) {
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation menu"
-        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ease-out ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 z-40 min-[1300px]:hidden transition-opacity duration-300 ease-out ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         {/* Backdrop */}
         <button
@@ -146,11 +139,11 @@ export function Navbar({ className = '', serviceItems, ...props }) {
           </div>
 
           {/* Scrollable nav + actions */}
-          <div className="flex-1 overflow-y-auto overscroll-contain py-4 px-4 sm:px-5">
+          <div className="flex-1 overflow-y-auto overscroll-contain py-4">
             <NavList
               serviceItems={serviceItems}
               variant="mobile"
-              className="flex flex-col items-stretch gap-1 w-full"
+              className="flex flex-col items-stretch  w-full"
             />
             <div className="mt-6 pt-6 border-t border-gray-100 flex flex-col gap-3 [&_a]:w-full [&_a]:justify-center [&_button]:w-full [&_button]:justify-center">
               <NavActions className="flex flex-col w-full gap-3" />

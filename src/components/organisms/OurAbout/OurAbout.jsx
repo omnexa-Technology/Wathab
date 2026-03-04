@@ -22,10 +22,7 @@ export function OurAbout({ className = '', ...props }) {
       {/* Mobile/Tablet: relative flow layout */}
       <div className="relative md:absolute md:left-1/2 md:-translate-x-1/2 md:top-0 w-full md:w-[1918px] min-h-[871px] md:h-[871px] px-4 md:px-0 py-12 md:py-0">
         {/* Background decorative patterns - hidden on mobile */}
-        {/* <div
-            className={` md:block absolute w-full h-[650px] top-[221px] bg-[#1B6936] xl:bg-[url('/assets/icons/logo/cover-about.svg')]  about-green-cut-rtl `}
-                /> */}
-
+       
         <div
           className={`
             md:block absolute w-full h-[650px] top-[221px] 
@@ -59,55 +56,6 @@ export function OurAbout({ className = '', ...props }) {
             sizes="(max-width: 768px) 280px, 540px"
           />
         </figure>
-
-        {/* Text content - positioned RIGHT in RTL, LEFT in LTR */}
-        {/* Mobile: full width, stacked below image */}
-        {/* Desktop: absolute positioned */}
-        {/* <article
-          className={`
-            flex flex-col 
-            w-full md:w-[1052px] 
-            items-start md:ltr:items-start md:rtl:items-end 
-            gap-8 md:gap-16 
-            relative md:absolute 
-            md:left-2/3 md:-translate-x-1/2 md:top-1/3
-            text-start
-          `}
-          dir={isRTL ? 'rtl' : 'ltr'} */}
-
-        {/* <article
-          className={`
-    flex flex-col
-
-    w-full
-  
-
-    mx-auto
-    md:mx-0
-
-    px-6
-    md:px-0
-
-    items-start rtl:items-end
-
-    gap-8 md:gap-10 lg:gap-16
-
-    relative
-    md:absolute
-
-    md:top-[260px]
-
-    md:rtl:right-[120px]
-    md:ltr:left-[120px]
-
-    lg:rtl:right-[180px]
-    lg:ltr:left-[180px]
-
-    text-start
-  `}
-          dir={isRTL ? 'rtl' : 'ltr'}
-        > */}
-
         <article
           className="
     flex flex-col
@@ -155,7 +103,7 @@ export function OurAbout({ className = '', ...props }) {
                 className="md:me-28 lg:me-0 me-2 w-fit font-h2 text-white text-3xl md:text-5xl lg:text-7xl text-start whitespace-nowrap relative [font-style:var(--h2-font-style)]"
               >
                 {t('about.section.title')}
-                
+
               </h2>
             </header>
             {/* Content section with heading and description */}
