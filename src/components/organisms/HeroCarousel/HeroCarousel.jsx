@@ -91,12 +91,12 @@ export function HeroCarousel({
                   }}
                 />
                 <Image
-                  src='/assets/images/pages/Home/HeroHome.webp'
-                  alt="hero cover"
+                  src={slide.imageSrc || '/assets/images/pages/Home/HeroHome.webp'}
+                  alt={slide.imageAlt || "hero cover"}
                   fill
                   className="object-cover"
                   sizes="100vw"
-                // priority={index === 0}
+                  priority={index === 0}
                 />
 
                 {/* Slide content — responsive vertical offset */}
@@ -119,7 +119,7 @@ export function HeroCarousel({
         bottom-8 sm:bottom-10 lg:bottom-16
         left-1/2 -translate-x-1/2
         lg:left-auto lg:right-auto lg:translate-x-0
-        lg:ltr:left-1/9 lg:rtl:right-1/9
+        lg:ltr:left-[11%] lg:rtl:right-[11%]
         flex items-center">
         <CarouselNavigation
           onPrev={handlePrev}

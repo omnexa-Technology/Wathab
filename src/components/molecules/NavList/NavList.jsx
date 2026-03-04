@@ -59,8 +59,7 @@ export function NavList({ className = '', serviceItems, variant = 'desktop', ...
 
   return (
     <ul
-      className={`flex items-center justify-end gap-2 flex-col lg:flex-row lg:items-center lg:justify-end lg:gap-2 ${isMobile ? 'w-full gap-0' : ''} ${className}`}
-      dir="rtl"
+      className={`flex items-center justify-end gap-2 flex-col min-[1300px]:flex-row min-[1300px]:items-center min-[1300px]:justify-end min-[1300px]:gap-2 ${isMobile ? 'w-full gap-0' : ''} ${className}`}
       {...props}
     >
       {resolvedNavItems.map((item) => {
