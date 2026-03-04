@@ -53,6 +53,7 @@ export function HeroCarousel({
     >
       {/* Main Swiper Container */}
       <Swiper
+        key={language}
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         onSwiper={(swiper) => { swiperRef.current = swiper; }}
         onSlideChange={handleSlideChange}
@@ -95,7 +96,7 @@ export function HeroCarousel({
                   fill
                   className="object-cover"
                   sizes="100vw"
-                  // priority={index === 0}
+                // priority={index === 0}
                 />
 
                 {/* Slide content — responsive vertical offset */}
