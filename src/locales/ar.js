@@ -21,6 +21,12 @@ export default {
     aboutClients: 'عملاؤنا',
     aboutFaq: 'الأسئلة الشائعة',
     servicesAll: 'الخدمات',
+    aria: {
+      main: 'التنقل الرئيسي',
+      openMenu: 'فتح القائمة',
+      closeMenu: 'إغلاق القائمة',
+      mobileMenu: 'قائمة التنقل للجوال',
+    },
   },
   home: {
     title: 'وثب للاستشارات البيئية',
