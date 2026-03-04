@@ -72,7 +72,7 @@ export function Navbar({ serviceItems, ...props }) {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 flex w-full h-20 sm:h-[72px] min-[1300px]:h-[88px] items-center justify-center bg-white px-0 py-3 sm:py-4 transition-transform duration-300 ease-out overflow-hidden ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
         data-colors-mode="light"
-        aria-label="Main navigation"
+        aria-label={t('navbar.aria.main')}
         {...props}
       >
         <div className="flex w-full items-center justify-between">
@@ -93,7 +93,7 @@ export function Navbar({ serviceItems, ...props }) {
             onClick={() => setIsMobileMenuOpen((o) => !o)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav-drawer"
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isMobileMenuOpen ? t('navbar.aria.closeMenu') : t('navbar.aria.openMenu')}
             className="flex min-[1300px]:hidden min-h-[44px] mx-3 min-w-[44px] sm:min-h-[48px] sm:min-w-[48px] items-center justify-center rounded-xl border border-gray-200 bg-white shadow-sm text-[#1B6936] hover:bg-gray-50 active:bg-gray-100 transition-colors touch-manipulation"
           >
             {isMobileMenuOpen ? (
@@ -110,14 +110,14 @@ export function Navbar({ serviceItems, ...props }) {
         id="mobile-nav-drawer"
         role="dialog"
         aria-modal="true"
-        aria-label="Mobile navigation menu"
+        aria-label={t('navbar.aria.mobileMenu')}
         className={`fixed inset-0 z-40 min-[1300px]:hidden transition-opacity duration-300 ease-out ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         {/* Backdrop */}
         <button
           type="button"
           onClick={closeMobileMenu}
-          aria-label="Close menu"
+          aria-label={t('navbar.aria.closeMenu')}
           className="absolute inset-0 bg-black/20"
         />
 
@@ -131,7 +131,7 @@ export function Navbar({ serviceItems, ...props }) {
             <button
               type="button"
               onClick={closeMobileMenu}
-              aria-label="Close menu"
+              aria-label={t('navbar.aria.closeMenu')}
               className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-[#1B6936] hover:bg-gray-100 transition-colors touch-manipulation"
             >
               <X className="w-5 h-5" />

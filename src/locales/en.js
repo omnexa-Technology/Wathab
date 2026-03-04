@@ -21,6 +21,12 @@ export default {
     aboutClients: 'Clients',
     aboutFaq: 'FAQ',
     servicesAll: 'All Services',
+    aria: {
+      main: 'Main navigation',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
+      mobileMenu: 'Mobile navigation menu',
+    },
   },
   home: {
     title: 'Wathb Environmental Consulting',
