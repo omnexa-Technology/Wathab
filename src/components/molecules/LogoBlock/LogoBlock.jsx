@@ -12,7 +12,7 @@ export function LogoBlock({ className = '', ...props }) {
           alt="Wathb Logo"
           width={193}
           height={48}
-          className="w-28 h-auto sm:w-36 md:w-40 lg:w-[193.17px] max-w-full object-contain"
+          className="w-36 h-auto md:w-40 lg:w-[193.17px] max-w-full object-contain"
         />
       </LocaleLink>
     </div>
