@@ -40,6 +40,7 @@
   src: url("/assets/fonts/din-next-lt-arabic/DINNextLTArabic-Bold.woff2") format("woff2");
 }
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -220,6 +221,7 @@ body {
   background: #ffffff;
   color: #171717;
 }
+
 /* 
 .about-green-cut-ltr {
   clip-path: polygon(310px 0,

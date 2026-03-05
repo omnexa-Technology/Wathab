@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
 import { Toaster } from 'sonner';
 import { routing } from '../../i18n/routing';
 import { DirectionProvider } from '@/components/ui/direction-provider';
@@ -11,7 +10,6 @@ import en from '../../locales/en';
 import '../globals.css';
 
 const locales = { ar, en };
-const MIN_LOADING_MS = 2000;
 
 function LoadingOverlay() {
   return (
@@ -29,19 +27,14 @@ function LoadingOverlay() {
   );
 }
 
-async function LangSwitchDelay({ children }) {
-  const cookieStore = await cookies();
-  const langSwitch = cookieStore.get('langSwitch');
-  if (langSwitch?.value === '1') {
-    await new Promise((resolve) => setTimeout(resolve, MIN_LOADING_MS));
-  }
-  return children;
-}
-
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params);
   const m = locales[locale] || locales.ar;
-  return { title: m.home.title, description: m.home.description };
+  return {
+    title: m.home.title,
+    description: m.home.description,
+    metadataBase: new URL('https://whathab.com'),
+  };
 }
 
 export default async function LocaleLayout({ children, params }) {
@@ -58,7 +51,7 @@ export default async function LocaleLayout({ children, params }) {
           <Toaster richColors position="top-center" />
           <MainLayout>
             <Suspense fallback={<LoadingOverlay />}>
-              <LangSwitchDelay>{children}</LangSwitchDelay>
+              {children}
             </Suspense>
           </MainLayout>
         </DirectionProvider>
@@ -66,3 +59,4 @@ export default async function LocaleLayout({ children, params }) {
     </html>
   );
 }
+
