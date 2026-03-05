@@ -97,6 +97,7 @@ export function HeroCarousel({
                   className="object-cover"
                   sizes="100vw"
                   priority={index === 0}
+                  fetchPriority={index === 0 ? 'high' : 'auto'}
                 />
 
                 {/* Slide content — responsive vertical offset */}
@@ -107,6 +108,7 @@ export function HeroCarousel({
                     titleKey={slide.titleKey}
                     descriptionKey={slide.descriptionKey}
                     ctaKey={slide.ctaKey}
+                    isLCP={index === 0}
                   />
                 </div>
               </div>
