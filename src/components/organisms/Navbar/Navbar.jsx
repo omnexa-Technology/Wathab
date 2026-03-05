@@ -77,7 +77,7 @@ export function Navbar({ serviceItems, ...props }) {
       >
         <div className="flex w-full items-center justify-between">
           {/* Logo – right in RTL */}
-          <LogoBlock className="flex-shrink-0 min-w-0" />
+          <LogoBlock className="flex-shrink-0 min-w-0 px-6 sm:px-10" />
 
           {/* Desktop: center nav + actions */}
           <div className="hidden min-[1300px]:flex flex-1 items-center justify-center min-w-0">
