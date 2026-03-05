@@ -1,20 +1,49 @@
+import dynamic from 'next/dynamic';
 import { getLocaleAndTranslations } from '../../lib/getLocaleAndTranslations';
 import { sanityFetch, urlFor } from '../../lib/sanity';
 import { NEWS_LIST_QUERY } from '../../lib/queries';
 import { HeroCarousel } from '../../components/organisms/HeroCarousel/HeroCarousel';
 import { StatsSection } from '../../components/organisms/StatsSection/StatsSection';
 import { OurAbout } from '../../components/organisms/OurAbout/OurAbout';
-// import { AboutSection } from '../../components/sections/AboutSection/AboutSection';
 import { VisionMissionSection } from '../../components/sections/VisionMissionSection';
 import { OurValuesSection } from '../../components/sections/OurValuesSection';
 import { OurServicesSection } from '../../components/sections/OurServicesSection/OurServicesSection';
-import { AchievementsSection } from '../../components/sections/AchievementsSection/AchievementsSection';
 import { WhyChooseSection } from '../../components/sections/WhyChooseSection/WhyChooseSection';
-import { OurClientsSection } from '../../components/sections/OurClientsSection/OurClientsSection';
-import { NewsSection } from '../../components/sections/NewsSection/NewsSection';
-import { TeamSection } from '../../components/sections/TeamSection/TeamSection';
-import { ContactCtaSection } from '../../components/sections/ContactCtaSection/ContactCtaSection';
-import { FaqSection } from '../../components/sections/FaqSection/FaqSection';
+
+// --- Dynamic (lazy) imports for below-fold sections ---
+// These sections are never visible on first paint.
+// Deferring them reduces initial JS bundle → lower TBT & faster FCP.
+
+const AchievementsSection = dynamic(
+  () => import('../../components/sections/AchievementsSection/AchievementsSection').then(m => ({ default: m.AchievementsSection })),
+  { ssr: true }
+);
+
+const OurClientsSection = dynamic(
+  () => import('../../components/sections/OurClientsSection/OurClientsSection').then(m => ({ default: m.OurClientsSection })),
+  { ssr: true }
+);
+
+const NewsSection = dynamic(
+  () => import('../../components/sections/NewsSection/NewsSection').then(m => ({ default: m.NewsSection })),
+  { ssr: true }
+);
+
+const TeamSection = dynamic(
+  () => import('../../components/sections/TeamSection/TeamSection').then(m => ({ default: m.TeamSection })),
+  { ssr: true }
+);
+
+const ContactCtaSection = dynamic(
+  () => import('../../components/sections/ContactCtaSection/ContactCtaSection').then(m => ({ default: m.ContactCtaSection })),
+  { ssr: true }
+);
+
+const FaqSection = dynamic(
+  () => import('../../components/sections/FaqSection/FaqSection').then(m => ({ default: m.FaqSection })),
+  { ssr: true }
+);
+
 
 const heroSlides = [
   {
@@ -65,19 +94,19 @@ export default async function HomePage() {
   const articles =
     list.length > 0
       ? list.map((item) => {
-          const slug = item.slug ?? item._id;
-          const imageSrc =
-            item.mainImage?.asset?.url
-              ? urlFor(item.mainImage).width(600).height(400).url()
-              : FALLBACK_IMAGE;
-          return {
-            imageSrc,
-            title: item.title ?? '',
-            date: formatNewsDate(item.publishedAt),
-            excerpt: item.excerpt ?? '',
-            href: `/${locale}/news/${slug}`,
-          };
-        })
+        const slug = item.slug ?? item._id;
+        const imageSrc =
+          item.mainImage?.asset?.url
+            ? urlFor(item.mainImage).width(600).height(400).url()
+            : FALLBACK_IMAGE;
+        return {
+          imageSrc,
+          title: item.title ?? '',
+          date: formatNewsDate(item.publishedAt),
+          excerpt: item.excerpt ?? '',
+          href: `/${locale}/news/${slug}`,
+        };
+      })
       : undefined;
 
   return (
@@ -153,7 +182,7 @@ export default async function HomePage() {
 
       {/* Section 14: FAQ (الأسئلة الشائعة) */}
       <div className="flex justify-center relative w-full overflow-x-hidden min-w-0">
-        <FaqSection />  
+        <FaqSection />
       </div>
     </>
   );
