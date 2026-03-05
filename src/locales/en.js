@@ -344,18 +344,18 @@ export default {
   hero: {
     slides: {
       slide1: {
-        title: 'Making Business Thrive in a Sustainable Environment',
-        description: 'Your trusted partner for comprehensive environmental solutions and regulatory compliance in Saudi Arabia.',
+        title: 'Empowering Businesses to Thrive in a Sustainable Environment',
+        description: 'Your certified partner for integrated environmental solutions and regulatory compliance across the Kingdom of Saudi Arabia.',
         cta: 'Start Your Journey With Us Now',
       },
       slide2: {
-        title: 'Integrated Environmental Solutions',
-        description: 'We help you achieve environmental compliance and sustainability through specialized consulting services.',
+        title: 'Towards a More Sustainable Environmental Future',
+        description: 'We provide integrated environmental solutions that help companies achieve sustainability and reduce their environmental impact using modern technologies.',
         cta: 'Explore Our Services',
       },
       slide3: {
-        title: 'Partners in Environmental Success',
-        description: 'Certified expertise and strategic partnerships to achieve your environmental goals in the Kingdom.',
+        title: 'Innovating Today for a Better Tomorrow',
+        description: 'Sustainable solutions for managing natural resources and promoting a balanced future between environmental protection and development.',
         cta: 'Contact Us',
       },
     },
