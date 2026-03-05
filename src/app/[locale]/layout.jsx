@@ -45,6 +45,11 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale} dir={dir} className="font-din">
+      <head>
+        {/* Preconnect to Sanity image CDN — eliminates cold DNS+TCP on first image request */}
+        <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+      </head>
       <body>
         <DirectionProvider direction={dir}>
           <DirectionHandler />
