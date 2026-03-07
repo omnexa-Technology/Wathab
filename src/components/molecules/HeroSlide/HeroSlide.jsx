@@ -1,7 +1,8 @@
 'use client';
 
 import { useTranslation } from '../../../hooks/useTranslation';
-import { ArrowLeft } from 'lucide-react';
+import { useLanguageStore } from '../../../store/useLanguageStore';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 import FadeContent from '../../FadeContent';
 import LocaleLink from '../../LocaleLink';
 
@@ -22,6 +23,10 @@ export function HeroSlide({
   ...props
 }) {
   const { t } = useTranslation();
+
+  // Direction flags — use these freely for any JS conditions
+  const isRTL = useLanguageStore((s) => s.language === 'ar');
+  const isLTR = !isRTL;
 
   const content = (
     <div className={`pointer-events-auto flex flex-col w-full items-start
@@ -57,24 +62,38 @@ export function HeroSlide({
           href="/contact"
           className="inline-flex items-center justify-center
             bg-white/95 backdrop-blur-sm hover:bg-[#1b6936]
-            rounded-[32px] shadow-md hover:shadow-xl transition-all duration-300 flex-row rtl:flex-row-reverse
+            rounded-[32px] shadow-md hover:shadow-xl transition-all duration-300
             gap-3 px-6 py-3 h-12
             sm:gap-3 sm:px-7 sm:py-3.5 sm:h-14
             lg:gap-4 lg:px-8 lg:h-auto lg:py-4"
         >
-          <ArrowLeft
-            className="text-[#1b6036] shrink-0
-              group-hover:text-white transition-transform duration-300
-              group-hover:-translate-x-1 rtl:group-hover:translate-x-1
-              w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8
-              rtl:rotate-180"
-            aria-hidden
-          />
+          {/* RTL: السهم قبل النص */}
+          
+         
+
           <span className="font-bold text-[#1b6036]
             group-hover:text-white whitespace-nowrap
             text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
             {t(ctaKey)}
           </span>
+          {isRTL && <ArrowLeft
+            className="text-[#1b6036] shrink-0
+              group-hover:text-white transition-transform duration-300
+              group-hover:translate-x-1
+              w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8"
+            aria-hidden
+          />}
+
+          {/* LTR: ArrowRight appears AFTER the text (end of reading direction) */}
+          {isLTR && (
+            <ArrowRight
+              className="text-[#1b6036] shrink-0
+                group-hover:text-white transition-transform duration-300
+                group-hover:-translate-x-1
+                w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8"
+              aria-hidden
+            />
+          )}
         </LocaleLink>
       </div>
     </div>
